@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.sonarsource.parent</groupId>
+    <artifactId>parent</artifactId>
+    <version>45</version>
+  </parent>
+
+  <groupId>org.sonarsource.solidity</groupId>
+  <artifactId>solidity</artifactId>
+  <version>0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>SonarSolidity</name>
+  <description>Code Analyzer for Solidity</description>
+   <inceptionYear>2018</inceptionYear>
+
+
+
+
+
+
+
+
+    <properties>
+        <gitRepositoryName>sonar-solidity</gitRepositoryName>
+        <license.title>SonarSolidity</license.title>
+        <slf4j.version>1.7.25</slf4j.version>
+        <assertj.version>3.10.0</assertj.version>
+        <junit.version>4.12</junit.version>
+        <sonar.version>7.2.0.11647</sonar.version>
+        <sonar.min.version>6.7</sonar.min.version>
+        <sonar-orchestrator.version>3.17.0.1491</sonar-orchestrator.version>
+        <sonarlint.version>3.1.0.1376</sonarlint.version>
+        <jsr305.version>3.0.2</jsr305.version>
+        <mockito.version>2.18.3</mockito.version>
+        <sonar-analyzer-commons.version>1.7.0.243</sonar-analyzer-commons.version>
+        <artifactsToPublish>${project.groupId}:sonar-solidity-plugin:jar</artifactsToPublish>
+    </properties>
+
+   <dependencyManagement>
+      <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.sonarsource.sonarqube</groupId>
+            <artifactId>sonar-testing-harness</artifactId>
+            <version>${sonar.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.sonarsource.orchestrator</groupId>
+            <artifactId>sonar-orchestrator</artifactId>
+            <version>${sonar-orchestrator.version}</version>
+            <scope>test</scope>
+        </dependency>
+         <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>3.1.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+           <groupId>org.sonarsource.sonarqube</groupId>
+           <artifactId>sonar-plugin-api</artifactId>
+           <version>${sonar.min.version}</version>
+           <scope>provided</scope>
+         </dependency>
+       <dependency>
+           <groupId>org.slf4j</groupId>
+           <artifactId>slf4j-api</artifactId>
+           <version>${slf4j.version}</version>
+           <scope>provided</scope>
+       </dependency>
+      </dependencies>
+   </dependencyManagement>
+</project>
