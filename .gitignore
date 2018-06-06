@@ -1,0 +1,16 @@
+# ---- Maven
+target/
+dependency-reduced-pom.xml
+
+# ---- IntelliJ IDEA
+*.iws
+*.iml
+*.ipr
+.idea/
+
+# ---- Eclipse
+.classpath
+.project
+.settings
+
+.java-version
