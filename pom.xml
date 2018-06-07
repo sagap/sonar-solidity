@@ -11,6 +11,19 @@
 
 	<name>SonarSolidity</name>
 	<description>Draft of sonar-solidity</description>
+  <scm>
+      <connection>scm:git:git@github.com:stylianos-agapiou-sonarsource/sonar-solidity.git</connection>
+      <developerConnection>scm:git:git@github.com:stylianos-agapiou-sonarsource/sonar-solidity.git</developerConnection>
+      <url>https://github.com/stylianos-agapiou-sonarsource/sonar-solidity</url>
+  </scm>
+  <issueManagement>
+      <system>GitHub</system>
+      <url>https://github.com/stylianos-agapiou-sonarsource/sonar-solidity/issues</url>
+  </issueManagement>
+  <ciManagement>
+      <system>Travis</system>
+      <url>https://travis-ci.org/stylianos-agapiou-sonarsource/sonar-solidity</url>
+  </ciManagement>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
