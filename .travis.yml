@@ -11,7 +11,7 @@ jdk:
   - oraclejdk8
 
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.token=3b2898272832b8d410ef166bc7a96c2eb9e328ec
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -X -Dsonar.token=3b2898272832b8d410ef166bc7a96c2eb9e328ec
 
 cache:
   directories:
