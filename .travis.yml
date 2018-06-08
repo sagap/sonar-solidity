@@ -10,9 +10,9 @@ addons:
 
 jdk: oraclejdk8
 
-#script:
-#  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
-script: "./travis.sh"
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+
 cache:
   directories:
     - '$HOME/.m2/repository'
