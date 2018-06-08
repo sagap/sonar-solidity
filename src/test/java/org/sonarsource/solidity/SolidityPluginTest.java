@@ -31,12 +31,6 @@ public class SolidityPluginTest {
     assertThat(context.getExtensions()).as("Number of extensions for SQ 6.7").hasSize(5);
   }
 
-  @Test
-  public void count_plugin_extensions_sq7_2() {
-    Plugin.Context context = setupContext(SonarRuntimeImpl.forSonarQube(Version.create(6, 8), SonarQubeSide.SERVER));
-    assertThat(context.getExtensions()).as("Number of extensions for SQ 6.8").hasSize(5);
-  }
-
   private Plugin.Context setupContext(SonarRuntime runtime) {
     Plugin.Context context = new Plugin.Context(runtime);
     new SolidityPlugin().define(context);
