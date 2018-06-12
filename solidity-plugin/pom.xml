@@ -4,32 +4,22 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.sonarsource.plugins.example</groupId>
-	<artifactId>sonar-solidity</artifactId>
+  <parent>
+    <groupId>org.sonarsource.solidity</groupId>
+    <artifactId>sonar-solidity</artifactId>
+    <version>0.0</version>
+  </parent>
+
+	<artifactId>solidity-plugin</artifactId>
 	<packaging>sonar-plugin</packaging>
-	<version>0.0</version>
 
 	<name>solidity-plugin</name>
 	<description>Draft of sonar-solidity</description>
-  <scm>
-     <connection>scm:git:git@github.com:stylianos-agapiou-sonarsource/sonar-solidity.git</connection>
-     <developerConnection>scm:git:git@github.com:stylianos-agapiou-sonarsource/sonar-solidity.git</developerConnection>
-     <url>https://github.com/stylianos-agapiou-sonarsource/sonar-solidity</url>
-  </scm>
-  <issueManagement>
-     <system>GitHub</system>
-     <url>https://github.com/stylianos-agapiou-sonarsource/sonar-solidity/issues</url>
-  </issueManagement>
-  <ciManagement>
-     <system>Travis</system>
-     <url>https://travis-ci.org/stylianos-agapiou-sonarsource/sonar-solidity</url>
-  </ciManagement>
-  
-    <properties>
+	
+  <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.apiVersion>6.7.1</sonar.apiVersion>
     <jdk.min.version>1.8</jdk.min.version>
-    <sonar.sources>src/main/java</sonar.sources>
   </properties>
   
 	<dependencies>

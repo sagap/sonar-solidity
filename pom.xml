@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.sonarsource.solidity</groupId>
-  <artifactId>solidity</artifactId>
+  <artifactId>sonar-solidity</artifactId>
   <version>0.0</version>
   <packaging>pom</packaging>
 
@@ -32,7 +32,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.apiVersion>6.7.1</sonar.apiVersion>
     <jdk.min.version>1.8</jdk.min.version>
-    <sonar.sources>src/main/java</sonar.sources>
   </properties>
   
   <dependencies>
@@ -78,7 +77,25 @@
 
   <build>
     <plugins>
-      <plugin>
+       <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <configuration>
+            <includes>
+              <include>org.sonar.*</include>
+            </includes>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration />
+        </plugin>
+    
+    
+    
+    
+      <!-- plugin>
         <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
         <artifactId>sonar-packaging-maven-plugin</artifactId>
         <version>1.18.0.372</version>
@@ -87,7 +104,7 @@
           <pluginKey>example</pluginKey>
           <pluginClass>org.sonarsource.solidity.SolidityPlugin</pluginClass>
         </configuration>
-      </plugin>
+      </plugin> 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -97,7 +114,7 @@
           <target>${jdk.min.version}</target>
         </configuration>
       </plugin>
-      <!--plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>native2ascii-maven-plugin</artifactId> 
+      plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>native2ascii-maven-plugin</artifactId> 
         <version>1.0-beta-1</version> <executions> <execution> <goals> <goal>native2ascii</goal> 
         </goals> </execution> </executions> </plugin -->
     </plugins>
