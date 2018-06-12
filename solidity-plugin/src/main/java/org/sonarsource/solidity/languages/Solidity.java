@@ -61,7 +61,7 @@ public final class Solidity extends AbstractLanguage {
     }
     return nonEmptyStrings.toArray(new String[nonEmptyStrings.size()]);
   }
-  
+
   /**
    * Allows to know if the given file name has a valid suffix.
    *
@@ -76,5 +76,22 @@ public final class Solidity extends AbstractLanguage {
       }
     }
     return false;
-}
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || this.getClass() != o.getClass()) {
+      return false;
+    }
+    Solidity other = (Solidity) o;
+    return this.config.equals(other.config);
+  }
+
+  @Override
+  public int hashCode() {
+    return super.hashCode();
+  }
 }
