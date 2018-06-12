@@ -82,7 +82,7 @@
           <artifactId>jacoco-maven-plugin</artifactId>
           <configuration>
             <includes>
-              <include>org.sonar.*</include>
+              <include>org.sonarsource.*</include>
             </includes>
           </configuration>
         </plugin>
