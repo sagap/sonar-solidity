@@ -1,4 +1,4 @@
-package org.sonarsource.solidity;
+package org.sonarsource.solidity.frontend;
 
 import java.util.List;
 import org.antlr.v4.runtime.CharStream;
@@ -6,13 +6,13 @@ import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStream;
 import org.junit.Test;
-import org.sonarsource.solidity.SolidityParser.ContractDefinitionContext;
-import org.sonarsource.solidity.SolidityParser.ContractPartContext;
-import org.sonarsource.solidity.SolidityParser.IdentifierContext;
-import org.sonarsource.solidity.SolidityParser.PragmaDirectiveContext;
-import org.sonarsource.solidity.SolidityParser.SourceUnitContext;
-import org.sonarsource.solidity.SolidityParser.StructDefinitionContext;
-import org.sonarsource.solidity.SolidityParser.VariableDeclarationContext;
+import org.sonarsource.solidity.frontend.SolidityParser.ContractDefinitionContext;
+import org.sonarsource.solidity.frontend.SolidityParser.ContractPartContext;
+import org.sonarsource.solidity.frontend.SolidityParser.IdentifierContext;
+import org.sonarsource.solidity.frontend.SolidityParser.PragmaDirectiveContext;
+import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
+import org.sonarsource.solidity.frontend.SolidityParser.StructDefinitionContext;
+import org.sonarsource.solidity.frontend.SolidityParser.VariableDeclarationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -1,4 +1,4 @@
-package org.sonarsource.solidity;
+package org.sonarsource.solidity.frontend;
 // Generated from Solidity.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 

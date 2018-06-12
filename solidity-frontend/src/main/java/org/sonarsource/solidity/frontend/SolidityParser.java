@@ -1,4 +1,4 @@
-package org.sonarsource.solidity;
+package org.sonarsource.solidity.frontend;
 
 import java.util.List;
 import org.antlr.v4.runtime.FailedPredicateException;
