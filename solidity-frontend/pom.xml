@@ -61,11 +61,20 @@
         <artifactId>jacoco-maven-plugin</artifactId>
         <configuration>
           <includes>
-            <include>src/*</include>
+            <include>org.sonarsource.solidity.*</include>
           </includes>
           <excludes>
             <exclude>org.sonarsource.maven.model.*</exclude>
           </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>${jdk.min.version}</source>
+          <target>${jdk.min.version}</target>
         </configuration>
       </plugin>
     </plugins>
