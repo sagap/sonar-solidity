@@ -9,15 +9,19 @@ import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStream;
 import org.junit.Test;
+import org.sonarsource.solidity.frontend.SolidityParser.BlockContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContractDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContractPartContext;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IdentifierContext;
+import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.PragmaDirectiveContext;
 import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
 import org.sonarsource.solidity.frontend.SolidityParser.StateVariableDeclarationContext;
+import org.sonarsource.solidity.frontend.SolidityParser.StatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.StructDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.VariableDeclarationContext;
+import org.sonarsource.solidity.frontend.SolidityParser.WhileStatementContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -101,5 +105,32 @@ public class SolidityParserTest {
       .collect(Collectors.toList());
 
     assertThat(vars).hasSize(3);
+
+    funList.stream()
+      .map(FunctionDefinitionContext::block)
+      .filter(Objects::nonNull)
+      .forEach(x -> System.out.println(x.getText()));
+
+    BlockContext blckCtx = funList.get(0).block();
+    List<StatementContext> stmt = blckCtx.statement();
+    assertThat(stmt.get(0).simpleStatement()).isNotNull();
+    assertThat(stmt.get(1).simpleStatement()).isNotNull();
+    assertThat(stmt.get(2).simpleStatement()).isNotNull();
+
+    WhileStatementContext whileStmt = stmt.get(3).whileStatement();
+    assertThat(whileStmt).isNotNull();
+    assertThat(whileStmt.statement().simpleStatement()).isNotNull();
+
+    blckCtx = funList.get(1).block();
+    stmt = blckCtx.statement();
+    assertThat(stmt.get(0).returnStatement()).isNotNull();
+
+    blckCtx = funList.get(2).block();
+    stmt = blckCtx.statement();
+    IfStatementContext ifStmt = stmt.get(0).ifStatement();
+    assertThat(ifStmt).isNotNull();
+    blckCtx = ifStmt.statement().get(0).block();
+    assertThat(blckCtx.statement().get(0).simpleStatement()).isNotNull();
+
   }
 }
