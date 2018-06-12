@@ -2,19 +2,35 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.sonarsource.solidity</groupId>
+	<parent>
+	  <groupId>org.sonarsource.solidity</groupId>
+	  <artifactId>sonar-solidity</artifactId>
+	  <version>0.0</version>
+	</parent>
+
   <artifactId>solidity-frontend</artifactId>
-  <version>0.0</version>
-  <packaging>jar</packaging>
 
   <name>solidity-frontend</name>
-  <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.apiVersion>6.7.1</sonar.apiVersion>
+    <jdk.min.version>1.8</jdk.min.version>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>org.sonarsource.sonarqube</groupId>
+      <artifactId>sonar-plugin-api</artifactId>
+      <version>${sonar.apiVersion}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <!-- packaged with the plugin -->
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.6</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -37,4 +53,31 @@
     </dependency>
     
   </dependencies>
+  
+   <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>org.sonarsource.solidity.*</include>
+          </includes>
+          <excludes>
+            <exclude>org.sonarsource.maven.model.*</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>${jdk.min.version}</source>
+          <target>${jdk.min.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
 </project>

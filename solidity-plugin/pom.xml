@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.sonarsource.solidity</groupId>
+    <artifactId>sonar-solidity</artifactId>
+    <version>0.0</version>
+  </parent>
+
+	<artifactId>solidity-plugin</artifactId>
+	<packaging>sonar-plugin</packaging>
+
+	<name>solidity-plugin</name>
+	<description>Draft of sonar-solidity</description>
+	
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.apiVersion>6.7.1</sonar.apiVersion>
+    <jdk.min.version>1.8</jdk.min.version>
+  </properties>
+  
+	<dependencies>
+		<dependency>
+			<groupId>org.sonarsource.sonarqube</groupId>
+			<artifactId>sonar-plugin-api</artifactId>
+			<version>${sonar.apiVersion}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<!-- packaged with the plugin -->
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>1.9.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.8.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.antlr</groupId>
+      <artifactId>antlr4</artifactId>
+      <version>4.7.1</version>
+    </dependency>
+		<!-- unit tests -->
+		<dependency>
+			<groupId>org.sonarsource.sonarqube</groupId>
+			<artifactId>sonar-testing-harness</artifactId>
+			<version>${sonar.apiVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
+				<artifactId>sonar-packaging-maven-plugin</artifactId>
+				<version>1.18.0.372</version>
+				<extensions>true</extensions>
+				<configuration>
+					<pluginKey>example</pluginKey>
+					<pluginClass>org.sonarsource.solidity.SolidityPlugin</pluginClass>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>${jdk.min.version}</source>
+					<target>${jdk.min.version}</target>
+				</configuration>
+			</plugin>
+			<!--plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>native2ascii-maven-plugin</artifactId> 
+				<version>1.0-beta-1</version> <executions> <execution> <goals> <goal>native2ascii</goal> 
+				</goals> </execution> </executions> </plugin -->
+		</plugins>
+	</build>
+
+</project>

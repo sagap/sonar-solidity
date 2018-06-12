@@ -1,18 +1,23 @@
-package org.sonarsource.solidity;
+package org.sonarsource.solidity.frontend;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStream;
 import org.junit.Test;
-import org.sonarsource.solidity.SolidityParser.ContractDefinitionContext;
-import org.sonarsource.solidity.SolidityParser.ContractPartContext;
-import org.sonarsource.solidity.SolidityParser.IdentifierContext;
-import org.sonarsource.solidity.SolidityParser.PragmaDirectiveContext;
-import org.sonarsource.solidity.SolidityParser.SourceUnitContext;
-import org.sonarsource.solidity.SolidityParser.StructDefinitionContext;
-import org.sonarsource.solidity.SolidityParser.VariableDeclarationContext;
+import org.sonarsource.solidity.frontend.SolidityParser.ContractDefinitionContext;
+import org.sonarsource.solidity.frontend.SolidityParser.ContractPartContext;
+import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
+import org.sonarsource.solidity.frontend.SolidityParser.IdentifierContext;
+import org.sonarsource.solidity.frontend.SolidityParser.PragmaDirectiveContext;
+import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
+import org.sonarsource.solidity.frontend.SolidityParser.StateVariableDeclarationContext;
+import org.sonarsource.solidity.frontend.SolidityParser.StructDefinitionContext;
+import org.sonarsource.solidity.frontend.SolidityParser.VariableDeclarationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -68,4 +73,33 @@ public class SolidityParserTest {
     assertThat(vdcList).hasSize(4);
   }
 
+  @Test
+  public void test_parsing_file() throws IOException {
+    CharStream cs = CharStreams.fromFileName("src/test/resources/test1.sol");
+    SolidityLexer sl = new SolidityLexer(cs);
+    TokenStream tokens = new CommonTokenStream(sl);
+    SolidityParser parser = new SolidityParser(tokens);
+
+    SourceUnitContext suc = parser.sourceUnit();
+    assertThat(suc).isNotNull();
+
+    ContractDefinitionContext cdc = suc.contractDefinition().get(0);
+    assertThat(cdc).isNotNull();
+
+    List<ContractPartContext> cpcList = cdc.contractPart();
+
+    List<FunctionDefinitionContext> funList = cpcList.stream()
+      .map(ContractPartContext::functionDefinition)
+      .filter(Objects::nonNull)
+      .collect(Collectors.toList());
+
+    assertThat(funList).hasSize(3);
+
+    List<StateVariableDeclarationContext> vars = cpcList.stream()
+      .map(ContractPartContext::stateVariableDeclaration)
+      .filter(Objects::nonNull)
+      .collect(Collectors.toList());
+
+    assertThat(vars).hasSize(3);
+  }
 }

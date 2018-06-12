@@ -1,8 +1,9 @@
-package org.sonarsource.solidity;
+package org.sonarsource.solidity.frontend;
 
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.junit.Test;
+import org.sonarsource.solidity.frontend.SolidityLexer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

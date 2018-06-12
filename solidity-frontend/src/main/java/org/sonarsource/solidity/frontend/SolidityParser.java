@@ -1,4 +1,4 @@
-package org.sonarsource.solidity;
+package org.sonarsource.solidity.frontend;
 
 import java.util.List;
 import org.antlr.v4.runtime.FailedPredicateException;
@@ -48,6 +48,7 @@ public class SolidityParser extends Parser {
     PayableKeyword = 109, PrivateKeyword = 110, PublicKeyword = 111, PureKeyword = 112,
     ViewKeyword = 113, Identifier = 114, StringLiteral = 115, WS = 116, COMMENT = 117,
     LINE_COMMENT = 118;
+
   public static final int RULE_sourceUnit = 0, RULE_pragmaDirective = 1, RULE_pragmaName = 2, RULE_pragmaValue = 3,
     RULE_version = 4, RULE_versionOperator = 5, RULE_versionConstraint = 6,
     RULE_importDeclaration = 7, RULE_importDirective = 8, RULE_contractDefinition = 9,
@@ -76,6 +77,7 @@ public class SolidityParser extends Parser {
     RULE_assemblyFor = 75, RULE_assemblyIf = 76, RULE_assemblyLiteral = 77,
     RULE_subAssembly = 78, RULE_tupleExpression = 79, RULE_elementaryTypeNameExpression = 80,
     RULE_numberLiteral = 81, RULE_identifier = 82;
+
   public static final String[] ruleNames = {
     "sourceUnit", "pragmaDirective", "pragmaName", "pragmaValue", "version",
     "versionOperator", "versionConstraint", "importDeclaration", "importDirective",

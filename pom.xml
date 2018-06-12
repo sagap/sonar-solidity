@@ -1,16 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.sonarsource.plugins.example</groupId>
-	<artifactId>sonar-solidity</artifactId>
-	<packaging>sonar-plugin</packaging>
-	<version>0.0</version>
+  <groupId>org.sonarsource.solidity</groupId>
+  <artifactId>sonar-solidity</artifactId>
+  <version>0.0</version>
+  <packaging>pom</packaging>
 
-	<name>SonarSolidity</name>
-	<description>Draft of sonar-solidity</description>
+  <name>SonarSolidity</name>
+  <description>Draft of sonar-solidity</description>
   <scm>
      <connection>scm:git:git@github.com:stylianos-agapiou-sonarsource/sonar-solidity.git</connection>
      <developerConnection>scm:git:git@github.com:stylianos-agapiou-sonarsource/sonar-solidity.git</developerConnection>
@@ -25,26 +23,30 @@
      <url>https://travis-ci.org/stylianos-agapiou-sonarsource/sonar-solidity</url>
   </ciManagement>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<sonar.apiVersion>6.7.1</sonar.apiVersion>
-		<jdk.min.version>1.8</jdk.min.version>
-		<sonar.sources>src/main/java</sonar.sources>
-	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.sonarsource.sonarqube</groupId>
-			<artifactId>sonar-plugin-api</artifactId>
-			<version>${sonar.apiVersion}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<!-- packaged with the plugin -->
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.6</version>
-		</dependency>
+  <modules>
+  <module>solidity-frontend</module>
+  <module>solidity-plugin</module>
+  </modules>
+  
+    <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.apiVersion>6.7.1</sonar.apiVersion>
+    <jdk.min.version>1.8</jdk.min.version>
+  </properties>
+  
+  <dependencies>
+      <dependency>
+      <groupId>org.sonarsource.sonarqube</groupId>
+      <artifactId>sonar-plugin-api</artifactId>
+      <version>${sonar.apiVersion}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <!-- packaged with the plugin -->
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.6</version>
+    </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-all</artifactId>
@@ -60,44 +62,62 @@
       <artifactId>antlr4</artifactId>
       <version>4.7.1</version>
     </dependency>
-		<!-- unit tests -->
-		<dependency>
-			<groupId>org.sonarsource.sonarqube</groupId>
-			<artifactId>sonar-testing-harness</artifactId>
-			<version>${sonar.apiVersion}</version>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-		</dependency>
-	</dependencies>
+    <!-- unit tests -->
+    <dependency>
+      <groupId>org.sonarsource.sonarqube</groupId>
+      <artifactId>sonar-testing-harness</artifactId>
+      <version>${sonar.apiVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+    </dependency>
+  </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
-				<artifactId>sonar-packaging-maven-plugin</artifactId>
-				<version>1.18.0.372</version>
-				<extensions>true</extensions>
-				<configuration>
-					<pluginKey>example</pluginKey>
-					<pluginClass>org.sonarsource.solidity.SolidityPlugin</pluginClass>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
-				<configuration>
-					<source>${jdk.min.version}</source>
-					<target>${jdk.min.version}</target>
-				</configuration>
-			</plugin>
-			<!--plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>native2ascii-maven-plugin</artifactId> 
-				<version>1.0-beta-1</version> <executions> <execution> <goals> <goal>native2ascii</goal> 
-				</goals> </execution> </executions> </plugin -->
-		</plugins>
-	</build>
-
+  <build>
+    <plugins>
+       <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <configuration>
+            <includes>
+              <include>org.sonarsource.*</include>
+            </includes>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration />
+        </plugin>
+    
+    
+    
+    
+      <!-- plugin>
+        <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
+        <artifactId>sonar-packaging-maven-plugin</artifactId>
+        <version>1.18.0.372</version>
+        <extensions>true</extensions>
+        <configuration>
+          <pluginKey>example</pluginKey>
+          <pluginClass>org.sonarsource.solidity.SolidityPlugin</pluginClass>
+        </configuration>
+      </plugin> 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>${jdk.min.version}</source>
+          <target>${jdk.min.version}</target>
+        </configuration>
+      </plugin>
+      plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>native2ascii-maven-plugin</artifactId> 
+        <version>1.0-beta-1</version> <executions> <execution> <goals> <goal>native2ascii</goal> 
+        </goals> </execution> </executions> </plugin -->
+    </plugins>
+  </build>
+    
 </project>
