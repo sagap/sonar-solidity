@@ -5,6 +5,8 @@ import org.antlr.v4.runtime.VocabularyImpl;
 
 public class SolidityTokensInfo {
 
+  protected static final String GRAMMAR_FILENAME = "Solidity.g4";
+
   protected static final String[] ruleNames = {
     "sourceUnit", "pragmaDirective", "pragmaName", "pragmaValue", "version",
     "versionOperator", "versionConstraint", "importDeclaration", "importDirective",
@@ -62,9 +64,23 @@ public class SolidityTokensInfo {
   };
   public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
-  @Deprecated
+  protected static final String[] tokenNames;
+
+  static {
+    tokenNames = new String[_SYMBOLIC_NAMES.length];
+    for (int i = 0; i < tokenNames.length; i++) {
+      tokenNames[i] = VOCABULARY.getLiteralName(i);
+      if (tokenNames[i] == null) {
+        tokenNames[i] = VOCABULARY.getSymbolicName(i);
+      }
+      if (tokenNames[i] == null) {
+        tokenNames[i] = "<INVALID>";
+      }
+    }
+  }
+
   public String[] getTokenNames() {
-    return null;
+    return tokenNames;
   }
 
   public Vocabulary getVocabulary() {
@@ -72,10 +88,11 @@ public class SolidityTokensInfo {
   }
 
   public String getGrammarFileName() {
-    return "Solidity.g4";
+    return GRAMMAR_FILENAME;
   }
 
   public String[] getRuleNames() {
     return ruleNames;
   }
+
 }
