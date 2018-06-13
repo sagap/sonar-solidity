@@ -17,11 +17,11 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.sonarsource.solidity.languages;
+package org.sonarsource.solidity;
 
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 
-import static org.sonarsource.solidity.rules.SolidityRulesDefinition.REPO_KEY;
+import static org.sonarsource.solidity.SolidityRulesDefinition.REPO_KEY;
 
 /**
  * Default, BuiltIn Quality Profile for the projects having files of Solidity

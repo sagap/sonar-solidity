@@ -20,11 +20,6 @@
 package org.sonarsource.solidity;
 
 import org.sonar.api.Plugin;
-import org.sonarsource.solidity.languages.Solidity;
-import org.sonarsource.solidity.languages.SolidityQualityProfile;
-import org.sonarsource.solidity.rules.SolidityRulesDefinition;
-import org.sonarsource.solidity.settings.SolidityLanguageProperties;
-import org.sonarsource.solidity.settings.SoliditySensor;
 
 /**
  * This class is the entry point for all extensions. It is referenced in pom.xml.
