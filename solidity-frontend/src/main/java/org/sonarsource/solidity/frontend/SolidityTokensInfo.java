@@ -5,7 +5,7 @@ import org.antlr.v4.runtime.VocabularyImpl;
 
 public class SolidityTokensInfo {
 
-  public static final String[] ruleNames = {
+  protected static final String[] ruleNames = {
     "sourceUnit", "pragmaDirective", "pragmaName", "pragmaValue", "version",
     "versionOperator", "versionConstraint", "importDeclaration", "importDirective",
     "contractDefinition", "inheritanceSpecifier", "contractPart", "stateVariableDeclaration",
@@ -62,28 +62,9 @@ public class SolidityTokensInfo {
   };
   public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
-  /**
-   * @deprecated Use {@link #VOCABULARY} instead.
-   */
-  @Deprecated
-  public static final String[] tokenNames;
-  static {
-    tokenNames = new String[_SYMBOLIC_NAMES.length];
-    for (int i = 0; i < tokenNames.length; i++) {
-      tokenNames[i] = VOCABULARY.getLiteralName(i);
-      if (tokenNames[i] == null) {
-        tokenNames[i] = VOCABULARY.getSymbolicName(i);
-      }
-
-      if (tokenNames[i] == null) {
-        tokenNames[i] = "<INVALID>";
-      }
-    }
-  }
-
   @Deprecated
   public String[] getTokenNames() {
-    return tokenNames;
+    return null;
   }
 
   public Vocabulary getVocabulary() {

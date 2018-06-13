@@ -100,6 +100,21 @@ public class SolidityParser extends Parser {
   };
 
   @Override
+  public String getGrammarFileName() {
+    return new SolidityTokensInfo().getGrammarFileName();
+  }
+
+  @Override
+  public String[] getRuleNames() {
+    return new SolidityTokensInfo().getRuleNames();
+  }
+
+  @Override
+  public String[] getTokenNames() {
+    return new SolidityTokensInfo().getTokenNames();
+  }
+
+  @Override
   public ATN getATN() {
     return _ATN;
   }
@@ -7074,20 +7089,5 @@ public class SolidityParser extends Parser {
     for (int i = 0; i < _ATN.getNumberOfDecisions(); i++) {
       _decisionToDFA[i] = new DFA(_ATN.getDecisionState(i), i);
     }
-  }
-
-  @Override
-  public String getGrammarFileName() {
-    return new SolidityTokensInfo().getGrammarFileName();
-  }
-
-  @Override
-  public String[] getRuleNames() {
-    return new SolidityTokensInfo().getRuleNames();
-  }
-
-  @Override
-  public String[] getTokenNames() {
-    return new SolidityTokensInfo().getTokenNames();
   }
 }
