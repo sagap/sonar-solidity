@@ -8,16 +8,24 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.TokenStream;
+import org.antlr.v4.runtime.tree.TerminalNode;
 import org.junit.Test;
+import org.sonarsource.solidity.frontend.SolidityParser.BlockContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContractDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContractPartContext;
+import org.sonarsource.solidity.frontend.SolidityParser.ExpressionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IdentifierContext;
+import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
+import org.sonarsource.solidity.frontend.SolidityParser.ModifierDefinitionContext;
+import org.sonarsource.solidity.frontend.SolidityParser.ParameterListContext;
 import org.sonarsource.solidity.frontend.SolidityParser.PragmaDirectiveContext;
 import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
 import org.sonarsource.solidity.frontend.SolidityParser.StateVariableDeclarationContext;
+import org.sonarsource.solidity.frontend.SolidityParser.StatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.StructDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.VariableDeclarationContext;
+import org.sonarsource.solidity.frontend.SolidityParser.WhileStatementContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -25,7 +33,7 @@ public class SolidityParserTest {
 
   @Test
   public void test_parsing() {
-    String test = "pragma solidity ^0.4.22;\n" +
+    String file = "pragma solidity ^0.4.22;\n" +
       "\n" +
       "/// @title Voting with delegation.\n" +
       "contract Ballot {\n" +
@@ -40,7 +48,7 @@ public class SolidityParserTest {
       " }\n" +
       "}";
     //
-    CharStream cs = CharStreams.fromString(test);
+    CharStream cs = CharStreams.fromString(file);
     SolidityLexer sl = new SolidityLexer(cs);
     TokenStream tokens = new CommonTokenStream(sl);
     SolidityParser parser = new SolidityParser(tokens);
@@ -101,5 +109,95 @@ public class SolidityParserTest {
       .collect(Collectors.toList());
 
     assertThat(vars).hasSize(3);
+
+    BlockContext blckCtx = funList.get(0).block();
+    List<StatementContext> stmt = blckCtx.statement();
+    assertThat(stmt.get(0).simpleStatement()).isNotNull();
+    assertThat(stmt.get(1).simpleStatement()).isNotNull();
+    assertThat(stmt.get(2).simpleStatement()).isNotNull();
+
+    WhileStatementContext whileStmt = stmt.get(3).whileStatement();
+    assertThat(whileStmt).isNotNull();
+    assertThat(whileStmt.statement().simpleStatement()).isNotNull();
+
+    blckCtx = funList.get(1).block();
+    stmt = blckCtx.statement();
+    assertThat(stmt.get(0).returnStatement()).isNotNull();
+
+    blckCtx = funList.get(2).block();
+    stmt = blckCtx.statement();
+    IfStatementContext ifStmt = stmt.get(0).ifStatement();
+    assertThat(ifStmt).isNotNull();
+    blckCtx = ifStmt.statement().get(0).block();
+    assertThat(blckCtx.statement().get(0).simpleStatement()).isNotNull();
   }
+
+  @Test
+  public void test2() {
+    String file = "contract Coin {\n" +
+      "    // The keyword \"public\" makes those variables\n" +
+      "    // readable from outside.\n" +
+      "    address public minter;\n" +
+      "    mapping (address => uint) public balances;\n" +
+      "\n" +
+      "    // Events allow light clients to react on\n" +
+      "    // changes efficiently.\n" +
+      "    event Sent(address from, address to, uint amount);}";
+
+    CharStream cs = CharStreams.fromString(file);
+    SolidityLexer sl = new SolidityLexer(cs);
+    TokenStream tokens = new CommonTokenStream(sl);
+    SolidityParser parser = new SolidityParser(tokens);
+
+    // ... source unit context is the root of the parse tree
+    SourceUnitContext suc = parser.sourceUnit();
+    ContractDefinitionContext cdc = suc.contractDefinition().get(0);
+    assertThat(cdc).isNotNull();
+
+    List<ContractPartContext> cpcList = cdc.contractPart();
+    assertThat(cpcList).hasSize(3);
+
+    assertThat(cpcList.get(0).stateVariableDeclaration()).isNotNull();
+    assertThat(cpcList.get(1).stateVariableDeclaration()).isNotNull();
+    assertThat(cpcList.get(2).eventDefinition()).isNotNull();
+  }
+
+  @Test
+  public void test3() {
+    String file = "contract c {\n" +
+      "    modifier mod1(address a) { if (msg.sender == a) _; }\n" +
+      "    modifier mod2 { if (msg.sender == 2) _; }\n" +
+      "    function f() mod1(7) mod2 { }\n" +
+      "    function f2(){\n" +
+      "        var (a,b,c) = g();\n" +
+      "    }\n" +
+      "    function g() returns (uint, uint, uint) {}\n" +
+      "}\n" +
+      "";
+
+    CharStream cs = CharStreams.fromString(file);
+    SolidityLexer sl = new SolidityLexer(cs);
+    TokenStream tokens = new CommonTokenStream(sl);
+    SolidityParser parser = new SolidityParser(tokens);
+
+    // ... source unit context is the root of the parse tree
+    SourceUnitContext suc = parser.sourceUnit();
+    ContractDefinitionContext cdc = suc.contractDefinition().get(0);
+    assertThat(cdc.identifier().getText()).isEqualTo("c");
+
+    List<ContractPartContext> cpcList = cdc.contractPart();
+    assertThat(cpcList).hasSize(5);
+
+    assertThat(cpcList.get(0).modifierDefinition()).isNotNull();
+    ModifierDefinitionContext mod = cpcList.get(0).modifierDefinition();
+    ParameterListContext paramList = mod.parameterList();
+    assertThat(paramList.parameter(0).identifier().getText()).isEqualTo("a");
+    IfStatementContext ifStmt = mod.block().statement().get(0).ifStatement();
+    ExpressionContext exprCtx = ifStmt.expression();
+    TerminalNode node = (TerminalNode) exprCtx.getChild(1);
+    assertThat(node.getText()).isEqualTo("==");
+    assertThat(cpcList.get(2).functionDefinition()).isNotNull();
+
+  }
+
 }
