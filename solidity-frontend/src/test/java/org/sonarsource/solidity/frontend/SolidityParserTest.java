@@ -13,10 +13,13 @@ import org.junit.Test;
 import org.sonarsource.solidity.frontend.SolidityParser.BlockContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContractDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContractPartContext;
+import org.sonarsource.solidity.frontend.SolidityParser.EnumDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ExpressionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IdentifierContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
+import org.sonarsource.solidity.frontend.SolidityParser.ImportDirectiveContext;
+import org.sonarsource.solidity.frontend.SolidityParser.InheritanceSpecifierContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ModifierDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ParameterListContext;
 import org.sonarsource.solidity.frontend.SolidityParser.PragmaDirectiveContext;
@@ -47,14 +50,7 @@ public class SolidityParserTest {
       " uint vote; // index of the voted proposal\n" +
       " }\n" +
       "}";
-    //
-    CharStream cs = CharStreams.fromString(file);
-    SolidityLexer sl = new SolidityLexer(cs);
-    TokenStream tokens = new CommonTokenStream(sl);
-    SolidityParser parser = new SolidityParser(tokens);
-
-    // ... source unit context is the root of the parse tree
-    SourceUnitContext suc = parser.sourceUnit();
+    SourceUnitContext suc = returnSourceUnitFromParsedFile(file);
 
     PragmaDirectiveContext pdc = suc.pragmaDirective().get(0);
     assertThat(pdc).isNotNull();
@@ -144,13 +140,7 @@ public class SolidityParserTest {
       "    // changes efficiently.\n" +
       "    event Sent(address from, address to, uint amount);}";
 
-    CharStream cs = CharStreams.fromString(file);
-    SolidityLexer sl = new SolidityLexer(cs);
-    TokenStream tokens = new CommonTokenStream(sl);
-    SolidityParser parser = new SolidityParser(tokens);
-
-    // ... source unit context is the root of the parse tree
-    SourceUnitContext suc = parser.sourceUnit();
+    SourceUnitContext suc = returnSourceUnitFromParsedFile(file);
     ContractDefinitionContext cdc = suc.contractDefinition().get(0);
     assertThat(cdc).isNotNull();
 
@@ -175,13 +165,7 @@ public class SolidityParserTest {
       "}\n" +
       "";
 
-    CharStream cs = CharStreams.fromString(file);
-    SolidityLexer sl = new SolidityLexer(cs);
-    TokenStream tokens = new CommonTokenStream(sl);
-    SolidityParser parser = new SolidityParser(tokens);
-
-    // ... source unit context is the root of the parse tree
-    SourceUnitContext suc = parser.sourceUnit();
+    SourceUnitContext suc = returnSourceUnitFromParsedFile(file);
     ContractDefinitionContext cdc = suc.contractDefinition().get(0);
     assertThat(cdc.identifier().getText()).isEqualTo("c");
 
@@ -197,7 +181,44 @@ public class SolidityParserTest {
     TerminalNode node = (TerminalNode) exprCtx.getChild(1);
     assertThat(node.getText()).isEqualTo("==");
     assertThat(cpcList.get(2).functionDefinition()).isNotNull();
-
   }
 
+  @Test
+  public void test_import() {
+    String file = "import \"./abc.sol\";";
+    SourceUnitContext suc = returnSourceUnitFromParsedFile(file);
+    ImportDirectiveContext idCtx = suc.importDirective().get(0);
+    assertThat(idCtx).isNotNull();
+    assertThat(Utils.trimQuotes(idCtx.StringLiteral().getText())).isEqualTo("./abc.sol");
+  }
+
+  @Test
+  public void test_inheritance() {
+    String file = "contract base {\n" +
+      "}\n" +
+      "contract derived is base {\n" +
+      "enum foo { }\n" +
+      "}";
+    SourceUnitContext suc = returnSourceUnitFromParsedFile(file);
+    ContractDefinitionContext cdCtx = suc.contractDefinition(1);
+    assertThat(cdCtx.inheritanceSpecifier().get(0).getText()).isEqualTo("base");
+    InheritanceSpecifierContext isCtx = cdCtx.inheritanceSpecifier(0);
+    assertThat(isCtx.userDefinedTypeName().getText()).isEqualTo("base");
+    assertThat(isCtx.expression(0)).isNull();
+    assertThat(isCtx.expression()).isEmpty();
+    assertThat(cdCtx.identifier().getText()).isEqualTo("derived");
+    ContractPartContext cpCtx = cdCtx.contractPart(0);
+    EnumDefinitionContext edCtx = cpCtx.enumDefinition();
+    assertThat(edCtx).isNotNull();
+    assertThat(edCtx.identifier().getText()).isEqualTo("foo");
+  }
+
+  // ... source unit context is the root of the parse tree
+  private static SourceUnitContext returnSourceUnitFromParsedFile(String file) {
+    CharStream cs = CharStreams.fromString(file);
+    SolidityLexer sl = new SolidityLexer(cs);
+    TokenStream tokens = new CommonTokenStream(sl);
+    SolidityParser parser = new SolidityParser(tokens);
+    return parser.sourceUnit();
+  }
 }
