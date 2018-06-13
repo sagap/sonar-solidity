@@ -4,8 +4,6 @@ import org.antlr.v4.runtime.CharStream;
 // Generated from Solidity.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.RuntimeMetaData;
-import org.antlr.v4.runtime.Vocabulary;
-import org.antlr.v4.runtime.VocabularyImpl;
 import org.antlr.v4.runtime.atn.ATN;
 import org.antlr.v4.runtime.atn.ATNDeserializer;
 import org.antlr.v4.runtime.atn.LexerATNSimulator;
@@ -68,71 +66,6 @@ public class SolidityLexer extends Lexer {
     "SingleQuotedStringCharacter", "WS", "COMMENT", "LINE_COMMENT"
   };
 
-  private static final String[] _LITERAL_NAMES = {
-    null, "'pragma'", "';'", "'^'", "'~'", "'>='", "'>'", "'<'", "'<='", "'='",
-    "'as'", "'import'", "'*'", "'from'", "'{'", "','", "'}'", "'contract'",
-    "'interface'", "'library'", "'is'", "'('", "')'", "'using'", "'for'",
-    "'struct'", "'constructor'", "'modifier'", "'function'", "'returns'",
-    "'event'", "'enum'", "'['", "']'", "'.'", "'mapping'", "'=>'", "'memory'",
-    "'storage'", "'if'", "'else'", "'while'", "'assembly'", "'do'", "'return'",
-    "'throw'", "'emit'", "'var'", "'address'", "'bool'", "'string'", "'byte'",
-    "'++'", "'--'", "'new'", "'+'", "'-'", "'after'", "'delete'", "'!'", "'**'",
-    "'/'", "'%'", "'<<'", "'>>'", "'&'", "'|'", "'=='", "'!='", "'&&'", "'||'",
-    "'?'", "':'", "'|='", "'^='", "'&='", "'<<='", "'>>='", "'+='", "'-='",
-    "'*='", "'/='", "'%='", "'let'", "':='", "'=:'", "'switch'", "'case'",
-    "'default'", "'->'", null, null, null, null, null, null, null, null, null,
-    null, null, null, "'anonymous'", "'break'", "'constant'", "'continue'",
-    "'external'", "'indexed'", "'internal'", "'payable'", "'private'", "'public'",
-    "'pure'", "'view'"
-  };
-  private static final String[] _SYMBOLIC_NAMES = {
-    null, null, null, null, null, null, null, null, null, null, null, null,
-    null, null, null, null, null, null, null, null, null, null, null, null,
-    null, null, null, null, null, null, null, null, null, null, null, null,
-    null, null, null, null, null, null, null, null, null, null, null, null,
-    null, null, null, null, null, null, null, null, null, null, null, null,
-    null, null, null, null, null, null, null, null, null, null, null, null,
-    null, null, null, null, null, null, null, null, null, null, null, null,
-    null, null, null, null, null, null, "Int", "Uint", "Byte", "Fixed", "Ufixed",
-    "VersionLiteral", "BooleanLiteral", "DecimalNumber", "HexNumber", "NumberUnit",
-    "HexLiteral", "ReservedKeyword", "AnonymousKeyword", "BreakKeyword", "ConstantKeyword",
-    "ContinueKeyword", "ExternalKeyword", "IndexedKeyword", "InternalKeyword",
-    "PayableKeyword", "PrivateKeyword", "PublicKeyword", "PureKeyword", "ViewKeyword",
-    "Identifier", "StringLiteral", "WS", "COMMENT", "LINE_COMMENT"
-  };
-  public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
-
-  /**
-   * @deprecated Use {@link #VOCABULARY} instead.
-   */
-  @Deprecated
-  public static final String[] tokenNames;
-  static {
-    tokenNames = new String[_SYMBOLIC_NAMES.length];
-    for (int i = 0; i < tokenNames.length; i++) {
-      tokenNames[i] = VOCABULARY.getLiteralName(i);
-      if (tokenNames[i] == null) {
-        tokenNames[i] = VOCABULARY.getSymbolicName(i);
-      }
-
-      if (tokenNames[i] == null) {
-        tokenNames[i] = "<INVALID>";
-      }
-    }
-  }
-
-  @Override
-  @Deprecated
-  public String[] getTokenNames() {
-    return tokenNames;
-  }
-
-  @Override
-
-  public Vocabulary getVocabulary() {
-    return VOCABULARY;
-  }
-
   public SolidityLexer(CharStream input) {
     super(input);
     _interp = new LexerATNSimulator(this, _ATN, _decisionToDFA, _sharedContextCache);
@@ -140,12 +73,12 @@ public class SolidityLexer extends Lexer {
 
   @Override
   public String getGrammarFileName() {
-    return "Solidity.g4";
+    return new SolidityTokensInfo().getGrammarFileName();
   }
 
   @Override
   public String[] getRuleNames() {
-    return ruleNames;
+    return new SolidityTokensInfo().getRuleNames();
   }
 
   @Override
