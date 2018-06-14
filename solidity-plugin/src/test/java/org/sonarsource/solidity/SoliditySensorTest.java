@@ -8,6 +8,7 @@ import org.sonar.api.SonarQubeSide;
 import org.sonar.api.SonarRuntime;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.fs.internal.TestInputFileBuilder;
+import org.sonar.api.batch.sensor.highlighting.TypeOfText;
 import org.sonar.api.batch.sensor.internal.DefaultSensorDescriptor;
 import org.sonar.api.batch.sensor.internal.SensorContextTester;
 import org.sonar.api.internal.SonarRuntimeImpl;
@@ -60,8 +61,15 @@ public class SoliditySensorTest {
   }
 
   private void analyseSingleFile(SoliditySensor sensor, String filename) {
-    sensorContext.fileSystem().add(createInputFile(filename));
+    InputFile file = createInputFile(filename);
+    sensorContext.fileSystem().add(file);
+    String key = file.key();
     sensor.execute(sensorContext);
+
+    assertThat(sensorContext.highlightingTypeAt(key, 5, 52)).isNotEmpty();
+    assertThat(sensorContext.highlightingTypeAt(key, 1, 4)).isNotEmpty();
+    assertThat(sensorContext.highlightingTypeAt(key, 1, 0)).first().isEqualTo(TypeOfText.KEYWORD);
+
   }
 
   private InputFile createInputFile(String filename) {

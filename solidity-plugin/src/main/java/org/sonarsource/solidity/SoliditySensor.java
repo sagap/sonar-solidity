@@ -19,8 +19,11 @@
  */
 package org.sonarsource.solidity;
 
+import com.google.common.collect.ImmutableList;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.antlr.v4.runtime.Token;
 import org.sonar.api.SonarProduct;
 import org.sonar.api.batch.fs.FilePredicate;
 import org.sonar.api.batch.fs.FileSystem;
@@ -29,16 +32,24 @@ import org.sonar.api.batch.fs.InputFile.Type;
 import org.sonar.api.batch.sensor.Sensor;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.SensorDescriptor;
+import org.sonar.api.batch.sensor.highlighting.NewHighlighting;
+import org.sonar.api.batch.sensor.highlighting.TypeOfText;
 import org.sonar.api.measures.FileLinesContextFactory;
 import org.sonar.api.utils.Version;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
+import org.sonarsource.solidity.frontend.SolidityParser;
+import org.sonarsource.solidity.frontend.Utils;
 
 public class SoliditySensor implements Sensor {
 
   private static final Logger LOG = Loggers.get(SoliditySensor.class);
   private final FileLinesContextFactory fileLinesContextFactory;
   public static final Version SQ_VERSION = Version.create(6, 7);
+  private NewHighlighting highlighting;
+
+  public static final ImmutableList<String> WORDS = ImmutableList.<String>builder()
+    .add(SolidityKeywords.get()).build();
 
   public SoliditySensor(FileLinesContextFactory fileLinesContextFactory) {
     this.fileLinesContextFactory = fileLinesContextFactory;
@@ -71,14 +82,36 @@ public class SoliditySensor implements Sensor {
       lastAnalyzedFile = file.toString();
       if (inSonarQube(context)) {
         System.out.println("Analyzing: " + lastAnalyzedFile);
-
-        saveHighlighting(context, file);
+        getSyntaxHighlighting(context, file).save();
       }
     }
   }
 
   private void saveHighlighting(SensorContext context, InputFile file) {
-    LOG.debug("Start highlighting!!!!!!!!!");
+    System.out.println("Start highlighting!!!!!!!!!");
+    // SolidityParser p = SolidityParserTest.returnSourceUnitFromParsedFile(cs);
+  }
+
+  public NewHighlighting getSyntaxHighlighting(SensorContext context, InputFile inputFile) {
+    this.highlighting = context.newHighlighting().onFile(inputFile);
+    try {
+      SolidityParser parser = Utils.returnParserUnitFromParsedFile(inputFile.contents());
+      for (Token t : parser.comments) {
+        if (t.getType() == 118) {
+          highlightComment(t);
+        } else { // TODO Structured Comments
+        }
+      }
+      MyVisitor visitor = new MyVisitor(this.highlighting);
+      visitor.visitTokens(parser.getTokenStream());
+    } catch (IOException e) {
+      System.out.println(e);
+    }
+    return this.highlighting;
+  }
+
+  private void highlightComment(Token token) {
+    this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(), token.getLine(), (token.getCharPositionInLine() + token.getText().length()), TypeOfText.COMMENT);
   }
 
   private static boolean inSonarQube(SensorContext context) {
