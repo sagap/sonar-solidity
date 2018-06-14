@@ -1,6 +1,8 @@
 package org.sonarsource.solidity.frontend;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import org.antlr.v4.runtime.FailedPredicateException;
 import org.antlr.v4.runtime.NoViableAltException;
 import org.antlr.v4.runtime.Parser;
@@ -24,6 +26,8 @@ public class SolidityParser extends Parser {
   static {
     RuntimeMetaData.checkVersion("4.7", RuntimeMetaData.VERSION);
   }
+
+  protected final Set<Token> comments = new HashSet<>();
 
   protected static final DFA[] _decisionToDFA;
   protected static final PredictionContextCache _sharedContextCache = new PredictionContextCache();
