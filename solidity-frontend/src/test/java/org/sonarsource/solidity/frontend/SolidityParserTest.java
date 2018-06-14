@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.junit.Test;
 import org.sonarsource.solidity.frontend.SolidityParser.BlockContext;
@@ -234,7 +233,7 @@ public class SolidityParserTest {
     CommonTokenStream tokenStream = new CommonTokenStream(sl);
     SolidityParser parser = new SolidityParser(tokenStream);
     tokenStream.fill();
-    handleComments(tokenStream.getTokens(), parser);
+    parser.handleComments(tokenStream.getTokens());
     return parser;
   }
 
@@ -244,14 +243,7 @@ public class SolidityParserTest {
     CommonTokenStream tokenStream = new CommonTokenStream(sl);
     SolidityParser parser = new SolidityParser(tokenStream);
     tokenStream.fill();
-    handleComments(tokenStream.getTokens(), parser);
+    parser.handleComments(tokenStream.getTokens());
     return parser;
-  }
-
-  private static void handleComments(List<? extends Token> tokens, SolidityParser parser) {
-    for (Token token : tokens) {
-      if (token.getChannel() == 1)
-        parser.comments.add(token);
-    }
   }
 }

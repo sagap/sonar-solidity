@@ -3,13 +3,24 @@ package org.sonarsource.solidity.frontend;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.junit.Test;
-import org.sonarsource.solidity.frontend.SolidityLexer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SolidityLexerTest {
 
   private static SolidityLexer lexer;
+
+  @Test
+  public void basic_test() {
+    CharStream cs = CharStreams.fromString("function");
+    lexer = new SolidityLexer(cs);
+    assertThat(lexer.getGrammarFileName()).isEqualTo("Solidity.g4");
+    assertThat(lexer.getRuleNames()).hasSize(83);
+    assertThat(lexer.getChannelNames()).hasSize(2);
+    assertThat(lexer.getModeNames()).hasSize(1);
+    assertThat(lexer.getSerializedATN()).startsWith("\3");
+    assertThat(lexer.getATN()).isNotNull();
+  }
 
   @Test
   public void tokenize_function() {
