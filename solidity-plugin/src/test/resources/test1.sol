@@ -3,6 +3,7 @@ contract TwoD {
     address creator;
     uint8 arraylength = 10;
     uint8[10][10] integers; // compiler says this line can't yet know about arraylength variable in the line above
+    string constant _string = "cryptopus.co Medium";
 
     function TwoD() 
     {

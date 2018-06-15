@@ -30,6 +30,12 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
+      <groupId>org.sonarsource.solidity</groupId>
+      <artifactId>solidity-frontend</artifactId>
+      <version>0.0</version>
+      <scope>provided</scope>
+    </dependency>
+		<dependency>
 			<!-- packaged with the plugin -->
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
@@ -49,6 +55,11 @@
       <groupId>org.antlr</groupId>
       <artifactId>antlr4</artifactId>
       <version>4.7.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>19.0</version>
     </dependency>
 		<!-- unit tests -->
 		<dependency>

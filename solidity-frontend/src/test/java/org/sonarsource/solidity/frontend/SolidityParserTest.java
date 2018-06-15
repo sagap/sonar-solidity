@@ -6,7 +6,6 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
-import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.junit.Test;
 import org.sonarsource.solidity.frontend.SolidityParser.BlockContext;
@@ -49,7 +48,7 @@ public class SolidityParserTest {
       " uint vote; // index of the voted proposal\n" +
       " }\n" +
       "}";
-    SolidityParser parser = returnSourceUnitFromParsedFile(file);
+    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file);
     SourceUnitContext suc = parser.sourceUnit();
     PragmaDirectiveContext pdc = suc.pragmaDirective().get(0);
     assertThat(pdc).isNotNull();
@@ -79,7 +78,7 @@ public class SolidityParserTest {
   @Test
   public void test_parsing_file() throws IOException {
     CharStream cs = CharStreams.fromFileName("src/test/resources/test1.sol");
-    SolidityParser parser = returnSourceUnitFromParsedFile(cs);
+    SolidityParser parser = Utils.returnParserFromParsedFile(cs);
     SourceUnitContext suc = parser.sourceUnit();
     assertThat(suc).isNotNull();
 
@@ -138,7 +137,7 @@ public class SolidityParserTest {
       "    // changes efficiently.\n" +
       "    event Sent(address from, address to, uint amount);}";
 
-    SolidityParser parser = returnSourceUnitFromParsedFile(file);
+    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file);
     SourceUnitContext suc = parser.sourceUnit();
     ContractDefinitionContext cdc = suc.contractDefinition().get(0);
     assertThat(cdc).isNotNull();
@@ -164,7 +163,7 @@ public class SolidityParserTest {
       "}\n" +
       "";
 
-    SolidityParser parser = returnSourceUnitFromParsedFile(file);
+    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file);
     SourceUnitContext suc = parser.sourceUnit();
     ContractDefinitionContext cdc = suc.contractDefinition().get(0);
     assertThat(cdc.identifier().getText()).isEqualTo("c");
@@ -186,7 +185,7 @@ public class SolidityParserTest {
   @Test
   public void test_import() {
     String file = "import \"./abc.sol\";";
-    SolidityParser parser = returnSourceUnitFromParsedFile(file);
+    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file);
     SourceUnitContext suc = parser.sourceUnit();
     ImportDirectiveContext idCtx = suc.importDirective().get(0);
     assertThat(idCtx).isNotNull();
@@ -200,7 +199,7 @@ public class SolidityParserTest {
       "contract derived is base {\n" +
       "enum foo { }\n" +
       "}";
-    SolidityParser parser = returnSourceUnitFromParsedFile(file);
+    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file);
     SourceUnitContext suc = parser.sourceUnit();
     ContractDefinitionContext cdCtx = suc.contractDefinition(1);
     assertThat(cdCtx.inheritanceSpecifier().get(0).getText()).isEqualTo("base");
@@ -220,30 +219,8 @@ public class SolidityParserTest {
     String file = "contract base {\n" +
       "    // ... test\n" +
       "}";
-    SolidityParser parser = returnSourceUnitFromParsedFile(file);
+    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file);
     SourceUnitContext suc = parser.sourceUnit();
     assertThat(parser.comments).hasSize(1);
-  }
-
-  // ... source unit context is the root of the parse tree
-  private static SolidityParser returnSourceUnitFromParsedFile(String file) {
-    CharStream cs = CharStreams.fromString(file);
-    SolidityLexer sl = new SolidityLexer(cs);
-    // TokenStream tokens = new CommonTokenStream(sl);
-    CommonTokenStream tokenStream = new CommonTokenStream(sl);
-    SolidityParser parser = new SolidityParser(tokenStream);
-    tokenStream.fill();
-    parser.handleComments(tokenStream.getTokens());
-    return parser;
-  }
-
-  private static SolidityParser returnSourceUnitFromParsedFile(CharStream cs) {
-    SolidityLexer sl = new SolidityLexer(cs);
-    // TokenStream tokens = new CommonTokenStream(sl);
-    CommonTokenStream tokenStream = new CommonTokenStream(sl);
-    SolidityParser parser = new SolidityParser(tokenStream);
-    tokenStream.fill();
-    parser.handleComments(tokenStream.getTokens());
-    return parser;
   }
 }
