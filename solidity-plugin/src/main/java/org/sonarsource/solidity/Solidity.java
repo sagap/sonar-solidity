@@ -19,8 +19,6 @@
  */
 package org.sonarsource.solidity;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.sonar.api.config.Configuration;
 import org.sonar.api.resources.AbstractLanguage;
@@ -44,29 +42,9 @@ public final class Solidity extends AbstractLanguage {
 
   @Override
   public String[] getFileSuffixes() {
-    String[] suffixes = filterEmptyStrings(config.getStringArray(SolidityLanguageProperties.FILE_SUFFIXES_KEY));
-    if (suffixes.length == 0) {
-      suffixes = StringUtils.split(SolidityLanguageProperties.FILE_SUFFIXES_DEFAULT_VALUE, ",");
-    }
-    return suffixes;
+    return config.getStringArray(SolidityPlugin.FILE_SUFFIXES_KEY);
   }
 
-  private String[] filterEmptyStrings(String[] stringArray) {
-    List<String> nonEmptyStrings = new ArrayList<>();
-    for (String string : stringArray) {
-      if (StringUtils.isNotBlank(string.trim())) {
-        nonEmptyStrings.add(string.trim());
-      }
-    }
-    return nonEmptyStrings.toArray(new String[nonEmptyStrings.size()]);
-  }
-
-  /**
-   * Allows to know if the given file name has a valid suffix.
-   *
-   * @param fileName String representing the file name
-   * @return boolean <code>true</code> if the file name's suffix is known, <code>false</code> any other way
-   */
   public boolean hasValidSuffixes(String fileName) {
     String pathLowerCase = StringUtils.lowerCase(fileName);
     for (String suffix : getFileSuffixes()) {

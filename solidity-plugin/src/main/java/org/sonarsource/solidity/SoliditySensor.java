@@ -23,7 +23,6 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.antlr.v4.runtime.Token;
 import org.sonar.api.SonarProduct;
 import org.sonar.api.batch.fs.FilePredicate;
 import org.sonar.api.batch.fs.FileSystem;
@@ -33,7 +32,6 @@ import org.sonar.api.batch.sensor.Sensor;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.api.batch.sensor.highlighting.NewHighlighting;
-import org.sonar.api.batch.sensor.highlighting.TypeOfText;
 import org.sonar.api.measures.FileLinesContextFactory;
 import org.sonar.api.utils.Version;
 import org.sonar.api.utils.log.Logger;
@@ -95,22 +93,13 @@ public class SoliditySensor implements Sensor {
     this.highlighting = context.newHighlighting().onFile(inputFile);
     try {
       SolidityParser parser = Utils.returnParserUnitFromParsedFile(inputFile.contents());
-      for (Token t : parser.comments) {
-        if (t.getType() == 118) {
-          highlightComment(t);
-        } else { // TODO Structured Comments
-        }
-      }
       MyVisitor visitor = new MyVisitor(this.highlighting);
+      visitor.highlightComments(parser);
       visitor.visitTokens(parser.getTokenStream());
     } catch (IOException e) {
       LOG.error(e.toString());
     }
     return this.highlighting;
-  }
-
-  private void highlightComment(Token token) {
-    this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(), token.getLine(), (token.getCharPositionInLine() + token.getText().length()), TypeOfText.COMMENT);
   }
 
   private static boolean inSonarQube(SensorContext context) {

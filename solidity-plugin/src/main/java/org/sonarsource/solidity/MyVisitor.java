@@ -5,6 +5,8 @@ import org.antlr.v4.runtime.TokenStream;
 import org.sonar.api.batch.sensor.highlighting.NewHighlighting;
 import org.sonar.api.batch.sensor.highlighting.TypeOfText;
 import org.sonarsource.solidity.frontend.SolidityBaseVisitor;
+import org.sonarsource.solidity.frontend.SolidityParser;
+import org.sonarsource.solidity.frontend.Utils;
 
 public class MyVisitor extends SolidityBaseVisitor<Token> {
 
@@ -32,5 +34,19 @@ public class MyVisitor extends SolidityBaseVisitor<Token> {
       } else {
       }
     }
+  }
+
+  public void highlightComments(SolidityParser parser) {
+    for (Token t : parser.comments) {
+      if (t.getType() == 118) {
+        highlightComment(t);
+      } else {
+        Utils.handleStructuredComments(t);
+      }
+    }
+  }
+
+  private void highlightComment(Token token) {
+    this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(), token.getLine(), (token.getCharPositionInLine() + token.getText().length()), TypeOfText.COMMENT);
   }
 }
