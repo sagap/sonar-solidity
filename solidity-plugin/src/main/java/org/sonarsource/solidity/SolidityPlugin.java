@@ -20,11 +20,16 @@
 package org.sonarsource.solidity;
 
 import org.sonar.api.Plugin;
+import org.sonar.api.config.PropertyDefinition;
+import org.sonar.api.resources.Qualifiers;
 
 /**
  * This class is the entry point for all extensions. It is referenced in pom.xml.
  */
 public class SolidityPlugin implements Plugin {
+
+  public static final String FILE_SUFFIXES_KEY = "sonar.solidity.file.suffixes";
+  public static final String FILE_SUFFIXES_DEFAULT_VALUE = ".sol";
 
   @Override
   public void define(Context context) {
@@ -43,8 +48,6 @@ public class SolidityPlugin implements Plugin {
     // context.addExtensions(DisplayIssuesInScanner.class, DisplayQualityGateStatus.class);
 
     context.addExtension(SolidityQualityProfile.class);
-    context.addExtension(SolidityLanguageProperties.getProperties());
-
     // // tutorial on measures
     // context
     // .addExtensions(ExampleMetrics.class, SetSizeOnFilesSensor.class, ComputeSizeAverage.class, ComputeSizeRating.class);
@@ -55,12 +58,14 @@ public class SolidityPlugin implements Plugin {
     // web extensions
     // context.addExtension(MyPluginPageDefinition.class);
 
-    // context.addExtensions(asList(
-    // PropertyDefinition.builder("sonar.foo.file.suffixes")
-    // .name("Suffixes FooLint")
-    // .description("Suffixes supported by FooLint")
-    // .category("FooLint")
-    // .defaultValue("")
-    // .build()));
+    context.addExtension(
+      PropertyDefinition.builder(FILE_SUFFIXES_KEY)
+        .defaultValue(FILE_SUFFIXES_DEFAULT_VALUE)
+        .category("Solidity")
+        .name("File Suffixes")
+        .description("Comma-separated list of suffixes for files to analyze.")
+        .onQualifiers(Qualifiers.PROJECT)
+        .multiValues(true)
+        .build());
   }
 }

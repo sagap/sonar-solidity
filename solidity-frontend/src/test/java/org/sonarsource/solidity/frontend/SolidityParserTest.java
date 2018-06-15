@@ -222,5 +222,12 @@ public class SolidityParserTest {
     SolidityParser parser = Utils.returnParserUnitFromParsedFile(file);
     SourceUnitContext suc = parser.sourceUnit();
     assertThat(parser.comments).hasSize(1);
+    assertThat(parser.getGrammarFileName()).isNotNull();
+    assertThat(parser.getRuleNames()).isNotEmpty();
+    assertThat(parser.getTokenNames()).isNotEmpty();
+    assertThat(parser.getATN()).isNotNull();
+    assertThat(parser.getSerializedATN()).isNotNull();
+    assertThat(suc.getRuleIndex()).isEqualTo(0);
+    assertThat(suc.EOF()).isNotNull();
   }
 }

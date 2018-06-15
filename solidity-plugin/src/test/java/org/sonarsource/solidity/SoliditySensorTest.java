@@ -54,25 +54,36 @@ public class SoliditySensorTest {
   }
 
   @Test
+  public void highlight_comment() {
+    String filename = "test.sol";
+    SoliditySensor sensor = new SoliditySensor(createFileLinesContextFactory());
+    analyseSingleFile(sensor, filename);
+
+    assertThat(sensorContext.highlightingTypeAt("module:" + filename, 2, 14)).first().isEqualTo(TypeOfText.STRUCTURED_COMMENT);
+  }
+
+  @Test
   public void test_file() {
     String filename = "test1.sol";
     SoliditySensor sensor = new SoliditySensor(createFileLinesContextFactory());
     analyseSingleFile(sensor, filename);
+
+    assertThat(sensorContext.highlightingTypeAt("module:" + filename, 5, 52)).isNotEmpty();
+    assertThat(sensorContext.highlightingTypeAt("module:" + filename, 1, 4)).isNotEmpty();
+    assertThat(sensorContext.highlightingTypeAt("module:" + filename, 1, 0)).first().isEqualTo(TypeOfText.KEYWORD);
+    assertThat(sensorContext.highlightingTypeAt("module:" + filename, 11, 18)).first().isEqualTo(TypeOfText.CONSTANT);
+    assertThat(sensorContext.highlightingTypeAt("module:" + filename, 6, 35)).first().isEqualTo(TypeOfText.STRING);
+    assertThat(sensorContext.highlightingTypeAt("module:" + filename, 11, 12)).isNotEmpty();
+    assertThat(sensorContext.highlightingTypeAt("module:" + filename, 11, 12)).first().isEqualTo(TypeOfText.KEYWORD_LIGHT);
+    assertThat(sensorContext.highlightingTypeAt("module:" + filename, 23, 13)).first().isEqualTo(TypeOfText.STRUCTURED_COMMENT);
+    assertThat(sensorContext.highlightingTypeAt("module:" + filename, 5, 43)).first().isEqualTo(TypeOfText.COMMENT);
   }
 
   private void analyseSingleFile(SoliditySensor sensor, String filename) {
     InputFile file = createInputFile(filename);
     sensorContext.fileSystem().add(file);
-    String key = file.key();
     sensor.execute(sensorContext);
 
-    assertThat(sensorContext.highlightingTypeAt(key, 5, 52)).isNotEmpty();
-    assertThat(sensorContext.highlightingTypeAt(key, 1, 4)).isNotEmpty();
-    assertThat(sensorContext.highlightingTypeAt(key, 1, 0)).first().isEqualTo(TypeOfText.KEYWORD);
-    assertThat(sensorContext.highlightingTypeAt(key, 11, 18)).first().isEqualTo(TypeOfText.CONSTANT);
-    assertThat(sensorContext.highlightingTypeAt(key, 6, 35)).first().isEqualTo(TypeOfText.STRING);
-    assertThat(sensorContext.highlightingTypeAt(key, 11, 12)).isNotEmpty();
-    assertThat(sensorContext.highlightingTypeAt(key, 11, 12)).first().isEqualTo(TypeOfText.KEYWORD_LIGHT);
   }
 
   private InputFile createInputFile(String filename) {

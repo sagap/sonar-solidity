@@ -27,11 +27,11 @@ public final class Utils {
 
   public static SolidityParser returnParserFromParsedFile(CharStream cs) {
     SolidityLexer sl = new SolidityLexer(cs);
-    // TokenStream tokens = new CommonTokenStream(sl);
     CommonTokenStream tokenStream = new CommonTokenStream(sl);
     SolidityParser parser = new SolidityParser(tokenStream);
     tokenStream.fill();
     parser.handleComments(tokenStream.getTokens());
     return parser;
   }
+
 }
