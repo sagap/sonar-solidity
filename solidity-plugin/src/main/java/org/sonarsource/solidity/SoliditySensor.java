@@ -44,12 +44,16 @@ import org.sonarsource.solidity.frontend.Utils;
 public class SoliditySensor implements Sensor {
 
   private static final Logger LOG = Loggers.get(SoliditySensor.class);
+
   private final FileLinesContextFactory fileLinesContextFactory;
   public static final Version SQ_VERSION = Version.create(6, 7);
   private NewHighlighting highlighting;
 
-  public static final ImmutableList<String> WORDS = ImmutableList.<String>builder()
+  public static final ImmutableList<String> KEYWORDS = ImmutableList.<String>builder()
     .add(SolidityKeywords.get()).build();
+
+  public static final ImmutableList<String> KEYWORD_TYPES = ImmutableList.<String>builder()
+    .add(SolidityKeywords.getKeyowrdTypes()).build();
 
   public SoliditySensor(FileLinesContextFactory fileLinesContextFactory) {
     this.fileLinesContextFactory = fileLinesContextFactory;
@@ -87,11 +91,6 @@ public class SoliditySensor implements Sensor {
     }
   }
 
-  private void saveHighlighting(SensorContext context, InputFile file) {
-    System.out.println("Start highlighting!!!!!!!!!");
-    // SolidityParser p = SolidityParserTest.returnSourceUnitFromParsedFile(cs);
-  }
-
   public NewHighlighting getSyntaxHighlighting(SensorContext context, InputFile inputFile) {
     this.highlighting = context.newHighlighting().onFile(inputFile);
     try {
@@ -105,7 +104,7 @@ public class SoliditySensor implements Sensor {
       MyVisitor visitor = new MyVisitor(this.highlighting);
       visitor.visitTokens(parser.getTokenStream());
     } catch (IOException e) {
-      System.out.println(e);
+      LOG.error(e.toString());
     }
     return this.highlighting;
   }

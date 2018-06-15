@@ -69,7 +69,10 @@ public class SoliditySensorTest {
     assertThat(sensorContext.highlightingTypeAt(key, 5, 52)).isNotEmpty();
     assertThat(sensorContext.highlightingTypeAt(key, 1, 4)).isNotEmpty();
     assertThat(sensorContext.highlightingTypeAt(key, 1, 0)).first().isEqualTo(TypeOfText.KEYWORD);
-
+    assertThat(sensorContext.highlightingTypeAt(key, 11, 18)).first().isEqualTo(TypeOfText.CONSTANT);
+    assertThat(sensorContext.highlightingTypeAt(key, 6, 35)).first().isEqualTo(TypeOfText.STRING);
+    assertThat(sensorContext.highlightingTypeAt(key, 11, 12)).isNotEmpty();
+    assertThat(sensorContext.highlightingTypeAt(key, 11, 12)).first().isEqualTo(TypeOfText.KEYWORD_LIGHT);
   }
 
   private InputFile createInputFile(String filename) {

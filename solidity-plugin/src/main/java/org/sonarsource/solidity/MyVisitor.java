@@ -17,17 +17,19 @@ public class MyVisitor extends SolidityBaseVisitor<Token> {
   public void visitTokens(TokenStream tokenStream) {
     for (int i = 0; i < tokenStream.size(); i++) {
       Token token = tokenStream.get(i);
-      if (SoliditySensor.WORDS.contains(token.getText())) {
+      if (SoliditySensor.KEYWORDS.contains(token.getText())) {
         this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(),
-          token.getLine(), (token.getCharPositionInLine() + token.getStopIndex() - token.getStartIndex()), TypeOfText.KEYWORD);
+          token.getLine(), (token.getCharPositionInLine() + token.getStopIndex() - token.getStartIndex() + 1), TypeOfText.KEYWORD);
+      } else if (SoliditySensor.KEYWORD_TYPES.contains(token.getText())) {
+        this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(),
+          token.getLine(), (token.getCharPositionInLine() + token.getStopIndex() - token.getStartIndex() + 1), TypeOfText.KEYWORD_LIGHT);
       } else if (token.getType() == 115) {
         this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(),
-          token.getLine(), (token.getCharPositionInLine() + token.getStopIndex() - token.getStartIndex()), TypeOfText.STRING);
+          token.getLine(), (token.getCharPositionInLine() + token.getStopIndex() - token.getStartIndex() + 1), TypeOfText.STRING);
       } else if (token.getType() >= 96 && token.getType() <= 100) {
         this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(),
           token.getLine(), (token.getCharPositionInLine() + token.getStopIndex() - token.getStartIndex() + 1), TypeOfText.CONSTANT);
       } else {
-        // System.out.println(token.getText() + " --- " + token.getType());
       }
     }
   }
