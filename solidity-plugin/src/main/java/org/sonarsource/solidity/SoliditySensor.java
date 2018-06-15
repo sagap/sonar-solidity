@@ -79,12 +79,13 @@ public class SoliditySensor implements Sensor {
   }
 
   public void analyzeFiles(SensorContext context, List<InputFile> files) {
-    String lastAnalyzedFile = "no file analyzed";
     for (InputFile file : files) {
-      lastAnalyzedFile = file.toString();
+      String lastAnalyzedFile = file.toString();
       if (inSonarQube(context)) {
-        System.out.println("Analyzing: " + lastAnalyzedFile);
+        LOG.debug("Analyzing: " + lastAnalyzedFile);
         getSyntaxHighlighting(context, file).save();
+      } else {
+        LOG.debug(lastAnalyzedFile);
       }
     }
   }
@@ -94,8 +95,8 @@ public class SoliditySensor implements Sensor {
     try {
       SolidityParser parser = Utils.returnParserUnitFromParsedFile(inputFile.contents());
       MyVisitor visitor = new MyVisitor(this.highlighting);
-      visitor.highlightComments(parser);
       visitor.visitTokens(parser.getTokenStream());
+      visitor.highlightComments(parser);
     } catch (IOException e) {
       LOG.error(e.toString());
     }

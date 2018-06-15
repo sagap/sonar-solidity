@@ -6,7 +6,6 @@ import org.sonar.api.batch.sensor.highlighting.NewHighlighting;
 import org.sonar.api.batch.sensor.highlighting.TypeOfText;
 import org.sonarsource.solidity.frontend.SolidityBaseVisitor;
 import org.sonarsource.solidity.frontend.SolidityParser;
-import org.sonarsource.solidity.frontend.Utils;
 
 public class MyVisitor extends SolidityBaseVisitor<Token> {
 
@@ -37,12 +36,26 @@ public class MyVisitor extends SolidityBaseVisitor<Token> {
   }
 
   public void highlightComments(SolidityParser parser) {
-    for (Token t : parser.comments) {
-      if (t.getType() == 118) {
-        highlightComment(t);
+    for (Token token : parser.comments) {
+      if (token.getType() == 118) {
+        highlightComment(token);
       } else {
-        Utils.handleStructuredComments(t);
+        handleStructuredComments(token);
       }
+    }
+  }
+
+  public void handleStructuredComments(Token token) {
+    int newLineOccurences = token.getText().split("\r\n|\r|\n").length - 1;
+    int lastIndexNewLine = token.getText().lastIndexOf('\n');
+    int lastIndex = token.getText().length();
+    if (lastIndexNewLine == -1) {
+      lastIndexNewLine = 0;
+      this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(), (token.getLine() + newLineOccurences), (lastIndex - lastIndexNewLine),
+        TypeOfText.STRUCTURED_COMMENT);
+    } else {
+      this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(), (token.getLine() + newLineOccurences), (lastIndex - lastIndexNewLine - 1),
+        TypeOfText.STRUCTURED_COMMENT);
     }
   }
 
