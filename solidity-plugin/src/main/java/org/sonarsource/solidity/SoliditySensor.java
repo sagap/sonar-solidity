@@ -32,6 +32,8 @@ import org.sonar.api.batch.sensor.Sensor;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.api.batch.sensor.highlighting.NewHighlighting;
+import org.sonar.api.measures.CoreMetrics;
+import org.sonar.api.measures.FileLinesContext;
 import org.sonar.api.measures.FileLinesContextFactory;
 import org.sonar.api.utils.Version;
 import org.sonar.api.utils.log.Logger;
@@ -45,7 +47,6 @@ public class SoliditySensor implements Sensor {
 
   private final FileLinesContextFactory fileLinesContextFactory;
   public static final Version SQ_VERSION = Version.create(6, 7);
-  private NewHighlighting highlighting;
 
   public static final ImmutableList<String> KEYWORDS = ImmutableList.<String>builder()
     .add(SolidityKeywords.get()).build();
@@ -82,25 +83,55 @@ public class SoliditySensor implements Sensor {
     for (InputFile file : files) {
       String lastAnalyzedFile = file.toString();
       if (inSonarQube(context)) {
-        LOG.debug("Analyzing: " + lastAnalyzedFile);
-        getSyntaxHighlighting(context, file).save();
+        try {
+          LOG.debug("Analyzing: " + lastAnalyzedFile);
+          SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
+          getSyntaxHighlighting(parser, context, file).save();
+          saveFileMeasures(context, computeMeasures(parser, fileLinesContextFactory.createFor(file), file), file);
+          if (inSonarQube(context)) {
+
+          }
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
       } else {
         LOG.debug(lastAnalyzedFile);
       }
     }
   }
 
-  public NewHighlighting getSyntaxHighlighting(SensorContext context, InputFile inputFile) {
-    this.highlighting = context.newHighlighting().onFile(inputFile);
-    try {
-      SolidityParser parser = Utils.returnParserUnitFromParsedFile(inputFile.contents());
-      MyVisitor visitor = new MyVisitor(this.highlighting);
-      visitor.visitTokens(parser.getTokenStream());
-      visitor.highlightComments(parser);
-    } catch (IOException e) {
-      LOG.error(e.toString());
-    }
-    return this.highlighting;
+  private FileMeasures computeMeasures(SolidityParser parser, FileLinesContext fileLinesContext, InputFile file) {
+    MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
+
+    return metricsVisitor.fileMeasures;
+  }
+
+  public NewHighlighting getSyntaxHighlighting(SolidityParser parser, SensorContext context, InputFile inputFile) {
+    NewHighlighting highlighting = context.newHighlighting().onFile(inputFile);
+    MyVisitor visitor = new MyVisitor(highlighting);
+    visitor.visitTokens(parser.getTokenStream());
+    visitor.highlightComments(parser);
+    return highlighting;
+  }
+
+  private static void saveFileMeasures(SensorContext context, FileMeasures fileMeasures, InputFile inputFile) {
+    System.out.println("CCComputed: " + fileMeasures);
+    context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getLinesOfCodeNumber()).forMetric(CoreMetrics.NCLOC).save();
+    context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getCommentLinesNumber()).forMetric(CoreMetrics.COMMENT_LINES).save();
+    // context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getClassNumber()).forMetric(CoreMetrics.CLASSES).save();
+    context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getFunctionNumber()).forMetric(CoreMetrics.FUNCTIONS).save();
+    context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getStatementNumber()).forMetric(CoreMetrics.STATEMENTS).save();
+    // context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getFileCognitiveComplexity()).forMetric(CoreMetrics.COGNITIVE_COMPLEXITY).save();
+    // context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getFileComplexity()).forMetric(CoreMetrics.COMPLEXITY).save();
+    // context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getClassComplexity()).forMetric(CoreMetrics.COMPLEXITY_IN_CLASSES).save();
+    // context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getFunctionComplexity()).forMetric(CoreMetrics.COMPLEXITY_IN_FUNCTIONS).save();
+
+    // String functionComplexityMeasure = fileMeasures.getFunctionComplexityDistribution().build();
+    // context.<String>newMeasure().on(inputFile).withValue(functionComplexityMeasure).forMetric(CoreMetrics.FUNCTION_COMPLEXITY_DISTRIBUTION).save();
+    //
+    // String fileComplexityMeasure = fileMeasures.getFileComplexityDistribution().build();
+    // context.<String>newMeasure().on(inputFile).withValue(fileComplexityMeasure).forMetric(CoreMetrics.FILE_COMPLEXITY_DISTRIBUTION).save();
+
   }
 
   private static boolean inSonarQube(SensorContext context) {

@@ -33,7 +33,6 @@
       <groupId>org.sonarsource.solidity</groupId>
       <artifactId>solidity-frontend</artifactId>
       <version>0.0</version>
-      <scope>provided</scope>
     </dependency>
 		<dependency>
 			<!-- packaged with the plugin -->
