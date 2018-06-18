@@ -3004,6 +3004,7 @@ public class SolidityParser extends Parser {
   }
 
   public static class BlockContext extends ParserRuleContext {
+
     public List<StatementContext> statement() {
       return getRuleContexts(StatementContext.class);
     }

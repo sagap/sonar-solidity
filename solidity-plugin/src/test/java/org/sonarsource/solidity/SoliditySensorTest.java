@@ -79,6 +79,13 @@ public class SoliditySensorTest {
     assertThat(sensorContext.highlightingTypeAt("module:" + filename, 5, 43)).first().isEqualTo(TypeOfText.COMMENT);
   }
 
+  @Test
+  public void test_two_contracts() {
+    String filename = "test_contracts.sol";
+    SoliditySensor sensor = new SoliditySensor(createFileLinesContextFactory());
+    analyseSingleFile(sensor, filename);
+  }
+
   private void analyseSingleFile(SoliditySensor sensor, String filename) {
     InputFile file = createInputFile(filename);
     sensorContext.fileSystem().add(file);
