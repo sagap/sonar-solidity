@@ -88,8 +88,11 @@ public class SoliditySensor implements Sensor {
           SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
           getSyntaxHighlighting(parser, context, file).save();
           saveFileMeasures(context, computeMeasures(parser, fileLinesContextFactory.createFor(file), file), file);
-        } catch (IOException e) {
+          if (inSonarQube(context)) {
 
+          }
+        } catch (IOException e) {
+          e.printStackTrace();
         }
       } else {
         LOG.debug(lastAnalyzedFile);

@@ -8,7 +8,6 @@ import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.SolidityParser.BreakStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContinueStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContractDefinitionContext;
-import org.sonarsource.solidity.frontend.SolidityParser.ContractPartContext;
 import org.sonarsource.solidity.frontend.SolidityParser.DoWhileStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.EmitStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ExpressionStatementContext;
@@ -49,43 +48,10 @@ public class MetricsVisitor extends SolidityBaseVisitor<Token> {
     return comments;
   }
 
-  // @Override
-  // public Token visitSourceUnit(SourceUnitContext ctx) {
-  // List<FunctionDefinitionContext> functionList = contractPartList
-  // .stream()
-  // .map(x -> x.functionDefinition())
-  // .filter(Objects::nonNull)
-  // .collect(Collectors.toList());
-  //
-  // fileMeasures.setFunctionNumber(functionList.size());
-  //
-  // long statementsCounter = 0;
-  // List<StatementContext> statementList = new ArrayList<>();
-  //
-  // functionList
-  // .stream()
-  // .map(FunctionDefinitionContext::block)
-  // .map(BlockContext::statement)
-  // .filter(Objects::nonNull)
-  // .forEach(x -> statementList.addAll(x));
-  //
-  // BlockVisitorClass vis = new BlockVisitorClass();
-  // functionList
-  // .stream()
-  // .map(x -> x.accept(vis))
-  // .forEach(x -> System.out.println(x));
-  // return super.visitSourceUnit(ctx);
-  // }
-
   @Override
   public Token visitContractDefinition(ContractDefinitionContext ctx) {
     contractCounter++;
     return super.visitContractDefinition(ctx);
-  }
-
-  @Override
-  public Token visitContractPart(ContractPartContext ctx) {
-    return super.visitContractPart(ctx);
   }
 
   @Override
@@ -159,31 +125,4 @@ public class MetricsVisitor extends SolidityBaseVisitor<Token> {
     statements++;
     return super.visitWhileStatement(ctx);
   }
-
-  /*
-   * private static class BlockVisitorClass extends SolidityBaseVisitor {
-   * 
-   * @Override
-   * public Token visitBlock(BlockContext ctx) {
-   * ctx.statement()
-   * .stream()
-   * .filter(x -> isEncolsingStatement(x))
-   * .forEach(x -> System.out.println("Aklfa: " + x.getText()));
-   * return (Token) super.visitBlock(ctx);
-   * }
-   * 
-   * private static boolean isEncolsingStatement(StatementContext stmt) {
-   * if (stmt.forStatement() != null) {
-   * System.out.println(stmt.toStringTree());
-   * } else if (stmt.whileStatement() != null) {
-   * System.out.println((stmt.whileStatement()).statement().getText());
-   * }
-   * if (stmt.forStatement() != null || stmt.whileStatement() != null || stmt.doWhileStatement() != null
-   * || stmt.ifStatement() != null) {
-   * return true;
-   * }
-   * return false;
-   * }
-   * }
-   */
 }
