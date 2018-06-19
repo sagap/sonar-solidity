@@ -80,6 +80,14 @@ public class SoliditySensorTest {
   }
 
   @Test
+  public void test_complexity() {
+    String filename = "test3.sol";
+    SoliditySensor sensor = new SoliditySensor(createFileLinesContextFactory());
+    analyseSingleFile(sensor, filename);
+
+  }
+
+  @Test
   public void test_two_contracts() {
     String filename = "test_contracts.sol";
     SoliditySensor sensor = new SoliditySensor(createFileLinesContextFactory());

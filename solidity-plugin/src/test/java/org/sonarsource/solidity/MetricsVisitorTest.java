@@ -56,6 +56,22 @@ public class MetricsVisitorTest {
     }
   }
 
+  @Test
+  public void test3() {
+    String filename = "test3.sol";
+    FileLinesContextFactory fileLinesContextFactory = mock(FileLinesContextFactory.class);
+    FileLinesContext fileLinesContext = mock(FileLinesContext.class);
+    when(fileLinesContextFactory.createFor(any(InputFile.class))).thenReturn(fileLinesContext);
+    InputFile file = createInputFile(new File("src/test/resources/" + filename));
+    try {
+      SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
+      MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
+      assertThat(metricsVisitor.fileMeasures.getContractNumber()).isEqualTo(1);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
   private InputFile createInputFile(File file) {
     try {
       return TestInputFileBuilder.create("module", file.getName())

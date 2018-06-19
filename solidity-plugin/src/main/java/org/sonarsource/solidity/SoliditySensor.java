@@ -23,6 +23,7 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.antlr.v4.runtime.RecognitionException;
 import org.sonar.api.SonarProduct;
 import org.sonar.api.batch.fs.FilePredicate;
 import org.sonar.api.batch.fs.FileSystem;
@@ -88,11 +89,8 @@ public class SoliditySensor implements Sensor {
           SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
           getSyntaxHighlighting(parser, context, file).save();
           saveFileMeasures(context, computeMeasures(parser, fileLinesContextFactory.createFor(file), file), file);
-          if (inSonarQube(context)) {
-
-          }
         } catch (IOException e) {
-          e.printStackTrace();
+          LOG.debug(e.getMessage(), e);
         }
       } else {
         LOG.debug(lastAnalyzedFile);
@@ -102,7 +100,12 @@ public class SoliditySensor implements Sensor {
 
   private FileMeasures computeMeasures(SolidityParser parser, FileLinesContext fileLinesContext, InputFile file) {
     MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
+    try {
+      CognitiveComplexityVisitor cognComplex = new CognitiveComplexityVisitor(Utils.returnParserUnitFromParsedFile(file.contents()).sourceUnit());
 
+    } catch (RecognitionException | IOException e) {
+      LOG.debug(e.getMessage(), e);
+    }
     return metricsVisitor.fileMeasures;
   }
 

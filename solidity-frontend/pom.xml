@@ -65,6 +65,7 @@
           </includes>
           <excludes>
             <exclude>org.sonarsource.maven.model.*</exclude>
+            <exclude>org.sonarsource.solidity.frontend.SolidityParser</exclude>
           </excludes>
         </configuration>
       </plugin>
