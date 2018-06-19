@@ -96,7 +96,7 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
 
   private Token visitNested(List<StatementContext> statements) {
     for (StatementContext stmt : statements) {
-      return super.visitStatement(stmt);
+      super.visitStatement(stmt);
     }
     return null;
   }
