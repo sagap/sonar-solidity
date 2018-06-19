@@ -13,15 +13,14 @@ public final class Utils {
     return value.substring(1, value.length() - 1);
   }
 
-  // ... parser
   public static SolidityParser returnParserUnitFromParsedFile(String file) {
     CharStream cs = CharStreams.fromString(file);
     SolidityLexer sl = new SolidityLexer(cs);
-    // TokenStream tokens = new CommonTokenStream(sl);
+    // could use this instead: TokenStream tokens = new CommonTokenStream(sl);
     CommonTokenStream tokenStream = new CommonTokenStream(sl);
     SolidityParser parser = new SolidityParser(tokenStream);
     tokenStream.fill();
-    parser.handleComments(tokenStream.getTokens());
+    parser.addCommentsToSet(tokenStream.getTokens());
     return parser;
   }
 
@@ -30,7 +29,7 @@ public final class Utils {
     CommonTokenStream tokenStream = new CommonTokenStream(sl);
     SolidityParser parser = new SolidityParser(tokenStream);
     tokenStream.fill();
-    parser.handleComments(tokenStream.getTokens());
+    parser.addCommentsToSet(tokenStream.getTokens());
     return parser;
   }
 

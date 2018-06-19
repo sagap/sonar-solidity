@@ -142,7 +142,7 @@ public class SolidityParser extends Parser {
     _interp = new ParserATNSimulator(this, _ATN, _decisionToDFA, _sharedContextCache);
   }
 
-  public void handleComments(List<? extends Token> tokens) {
+  public void addCommentsToSet(List<? extends Token> tokens) {
     for (Token token : tokens) {
       if (token.getChannel() == 1)
         comments.add(token);

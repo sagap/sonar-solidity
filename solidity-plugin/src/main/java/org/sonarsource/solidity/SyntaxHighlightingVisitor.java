@@ -31,6 +31,7 @@ public class SyntaxHighlightingVisitor extends SolidityBaseVisitor<Token> {
         this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(),
           token.getLine(), (token.getCharPositionInLine() + token.getStopIndex() - token.getStartIndex() + 1), TypeOfText.CONSTANT);
       } else {
+        // TODO maybe add more cases
       }
     }
   }
