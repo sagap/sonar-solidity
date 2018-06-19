@@ -105,17 +105,17 @@ public class SolidityParser extends Parser {
 
   @Override
   public String getGrammarFileName() {
-    return new SolidityTokensInfo().getGrammarFileName();
+    return SolidityTokensInfo.getGrammarFileName();
   }
 
   @Override
   public String[] getRuleNames() {
-    return new SolidityTokensInfo().getRuleNames();
+    return SolidityTokensInfo.getRuleNames();
   }
 
   @Override
   public String[] getTokenNames() {
-    return new SolidityTokensInfo().getTokenNames();
+    return SolidityTokensInfo.getTokenNames();
   }
 
   @Override

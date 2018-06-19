@@ -229,5 +229,6 @@ public class SolidityParserTest {
     assertThat(parser.getSerializedATN()).isNotNull();
     assertThat(suc.getRuleIndex()).isEqualTo(0);
     assertThat(suc.EOF()).isNotNull();
+    assertThat(SolidityTokensInfo.getVocabulary()).isNotNull();
   }
 }

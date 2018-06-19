@@ -34,6 +34,11 @@ public class MetricsVisitor extends SolidityBaseVisitor<Token> {
     this.fileMeasures.setCommentLinesNumber(computeLinesOfComments(parser.comments));
     TerminalNode node = parser.sourceUnit().EOF();
     this.fileMeasures.setLinesOfCodeNumber(node.getSymbol().getLine());
+    // TODO fix complexity
+    this.fileMeasures.setContractComplexity(0);
+    this.fileMeasures.setFunctionComplexity(0);
+    this.fileMeasures.setFileComplexity(0);
+    this.fileMeasures.setFileCognitiveComplexity(0);
   }
 
   private int computeLinesOfComments(Set<Token> tokens) {

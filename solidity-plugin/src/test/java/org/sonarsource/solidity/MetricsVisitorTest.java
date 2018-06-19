@@ -18,12 +18,15 @@ import static org.mockito.Mockito.when;
 
 public class MetricsVisitorTest {
 
-  @Test
-  public void test() {
-    String filename = "test_contracts.sol";
+  static {
     FileLinesContextFactory fileLinesContextFactory = mock(FileLinesContextFactory.class);
     FileLinesContext fileLinesContext = mock(FileLinesContext.class);
     when(fileLinesContextFactory.createFor(any(InputFile.class))).thenReturn(fileLinesContext);
+  }
+
+  @Test
+  public void test() {
+    String filename = "test_contracts.sol";
     InputFile file = createInputFile(new File("src/test/resources/" + filename));
     try {
       SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
@@ -38,9 +41,6 @@ public class MetricsVisitorTest {
   @Test
   public void test2() {
     String filename = "test1.sol";
-    FileLinesContextFactory fileLinesContextFactory = mock(FileLinesContextFactory.class);
-    FileLinesContext fileLinesContext = mock(FileLinesContext.class);
-    when(fileLinesContextFactory.createFor(any(InputFile.class))).thenReturn(fileLinesContext);
     InputFile file = createInputFile(new File("src/test/resources/" + filename));
     try {
       SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
@@ -59,9 +59,6 @@ public class MetricsVisitorTest {
   @Test
   public void test3() {
     String filename = "test3.sol";
-    FileLinesContextFactory fileLinesContextFactory = mock(FileLinesContextFactory.class);
-    FileLinesContext fileLinesContext = mock(FileLinesContext.class);
-    when(fileLinesContextFactory.createFor(any(InputFile.class))).thenReturn(fileLinesContext);
     InputFile file = createInputFile(new File("src/test/resources/" + filename));
     try {
       SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());

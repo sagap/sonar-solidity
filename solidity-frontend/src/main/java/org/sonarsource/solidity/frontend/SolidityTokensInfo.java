@@ -5,6 +5,9 @@ import org.antlr.v4.runtime.VocabularyImpl;
 
 public class SolidityTokensInfo {
 
+  private SolidityTokensInfo() {
+  }
+
   protected static final String GRAMMAR_FILENAME = "Solidity.g4";
 
   protected static final String[] ruleNames = {
@@ -94,5 +97,4 @@ public class SolidityTokensInfo {
   public static String[] getRuleNames() {
     return ruleNames;
   }
-
 }
