@@ -73,12 +73,12 @@ public class SolidityLexer extends Lexer {
 
   @Override
   public String getGrammarFileName() {
-    return new SolidityTokensInfo().getGrammarFileName();
+    return SolidityTokensInfo.getGrammarFileName();
   }
 
   @Override
   public String[] getRuleNames() {
-    return new SolidityTokensInfo().getRuleNames();
+    return SolidityTokensInfo.getRuleNames();
   }
 
   @Override

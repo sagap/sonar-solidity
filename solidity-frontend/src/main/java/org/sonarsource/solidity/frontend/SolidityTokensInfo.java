@@ -79,19 +79,19 @@ public class SolidityTokensInfo {
     }
   }
 
-  public String[] getTokenNames() {
+  public static String[] getTokenNames() {
     return tokenNames;
   }
 
-  public Vocabulary getVocabulary() {
+  public static Vocabulary getVocabulary() {
     return VOCABULARY;
   }
 
-  public String getGrammarFileName() {
+  public static String getGrammarFileName() {
     return GRAMMAR_FILENAME;
   }
 
-  public String[] getRuleNames() {
+  public static String[] getRuleNames() {
     return ruleNames;
   }
 
