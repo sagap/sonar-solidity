@@ -7,11 +7,11 @@ import org.sonar.api.batch.sensor.highlighting.TypeOfText;
 import org.sonarsource.solidity.frontend.SolidityBaseVisitor;
 import org.sonarsource.solidity.frontend.SolidityParser;
 
-public class MyVisitor extends SolidityBaseVisitor<Token> {
+public class SyntaxHighlightingVisitor extends SolidityBaseVisitor<Token> {
 
   private NewHighlighting highlighting;
 
-  public MyVisitor(NewHighlighting highlighting) {
+  public SyntaxHighlightingVisitor(NewHighlighting highlighting) {
     this.highlighting = highlighting;
   }
 
@@ -24,13 +24,14 @@ public class MyVisitor extends SolidityBaseVisitor<Token> {
       } else if (SoliditySensor.KEYWORD_TYPES.contains(token.getText())) {
         this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(),
           token.getLine(), (token.getCharPositionInLine() + token.getStopIndex() - token.getStartIndex() + 1), TypeOfText.KEYWORD_LIGHT);
-      } else if (token.getType() == 115) {
+      } else if (SolidityParser.typeMatches(token, SolidityParser.StringLiteral)) {
         this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(),
           token.getLine(), (token.getCharPositionInLine() + token.getStopIndex() - token.getStartIndex() + 1), TypeOfText.STRING);
-      } else if (token.getType() >= 96 && token.getType() <= 100) {
+      } else if (SolidityParser.typeMatches(token, 95, 96, 97, 98, 99, 100)) {
         this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(),
           token.getLine(), (token.getCharPositionInLine() + token.getStopIndex() - token.getStartIndex() + 1), TypeOfText.CONSTANT);
       } else {
+        // TODO maybe add more cases
       }
     }
   }

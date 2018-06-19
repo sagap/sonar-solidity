@@ -111,7 +111,7 @@ public class SoliditySensor implements Sensor {
 
   public NewHighlighting getSyntaxHighlighting(SolidityParser parser, SensorContext context, InputFile inputFile) {
     NewHighlighting highlighting = context.newHighlighting().onFile(inputFile);
-    MyVisitor visitor = new MyVisitor(highlighting);
+    SyntaxHighlightingVisitor visitor = new SyntaxHighlightingVisitor(highlighting);
     visitor.visitTokens(parser.getTokenStream());
     visitor.highlightComments(parser);
     return highlighting;

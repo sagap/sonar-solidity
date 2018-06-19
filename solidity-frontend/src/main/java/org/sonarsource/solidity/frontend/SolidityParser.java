@@ -103,6 +103,16 @@ public class SolidityParser extends Parser {
     "elementaryTypeNameExpression", "numberLiteral", "identifier"
   };
 
+  public static boolean typeMatches(Token token, int... types) {
+    int tokenType = token.getType();
+    for (int typeIter : types) {
+      if (tokenType == typeIter) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   @Override
   public String getGrammarFileName() {
     return SolidityTokensInfo.getGrammarFileName();
@@ -132,7 +142,7 @@ public class SolidityParser extends Parser {
     _interp = new ParserATNSimulator(this, _ATN, _decisionToDFA, _sharedContextCache);
   }
 
-  public void handleComments(List<? extends Token> tokens) {
+  public void addCommentsToSet(List<? extends Token> tokens) {
     for (Token token : tokens) {
       if (token.getChannel() == 1)
         comments.add(token);
