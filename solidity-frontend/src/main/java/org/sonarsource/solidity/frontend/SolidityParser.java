@@ -103,6 +103,16 @@ public class SolidityParser extends Parser {
     "elementaryTypeNameExpression", "numberLiteral", "identifier"
   };
 
+  public static boolean typeMatches(Token token, int... types) {
+    int tokenType = token.getType();
+    for (int typeIter : types) {
+      if (tokenType == typeIter) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   @Override
   public String getGrammarFileName() {
     return SolidityTokensInfo.getGrammarFileName();

@@ -6,7 +6,7 @@ contract temp_contract{
   uint8 i = 0;
         while(i<20){
     i++;
-          if (i == 10)
+          if (i == 10 && i < 30)
           {
             break;  // kills this contract and sends remaining funds back to creator
           }

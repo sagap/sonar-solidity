@@ -1,8 +1,10 @@
 package org.sonarsource.solidity;
 
 import java.util.List;
+import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.TerminalNode;
 import org.sonarsource.solidity.frontend.SolidityBaseVisitor;
 import org.sonarsource.solidity.frontend.SolidityParser.BreakStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContinueStatementContext;
@@ -79,17 +81,10 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
   }
 
   private boolean checkExpressionIncrementsComplexity(ExpressionContext exprList) {
-    System.out.println("PRIMARY: " + exprList.getChildCount());
-    System.out.println(exprList.getChild(0).getText());
-    System.out.println(exprList.getChild(1).getText());
-    System.out.println(exprList.getChild(2).getText());
-    // exprList.getRuleContexts(TerminalNode.class);
-    for (ExpressionContext exp : exprList.expression()) {
-      // exprList.children.forEach(x -> System.out.println(x.getText() + " ... " + x.getClass()));
-      System.out.println("TEXT: " + exp.getRuleIndex());
-      System.out.println(":::" + exp.getText() + " +++ " + exp.getClass().toString());
-      ExpressionContext temp = (ExpressionContext) exp;
-      System.out.println("TEMPPPPP: " + temp.getRuleIndex() + " --- " + temp.getText() + " " + exp.typeName());
+    for (ParseTree tree : exprList.children) {
+      if (TerminalNode.class.isInstance(tree) && isAndOrOperator(tree)) {
+        complexity++;
+      }
     }
     return false;
   }
@@ -101,7 +96,9 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
     return null;
   }
 
-  private boolean isTerminalNode(ParseTree exp) {
-    return ("class org.antlr.v4.runtime.tree.TerminalNodeImpl".equals(exp.getClass().toString()));
+  private static boolean isAndOrOperator(ParseTree tree) {
+    int type = ((CommonToken) tree.getPayload()).getType();
+    return 69 == type || 70 == type;
   }
+
 }
