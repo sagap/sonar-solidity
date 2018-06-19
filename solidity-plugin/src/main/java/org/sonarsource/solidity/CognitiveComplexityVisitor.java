@@ -16,7 +16,7 @@ import org.sonarsource.solidity.frontend.SolidityParser.StatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.WhileStatementContext;
 
 public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
-  public int complexity;
+  private int complexity;
 
   public CognitiveComplexityVisitor(SourceUnitContext sourceUnitCtx) {
     sourceUnitCtx.accept(this);
