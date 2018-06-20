@@ -60,7 +60,6 @@ public class SolidityParserTest {
 
     // now check that contract definition is well parsed
     assertThat(c.inheritanceSpecifier()).isEmpty();
-
     ContractPartContext cp = c.contractPart().get(0);
     assertThat(cp).isNotNull();
 
