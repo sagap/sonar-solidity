@@ -12,11 +12,12 @@ contract test_cognitive_complexity1{
               if(x%2 == 0){
                     break;
               }
-              else if(x%2 == 1){
+              else if(x%2 == 1 && x != 5){
                   continue;
               }
               else{
                   x = 5;
+                  break;
               }
               uint8 cnt = 0;
               uint8 i = 0;

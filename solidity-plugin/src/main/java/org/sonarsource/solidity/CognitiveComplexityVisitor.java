@@ -1,6 +1,5 @@
 package org.sonarsource.solidity;
 
-import java.util.List;
 import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -14,7 +13,6 @@ import org.sonarsource.solidity.frontend.SolidityParser.ForStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
-import org.sonarsource.solidity.frontend.SolidityParser.StatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.WhileStatementContext;
 import org.sonarsource.solidity.frontend.Utils;
 
@@ -30,9 +28,7 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
   public Token visitFunctionDefinition(FunctionDefinitionContext ctx) {
     complexity = 0;
     nestingLevel = 0;
-    System.out.println("Starts counting..." + ctx.getText() + " --- complexity: " + complexity + " --- level: " + nestingLevel);
     super.visitFunctionDefinition(ctx);
-    System.out.println("Ends counting... complexity: " + complexity + " --- level: " + nestingLevel);
     return null;
   }
 
@@ -73,29 +69,28 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
 
   @Override
   public Token visitIfStatement(IfStatementContext ctx) {
-    nestingLevel++;
     if (Utils.isElseIfStatement(ctx)) {
       complexity++;
       System.out.println("ELSE If: " + complexity);
+      checkExpressionIncrementsComplexity(ctx.expression());
       Utils.checkForElseStatement(ctx).ifPresent(elseStmt -> {
         complexity++;
-        super.visit(elseStmt);
+      });
+      return super.visitIfStatement(ctx);
+    } else {
+      nestingLevel++;
+      complexity += nestingLevel;
+      System.out.println("If: " + complexity);
+      checkExpressionIncrementsComplexity(ctx.expression());
+      Utils.checkForElseStatement(ctx).ifPresent(elseStmt -> {
+        complexity++;
+        System.out.println("ELSE: " + complexity);
       });
       super.visitIfStatement(ctx);
       nestingLevel--;
+      System.out.println("Leaving IF: " + nestingLevel);
       return null;
     }
-    complexity += nestingLevel;
-    System.out.println("If: " + complexity);
-    checkExpressionIncrementsComplexity(ctx.expression());
-    super.visitIfStatement(ctx);
-    Utils.checkForElseStatement(ctx).ifPresent(elseStmt -> {
-      complexity++;
-      System.out.println("ELSE: " + complexity);
-    });
-    nestingLevel--;
-    System.out.println("Leaving IF: " + nestingLevel);
-    return null;
   }
 
   @Override
@@ -121,13 +116,6 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
     return false;
   }
 
-  private Token visitNested(List<StatementContext> statements) {
-    for (StatementContext stmt : statements) {
-      super.visitStatement(stmt);
-    }
-    return null;
-  }
-
   private static boolean isAndOrOperator(ParseTree tree) {
     int type = ((CommonToken) tree.getPayload()).getType();
     return 69 == type || 70 == type;
@@ -135,9 +123,5 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
 
   public int getComplexity() {
     return complexity;
-  }
-
-  public int getNestingLevel() {
-    return nestingLevel;
   }
 }

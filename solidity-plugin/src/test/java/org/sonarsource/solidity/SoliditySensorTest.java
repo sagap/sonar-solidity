@@ -134,7 +134,7 @@ public class SoliditySensorTest {
     InputFile file = createInputFile(filename);
     SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
     CognitiveComplexityVisitor cogn = new CognitiveComplexityVisitor(parser.sourceUnit());
-    assertThat(cogn.getComplexity()).isEqualTo(14);
+    assertThat(cogn.getComplexity()).isEqualTo(16);
   }
 
   @Test

@@ -23,6 +23,7 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.antlr.v4.runtime.RecognitionException;
 import org.sonar.api.SonarProduct;
 import org.sonar.api.batch.fs.FilePredicate;
 import org.sonar.api.batch.fs.FileSystem;
@@ -97,15 +98,11 @@ public class SoliditySensor implements Sensor {
     }
   }
 
-  private FileMeasures computeMeasures(SolidityParser parser, FileLinesContext fileLinesContext, InputFile file) {
+  private FileMeasures computeMeasures(SolidityParser parser, FileLinesContext fileLinesContext, InputFile file) throws RecognitionException, IOException {
     MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
-    // try {
-    // CognitiveComplexityVisitor cognComplex = new
-    // CognitiveComplexityVisitor(Utils.returnParserUnitFromParsedFile(file.contents()).sourceUnit());
-    //
-    // } catch (RecognitionException | IOException e) {
-    // LOG.debug(e.getMessage(), e);
-    // }
+
+    CognitiveComplexityVisitor cognitiveComplexity = new CognitiveComplexityVisitor(Utils.returnParserUnitFromParsedFile(file.contents()).sourceUnit());
+    metricsVisitor.fileMeasures.setFileCognitiveComplexity(cognitiveComplexity.getComplexity());
     return metricsVisitor.fileMeasures;
   }
 
@@ -118,7 +115,6 @@ public class SoliditySensor implements Sensor {
   }
 
   private static void saveFileMeasures(SensorContext context, FileMeasures fileMeasures, InputFile inputFile) {
-    System.out.println("CCComputed: " + fileMeasures);
     context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getLinesOfCodeNumber()).forMetric(CoreMetrics.NCLOC).save();
     context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getCommentLinesNumber()).forMetric(CoreMetrics.COMMENT_LINES).save();
     context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getContractNumber()).forMetric(CoreMetrics.CLASSES).save();
@@ -132,8 +128,8 @@ public class SoliditySensor implements Sensor {
     // String functionComplexityMeasure = fileMeasures.getFunctionComplexityDistribution().build();
     // context.<String>newMeasure().on(inputFile).withValue(functionComplexityMeasure).forMetric(CoreMetrics.FUNCTION_COMPLEXITY_DISTRIBUTION).save();
     //
-    // String fileComplexityMeasure = fileMeasures.getFileComplexityDistribution().build();
-    // context.<String>newMeasure().on(inputFile).withValue(fileComplexityMeasure).forMetric(CoreMetrics.FILE_COMPLEXITY_DISTRIBUTION).save();
+    String fileComplexityMeasure = Integer.toString(fileMeasures.getFileCognitiveComplexity());
+    context.<String>newMeasure().on(inputFile).withValue(fileComplexityMeasure).forMetric(CoreMetrics.FILE_COMPLEXITY_DISTRIBUTION).save();
 
   }
 
