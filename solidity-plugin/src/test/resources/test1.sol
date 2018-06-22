@@ -13,16 +13,16 @@ contract TwoD {
         while(y < arraylength)
         	y++;
     }
-    
+
     function getValue(uint8 x, uint8 y) constant returns (uint8)
     {
     	return integers[x][y];
     }
-    
+
     /**********
      Standard kill() function to recover funds 
      **********/
-    
+
     function kill()
     { 
         if (msg.sender == creator)

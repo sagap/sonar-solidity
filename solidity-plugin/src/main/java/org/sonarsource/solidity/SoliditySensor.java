@@ -128,8 +128,8 @@ public class SoliditySensor implements Sensor {
     // String functionComplexityMeasure = fileMeasures.getFunctionComplexityDistribution().build();
     // context.<String>newMeasure().on(inputFile).withValue(functionComplexityMeasure).forMetric(CoreMetrics.FUNCTION_COMPLEXITY_DISTRIBUTION).save();
     //
-    String fileComplexityMeasure = Integer.toString(fileMeasures.getFileCognitiveComplexity());
-    context.<String>newMeasure().on(inputFile).withValue(fileComplexityMeasure).forMetric(CoreMetrics.FILE_COMPLEXITY_DISTRIBUTION).save();
+    // String fileComplexityMeasure = Integer.toString(fileMeasures.getFileCognitiveComplexity());
+    // context.<String>newMeasure().on(inputFile).withValue(fileComplexityMeasure).forMetric(CoreMetrics.FILE_COMPLEXITY_DISTRIBUTION).save();
 
   }
 
