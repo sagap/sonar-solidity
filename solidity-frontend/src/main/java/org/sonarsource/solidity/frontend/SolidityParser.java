@@ -28,19 +28,20 @@ public class SolidityParser extends Parser {
   }
 
   public final Set<Token> comments = new HashSet<>();
-
+  public Integer emptyLines = 0;
+  public Integer linesOfComments = 0;
   protected static final DFA[] _decisionToDFA;
   protected static final PredictionContextCache _sharedContextCache = new PredictionContextCache();
-  public static final int T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, T__7 = 8, T__8 = 9,
+  public static final int T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, GREATER_THAN = 6, LESS_THAN = 7, T__7 = 8, T__8 = 9,
     T__9 = 10, T__10 = 11, T__11 = 12, T__12 = 13, T__13 = 14, T__14 = 15, T__15 = 16, T__16 = 17,
     T__17 = 18, T__18 = 19, T__19 = 20, T__20 = 21, T__21 = 22, T__22 = 23, T__23 = 24,
     T__24 = 25, T__25 = 26, T__26 = 27, T__27 = 28, T__28 = 29, T__29 = 30, T__30 = 31,
     T__31 = 32, T__32 = 33, T__33 = 34, T__34 = 35, T__35 = 36, T__36 = 37, T__37 = 38,
-    T__38 = 39, T__39 = 40, T__40 = 41, T__41 = 42, T__42 = 43, T__43 = 44, T__44 = 45,
+    If = 39, Else = 40, T__40 = 41, T__41 = 42, T__42 = 43, T__43 = 44, T__44 = 45,
     T__45 = 46, T__46 = 47, T__47 = 48, T__48 = 49, T__49 = 50, T__50 = 51, T__51 = 52,
     T__52 = 53, T__53 = 54, T__54 = 55, T__55 = 56, T__56 = 57, T__57 = 58, T__58 = 59,
     T__59 = 60, T__60 = 61, T__61 = 62, T__62 = 63, T__63 = 64, T__64 = 65, T__65 = 66,
-    T__66 = 67, T__67 = 68, T__68 = 69, T__69 = 70, T__70 = 71, T__71 = 72, T__72 = 73,
+    EQUAL = 67, T__67 = 68, CONDITIONAL_AND = 69, CONDITIONAL_OR = 70, T__70 = 71, T__71 = 72, T__72 = 73,
     T__73 = 74, T__74 = 75, T__75 = 76, T__76 = 77, T__77 = 78, T__78 = 79, T__79 = 80,
     T__80 = 81, T__81 = 82, T__82 = 83, T__83 = 84, T__84 = 85, T__85 = 86, T__86 = 87,
     T__87 = 88, T__88 = 89, Int = 90, Uint = 91, Byte = 92, Fixed = 93, Ufixed = 94, VersionLiteral = 95,
@@ -143,9 +144,15 @@ public class SolidityParser extends Parser {
   }
 
   public void addCommentsToSet(List<? extends Token> tokens) {
+    int emptyLines = 0;
+    int lastLine = 1;
     for (Token token : tokens) {
-      if (token.getChannel() == 1)
+      if (token.getChannel() == 1) {
         comments.add(token);
+        if (Utils.isCommentSignificant(token)) {
+          linesOfComments++;
+        }
+      }
     }
   }
 
@@ -434,7 +441,7 @@ public class SolidityParser extends Parser {
         setState(189);
         _errHandler.sync(this);
         _la = _input.LA(1);
-        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8))) != 0)
+        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << GREATER_THAN) | (1L << LESS_THAN) | (1L << T__7) | (1L << T__8))) != 0)
           || _la == VersionLiteral) {
           {
             setState(188);
@@ -480,7 +487,8 @@ public class SolidityParser extends Parser {
       {
         setState(191);
         _la = _input.LA(1);
-        if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8))) != 0))) {
+        if (!((((_la) & ~0x3f) == 0
+          && ((1L << _la) & ((1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << GREATER_THAN) | (1L << LESS_THAN) | (1L << T__7) | (1L << T__8))) != 0))) {
           _errHandler.recoverInline(this);
         } else {
           if (_input.LA(1) == Token.EOF)
@@ -535,7 +543,7 @@ public class SolidityParser extends Parser {
         setState(194);
         _errHandler.sync(this);
         _la = _input.LA(1);
-        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7) | (1L << T__8))) != 0)) {
+        if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__2) | (1L << T__3) | (1L << T__4) | (1L << GREATER_THAN) | (1L << LESS_THAN) | (1L << T__7) | (1L << T__8))) != 0)) {
           {
             setState(193);
             versionOperator();
@@ -3053,7 +3061,7 @@ public class SolidityParser extends Parser {
         _errHandler.sync(this);
         _la = _input.LA(1);
         while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__3) | (1L << T__12) | (1L << T__13) | (1L << T__20) | (1L << T__23) | (1L << T__27) | (1L << T__31) | (1L << T__34)
-          | (1L << T__38) | (1L << T__40) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48)
+          | (1L << If) | (1L << T__40) | (1L << T__41) | (1L << T__42) | (1L << T__43) | (1L << T__44) | (1L << T__45) | (1L << T__46) | (1L << T__47) | (1L << T__48)
           | (1L << T__49) | (1L << T__50) | (1L << T__51) | (1L << T__52) | (1L << T__53) | (1L << T__54) | (1L << T__55) | (1L << T__56) | (1L << T__57) | (1L << T__58))) != 0)
           || ((((_la - 90)) & ~0x3f) == 0 && ((1L << (_la - 90)) & ((1L << (Int - 90)) | (1L << (Uint - 90)) | (1L << (Byte - 90)) | (1L << (Fixed - 90)) | (1L << (Ufixed - 90))
             | (1L << (BooleanLiteral - 90)) | (1L << (DecimalNumber - 90)) | (1L << (HexNumber - 90)) | (1L << (HexLiteral - 90)) | (1L << (BreakKeyword - 90))
@@ -3154,7 +3162,7 @@ public class SolidityParser extends Parser {
       setState(532);
       _errHandler.sync(this);
       switch (_input.LA(1)) {
-        case T__38:
+        case If:
           enterOuterAlt(_localctx, 1); {
           setState(520);
           ifStatement();
@@ -3312,6 +3320,10 @@ public class SolidityParser extends Parser {
   }
 
   public static class IfStatementContext extends ParserRuleContext {
+    public TerminalNode If() {
+      return getToken(SolidityParser.If, 0);
+    }
+
     public ExpressionContext expression() {
       return getRuleContext(ExpressionContext.class, 0);
     }
@@ -3322,6 +3334,10 @@ public class SolidityParser extends Parser {
 
     public StatementContext statement(int i) {
       return getRuleContext(StatementContext.class, i);
+    }
+
+    public TerminalNode Else() {
+      return getToken(SolidityParser.Else, 0);
     }
 
     public IfStatementContext(ParserRuleContext parent, int invokingState) {
@@ -3348,7 +3364,7 @@ public class SolidityParser extends Parser {
       enterOuterAlt(_localctx, 1);
       {
         setState(537);
-        match(T__38);
+        match(If);
         setState(538);
         match(T__20);
         setState(539);
@@ -3362,7 +3378,7 @@ public class SolidityParser extends Parser {
         switch (getInterpreter().adaptivePredict(_input, 54, _ctx)) {
           case 1: {
             setState(542);
-            match(T__39);
+            match(Else);
             setState(543);
             statement();
           }
@@ -4460,7 +4476,7 @@ public class SolidityParser extends Parser {
                     throw new FailedPredicateException(this, "precpred(_ctx, 7)");
                   setState(675);
                   _la = _input.LA(1);
-                  if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__4) | (1L << T__5) | (1L << T__6) | (1L << T__7))) != 0))) {
+                  if (!((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__4) | (1L << GREATER_THAN) | (1L << LESS_THAN) | (1L << T__7))) != 0))) {
                     _errHandler.recoverInline(this);
                   } else {
                     if (_input.LA(1) == Token.EOF)
@@ -4480,7 +4496,7 @@ public class SolidityParser extends Parser {
                     throw new FailedPredicateException(this, "precpred(_ctx, 6)");
                   setState(678);
                   _la = _input.LA(1);
-                  if (!(_la == T__66 || _la == T__67)) {
+                  if (!(_la == EQUAL || _la == T__67)) {
                     _errHandler.recoverInline(this);
                   } else {
                     if (_input.LA(1) == Token.EOF)
@@ -4499,7 +4515,7 @@ public class SolidityParser extends Parser {
                   if (!(precpred(_ctx, 5)))
                     throw new FailedPredicateException(this, "precpred(_ctx, 5)");
                   setState(681);
-                  match(T__68);
+                  match(CONDITIONAL_AND);
                   setState(682);
                   expression(6);
                 }
@@ -4511,7 +4527,7 @@ public class SolidityParser extends Parser {
                   if (!(precpred(_ctx, 4)))
                     throw new FailedPredicateException(this, "precpred(_ctx, 4)");
                   setState(684);
-                  match(T__69);
+                  match(CONDITIONAL_OR);
                   setState(685);
                   expression(5);
                 }
@@ -5137,7 +5153,7 @@ public class SolidityParser extends Parser {
         _errHandler.sync(this);
         _la = _input.LA(1);
         while ((((_la) & ~0x3f) == 0 && ((1L << _la)
-          & ((1L << T__12) | (1L << T__13) | (1L << T__20) | (1L << T__23) | (1L << T__27) | (1L << T__38) | (1L << T__41) | (1L << T__43) | (1L << T__47) | (1L << T__50))) != 0)
+          & ((1L << T__12) | (1L << T__13) | (1L << T__20) | (1L << T__23) | (1L << T__27) | (1L << If) | (1L << T__41) | (1L << T__43) | (1L << T__47) | (1L << T__50))) != 0)
           || ((((_la - 83)) & ~0x3f) == 0
             && ((1L << (_la - 83)) & ((1L << (T__82 - 83)) | (1L << (T__84 - 83)) | (1L << (T__85 - 83)) | (1L << (DecimalNumber - 83)) | (1L << (HexNumber - 83))
               | (1L << (HexLiteral - 83)) | (1L << (BreakKeyword - 83)) | (1L << (ContinueKeyword - 83)) | (1L << (Identifier - 83)) | (1L << (StringLiteral - 83)))) != 0)) {
@@ -6264,7 +6280,7 @@ public class SolidityParser extends Parser {
       enterOuterAlt(_localctx, 1);
       {
         setState(888);
-        match(T__38);
+        match(If);
         setState(889);
         assemblyExpression();
         setState(890);

@@ -30,6 +30,7 @@ public class MetricsVisitorTest {
     InputFile file = createInputFile(new File("src/test/resources/" + filename));
     try {
       SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
+      parser.emptyLines = Utils.emptyLines(file);
       MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
       assertThat(metricsVisitor.fileMeasures.getContractNumber()).isEqualTo(2);
       assertThat(metricsVisitor.fileMeasures.getCommentLinesNumber()).isEqualTo(2);
@@ -44,12 +45,13 @@ public class MetricsVisitorTest {
     InputFile file = createInputFile(new File("src/test/resources/" + filename));
     try {
       SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
+      parser.emptyLines = Utils.emptyLines(file);
       MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
       assertThat(metricsVisitor.fileMeasures.getContractNumber()).isEqualTo(1);
       assertThat(metricsVisitor.fileMeasures.getFunctionNumber()).isEqualTo(3);
       assertThat(metricsVisitor.fileMeasures.getStatementNumber()).isEqualTo(8);
-      assertThat(metricsVisitor.fileMeasures.getCommentLinesNumber()).isEqualTo(5);
-      assertThat(metricsVisitor.fileMeasures.getLinesOfCodeNumber()).isEqualTo(34);
+      assertThat(metricsVisitor.fileMeasures.getCommentLinesNumber()).isEqualTo(3);
+      assertThat(metricsVisitor.fileMeasures.getLinesOfCodeNumber()).isEqualTo(25);
 
     } catch (IOException e) {
       e.printStackTrace();
@@ -62,8 +64,10 @@ public class MetricsVisitorTest {
     InputFile file = createInputFile(new File("src/test/resources/" + filename));
     try {
       SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
+      parser.emptyLines = Utils.emptyLines(file);
       MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
       assertThat(metricsVisitor.fileMeasures.getContractNumber()).isEqualTo(1);
+      assertThat(metricsVisitor.fileMeasures.getLinesOfCodeNumber()).isEqualTo(23);
     } catch (IOException e) {
       e.printStackTrace();
     }

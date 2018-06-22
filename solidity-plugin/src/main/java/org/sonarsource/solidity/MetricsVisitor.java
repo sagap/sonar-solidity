@@ -1,6 +1,7 @@
 package org.sonarsource.solidity;
 
 import java.util.Set;
+import java.util.stream.IntStream;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.sonarsource.solidity.frontend.SolidityBaseVisitor;
@@ -18,6 +19,7 @@ import org.sonarsource.solidity.frontend.SolidityParser.ReturnStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ThrowStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.VariableDeclarationStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.WhileStatementContext;
+import org.sonarsource.solidity.frontend.Utils;
 
 public class MetricsVisitor extends SolidityBaseVisitor<Token> {
   protected FileMeasures fileMeasures;
@@ -31,9 +33,9 @@ public class MetricsVisitor extends SolidityBaseVisitor<Token> {
     this.fileMeasures.setStatementNumber(statements);
     this.fileMeasures.setFunctionNumber(functionCounter);
     this.fileMeasures.setContractNumber(contractCounter);
-    this.fileMeasures.setCommentLinesNumber(computeLinesOfComments(parser.comments));
+    this.fileMeasures.setCommentLinesNumber(parser.linesOfComments);
     TerminalNode node = parser.sourceUnit().EOF();
-    this.fileMeasures.setLinesOfCodeNumber(node.getSymbol().getLine());
+    this.fileMeasures.setLinesOfCodeNumber(node.getSymbol().getLine() - computeLinesOfComments(parser.comments) - parser.emptyLines);
     // TODO fix complexity
     this.fileMeasures.setContractComplexity(0);
     this.fileMeasures.setFunctionComplexity(0);
@@ -45,9 +47,14 @@ public class MetricsVisitor extends SolidityBaseVisitor<Token> {
     int comments = 0;
     for (Token token : tokens) {
       if (token.getType() == 118) {
-        comments++;
+        if (Utils.isCommentSignificant(token)) {
+          comments++;
+        }
       } else {
-        comments += token.getText().split("\r\n|\r|\n").length;
+        String[] comment = token.getText().split("\r\n|\r|\n");
+        comments += IntStream.range(0, comment.length)
+          .filter(x -> Utils.isCommentSignificant(comment[x]))
+          .count();
       }
     }
     return comments;

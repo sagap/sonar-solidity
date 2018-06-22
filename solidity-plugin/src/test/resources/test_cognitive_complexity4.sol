@@ -1,7 +1,9 @@
-contract test_cognitive_complexity1{
+pragma solidity ^0.4.24;
+
+contract test_cognitive_complexity4{
     address creator;
     uint8[10] integers;
-    function foo() 
+    function foo() public
     {
         creator = msg.sender;       
         uint8 x = 0;
@@ -26,7 +28,7 @@ contract test_cognitive_complexity1{
                 }
             }
         }
-        if(integers.length == 10){
+        if(integers.length == 10 || integers.length == 12){
             x++;
         }
     }

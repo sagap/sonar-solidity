@@ -36,10 +36,10 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
   public Token visitForStatement(ForStatementContext ctx) {
     nestingLevel++;
     complexity += nestingLevel;
-    System.out.println("For: " + complexity + " nestingLevel: " + nestingLevel);
+    // System.out.println("For: " + complexity + " nestingLevel: " + nestingLevel);
     super.visitForStatement(ctx);
     nestingLevel--;
-    System.out.println("Leaving For Loop " + nestingLevel);
+    // System.out.println("Leaving For Loop " + nestingLevel);
     return null;
   }
 
@@ -47,11 +47,11 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
   public Token visitWhileStatement(WhileStatementContext ctx) {
     nestingLevel++;
     complexity += nestingLevel;
-    System.out.println("While: " + complexity + " nestingLevel: " + nestingLevel);
+    // System.out.println("While: " + complexity + " nestingLevel: " + nestingLevel);
     checkExpressionIncrementsComplexity(ctx.expression());
     super.visitWhileStatement(ctx);
     nestingLevel--;
-    System.out.println("Leaving While Loop " + nestingLevel);
+    // System.out.println("Leaving While Loop " + nestingLevel);
     return null;
   }
 
@@ -59,19 +59,23 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
   public Token visitDoWhileStatement(DoWhileStatementContext ctx) {
     nestingLevel++;
     complexity += nestingLevel;
-    System.out.println("DoWhile: " + complexity + " nestinglEvel: " + nestingLevel);
+    // System.out.println("DoWhile: " + complexity + " nestinglEvel: " + nestingLevel);
     checkExpressionIncrementsComplexity(ctx.expression());
     super.visitDoWhileStatement(ctx);
     nestingLevel--;
-    System.out.println("Leaving DoWhile Loop " + nestingLevel);
+    // System.out.println("Leaving DoWhile Loop " + nestingLevel);
     return null;
   }
 
   @Override
   public Token visitIfStatement(IfStatementContext ctx) {
+    // System.out.println(ctx.If() + " ::: " + ctx.If().getText() + " --- " + ctx.Else());
+    if (ctx.Else() != null) {
+      // System.out.println(ctx.Else().getSymbol());
+    }
     if (Utils.isElseIfStatement(ctx)) {
       complexity++;
-      System.out.println("ELSE If: " + complexity);
+      // System.out.println("ELSE If: " + complexity);
       checkExpressionIncrementsComplexity(ctx.expression());
       Utils.checkForElseStatement(ctx).ifPresent(elseStmt -> {
         complexity++;
@@ -80,15 +84,15 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
     } else {
       nestingLevel++;
       complexity += nestingLevel;
-      System.out.println("If: " + complexity);
+      // System.out.println("If: " + complexity);
       checkExpressionIncrementsComplexity(ctx.expression());
       Utils.checkForElseStatement(ctx).ifPresent(elseStmt -> {
         complexity++;
-        System.out.println("ELSE: " + complexity);
+        // System.out.println("ELSE: " + complexity);
       });
       super.visitIfStatement(ctx);
       nestingLevel--;
-      System.out.println("Leaving IF: " + nestingLevel);
+      // System.out.println("Leaving IF: " + nestingLevel);
       return null;
     }
   }
@@ -96,14 +100,12 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
   @Override
   public Token visitBreakStatement(BreakStatementContext ctx) {
     complexity += 1;
-    System.out.println("Break: " + complexity);
     return super.visitBreakStatement(ctx);
   }
 
   @Override
   public Token visitContinueStatement(ContinueStatementContext ctx) {
     complexity += 1;
-    System.out.println("Continue: " + complexity);
     return super.visitContinueStatement(ctx);
   }
 
