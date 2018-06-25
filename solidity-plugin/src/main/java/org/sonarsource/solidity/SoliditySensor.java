@@ -102,7 +102,7 @@ public class SoliditySensor implements Sensor {
     MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
 
     CognitiveComplexityVisitor cognitiveComplexity = new CognitiveComplexityVisitor(Utils.returnParserUnitFromParsedFile(file.contents()).sourceUnit());
-    metricsVisitor.fileMeasures.setFileCognitiveComplexity(cognitiveComplexity.getComplexity());
+    metricsVisitor.fileMeasures.setFileCognitiveComplexity(cognitiveComplexity.getCognitiveComplexity());
     return metricsVisitor.fileMeasures;
   }
 

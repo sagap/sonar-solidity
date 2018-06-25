@@ -15,7 +15,12 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
+import org.sonarsource.solidity.frontend.SolidityParser.ExpressionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
+import org.sonarsource.solidity.frontend.SolidityParser.ReturnStatementContext;
+import org.sonarsource.solidity.frontend.SolidityParser.SimpleStatementContext;
+import org.sonarsource.solidity.frontend.SolidityParser.StatementContext;
+import org.sonarsource.solidity.frontend.SolidityParser.VariableDeclarationStatementContext;
 
 public final class Utils {
 
@@ -97,4 +102,41 @@ public final class Utils {
     return matcher.find();
   }
 
+  public static boolean isTernaryExpression(StatementContext ctx) {
+    // TODO
+    String statementName = ctx.getChild(0).getClass().getSimpleName();
+    ExpressionContext expr = null;
+    switch (statementName) {
+      case "ReturnStatementContext":
+        ReturnStatementContext retStmt = ctx.returnStatement();
+        expr = retStmt.expression();
+        return (expr.getToken(SolidityParser.TERNARY_OPERATOR, 0) != null);
+      case "SimpleStatementContext":
+        SimpleStatementContext simpleStmt = ctx.simpleStatement();
+        VariableDeclarationStatementContext varDeclStmt = simpleStmt.variableDeclarationStatement();
+        if (varDeclStmt != null) {
+          expr = varDeclStmt.expression();
+          return (expr.getToken(SolidityParser.TERNARY_OPERATOR, 0) != null);
+        }
+      default:
+    }
+    return false;
+  }
+
+  public static ExpressionContext countTernaryExpressionOperators(StatementContext ctx) {
+    String statementName = ctx.getChild(0).getClass().getSimpleName();
+    switch (statementName) {
+      case "ReturnStatementContext":
+        ReturnStatementContext retStmt = ctx.returnStatement();
+        ExpressionContext expr = retStmt.expression().expression(0);
+        return expr;
+      case "SimpleStatementContext":
+        VariableDeclarationStatementContext varDeclStmt = ctx.simpleStatement().variableDeclarationStatement();
+        if (varDeclStmt != null) {
+          expr = varDeclStmt.expression();
+          return expr;
+        }
+    }
+    return null;
+  }
 }
