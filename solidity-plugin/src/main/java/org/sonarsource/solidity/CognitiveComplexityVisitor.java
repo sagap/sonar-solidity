@@ -141,11 +141,6 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
   }
 
   @Override
-  public Token visitExpression(ExpressionContext ctx) {
-    return super.visitExpression(ctx);
-  }
-
-  @Override
   public Token visitStatement(StatementContext ctx) {
     if (Utils.isTernaryExpression(ctx)) {
       // ExpressionContext expression = Utils.countTernaryExpressionOperators(ctx);
