@@ -58,7 +58,6 @@ public final class UtilsSensor {
   }
 
   public static boolean isTernaryExpression(StatementContext ctx) {
-    // TODO
     String statementName = ctx.getChild(0).getClass().getSimpleName();
     ExpressionContext expr = null;
     switch (statementName) {
