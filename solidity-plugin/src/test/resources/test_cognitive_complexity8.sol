@@ -12,7 +12,7 @@ contract test_cognitive_complexity8{
             if(x > 2){
                     x = 1;
                 }else if(x > 5){
-                    if(x < integers.length && x > 10)  
+                    if(x < integers.length && x > 10 && false)  
                     {
                       integers[x] = x;
                       if(x > 1 && x > 2){

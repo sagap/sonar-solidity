@@ -169,7 +169,7 @@ public class SoliditySensorTest {
     InputFile file = createInputFile(filename);
     SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
     CognitiveComplexityVisitor cogn = new CognitiveComplexityVisitor(parser.sourceUnit());
-    assertThat(cogn.getCognitiveComplexity()).isEqualTo(20);
+    assertThat(cogn.getCognitiveComplexity()).isEqualTo(21);
   }
 
   private void analyseSingleFile(SoliditySensor sensor, String filename) {
