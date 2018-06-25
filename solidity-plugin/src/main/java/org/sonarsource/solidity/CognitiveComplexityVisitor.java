@@ -16,7 +16,6 @@ import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
 import org.sonarsource.solidity.frontend.SolidityParser.StatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.WhileStatementContext;
-import org.sonarsource.solidity.frontend.Utils;
 
 public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
   private int complexity;
@@ -76,11 +75,11 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
     if (ctx.Else() != null) {
       // System.out.println(ctx.Else().getSymbol());
     }
-    if (Utils.isElseIfStatement(ctx)) {
+    if (UtilsSensor.isElseIfStatement(ctx)) {
       complexity++;
       // System.out.println("ELSE If: " + complexity);
       // checkExpressionIncrementsComplexity(ctx.expression());
-      Utils.checkForElseStatement(ctx).ifPresent(elseStmt -> {
+      UtilsSensor.checkForElseStatement(ctx).ifPresent(elseStmt -> {
         complexity++;
       });
       return super.visitIfStatement(ctx);
@@ -89,7 +88,7 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
       complexity += nestingLevel;
       // System.out.println("If: " + complexity);
       // checkExpressionIncrementsComplexity(ctx.expression());
-      Utils.checkForElseStatement(ctx).ifPresent(elseStmt -> {
+      UtilsSensor.checkForElseStatement(ctx).ifPresent(elseStmt -> {
         complexity++;
         // System.out.println("ELSE: " + complexity);
       });
@@ -142,7 +141,7 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
 
   @Override
   public Token visitStatement(StatementContext ctx) {
-    if (Utils.isTernaryExpression(ctx)) {
+    if (UtilsSensor.isTernaryExpression(ctx)) {
       // ExpressionContext expression = Utils.countTernaryExpressionOperators(ctx);
       // complexity += countConditionalOperators(expression);
       complexity++;
