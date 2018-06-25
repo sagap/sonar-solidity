@@ -9,7 +9,6 @@ import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.SolidityParser.BreakStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContinueStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.DoWhileStatementContext;
-import org.sonarsource.solidity.frontend.SolidityParser.ExpressionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ForStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
@@ -111,24 +110,26 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
     return super.visitContinueStatement(ctx);
   }
 
-  private boolean checkExpressionIncrementsComplexity(ExpressionContext exprList) {
-    for (ParseTree tree : exprList.children) {
-      if (TerminalNode.class.isInstance(tree) && isAndOrOperator(tree)) {
-        complexity++;
-      }
-    }
-    return false;
-  }
-
-  private static int countConditionalOperators(ExpressionContext expr) {
-    int count = 1;
-    for (ParseTree tree : expr.children) {
-      if (TerminalNode.class.isInstance(tree) && isAndOrOperator(tree)) {
-        count++;
-      }
-    }
-    return count;
-  }
+  /*
+   * private boolean checkExpressionIncrementsComplexity(ExpressionContext exprList) {
+   * for (ParseTree tree : exprList.children) {
+   * if (TerminalNode.class.isInstance(tree) && isAndOrOperator(tree)) {
+   * complexity++;
+   * }
+   * }
+   * return false;
+   * }
+   * 
+   * private static int countConditionalOperators(ExpressionContext expr) {
+   * int count = 1;
+   * for (ParseTree tree : expr.children) {
+   * if (TerminalNode.class.isInstance(tree) && isAndOrOperator(tree)) {
+   * count++;
+   * }
+   * }
+   * return count;
+   * }
+   */
 
   @Override
   public Token visitTerminal(TerminalNode node) {
@@ -136,7 +137,6 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
       complexity++;
     }
     return super.visitTerminal(node);
-
   }
 
   @Override

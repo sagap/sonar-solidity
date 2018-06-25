@@ -77,21 +77,22 @@ public final class UtilsSensor {
     return false;
   }
 
-  public static ExpressionContext countTernaryExpressionOperators(StatementContext ctx) {
-    String statementName = ctx.getChild(0).getClass().getSimpleName();
-    switch (statementName) {
-      case "ReturnStatementContext":
-        ReturnStatementContext retStmt = ctx.returnStatement();
-        ExpressionContext expr = retStmt.expression().expression(0);
-        return expr;
-      case "SimpleStatementContext":
-        VariableDeclarationStatementContext varDeclStmt = ctx.simpleStatement().variableDeclarationStatement();
-        if (varDeclStmt != null) {
-          expr = varDeclStmt.expression();
-          return expr;
-        }
-    }
-    return null;
-  }
-
+  /*
+   * public static ExpressionContext countTernaryExpressionOperators(StatementContext ctx) {
+   * String statementName = ctx.getChild(0).getClass().getSimpleName();
+   * switch (statementName) {
+   * case "ReturnStatementContext":
+   * ReturnStatementContext retStmt = ctx.returnStatement();
+   * ExpressionContext expr = retStmt.expression().expression(0);
+   * return expr;
+   * case "SimpleStatementContext":
+   * VariableDeclarationStatementContext varDeclStmt = ctx.simpleStatement().variableDeclarationStatement();
+   * if (varDeclStmt != null) {
+   * expr = varDeclStmt.expression();
+   * return expr;
+   * }
+   * }
+   * return null;
+   * }
+   */
 }
