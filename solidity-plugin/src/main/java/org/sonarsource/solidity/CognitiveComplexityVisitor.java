@@ -5,6 +5,7 @@ import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.sonarsource.solidity.frontend.SolidityBaseVisitor;
+import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.SolidityParser.BreakStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContinueStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.DoWhileStatementContext;
@@ -13,6 +14,7 @@ import org.sonarsource.solidity.frontend.SolidityParser.ForStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
+import org.sonarsource.solidity.frontend.SolidityParser.StatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.WhileStatementContext;
 import org.sonarsource.solidity.frontend.Utils;
 
@@ -48,7 +50,8 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
     nestingLevel++;
     complexity += nestingLevel;
     // System.out.println("While: " + complexity + " nestingLevel: " + nestingLevel);
-    checkExpressionIncrementsComplexity(ctx.expression());
+    // checkExpressionIncrementsComplexity(ctx.expression());
+    // System.out.println("While: " + complexity + " nestingLevel: " + nestingLevel);
     super.visitWhileStatement(ctx);
     nestingLevel--;
     // System.out.println("Leaving While Loop " + nestingLevel);
@@ -60,7 +63,7 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
     nestingLevel++;
     complexity += nestingLevel;
     // System.out.println("DoWhile: " + complexity + " nestinglEvel: " + nestingLevel);
-    checkExpressionIncrementsComplexity(ctx.expression());
+    // checkExpressionIncrementsComplexity(ctx.expression());
     super.visitDoWhileStatement(ctx);
     nestingLevel--;
     // System.out.println("Leaving DoWhile Loop " + nestingLevel);
@@ -76,7 +79,7 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
     if (Utils.isElseIfStatement(ctx)) {
       complexity++;
       // System.out.println("ELSE If: " + complexity);
-      checkExpressionIncrementsComplexity(ctx.expression());
+      // checkExpressionIncrementsComplexity(ctx.expression());
       Utils.checkForElseStatement(ctx).ifPresent(elseStmt -> {
         complexity++;
       });
@@ -85,7 +88,7 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
       nestingLevel++;
       complexity += nestingLevel;
       // System.out.println("If: " + complexity);
-      checkExpressionIncrementsComplexity(ctx.expression());
+      // checkExpressionIncrementsComplexity(ctx.expression());
       Utils.checkForElseStatement(ctx).ifPresent(elseStmt -> {
         complexity++;
         // System.out.println("ELSE: " + complexity);
@@ -118,12 +121,41 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
     return false;
   }
 
-  private static boolean isAndOrOperator(ParseTree tree) {
-    int type = ((CommonToken) tree.getPayload()).getType();
-    return 69 == type || 70 == type;
+  private static int countConditionalOperators(ExpressionContext expr) {
+    int count = 1;
+    for (ParseTree tree : expr.children) {
+      if (TerminalNode.class.isInstance(tree) && isAndOrOperator(tree)) {
+        count++;
+      }
+    }
+    return count;
   }
 
-  public int getComplexity() {
+  @Override
+  public Token visitTerminal(TerminalNode node) {
+    if (isAndOrOperator(node)) {
+      complexity++;
+    }
+    return super.visitTerminal(node);
+
+  }
+
+  @Override
+  public Token visitStatement(StatementContext ctx) {
+    if (Utils.isTernaryExpression(ctx)) {
+      // ExpressionContext expression = Utils.countTernaryExpressionOperators(ctx);
+      // complexity += countConditionalOperators(expression);
+      complexity++;
+    }
+    return super.visitStatement(ctx);
+  }
+
+  private static boolean isAndOrOperator(ParseTree tree) {
+    int type = ((CommonToken) tree.getPayload()).getType();
+    return SolidityParser.CONDITIONAL_AND == type || SolidityParser.CONDITIONAL_OR == type;
+  }
+
+  public int getCognitiveComplexity() {
     return complexity;
   }
 }

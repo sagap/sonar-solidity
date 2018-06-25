@@ -21,6 +21,7 @@ import org.sonarsource.solidity.frontend.SolidityParser.InheritanceSpecifierCont
 import org.sonarsource.solidity.frontend.SolidityParser.ModifierDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ParameterListContext;
 import org.sonarsource.solidity.frontend.SolidityParser.PragmaDirectiveContext;
+import org.sonarsource.solidity.frontend.SolidityParser.ReturnStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
 import org.sonarsource.solidity.frontend.SolidityParser.StateVariableDeclarationContext;
 import org.sonarsource.solidity.frontend.SolidityParser.StatementContext;
@@ -229,5 +230,31 @@ public class SolidityParserTest {
     assertThat(suc.getRuleIndex()).isEqualTo(0);
     assertThat(suc.EOF()).isNotNull();
     assertThat(SolidityTokensInfo.getVocabulary()).isNotNull();
+  }
+
+  @Test
+  public void test_foo2() throws IOException {
+    CharStream cs = CharStreams.fromFileName("src/test/resources/test_ternary.sol");
+    SolidityParser parser = Utils.returnParserFromParsedFile(cs);
+    SourceUnitContext suc = parser.sourceUnit();
+    assertThat(suc).isNotNull();
+
+    ContractDefinitionContext cdc = suc.contractDefinition().get(0);
+    assertThat(cdc).isNotNull();
+
+    List<ContractPartContext> cpList = cdc.contractPart();
+    assertThat(cpList).isNotEmpty();
+
+    FunctionDefinitionContext functionCtx = cpList.get(0).functionDefinition();
+    assertThat(functionCtx).isNotNull();
+
+    assertThat(functionCtx.modifierList()).isNotNull();
+    List<StatementContext> stmtCtx = functionCtx.block().statement();
+    ReturnStatementContext retStmt = stmtCtx.get(0).returnStatement();
+    assertThat(retStmt).isNotNull();
+    ExpressionContext expr = retStmt.expression();
+    // expr.children.forEach(x -> System.out.println(x.getClass()));
+    TerminalNode t = expr.getToken(SolidityParser.TERNARY_OPERATOR, 0);
+    System.out.println(t.getText() + " " + t.getSymbol());
   }
 }
