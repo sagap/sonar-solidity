@@ -1,5 +1,7 @@
 package org.sonarsource.solidity;
 
+import java.util.HashMap;
+import java.util.Map;
 import org.antlr.v4.runtime.CommonToken;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -15,12 +17,15 @@ import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
 import org.sonarsource.solidity.frontend.SolidityParser.StatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.WhileStatementContext;
+import org.sonarsource.solidity.frontend.Utils;
 
 public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
   private int complexity;
   private int nestingLevel;
+  protected Map<String, Integer> functionsComplexity;
 
   public CognitiveComplexityVisitor(SourceUnitContext sourceUnitCtx) {
+    functionsComplexity = new HashMap<>();
     sourceUnitCtx.accept(this);
   }
 
@@ -29,6 +34,7 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
     complexity = 0;
     nestingLevel = 0;
     super.visitFunctionDefinition(ctx);
+    functionsComplexity.put(Utils.returnFunctionSignature(ctx), complexity);
     return null;
   }
 

@@ -123,6 +123,7 @@ public class SolidityParserTest {
     assertThat(blckCtx.statement().get(0).simpleStatement()).isNotNull();
 
     assertThat(parser.comments).hasSize(3);
+    assertThat(Utils.returnFunctionSignature(funList.get(1))).isEqualTo("getValue, uint8, uint8, uint8");
   }
 
   @Test

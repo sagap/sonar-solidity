@@ -1573,6 +1573,9 @@ public class SolidityParser extends Parser {
   }
 
   public static class FunctionDefinitionContext extends ParserRuleContext {
+
+    private String functionSignature;
+
     public ParameterListContext parameterList() {
       return getRuleContext(ParameterListContext.class, 0);
     }

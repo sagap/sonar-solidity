@@ -18,8 +18,6 @@ import org.sonar.api.measures.FileLinesContextFactory;
 import org.sonar.api.utils.Version;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
-import org.sonarsource.solidity.frontend.SolidityParser;
-import org.sonarsource.solidity.frontend.Utils;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
@@ -103,73 +101,65 @@ public class SoliditySensorTest {
   @Test
   public void test_cognitive_complexity1() throws IOException {
     String filename = "test_cognitive_complexity1.sol";
-    InputFile file = createInputFile(filename);
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
-    CognitiveComplexityVisitor cogn = new CognitiveComplexityVisitor(parser.sourceUnit());
-    assertThat(cogn.getCognitiveComplexity()).isEqualTo(2);
+    SoliditySensor sensor = new SoliditySensor(createFileLinesContextFactory());
+    analyseSingleFile(sensor, filename);
+    assertThat(sensor.cognitiveComplexity.getCognitiveComplexity()).isEqualTo(2);
   }
 
   @Test
   public void test_cognitive_complexity2() throws IOException {
     String filename = "test_cognitive_complexity2.sol";
-    InputFile file = createInputFile(filename);
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
-    CognitiveComplexityVisitor cogn = new CognitiveComplexityVisitor(parser.sourceUnit());
-    assertThat(cogn.getCognitiveComplexity()).isEqualTo(5);
+    SoliditySensor sensor = new SoliditySensor(createFileLinesContextFactory());
+    analyseSingleFile(sensor, filename);
+    assertThat(sensor.cognitiveComplexity.getCognitiveComplexity()).isEqualTo(5);
   }
 
   @Test
   public void test_cognitive_complexity3() throws IOException {
     String filename = "test_cognitive_complexity3.sol";
-    InputFile file = createInputFile(filename);
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
-    CognitiveComplexityVisitor cogn = new CognitiveComplexityVisitor(parser.sourceUnit());
-    assertThat(cogn.getCognitiveComplexity()).isEqualTo(11);
+    SoliditySensor sensor = new SoliditySensor(createFileLinesContextFactory());
+    analyseSingleFile(sensor, filename);
+    assertThat(sensor.cognitiveComplexity.getCognitiveComplexity()).isEqualTo(11);
   }
 
   @Test
   public void test_cognitive_complexity4() throws IOException {
     String filename = "test_cognitive_complexity4.sol";
-    InputFile file = createInputFile(filename);
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
-    CognitiveComplexityVisitor cogn = new CognitiveComplexityVisitor(parser.sourceUnit());
-    assertThat(cogn.getCognitiveComplexity()).isEqualTo(17);
+    SoliditySensor sensor = new SoliditySensor(createFileLinesContextFactory());
+    analyseSingleFile(sensor, filename);
+    assertThat(sensor.cognitiveComplexity.getCognitiveComplexity()).isEqualTo(17);
   }
 
   @Test
   public void test_cognitive_complexity5() throws IOException {
     String filename = "test_cognitive_complexity5.sol";
-    InputFile file = createInputFile(filename);
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
-    CognitiveComplexityVisitor cogn = new CognitiveComplexityVisitor(parser.sourceUnit());
-    assertThat(cogn.getCognitiveComplexity()).isEqualTo(14);
+    SoliditySensor sensor = new SoliditySensor(createFileLinesContextFactory());
+    analyseSingleFile(sensor, filename);
+    assertThat(sensor.cognitiveComplexity.getCognitiveComplexity()).isEqualTo(14);
   }
 
   @Test
   public void test_cognitive_complexity6() throws IOException {
     String filename = "test_cognitive_complexity6.sol";
-    InputFile file = createInputFile(filename);
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
-    CognitiveComplexityVisitor cogn = new CognitiveComplexityVisitor(parser.sourceUnit());
-    assertThat(cogn.getCognitiveComplexity()).isEqualTo(24);
+    SoliditySensor sensor = new SoliditySensor(createFileLinesContextFactory());
+    analyseSingleFile(sensor, filename);
+    assertThat(sensor.cognitiveComplexity.getCognitiveComplexity()).isEqualTo(24);
   }
 
   @Test
   public void test_cognitive_complexity7() throws IOException {
     String filename = "test_ternary.sol";
-    InputFile file = createInputFile(filename);
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
-    CognitiveComplexityVisitor cogn = new CognitiveComplexityVisitor(parser.sourceUnit());
-    assertThat(cogn.getCognitiveComplexity()).isEqualTo(3);
+    SoliditySensor sensor = new SoliditySensor(createFileLinesContextFactory());
+    analyseSingleFile(sensor, filename);
+    assertThat(sensor.cognitiveComplexity.getCognitiveComplexity()).isEqualTo(3);
   }
 
   @Test
   public void test_cognitive_complexity8() throws IOException {
     String filename = "test_cognitive_complexity8.sol";
-    InputFile file = createInputFile(filename);
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
-    CognitiveComplexityVisitor cogn = new CognitiveComplexityVisitor(parser.sourceUnit());
-    assertThat(cogn.getCognitiveComplexity()).isEqualTo(21);
+    SoliditySensor sensor = new SoliditySensor(createFileLinesContextFactory());
+    analyseSingleFile(sensor, filename);
+    assertThat(sensor.cognitiveComplexity.getCognitiveComplexity()).isEqualTo(21);
   }
 
   private void analyseSingleFile(SoliditySensor sensor, String filename) {

@@ -49,6 +49,7 @@ public class SoliditySensor implements Sensor {
   private final FileLinesContextFactory fileLinesContextFactory;
   public static final Version SQ_VERSION = Version.create(6, 7);
 
+  protected CognitiveComplexityVisitor cognitiveComplexity;
   public static final ImmutableList<String> KEYWORDS = ImmutableList.<String>builder()
     .add(SolidityKeywords.get()).build();
 
@@ -101,8 +102,10 @@ public class SoliditySensor implements Sensor {
   private FileMeasures computeMeasures(SolidityParser parser, FileLinesContext fileLinesContext, InputFile file) throws RecognitionException, IOException {
     MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
 
-    CognitiveComplexityVisitor cognitiveComplexity = new CognitiveComplexityVisitor(Utils.returnParserUnitFromParsedFile(file.contents()).sourceUnit());
-    metricsVisitor.fileMeasures.setFileCognitiveComplexity(cognitiveComplexity.getCognitiveComplexity());
+    cognitiveComplexity = new CognitiveComplexityVisitor(Utils.returnParserUnitFromParsedFile(file.contents()).sourceUnit());
+    int totalComplexity = cognitiveComplexity.functionsComplexity.values().stream().mapToInt(Integer::intValue).sum();
+    // System.out.println("EEE: " + file.filename() + " , " + totalComplexity + " --- " + cognitiveComplexity.functionsComplexity.values());
+    metricsVisitor.fileMeasures.setFileCognitiveComplexity(totalComplexity);
     return metricsVisitor.fileMeasures;
   }
 

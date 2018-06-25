@@ -8,6 +8,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Token;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
+import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
 
 public final class Utils {
 
@@ -52,5 +53,15 @@ public final class Utils {
   public static boolean isCommentSignificant(String token) {
     Matcher matcher = COMMENT_PATTERN.matcher(token);
     return matcher.find();
+  }
+
+  public static String returnFunctionSignature(FunctionDefinitionContext ctx) {
+    StringBuilder signature = new StringBuilder();
+    signature.append(ctx.identifier().getText());
+    ctx.parameterList().parameter().forEach(param -> signature.append(", " + param.typeName().getText()));
+    if (ctx.returnParameters() != null) {
+      ctx.returnParameters().parameterList().parameter().forEach(param -> signature.append(", " + param.typeName().getText()));
+    }
+    return signature.toString();
   }
 }
