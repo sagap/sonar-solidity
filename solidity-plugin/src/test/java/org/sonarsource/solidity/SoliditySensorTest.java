@@ -163,6 +163,15 @@ public class SoliditySensorTest {
     assertThat(cogn.getCognitiveComplexity()).isEqualTo(3);
   }
 
+  @Test
+  public void test_cognitive_complexity8() throws IOException {
+    String filename = "test_cognitive_complexity8.sol";
+    InputFile file = createInputFile(filename);
+    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
+    CognitiveComplexityVisitor cogn = new CognitiveComplexityVisitor(parser.sourceUnit());
+    assertThat(cogn.getCognitiveComplexity()).isEqualTo(20);
+  }
+
   private void analyseSingleFile(SoliditySensor sensor, String filename) {
     InputFile file = createInputFile(filename);
     sensorContext.fileSystem().add(file);
