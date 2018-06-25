@@ -104,7 +104,6 @@ public class SoliditySensor implements Sensor {
 
     cognitiveComplexity = new CognitiveComplexityVisitor(Utils.returnParserUnitFromParsedFile(file.contents()).sourceUnit());
     int totalComplexity = cognitiveComplexity.functionsComplexity.values().stream().mapToInt(Integer::intValue).sum();
-    // System.out.println("EEE: " + file.filename() + " , " + totalComplexity + " --- " + cognitiveComplexity.functionsComplexity.values());
     metricsVisitor.fileMeasures.setFileCognitiveComplexity(totalComplexity);
     return metricsVisitor.fileMeasures;
   }
@@ -125,15 +124,6 @@ public class SoliditySensor implements Sensor {
     context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getStatementNumber()).forMetric(CoreMetrics.STATEMENTS).save();
     context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getFileCognitiveComplexity()).forMetric(CoreMetrics.COGNITIVE_COMPLEXITY).save();
     context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getFileComplexity()).forMetric(CoreMetrics.COMPLEXITY).save();
-    // context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getContractComplexity()).forMetric(CoreMetrics.COMPLEXITY_IN_CLASSES).save();
-    // context.<Integer>newMeasure().on(inputFile).withValue(fileMeasures.getFunctionComplexity()).forMetric(CoreMetrics.COMPLEXITY_IN_FUNCTIONS).save();
-
-    // String functionComplexityMeasure = fileMeasures.getFunctionComplexityDistribution().build();
-    // context.<String>newMeasure().on(inputFile).withValue(functionComplexityMeasure).forMetric(CoreMetrics.FUNCTION_COMPLEXITY_DISTRIBUTION).save();
-    //
-    // String fileComplexityMeasure = Integer.toString(fileMeasures.getFileCognitiveComplexity());
-    // context.<String>newMeasure().on(inputFile).withValue(fileComplexityMeasure).forMetric(CoreMetrics.FILE_COMPLEXITY_DISTRIBUTION).save();
-
   }
 
   private static boolean inSonarQube(SensorContext context) {

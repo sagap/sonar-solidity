@@ -6,16 +6,12 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Token;
-import org.sonar.api.utils.log.Logger;
-import org.sonar.api.utils.log.Loggers;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
 
 public final class Utils {
 
   private Utils() {
   }
-
-  private static final Logger LOG = Loggers.get(Utils.class);
 
   private static final Pattern COMMENT_PATTERN = Pattern.compile(".*\\b+.*");
 
@@ -31,7 +27,6 @@ public final class Utils {
     SolidityParser parser = new SolidityParser(tokenStream);
     tokenStream.fill();
     parser.addCommentsToSet(tokenStream.getTokens());
-    // parser.emptyLines = Utils.emptyLines(newFile);
     return parser;
   }
 
@@ -41,7 +36,6 @@ public final class Utils {
     SolidityParser parser = new SolidityParser(tokenStream);
     tokenStream.fill();
     parser.addCommentsToSet(tokenStream.getTokens());
-    // parser.emptyLines = Utils.emptyLines(newFile);
     return parser;
   }
 
