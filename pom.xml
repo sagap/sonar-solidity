@@ -4,7 +4,7 @@
 
   <groupId>org.sonarsource.solidity</groupId>
   <artifactId>sonar-solidity</artifactId>
-  <version>0.0</version>
+  <version>0.3-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>SonarSolidity</name>
