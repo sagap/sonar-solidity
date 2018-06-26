@@ -97,27 +97,6 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
     return super.visitContinueStatement(ctx);
   }
 
-  /*
-   * private boolean checkExpressionIncrementsComplexity(ExpressionContext exprList) {
-   * for (ParseTree tree : exprList.children) {
-   * if (TerminalNode.class.isInstance(tree) && isAndOrOperator(tree)) {
-   * complexity++;
-   * }
-   * }
-   * return false;
-   * }
-   * 
-   * private static int countConditionalOperators(ExpressionContext expr) {
-   * int count = 1;
-   * for (ParseTree tree : expr.children) {
-   * if (TerminalNode.class.isInstance(tree) && isAndOrOperator(tree)) {
-   * count++;
-   * }
-   * }
-   * return count;
-   * }
-   */
-
   @Override
   public Token visitTerminal(TerminalNode node) {
     if (isAndOrOperator(node)) {

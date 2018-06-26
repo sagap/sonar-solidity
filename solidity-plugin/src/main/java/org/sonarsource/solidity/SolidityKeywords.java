@@ -51,7 +51,6 @@ public class SolidityKeywords {
     "throw",
     "emit",
     "var",
-    "byte",
     "new",
     "after",
     "delete",
