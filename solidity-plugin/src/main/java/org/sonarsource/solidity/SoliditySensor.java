@@ -49,7 +49,10 @@ public class SoliditySensor implements Sensor {
   private final FileLinesContextFactory fileLinesContextFactory;
   public static final Version SQ_VERSION = Version.create(6, 7);
 
+  protected static final String REPORT_PATH_KEY = "sonar.solidity.reportPath";
+
   protected CognitiveComplexityVisitor cognitiveComplexity;
+
   public static final ImmutableList<String> KEYWORDS = ImmutableList.<String>builder()
     .add(SolidityKeywords.get()).build();
 

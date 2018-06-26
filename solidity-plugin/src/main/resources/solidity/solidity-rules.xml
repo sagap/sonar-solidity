@@ -1,4 +1,4 @@
-<foolint-rules>
+<solidity-rules>
   <rule>
     <key>ExampleRule1</key>
     <name>Example Rule 1</name>
@@ -43,4 +43,4 @@
       <remediationFunctionGapMultiplier>10min</remediationFunctionGapMultiplier>
       <remediationFunctionBaseEffort>30min</remediationFunctionBaseEffort>    
   </rule>
-</foolint-rules>
+</solidity-rules>
