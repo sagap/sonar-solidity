@@ -10,8 +10,10 @@
     <status>READY</status>
     <type>BUG</type>
     <tag>example</tag>
-    <remediationFunction>CONSTANT_ISSUE</remediationFunction>
-        <remediationFunctionBaseEffort>2min</remediationFunctionBaseEffort>
+    <remedation>
+    	<func>CONSTANT_ISSUE</func>
+        <constantCost>2min</constantCost>
+    </remedation>
   </rule>
   <rule>
     <key>ExampleRule2</key>

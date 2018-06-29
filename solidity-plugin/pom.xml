@@ -32,7 +32,12 @@
 		<dependency>
       <groupId>org.sonarsource.solidity</groupId>
       <artifactId>solidity-frontend</artifactId>
-      <version>0.0</version>
+      <version>0.4-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.sonarsource.solidity</groupId>
+      <artifactId>solidity-checks</artifactId>
+      <version>0.4-SNAPSHOT</version>
     </dependency>
 		<dependency>
 			<!-- packaged with the plugin -->

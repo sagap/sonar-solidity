@@ -26,6 +26,7 @@
   <modules>
   <module>solidity-frontend</module>
   <module>solidity-plugin</module>
+  <module>solidity-checks</module>
   </modules>
   
     <properties>

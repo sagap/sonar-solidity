@@ -38,8 +38,9 @@ public final class SolidityRulesDefinition implements RulesDefinition {
     return PATH_TO_RULES_XML;
   }
 
-  private void defineRulesForLanguage(Context context, String repositoryKey, String repositoryName, String languageKey) {
-    NewRepository repository = context.createRepository(repositoryKey, languageKey).setName(repositoryName);
+  @Override
+  public void define(Context context) {
+    NewRepository repository = context.createRepository(REPO_KEY, KEY).setName(Solidity.KEY);
 
     InputStream rulesXml = this.getClass().getResourceAsStream(rulesDefinitionFilePath());
     if (rulesXml != null) {
@@ -48,10 +49,4 @@ public final class SolidityRulesDefinition implements RulesDefinition {
     }
     repository.done();
   }
-
-  @Override
-  public void define(Context context) {
-    defineRulesForLanguage(context, REPO_KEY, REPO_NAME, Solidity.KEY);
-  }
-
 }

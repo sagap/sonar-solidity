@@ -29,17 +29,27 @@ import org.sonar.api.batch.fs.FilePredicate;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.fs.InputFile.Type;
+import org.sonar.api.batch.fs.internal.DefaultTextPointer;
+import org.sonar.api.batch.fs.internal.DefaultTextRange;
+import org.sonar.api.batch.rule.Severity;
 import org.sonar.api.batch.sensor.Sensor;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.api.batch.sensor.highlighting.NewHighlighting;
+import org.sonar.api.batch.sensor.issue.NewIssue;
+import org.sonar.api.batch.sensor.issue.NewIssueLocation;
 import org.sonar.api.measures.CoreMetrics;
 import org.sonar.api.measures.FileLinesContext;
 import org.sonar.api.measures.FileLinesContextFactory;
+import org.sonar.api.rule.RuleKey;
 import org.sonar.api.utils.Version;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonarsource.solidity.frontend.SolidityParser;
+import org.sonarsource.solidity.frontend.SolidityParser.ContractDefinitionContext;
+import org.sonarsource.solidity.frontend.SolidityParser.IdentifierContext;
+import org.sonarsource.solidity.frontend.SolidityParser.PragmaDirectiveContext;
+import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
 import org.sonarsource.solidity.frontend.Utils;
 
 public class SoliditySensor implements Sensor {
@@ -52,6 +62,7 @@ public class SoliditySensor implements Sensor {
   protected static final String REPORT_PATH_KEY = "sonar.solidity.reportPath";
 
   protected CognitiveComplexityVisitor cognitiveComplexity;
+  // protected final Configuration config;
 
   public static final ImmutableList<String> KEYWORDS = ImmutableList.<String>builder()
     .add(SolidityKeywords.get()).build();
@@ -69,6 +80,10 @@ public class SoliditySensor implements Sensor {
       .onlyOnLanguage(Solidity.KEY)
       .name("SonarSolidity")
       .onlyOnFileType(Type.MAIN);
+  }
+
+  protected String reportPathKey() {
+    return REPORT_PATH_KEY;
   }
 
   @Override
@@ -93,6 +108,7 @@ public class SoliditySensor implements Sensor {
           SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
           getSyntaxHighlighting(parser, context, file).save();
           saveFileMeasures(context, computeMeasures(parser, fileLinesContextFactory.createFor(file), file), file);
+          saveIssues(context, file, Utils.returnParserUnitFromParsedFile(file.contents()));
         } catch (IOException e) {
           LOG.debug(e.getMessage(), e);
         }
@@ -100,6 +116,49 @@ public class SoliditySensor implements Sensor {
         LOG.debug(lastAnalyzedFile);
       }
     }
+  }
+
+  private void saveIssues(SensorContext context, InputFile file, SolidityParser parser) {
+    // List Issues here!
+    // IssuableVisitor.reportTest(file, context, parser.sourceUnit());
+    SourceUnitContext suc = parser.sourceUnit();
+    PragmaDirectiveContext pragma = suc.pragmaDirective(0);
+    List<NewIssue> issues = new ArrayList<>();
+    if (pragma != null) {
+      RuleKey ruleKey = RuleKey.of("solidity-solidity", "ExampleRule1");
+      NewIssue newIssue = context.newIssue().forRule(ruleKey).gap(Double.valueOf(1)).overrideSeverity(Severity.MAJOR);
+      NewIssueLocation location = newIssue.newLocation()
+        .on(file).message("AAA message");
+      DefaultTextPointer df1 = new DefaultTextPointer(pragma.getStart().getLine(), pragma.getStart().getCharPositionInLine());
+      DefaultTextPointer df2 = new DefaultTextPointer(pragma.getStop().getLine(), pragma.getStop().getCharPositionInLine());
+      DefaultTextRange range = new DefaultTextRange(df1, df2);
+      location.at(range);
+      newIssue.at(location);
+      newIssue.save();
+      issues.add(newIssue);
+      ContractDefinitionContext contract = suc.contractDefinition(0);
+      if (contract != null) {
+        RuleKey ruleKey2 = RuleKey.of("solidity-solidity", "ExampleRule1");
+        NewIssue newIssue2 = context.newIssue().forRule(ruleKey2).gap(Double.valueOf(1)).overrideSeverity(Severity.MAJOR);
+        NewIssueLocation location2 = newIssue2.newLocation()
+          .on(file).message("AAA message");
+
+        IdentifierContext idctx = contract.identifier();
+        DefaultTextPointer df12 = new DefaultTextPointer(contract.getStart().getLine(), contract.getStart().getCharPositionInLine());
+        DefaultTextPointer df22 = new DefaultTextPointer(idctx.getStop().getLine(), ("contract " + idctx.getText()).length());// idctx.getText().length()
+
+        DefaultTextRange range2 = new DefaultTextRange(df12, df22);
+        location2.at(range2);
+        newIssue2.at(location2);
+        newIssue2.save();
+        issues.add(newIssue2);
+      }
+    }
+  }
+
+  private void saveIssue(SensorContext context, InputFile file, SolidityParser parser) {
+    RuleKey ruleKey = RuleKey.of("solidity-solidity", "ExampleRule1");
+
   }
 
   private FileMeasures computeMeasures(SolidityParser parser, FileLinesContext fileLinesContext, InputFile file) throws RecognitionException, IOException {
