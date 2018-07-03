@@ -56,7 +56,21 @@
       <artifactId>assertj-core</artifactId>
       <version>3.8.0</version>
     </dependency>
-  </dependencies>
+    <dependency>
+      <groupId>org.sonarsource.analyzer-commons</groupId>
+      <artifactId>sonar-analyzer-commons</artifactId>
+      <version>1.7.0.243</version>
+    </dependency>
+    <dependency>
+      <groupId>org.sonarsource.analyzer-commons</groupId>
+      <artifactId>sonar-analyzer-test-commons</artifactId>
+      <version>1.7.0.243</version>
+    </dependency>
+    
+
+    
+    </dependencies>
+
   
    <build>
     <plugins>

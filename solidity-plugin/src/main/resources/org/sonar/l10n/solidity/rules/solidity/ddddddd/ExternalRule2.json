@@ -1,0 +1,14 @@
+{
+  "title": "Not the latest Contract version",
+  "type": "BUG",
+  "status": "ready",
+  "remedation": {
+   "func": "Constant\/Issue",
+   "constantCost": "5min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "BLOCKER",
+  "sqKey": "ExampleRule2"
+}

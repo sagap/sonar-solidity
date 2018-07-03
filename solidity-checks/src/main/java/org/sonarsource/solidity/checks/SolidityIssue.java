@@ -5,7 +5,7 @@ import org.sonar.api.rule.RuleKey;
 
 public class SolidityIssue {
 
-  private static final String REPO_KEY = "solidity-solidity";
+  public static final String REPO_KEY = "solidity-solidity";
 
   public final RuleKey ruleKey;
   public final Token start;

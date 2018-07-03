@@ -1,0 +1,14 @@
+{
+  "title": "Not the latest Function version",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remedation": {
+   "func": "Constant\/Issue",
+   "constantCost": "10min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "BLOCKER",
+  "sqKey": "ExampleRule3"
+}

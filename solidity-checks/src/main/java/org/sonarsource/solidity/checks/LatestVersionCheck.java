@@ -2,9 +2,12 @@ package org.sonarsource.solidity.checks;
 
 import java.util.Arrays;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.sonar.check.Rule;
 import org.sonarsource.solidity.frontend.SolidityParser.PragmaDirectiveContext;
 
+@Rule(key = LatestVersionCheck.RULE_KEY)
 public class LatestVersionCheck extends IssuableVisitor {
+
   public static final String RULE_KEY = "ExternalRule1";
 
   private static final String[] LATEST_VERSION = "0.4.24".split("\\.");
@@ -16,7 +19,8 @@ public class LatestVersionCheck extends IssuableVisitor {
   @Override
   public ParseTree visitPragmaDirective(PragmaDirectiveContext ctx) {
     if (!isLatestVersion(ctx.pragmaValue().getText())) {
-      reportIssue(ctx.getStart(), ctx.getStop(), "Not the latest version of solidity", RULE_KEY);
+      // reportIssue(ctx.getStart(), ctx.getStop(), "Not the latest version of solidity", RULE_KEY);
+      ruleContext().addIssue(ctx.getStart(), ctx.getStop(), "Not the latest version of solidity", RULE_KEY);
     }
     return super.visitPragmaDirective(ctx);
   }

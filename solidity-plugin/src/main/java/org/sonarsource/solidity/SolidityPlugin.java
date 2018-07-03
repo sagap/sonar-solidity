@@ -36,24 +36,13 @@ public class SolidityPlugin implements Plugin {
 
     // language
     context.addExtension(Solidity.class);
-
-    // sensor
-    context.addExtension(SoliditySensor.class);
-
-    // rules
     context.addExtension(SolidityRulesDefinition.class);
+    context.addExtension(SolidityProfile.class);
+    context.addExtension(SoliditySensor.class);
 
     // hooks
     // http://docs.sonarqube.org/display/DEV/Adding+Hooks
     // context.addExtensions(DisplayIssuesInScanner.class, DisplayQualityGateStatus.class);
-
-    context.addExtension(SolidityQualityProfile.class);
-    // // tutorial on measures
-    // context
-    // .addExtensions(ExampleMetrics.class, SetSizeOnFilesSensor.class, ComputeSizeAverage.class, ComputeSizeRating.class);
-    //
-    // // tutorial on rules
-    // context.addExtension(FooLintIssuesLoaderSensor.class);
 
     // web extensions
     // context.addExtension(MyPluginPageDefinition.class);
