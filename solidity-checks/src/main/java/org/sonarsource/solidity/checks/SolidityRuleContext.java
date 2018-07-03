@@ -37,5 +37,4 @@ public class SolidityRuleContext implements RuleContext {
     newIssue.at(location);
     newIssue.save();
   }
-
 }

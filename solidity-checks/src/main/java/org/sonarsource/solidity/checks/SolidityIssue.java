@@ -11,7 +11,6 @@ public class SolidityIssue {
   public final Token start;
   public final Token stop;
   public final String message;
-  // private final NewIssueLocation location;
 
   public SolidityIssue(Token from, Token to, String reportMessage, String externalRuleKey) {
     ruleKey = RuleKey.of(REPO_KEY, externalRuleKey);

@@ -19,7 +19,6 @@ public class LatestVersionCheck extends IssuableVisitor {
   @Override
   public ParseTree visitPragmaDirective(PragmaDirectiveContext ctx) {
     if (!isLatestVersion(ctx.pragmaValue().getText())) {
-      // reportIssue(ctx.getStart(), ctx.getStop(), "Not the latest version of solidity", RULE_KEY);
       ruleContext().addIssue(ctx.getStart(), ctx.getStop(), "Not the latest version of solidity", RULE_KEY);
     }
     return super.visitPragmaDirective(ctx);
@@ -30,9 +29,7 @@ public class LatestVersionCheck extends IssuableVisitor {
     for (int i = 0; i < latestVersion.length; i++) {
       if (currentVersion[i] > latestVersion[i]) {
         return true;
-      } else if (currentVersion[i] == latestVersion[i]) {
-        continue;
-      } else {
+      } else if (currentVersion[i] < latestVersion[i]) {
         return false;
       }
     }

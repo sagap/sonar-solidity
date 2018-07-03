@@ -3,7 +3,6 @@ package org.sonarsource.solidity;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Collection;
 import java.util.Optional;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
@@ -11,7 +10,6 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
-import org.sonarsource.solidity.checks.IssuableVisitor;
 import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.SolidityParser.ExpressionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
@@ -74,34 +72,9 @@ public final class UtilsSensor {
           expr = varDeclStmt.expression();
           return (expr.getToken(SolidityParser.TERNARY_OPERATOR, 0) != null);
         }
+        return false;
       default:
     }
     return false;
   }
-
-  public static Collection<IssuableVisitor> returnCollectionOfChecks() {
-    // ActiveRulesBuilder builder = (new ActiveRulesBuilder());
-    // for (String key : RuleKeyList.returnChecks()) {
-    // builder.create(RuleKey.of(SolidityRulesDefinition.REPO_KEY, key)).activate();
-    // }
-    return null;
-  }
-  /*
-   * public static ExpressionContext countTernaryExpressionOperators(StatementContext ctx) {
-   * String statementName = ctx.getChild(0).getClass().getSimpleName();
-   * switch (statementName) {
-   * case "ReturnStatementContext":
-   * ReturnStatementContext retStmt = ctx.returnStatement();
-   * ExpressionContext expr = retStmt.expression().expression(0);
-   * return expr;
-   * case "SimpleStatementContext":
-   * VariableDeclarationStatementContext varDeclStmt = ctx.simpleStatement().variableDeclarationStatement();
-   * if (varDeclStmt != null) {
-   * expr = varDeclStmt.expression();
-   * return expr;
-   * }
-   * }
-   * return null;
-   * }
-   */
 }
