@@ -1,14 +1,14 @@
 {
-  "title": "Not the latest Contract version",
-  "type": "BUG",
+  "title": "Contract should not be empty",
+  "type": "CODE_SMELL",
   "status": "ready",
   "remedation": {
    "func": "Constant\/Issue",
-   "constantCost": "5min"
+   "constantCost": "2min"
   },
   "tags": [
     "convention"
   ],
-  "defaultSeverity": "BLOCKER",
+  "defaultSeverity": "MINOR",
   "sqKey": "ExampleRule2"
 }

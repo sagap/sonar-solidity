@@ -10,6 +10,7 @@ public final class CheckList {
 
   public static List<Class> returnChecks() {
     return ImmutableList.<Class>builder()
+      .add(ContractNotEmptyCheck.class)
       .add(LatestVersionCheck.class)
       .build();
   }
