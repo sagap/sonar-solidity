@@ -16,6 +16,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 public class CheckVerifier {
 
   private static final Logger LOG = Loggers.get(CheckVerifier.class);
+  private static final Integer SUFFIX_LENGTH = 2;
 
   private CheckVerifier(IssuableVisitor checkVisitor, String relativePath, boolean expectIssues) {
     File file = new File(relativePath);
@@ -34,7 +35,7 @@ public class CheckVerifier {
           int line = x.getLine();
           int col = x.getCharPositionInLine();
           String val = x.getText();
-          int suffixLength = 2;
+          int suffixLength = SUFFIX_LENGTH;
           verifier.addComment(line, col, val, suffixLength, 0);
         });
     } catch (IOException e) {
@@ -65,8 +66,14 @@ public class CheckVerifier {
 
     @Override
     public void addIssue(Token start, Token stop, String reportMessage, String externalRuleKey) {
-      verifier.reportIssue(reportMessage).onRange(start.getLine(), start.getCharPositionInLine(), stop.getLine(), stop.getCharPositionInLine());
-    }
+      int startColumn = start.getCharPositionInLine();
+      if (startColumn == 0)
+        startColumn = 1;
+      int endColumn = stop.getCharPositionInLine();
+      if (endColumn == 0)
+        endColumn = 1;
 
+      verifier.reportIssue(reportMessage).onRange(start.getLine(), startColumn, stop.getLine(), endColumn);
+    }
   }
 }
