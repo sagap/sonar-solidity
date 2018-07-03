@@ -31,20 +31,6 @@ public final class SolidityRulesDefinition implements RulesDefinition {
   public static final String REPO_KEY = Solidity.KEY + "-" + KEY;
   protected static final String REPO_NAME = Solidity.KEY + "-" + NAME;
 
-  /*
-   * @Override
-   * public void define(Context context) {
-   * NewRepository repository = context.createRepository(REPO_KEY, KEY).setName(Solidity.KEY);
-   * 
-   * InputStream rulesXml = this.getClass().getResourceAsStream(rulesDefinitionFilePath());
-   * if (rulesXml != null) {
-   * RulesDefinitionXmlLoader rulesLoader = new RulesDefinitionXmlLoader();
-   * rulesLoader.load(repository, rulesXml, StandardCharsets.UTF_8.name());
-   * }
-   * repository.done();
-   * }
-   */
-
   @Override
   public void define(Context context) {
     NewRepository repository = context
@@ -56,5 +42,4 @@ public final class SolidityRulesDefinition implements RulesDefinition {
 
     repository.done();
   }
-
 }

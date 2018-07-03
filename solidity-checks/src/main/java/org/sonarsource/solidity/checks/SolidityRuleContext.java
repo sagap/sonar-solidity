@@ -16,6 +16,8 @@ import org.sonar.api.rule.RuleKey;
  * */
 public class SolidityRuleContext implements RuleContext {
 
+  public static final String REPO_KEY = "solidity-solidity";
+
   private InputFile file;
   private SensorContext context;
 
@@ -26,7 +28,7 @@ public class SolidityRuleContext implements RuleContext {
 
   @Override
   public void addIssue(Token start, Token stop, String reportMessage, String externalRuleKey) {
-    RuleKey ruleKey = RuleKey.of(SolidityIssue.REPO_KEY, externalRuleKey);
+    RuleKey ruleKey = RuleKey.of(REPO_KEY, externalRuleKey);
     NewIssue newIssue = context.newIssue().forRule(ruleKey).gap(Double.valueOf(1));
     NewIssueLocation location = newIssue.newLocation()
       .on(file).message(reportMessage);

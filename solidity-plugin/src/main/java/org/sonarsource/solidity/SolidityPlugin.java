@@ -34,7 +34,6 @@ public class SolidityPlugin implements Plugin {
   @Override
   public void define(Context context) {
 
-    // language
     context.addExtension(Solidity.class);
     context.addExtension(SolidityRulesDefinition.class);
     context.addExtension(SolidityProfile.class);
