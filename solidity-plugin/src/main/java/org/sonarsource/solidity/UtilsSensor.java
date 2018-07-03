@@ -20,6 +20,9 @@ import org.sonarsource.solidity.frontend.SolidityParser.VariableDeclarationState
 
 public final class UtilsSensor {
 
+  private UtilsSensor() {
+  }
+
   private static final Logger LOG = Loggers.get(UtilsSensor.class);
 
   public static Optional<ParseTree> checkForElseStatement(ParserRuleContext ctxNode) {
