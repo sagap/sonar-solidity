@@ -10,7 +10,7 @@ public class ContractNotEmptyCheckTest {
   }
 
   @Test
-  public void test_compliant() {
-    CheckVerifier.verifyNoIssue(new ContractNotEmptyCheck(), "src/test/resources/ContractNotEmptyCheck/test_compliant.sol");
+  public void test_with_compliant() {
+    new CheckVerifier(new ContractNotEmptyCheck(), "src/test/resources/ContractNotEmptyCheck/test_noncompliant_and_compliant.sol");
   }
 }

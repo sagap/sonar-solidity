@@ -9,3 +9,7 @@ contract test_compliant{   // Compliant
         return 1;
     }
 }
+
+contract test_non{  // Noncompliant {{Contract should not be empty}}
+
+}
