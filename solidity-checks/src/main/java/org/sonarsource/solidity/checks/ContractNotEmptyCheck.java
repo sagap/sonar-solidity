@@ -12,7 +12,7 @@ public class ContractNotEmptyCheck extends IssuableVisitor {
   @Override
   public ParseTree visitContractDefinition(ContractDefinitionContext ctx) {
     if (ctx.contractPart().isEmpty())
-      ruleContext().addIssue(ctx.getStart(), ctx.identifier().getStart(), "Contract should not be empty", "ExternalRule2");
+      ruleContext().addIssue(ctx.getStart(), ctx.identifier().getStart(), "Contract should not be empty", RULE_KEY);
     return super.visitContractDefinition(ctx);
   }
 }
