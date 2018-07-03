@@ -1,0 +1,14 @@
+{
+  "title": "Not the latest Solidity version",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remedation": {
+   "func": "Constant\/Issue",
+   "constantCost": "2min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "BLOCKER",
+  "sqKey": "ExampleRule1"
+}

@@ -20,6 +20,9 @@ import org.sonarsource.solidity.frontend.SolidityParser.VariableDeclarationState
 
 public final class UtilsSensor {
 
+  private UtilsSensor() {
+  }
+
   private static final Logger LOG = Loggers.get(UtilsSensor.class);
 
   public static Optional<ParseTree> checkForElseStatement(ParserRuleContext ctxNode) {
@@ -72,27 +75,9 @@ public final class UtilsSensor {
           expr = varDeclStmt.expression();
           return (expr.getToken(SolidityParser.TERNARY_OPERATOR, 0) != null);
         }
+        return false;
       default:
     }
     return false;
   }
-
-  /*
-   * public static ExpressionContext countTernaryExpressionOperators(StatementContext ctx) {
-   * String statementName = ctx.getChild(0).getClass().getSimpleName();
-   * switch (statementName) {
-   * case "ReturnStatementContext":
-   * ReturnStatementContext retStmt = ctx.returnStatement();
-   * ExpressionContext expr = retStmt.expression().expression(0);
-   * return expr;
-   * case "SimpleStatementContext":
-   * VariableDeclarationStatementContext varDeclStmt = ctx.simpleStatement().variableDeclarationStatement();
-   * if (varDeclStmt != null) {
-   * expr = varDeclStmt.expression();
-   * return expr;
-   * }
-   * }
-   * return null;
-   * }
-   */
 }

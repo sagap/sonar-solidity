@@ -776,6 +776,11 @@ public class SolidityParser extends Parser {
   }
 
   public static class ContractDefinitionContext extends ParserRuleContext {
+
+    public TerminalNode contractKeyword() {
+      return (TerminalNode) getChild(0);
+    }
+
     public IdentifierContext identifier() {
       return getRuleContext(IdentifierContext.class, 0);
     }

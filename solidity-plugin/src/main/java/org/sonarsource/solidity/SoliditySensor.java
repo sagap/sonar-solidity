@@ -22,35 +22,39 @@ package org.sonarsource.solidity;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
-import org.antlr.v4.runtime.RecognitionException;
 import org.sonar.api.SonarProduct;
 import org.sonar.api.batch.fs.FilePredicate;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.fs.InputFile.Type;
+import org.sonar.api.batch.rule.CheckFactory;
 import org.sonar.api.batch.sensor.Sensor;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.api.batch.sensor.highlighting.NewHighlighting;
 import org.sonar.api.measures.CoreMetrics;
-import org.sonar.api.measures.FileLinesContext;
 import org.sonar.api.measures.FileLinesContextFactory;
 import org.sonar.api.utils.Version;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
+import org.sonarsource.solidity.checks.CheckList;
+import org.sonarsource.solidity.checks.IssuableVisitor;
+import org.sonarsource.solidity.checks.RuleContext;
+import org.sonarsource.solidity.checks.SolidityRuleContext;
 import org.sonarsource.solidity.frontend.SolidityParser;
+import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
 import org.sonarsource.solidity.frontend.Utils;
 
 public class SoliditySensor implements Sensor {
 
   private static final Logger LOG = Loggers.get(SoliditySensor.class);
 
-  private final FileLinesContextFactory fileLinesContextFactory;
   public static final Version SQ_VERSION = Version.create(6, 7);
 
   protected static final String REPORT_PATH_KEY = "sonar.solidity.reportPath";
-
+  private Collection<IssuableVisitor> checks;
   protected CognitiveComplexityVisitor cognitiveComplexity;
 
   public static final ImmutableList<String> KEYWORDS = ImmutableList.<String>builder()
@@ -59,8 +63,10 @@ public class SoliditySensor implements Sensor {
   public static final ImmutableList<String> KEYWORD_TYPES = ImmutableList.<String>builder()
     .add(SolidityKeywords.getKeyowrdTypes()).build();
 
-  public SoliditySensor(FileLinesContextFactory fileLinesContextFactory) {
-    this.fileLinesContextFactory = fileLinesContextFactory;
+  public SoliditySensor(CheckFactory checkFactory, FileLinesContextFactory fileLinesContextFactory) {
+    this.checks = checkFactory.<IssuableVisitor>create(SolidityRulesDefinition.REPO_KEY)
+      .addAnnotatedChecks((Iterable) CheckList.returnChecks())
+      .all();
   }
 
   @Override
@@ -71,6 +77,10 @@ public class SoliditySensor implements Sensor {
       .onlyOnFileType(Type.MAIN);
   }
 
+  protected String reportPathKey() {
+    return REPORT_PATH_KEY;
+  }
+
   @Override
   public void execute(SensorContext context) {
     FileSystem fileSystem = context.fileSystem();
@@ -78,7 +88,6 @@ public class SoliditySensor implements Sensor {
     FilePredicate mainFilePredicate = fileSystem.predicates().and(
       fileSystem.predicates().hasType(InputFile.Type.MAIN),
       fileSystem.predicates().hasLanguage(Solidity.KEY));
-
     List<InputFile> inputFiles = new ArrayList<>();
     fileSystem.inputFiles(mainFilePredicate).forEach(inputFiles::add);
     analyzeFiles(context, inputFiles);
@@ -92,7 +101,9 @@ public class SoliditySensor implements Sensor {
           LOG.debug("Analyzing: " + lastAnalyzedFile);
           SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
           getSyntaxHighlighting(parser, context, file).save();
-          saveFileMeasures(context, computeMeasures(parser, fileLinesContextFactory.createFor(file), file), file);
+          saveFileMeasures(context, computeMeasures(parser, file), file);
+          RuleContext ruleContext = new SolidityRuleContext(file, context);
+          saveIssues(file, ruleContext);
         } catch (IOException e) {
           LOG.debug(e.getMessage(), e);
         }
@@ -102,7 +113,15 @@ public class SoliditySensor implements Sensor {
     }
   }
 
-  private FileMeasures computeMeasures(SolidityParser parser, FileLinesContext fileLinesContext, InputFile file) throws RecognitionException, IOException {
+  private void saveIssues(InputFile file, RuleContext ruleContext) throws IOException {
+    SourceUnitContext suc = Utils.returnParserUnitFromParsedFile(file.contents()).sourceUnit();
+    for (IssuableVisitor check : checks) {
+      check.setRuleContext(ruleContext);
+      check.visit(suc);
+    }
+  }
+
+  private FileMeasures computeMeasures(SolidityParser parser, InputFile file) throws IOException {
     MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
 
     cognitiveComplexity = new CognitiveComplexityVisitor(Utils.returnParserUnitFromParsedFile(file.contents()).sourceUnit());
