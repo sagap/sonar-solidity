@@ -56,6 +56,10 @@ public class CheckVerifier {
     new CheckVerifier(check, relativePath, false);
   }
 
+  /*
+   * class used to report for unit tests
+   */
+
   private static class TestRuleContext implements RuleContext {
 
     SingleFileVerifier verifier;

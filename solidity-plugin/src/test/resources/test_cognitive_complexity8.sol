@@ -36,3 +36,7 @@ contract test_cognitive_complexity8{
         }
     }
 }
+
+contract empty_contract{
+
+}

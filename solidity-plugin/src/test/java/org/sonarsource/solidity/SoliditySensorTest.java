@@ -170,7 +170,7 @@ public class SoliditySensorTest {
   @Test
   public void test_cognitive_complexity5() throws IOException {
     String filename = "test_cognitive_complexity5.sol";
-    CheckFactory checkFactory = new CheckFactory(activeRulesWithTrailingComment());
+    CheckFactory checkFactory = new CheckFactory(activeRuleForVersion());
     SoliditySensor sensor = new SoliditySensor(checkFactory, createFileLinesContextFactory());
     analyseSingleFile(sensor, filename);
     assertThat(sensor.cognitiveComplexity.getCognitiveComplexity()).isEqualTo(14);
@@ -179,7 +179,7 @@ public class SoliditySensorTest {
   @Test
   public void test_cognitive_complexity6() throws IOException {
     String filename = "test_cognitive_complexity6.sol";
-    CheckFactory checkFactory = new CheckFactory(activeRulesWithTrailingComment());
+    CheckFactory checkFactory = new CheckFactory(activeRuleForVersion());
     SoliditySensor sensor = new SoliditySensor(checkFactory, createFileLinesContextFactory());
     analyseSingleFile(sensor, filename);
     assertThat(sensor.cognitiveComplexity.getCognitiveComplexity()).isEqualTo(24);
@@ -190,7 +190,7 @@ public class SoliditySensorTest {
   @Test
   public void test_cognitive_complexity7() throws IOException {
     String filename = "test_ternary.sol";
-    CheckFactory checkFactory = new CheckFactory(activeRulesWithTrailingComment());
+    CheckFactory checkFactory = new CheckFactory(activeRuleForVersion());
     SoliditySensor sensor = new SoliditySensor(checkFactory, createFileLinesContextFactory());
     analyseSingleFile(sensor, filename);
     assertThat(sensor.cognitiveComplexity.getCognitiveComplexity()).isEqualTo(3);
@@ -199,7 +199,7 @@ public class SoliditySensorTest {
   @Test
   public void test_cognitive_complexity8() throws IOException {
     String filename = "test_cognitive_complexity8.sol";
-    CheckFactory checkFactory = new CheckFactory(activeRulesWithTrailingComment());
+    CheckFactory checkFactory = new CheckFactory(activeRuleForVersion());
     SoliditySensor sensor = new SoliditySensor(checkFactory, createFileLinesContextFactory());
     analyseSingleFile(sensor, filename);
     assertThat(sensor.cognitiveComplexity.getCognitiveComplexity()).isEqualTo(21);
@@ -208,7 +208,18 @@ public class SoliditySensorTest {
   }
 
   @Test
-  public void test_issue() throws IOException {
+  public void test_rule_context() {
+    String filename = "test_cognitive_complexity8.sol";
+    CheckFactory checkFactory = new CheckFactory(activeFirstRules());
+    SoliditySensor sensor = new SoliditySensor(checkFactory, createFileLinesContextFactory());
+    analyseSingleFile(sensor, filename);
+    assertThat(sensorContext.allIssues()).hasSize(2);
+    SolidityRuleContext ruleContext = new SolidityRuleContext(createInputFile(filename), sensorContext);
+    assertThat(ruleContext).isNotNull();
+  }
+
+  @Test
+  public void test_reporting() throws IOException {
     String filename = "test_issues1.sol";
     InputFile inputFile = createInputFile(filename);
     SolidityParser parser = Utils.returnParserUnitFromParsedFile(inputFile.contents());
@@ -268,10 +279,21 @@ public class SoliditySensorTest {
     return issues;
   }
 
-  private ActiveRules activeRulesWithTrailingComment() {
+  private ActiveRules activeRuleForVersion() {
     return (new ActiveRulesBuilder())
       .create(RuleKey.of(SolidityRulesDefinition.REPO_KEY, "ExternalRule1"))
       .setName("Foo Rule")
+      .activate()
+      .build();
+  }
+
+  private ActiveRules activeFirstRules() {
+    return (new ActiveRulesBuilder())
+      .create(RuleKey.of(SolidityRulesDefinition.REPO_KEY, "ExternalRule1"))
+      .setName("Foo Rule")
+      .activate()
+      .create(RuleKey.of(SolidityRulesDefinition.REPO_KEY, "ExternalRule2"))
+      .setName("Foo Rule2")
       .activate()
       .build();
   }

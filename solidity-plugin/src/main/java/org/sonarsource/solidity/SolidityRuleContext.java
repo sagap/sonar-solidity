@@ -1,4 +1,4 @@
-package org.sonarsource.solidity.checks;
+package org.sonarsource.solidity;
 
 import org.antlr.v4.runtime.Token;
 import org.sonar.api.batch.fs.InputFile;
@@ -8,6 +8,7 @@ import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.batch.sensor.issue.NewIssue;
 import org.sonar.api.batch.sensor.issue.NewIssueLocation;
 import org.sonar.api.rule.RuleKey;
+import org.sonarsource.solidity.checks.RuleContext;
 
 /* 
  * 

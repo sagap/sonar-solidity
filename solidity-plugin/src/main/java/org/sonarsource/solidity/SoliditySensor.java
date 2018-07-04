@@ -42,7 +42,6 @@ import org.sonar.api.utils.log.Loggers;
 import org.sonarsource.solidity.checks.CheckList;
 import org.sonarsource.solidity.checks.IssuableVisitor;
 import org.sonarsource.solidity.checks.RuleContext;
-import org.sonarsource.solidity.checks.SolidityRuleContext;
 import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
 import org.sonarsource.solidity.frontend.Utils;
