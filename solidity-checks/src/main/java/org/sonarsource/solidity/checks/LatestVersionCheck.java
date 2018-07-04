@@ -1,6 +1,7 @@
 package org.sonarsource.solidity.checks;
 
 import java.util.Arrays;
+import java.util.Optional;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.sonar.check.Rule;
 import org.sonarsource.solidity.frontend.SolidityParser.PragmaDirectiveContext;
@@ -25,7 +26,16 @@ public class LatestVersionCheck extends IssuableVisitor {
   }
 
   private static boolean isLatestVersion(String version) {
-    int[] currentVersion = Arrays.stream(version.substring(1).split("\\.")).mapToInt(Integer::parseInt).toArray();
+    Optional<Boolean> t = isSpecialCase(version);
+    if (t.isPresent()) {
+      return t.get();
+    }
+    int[] currentVersion;
+    if (version.startsWith("^")) {
+      currentVersion = Arrays.stream(version.substring(1).split("\\.")).mapToInt(Integer::parseInt).toArray();
+    } else {
+      currentVersion = Arrays.stream(version.split("\\.")).mapToInt(Integer::parseInt).toArray();
+    }
     for (int i = 0; i < latestVersion.length; i++) {
       if (currentVersion[i] > latestVersion[i]) {
         return true;
@@ -34,5 +44,19 @@ public class LatestVersionCheck extends IssuableVisitor {
       }
     }
     return true;
+  }
+
+  private static Optional<Boolean> isSpecialCase(String version) {
+    Boolean result = null;
+    if (version.contains(">"))
+      result = true;
+    else if (version.contains("<=")) {
+      if (isLatestVersion(version.split("<=")[1])) {
+        result = true;
+      } else {
+        result = false;
+      }
+    }
+    return Optional.ofNullable(result);
   }
 }
