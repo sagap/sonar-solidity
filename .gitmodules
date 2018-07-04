@@ -1,0 +1,3 @@
+[submodule "solidity-its/solidity-test-sources"]
+	path = solidity-its/solidity-test-sources
+	url = https://github.com/stylianos-agapiou-sonarsource/solidity-test-sources

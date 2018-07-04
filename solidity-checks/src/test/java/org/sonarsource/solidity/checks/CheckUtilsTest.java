@@ -13,5 +13,6 @@ public class CheckUtilsTest {
     assertThat(CheckUtils.isCommentForReporting("// ......")).isFalse();
     assertThat(CheckUtils.isCommentForReporting("// Noncompliant {{ ... }}")).isTrue();
     assertThat(CheckUtils.returnContentOfComments("// fffffff")).isNotNull();
+    assertThat(CheckUtils.isCommentForReporting("// Noncompliant {{ ...")).isFalse();
   }
 }
