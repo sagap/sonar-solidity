@@ -34,7 +34,7 @@ public class SolidityRuling {
   }
 
   private static final String DIR = "solidity-test-sources/src/";
-  private static final String DIFFERENCES = "src/test/resources/differences";
+  protected static final String DIFFERENCES = "src/test/resources/differences";
   private static final String[] PROJECTS_TO_ANALYZE = {
     "ethereum-api",
     "Random-Files"

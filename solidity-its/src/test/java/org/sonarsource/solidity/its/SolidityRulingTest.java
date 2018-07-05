@@ -1,5 +1,6 @@
 package org.sonarsource.solidity.its;
 
+import java.io.File;
 import java.io.IOException;
 import org.junit.Test;
 import org.sonar.api.utils.log.Logger;
@@ -20,6 +21,8 @@ public class SolidityRulingTest {
       SolidityRuling.collectSolidityFiles();
 
       SolidityRuling.findDifferences();
+      File file = new File(SolidityRuling.DIFFERENCES);
+      assertThat(file).doesNotExist();
     } catch (IOException e) {
       LOG.debug(e.getMessage());
     }
