@@ -16,14 +16,17 @@ public class SolidityRulingTest {
   public void test() {
     assertThat(SolidityRuling.getProjects()).hasSize(2);
     try {
+      SolidityRuling.collectFilesForIssues();
+
       SolidityRuling.deletePreviouslyAnalyzedFiles();
 
       File file = new File(SolidityRuling.DIFFERENCES);
       assertThat(file).doesNotExist();
+
       SolidityRuling.collectSolidityFiles();
       SolidityRuling.analyzeFiles();
 
-      SolidityRuling.collectFilesWithRecordedIssues();
+      SolidityRuling.findDifferences();
 
       assertThat(file).doesNotExist();
     } catch (IOException e) {
