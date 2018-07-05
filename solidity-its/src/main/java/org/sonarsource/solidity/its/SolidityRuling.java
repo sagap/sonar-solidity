@@ -1,16 +1,18 @@
 package org.sonarsource.solidity.its;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.sonar.api.batch.rule.ActiveRules;
@@ -30,12 +32,15 @@ public class SolidityRuling {
 
   private static final Logger LOG = Loggers.get(SolidityRuling.class);
 
+  private static final String DIR = "solidity-test-sources/src/";
+  protected static final String DIFFERENCES = "src/test/resources/differences";
+
+  protected static Map<String, List<File>> filesToAnalyze = new LinkedHashMap<>();
+
   private SolidityRuling() {
     // ... no reason for a public constructor
   }
 
-  private static final String DIR = "solidity-test-sources/src/";
-  protected static final String DIFFERENCES = "src/test/resources/differences";
   private static final String[] PROJECTS_TO_ANALYZE = {
     "ethereum-api",
     "Random-Files"
@@ -45,21 +50,80 @@ public class SolidityRuling {
     return PROJECTS_TO_ANALYZE;
   }
 
-  public static void collectSolidityFiles() {
+  /*
+   * public static void collectSolidityFiles() {
+   * Arrays.asList(getProjects())
+   * .stream()
+   * .forEach(projectName -> {
+   * try {
+   * String path = String.format("%s%s", DIR, projectName);
+   * Files.find(Paths.get(path),
+   * Integer.MAX_VALUE,
+   * (filePath, fileAttr) -> fileAttr.isRegularFile())
+   * .filter(file -> file.getFileName().toString().endsWith(".sol"))
+   * .forEach(file -> analyzeFile(file.toFile(), projectName));
+   * } catch (IOException e) {
+   * LOG.debug(e.getMessage(), e);
+   * }
+   * });
+   * }
+   */
+
+  public static void collectFiles() {
     Arrays.asList(getProjects())
       .stream()
       .forEach(projectName -> {
+        List<File> listFiles = new ArrayList<>();
         try {
           String path = String.format("%s%s", DIR, projectName);
           Files.find(Paths.get(path),
             Integer.MAX_VALUE,
             (filePath, fileAttr) -> fileAttr.isRegularFile())
             .filter(file -> file.getFileName().toString().endsWith(".sol"))
-            .forEach(file -> analyzeFile(file.toFile(), projectName));
+            .forEach(file -> listFiles.add(file.toFile()));
+          filesToAnalyze.put(projectName, listFiles);
         } catch (IOException e) {
           LOG.debug(e.getMessage(), e);
         }
       });
+  }
+
+  public static void collectFilesWithRecordedIssues() {
+
+    Arrays.asList(getProjects())
+      .stream()
+      .forEach(projectName -> {
+        String path = String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, projectName);
+        try {
+          Files.find(Paths.get(path),
+            Integer.MAX_VALUE,
+            (filePath, fileAttr) -> fileAttr.isRegularFile())
+            .forEach(path1 -> {
+              String actualIssuePath = String.format("%s%s", SolidityRulingIts.ACTUAL_ISSUES,
+                path1.toString().replaceAll(SolidityRulingIts.RECORD_ISSUES, ""));
+              try {
+                if (!FileUtils.contentEquals(new File(path1.toString()), new File(actualIssuePath))) {
+                  List<String> lines = Arrays.asList("Differences: " + path1.toString() + " - " + actualIssuePath);
+                  Files.write(Paths.get(String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, "differences")), lines, StandardCharsets.UTF_8,
+                    StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+                }
+              } catch (IOException e) {
+                LOG.debug(e.getMessage(), e);
+              }
+            });
+        } catch (IOException e) {
+          LOG.debug(e.getMessage(), e);
+        }
+      });
+
+  }
+
+  public static void analyzeFiles() {
+    filesToAnalyze.forEach((projectName, fileList) -> {
+      fileList.stream().forEach(file -> {
+        analyzeFile(file, projectName);
+      });
+    });
   }
 
   private static void analyzeFile(File file, String projectName) {
@@ -102,44 +166,26 @@ public class SolidityRuling {
   }
 
   public static void findDifferences() {
-    Arrays.asList(getProjects())
-      .stream()
-      .forEach(projectName -> {
-        String path = String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, projectName);
+    filesToAnalyze.forEach((projectName, fileList) -> {
+      fileList.stream().forEach(file -> {
+        String projectFileName = file.toString().replaceAll(DIR, "");
+        String actualIssues = SolidityRulingIts.ACTUAL_ISSUES + projectFileName;
+        String recordedIssues = SolidityRulingIts.RECORD_ISSUES + projectFileName;
         try {
-          Files.find(Paths.get(path),
-            Integer.MAX_VALUE,
-            (filePath, fileAttr) -> fileAttr.isRegularFile())
-            .forEach(path1 -> {
-              String actualIssuePath = String.format("%s%s", SolidityRulingIts.ACTUAL_ISSUES,
-                path1.toString().replaceAll(SolidityRulingIts.RECORD_ISSUES, ""));
-              try {
-                if (!FileUtils.contentEquals(new File(path1.toString()), new File(actualIssuePath))) {
-                  System.out.println("Not equal!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nAAAAAAAAAAAAAAAAAAAAAAAAAAA     " + path1.toString() + " - " + actualIssuePath);
-                  File file1 = new File(path1.toString());
-                  FileInputStream fis = new FileInputStream(file1);
-                  int oneByte;
-                  while ((oneByte = fis.read()) != -1) {
-                    System.out.print((char) oneByte);
-                  }
-                  File file2 = new File(actualIssuePath);
-                  FileInputStream fis2 = new FileInputStream(file2);
-                  while ((oneByte = fis2.read()) != -1) {
-                    System.out.print((char) oneByte);
-                  }
-
-                  List<String> lines = Arrays.asList("Differences: " + path1.toString() + " - " + actualIssuePath);
-                  Files.write(Paths.get(String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, "differences")), lines, StandardCharsets.UTF_8,
-                    StandardOpenOption.CREATE, StandardOpenOption.APPEND);
-                }
-              } catch (IOException e) {
-                LOG.debug(e.getMessage(), e);
-              }
-            });
+          System.out.println(recordedIssues + " - " + actualIssues);
+          System.out.println(FileUtils.contentEquals(new File(recordedIssues), new File(actualIssues)));
+          if (!FileUtils.contentEquals(new File(recordedIssues), new File(actualIssues))) {
+            System.out.println("NOT EQUALLLLLLLLLLLLLLLLLLLLLLLLl");
+            List<String> lines = Arrays.asList("Differences: " + recordedIssues + " - " + actualIssues);
+            Files.write(Paths.get(String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, "differences")), lines, StandardCharsets.UTF_8,
+              StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+          }
         } catch (IOException e) {
           LOG.debug(e.getMessage(), e);
         }
       });
+    });
+
   }
 
   private static Collection<IssuableVisitor> collectVisitors() {

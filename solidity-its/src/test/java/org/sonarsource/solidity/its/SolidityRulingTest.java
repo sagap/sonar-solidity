@@ -18,13 +18,22 @@ public class SolidityRulingTest {
     try {
       SolidityRuling.deletePreviouslyAnalyzedFiles();
 
-      SolidityRuling.collectSolidityFiles();
+      // SolidityRuling.collectSolidityFiles();
       File file = new File(SolidityRuling.DIFFERENCES);
-
+      //
       System.out.println(file.exists());
       assertThat(file).doesNotExist();
+      //
+      // SolidityRuling.findDifferences();
 
-      SolidityRuling.findDifferences();
+      //
+      // SolidityRuling.collectFiles();
+      // SolidityRuling.analyzeFiles();
+
+      SolidityRuling.collectFiles();
+      SolidityRuling.analyzeFiles();
+      // SolidityRuling.findDifferences();
+      SolidityRuling.collectFilesWithRecordedIssues();
       System.out.println(file.exists());
       assertThat(file).doesNotExist();
     } catch (IOException e) {
