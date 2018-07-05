@@ -42,30 +42,25 @@ public class SolidityRuling {
   public static void collectSolidityFiles() {
     Arrays.asList(getProjects())
       .stream()
-      .map(x -> String.format("%s%s", DIR, x))
-      .forEach(path -> {
+      .forEach(projectName -> {
         try {
+          String path = String.format("%s%s", DIR, projectName);
           Files.find(Paths.get(path),
             Integer.MAX_VALUE,
             (filePath, fileAttr) -> fileAttr.isRegularFile())
             .filter(file -> file.getFileName().toString().endsWith(".sol"))
-            .forEach(file -> analyzeFile(file.toFile()));
+            .forEach(file -> analyzeFile(file.toFile(), projectName));
         } catch (IOException e) {
           LOG.debug(e.getMessage(), e);
         }
       });
   }
 
-  private static void analyzeFile(File file) {
+  private static void analyzeFile(File file, String projectName) {
     LOG.debug("Analyze File: " + file);
-    System.out.println("AAA: " + file);
-    ActiveRules activeRules = activeRules();
-    CheckFactory checkFactory = new CheckFactory(activeRules);
-    Collection<IssuableVisitor> visitors = checkFactory.<IssuableVisitor>create(SolidityRulesDefinition.REPO_KEY)
-      .addAnnotatedChecks((Iterable) CheckList.returnChecks())
-      .all();
+    Collection<IssuableVisitor> visitors = collectVisitors();
     for (IssuableVisitor visitor : visitors) {
-      RuleContext ruleContext = new SolidityRulingIts(file.getPath());
+      RuleContext ruleContext = new SolidityRulingIts(visitor.getClass().getSimpleName(), file.getPath(), projectName);
       visitor.setRuleContext(ruleContext);
       try {
         SolidityParser parser = Utils.returnParserUnitFromParsedFile(IOUtils.toString(new FileReader(file)));
@@ -74,6 +69,36 @@ public class SolidityRuling {
         LOG.debug(e.getMessage(), e);
       }
     }
+  }
+
+  public static void deletePreviouslyAnalyzedFiles() {
+    Arrays.asList(getProjects())
+      .stream()
+      .forEach(projectName -> {
+        String path = String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, projectName);
+        try {
+          Files.find(Paths.get(path),
+            Integer.MAX_VALUE,
+            (filePath, fileAttr) -> fileAttr.isRegularFile())
+            .forEach(t -> {
+              try {
+                Files.deleteIfExists(t);
+              } catch (IOException e) {
+                LOG.debug(e.getMessage(), e);
+              }
+            });
+        } catch (IOException e) {
+          LOG.debug(e.getMessage(), e);
+        }
+      });
+  }
+
+  private static Collection<IssuableVisitor> collectVisitors() {
+    ActiveRules activeRules = activeRules();
+    CheckFactory checkFactory = new CheckFactory(activeRules);
+    return checkFactory.<IssuableVisitor>create(SolidityRulesDefinition.REPO_KEY)
+      .addAnnotatedChecks((Iterable) CheckList.returnChecks())
+      .all();
   }
 
   private static ActiveRules activeRules() {

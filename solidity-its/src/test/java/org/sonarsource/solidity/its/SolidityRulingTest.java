@@ -9,6 +9,7 @@ public class SolidityRulingTest {
   @Test
   public void test() {
     assertThat(SolidityRuling.getProjects()).hasSize(2);
+    SolidityRuling.deletePreviouslyAnalyzedFiles();
     SolidityRuling.collectSolidityFiles();
   }
 }
