@@ -22,6 +22,7 @@ public class SolidityRulingTest {
 
       SolidityRuling.findDifferences();
       File file = new File(SolidityRuling.DIFFERENCES);
+      System.out.println(file.exists());
       assertThat(file).doesNotExist();
     } catch (IOException e) {
       LOG.debug(e.getMessage());
