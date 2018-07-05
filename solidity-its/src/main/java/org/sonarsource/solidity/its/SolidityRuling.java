@@ -3,10 +3,14 @@ package org.sonarsource.solidity.its;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.sonar.api.batch.rule.ActiveRules;
 import org.sonar.api.batch.rule.CheckFactory;
@@ -30,6 +34,7 @@ public class SolidityRuling {
   }
 
   private static final String DIR = "solidity-test-sources/src/";
+  private static final String DIFFERENCES = "src/test/resources/differences";
   private static final String[] PROJECTS_TO_ANALYZE = {
     "ethereum-api",
     "Random-Files"
@@ -71,7 +76,7 @@ public class SolidityRuling {
     }
   }
 
-  public static void deletePreviouslyAnalyzedFiles() {
+  public static void deletePreviouslyAnalyzedFiles() throws IOException {
     Arrays.asList(getProjects())
       .stream()
       .forEach(projectName -> {
@@ -83,6 +88,36 @@ public class SolidityRuling {
             .forEach(t -> {
               try {
                 Files.deleteIfExists(t);
+              } catch (IOException e) {
+                LOG.debug(e.getMessage(), e);
+              }
+            });
+        } catch (IOException e) {
+          LOG.debug(e.getMessage(), e);
+        }
+      });
+    Files.deleteIfExists(new File(DIFFERENCES).toPath());
+
+  }
+
+  public static void findDifferences() {
+    Arrays.asList(getProjects())
+      .stream()
+      .forEach(projectName -> {
+        String path = String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, projectName);
+        try {
+          Files.find(Paths.get(path),
+            Integer.MAX_VALUE,
+            (filePath, fileAttr) -> fileAttr.isRegularFile())
+            .forEach(path1 -> {
+              String actualIssuePath = String.format("%s%s", SolidityRulingIts.ACTUAL_ISSUES,
+                path1.toString().replaceAll(SolidityRulingIts.RECORD_ISSUES, ""));
+              try {
+                if (!FileUtils.contentEquals(new File(path1.toString()), new File(actualIssuePath))) {
+                  List<String> lines = Arrays.asList("Differences: " + path1.toString() + " - " + actualIssuePath);
+                  Files.write(Paths.get(String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, "differences")), lines, StandardCharsets.UTF_8,
+                    StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+                }
               } catch (IOException e) {
                 LOG.debug(e.getMessage(), e);
               }

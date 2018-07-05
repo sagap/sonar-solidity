@@ -17,6 +17,7 @@ public class SolidityRulingIts implements RuleContext {
   private static final Logger LOG = Loggers.get(SolidityRulingIts.class);
 
   public static final String RECORD_ISSUES = "src/test/resources/";
+  public static final String ACTUAL_ISSUES = "actual-issues/";
 
   private String projectDir;
   private String ruleName;
@@ -42,5 +43,4 @@ public class SolidityRulingIts implements RuleContext {
       LOG.debug(e.getMessage(), e);
     }
   }
-
 }
