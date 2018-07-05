@@ -114,7 +114,7 @@ public class SolidityRuling {
                 path1.toString().replaceAll(SolidityRulingIts.RECORD_ISSUES, ""));
               try {
                 if (!FileUtils.contentEquals(new File(path1.toString()), new File(actualIssuePath))) {
-                  System.out.println("Not equal!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa");
+                  System.out.println("Not equal!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nAAAAAAAAAAAAAAAAAAAAAAAAAAA     " + path1.toString() + " - " + actualIssuePath);
                   List<String> lines = Arrays.asList("Differences: " + path1.toString() + " - " + actualIssuePath);
                   Files.write(Paths.get(String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, "differences")), lines, StandardCharsets.UTF_8,
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND);
