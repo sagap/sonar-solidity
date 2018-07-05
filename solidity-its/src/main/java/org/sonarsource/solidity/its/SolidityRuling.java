@@ -1,6 +1,7 @@
 package org.sonarsource.solidity.its;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -115,6 +116,18 @@ public class SolidityRuling {
               try {
                 if (!FileUtils.contentEquals(new File(path1.toString()), new File(actualIssuePath))) {
                   System.out.println("Not equal!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nAAAAAAAAAAAAAAAAAAAAAAAAAAA     " + path1.toString() + " - " + actualIssuePath);
+                  File file1 = new File(path1.toString());
+                  FileInputStream fis = new FileInputStream(file1);
+                  int oneByte;
+                  while ((oneByte = fis.read()) != -1) {
+                    System.out.print((char) oneByte);
+                  }
+                  File file2 = new File(actualIssuePath);
+                  FileInputStream fis2 = new FileInputStream(file2);
+                  while ((oneByte = fis2.read()) != -1) {
+                    System.out.print((char) oneByte);
+                  }
+
                   List<String> lines = Arrays.asList("Differences: " + path1.toString() + " - " + actualIssuePath);
                   Files.write(Paths.get(String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, "differences")), lines, StandardCharsets.UTF_8,
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND);
