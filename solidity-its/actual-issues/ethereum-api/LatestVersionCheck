@@ -1,6 +1,6 @@
-solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
-Issue Line: 13
-solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
-Issue Line: 31
 solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
 Issue Line: 1
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 31
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 13
