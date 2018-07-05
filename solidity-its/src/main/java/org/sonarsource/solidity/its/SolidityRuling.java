@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,23 +56,6 @@ public class SolidityRuling {
     Arrays.asList(getProjects())
       .stream()
       .forEach(projectName -> {
-        try {
-          String path = String.format("%s%s", DIR, projectName);
-          Files.find(Paths.get(path),
-            Integer.MAX_VALUE,
-            (filePath, fileAttr) -> fileAttr.isRegularFile())
-            .filter(file -> file.getFileName().toString().endsWith(".sol"))
-            .forEach(file -> analyzeFile(file.toFile(), projectName));
-        } catch (IOException e) {
-          LOG.debug(e.getMessage(), e);
-        }
-      });
-  }
-
-  public static void collectFiles() {
-    Arrays.asList(getProjects())
-      .stream()
-      .forEach(projectName -> {
         List<File> listFiles = new ArrayList<>();
         try {
           String path = String.format("%s%s", DIR, projectName);
@@ -91,14 +73,7 @@ public class SolidityRuling {
   }
 
   private static void sortList(List<File> listFiles) {
-    Collections.sort(listFiles, new Comparator<File>() {
-      @Override
-      public int compare(File o1, File o2) {
-        String name1 = o1.getName();
-        String name2 = o2.getName();
-        return name1.compareTo(name2);
-      }
-    });
+    Collections.sort(listFiles, (File f1, File f2) -> f1.getName().compareTo(f2.getName()));
   }
 
   public static void collectFilesWithRecordedIssues() {
@@ -150,7 +125,6 @@ public class SolidityRuling {
   public static void analyzeFiles() {
     filesToAnalyze.forEach((projectName, fileList) -> {
       fileList.stream().forEach(file -> {
-        System.out.println("Analysis: " + file + " PROJECT: " + projectName);
         analyzeFile(file, projectName);
       });
     });
