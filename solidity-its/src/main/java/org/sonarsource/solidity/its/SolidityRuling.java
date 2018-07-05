@@ -11,6 +11,8 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -80,11 +82,23 @@ public class SolidityRuling {
             (filePath, fileAttr) -> fileAttr.isRegularFile())
             .filter(file -> file.getFileName().toString().endsWith(".sol"))
             .forEach(file -> listFiles.add(file.toFile()));
+          sortList(listFiles);
           filesToAnalyze.put(projectName, listFiles);
         } catch (IOException e) {
           LOG.debug(e.getMessage(), e);
         }
       });
+  }
+
+  private static void sortList(List<File> listFiles) {
+    Collections.sort(listFiles, new Comparator<File>() {
+      @Override
+      public int compare(File o1, File o2) {
+        String name1 = o1.getName();
+        String name2 = o2.getName();
+        return name1.compareTo(name2);
+      }
+    });
   }
 
   public static void collectFilesWithRecordedIssues() {
@@ -104,12 +118,14 @@ public class SolidityRuling {
                 if (!FileUtils.contentEquals(new File(recordedIssues.toString()), new File(actualIssuePath))) {
                   System.out.println("Not equal!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nAAAAAAAAAAAAAAAAAAAAAAAAAAA     " + recordedIssues.toString() + " - " +
                     actualIssuePath);
+                  System.out.println("------" + recordedIssues + "-------------");
                   File file1 = new File(recordedIssues.toString());
                   FileInputStream fis = new FileInputStream(file1);
                   int oneByte;
                   while ((oneByte = fis.read()) != -1) {
                     System.out.print((char) oneByte);
                   }
+                  System.out.println("------" + actualIssuePath + "-------------");
                   File file2 = new File(actualIssuePath);
                   FileInputStream fis2 = new FileInputStream(file2);
                   while ((oneByte = fis2.read()) != -1) {
