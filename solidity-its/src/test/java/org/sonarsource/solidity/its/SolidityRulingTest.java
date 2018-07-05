@@ -1,6 +1,7 @@
 package org.sonarsource.solidity.its;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import org.junit.Test;
 import org.sonar.api.utils.log.Logger;
@@ -35,6 +36,11 @@ public class SolidityRulingTest {
       // SolidityRuling.findDifferences();
       SolidityRuling.collectFilesWithRecordedIssues();
       System.out.println(file.exists());
+      FileInputStream fis = new FileInputStream(file);
+      int oneByte;
+      while ((oneByte = fis.read()) != -1) {
+        System.out.print((char) oneByte);
+      }
       assertThat(file).doesNotExist();
     } catch (IOException e) {
       LOG.debug(e.getMessage());
