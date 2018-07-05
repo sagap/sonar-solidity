@@ -97,14 +97,14 @@ public class SolidityRuling {
           Files.find(Paths.get(path),
             Integer.MAX_VALUE,
             (filePath, fileAttr) -> fileAttr.isRegularFile())
-            .forEach(path1 -> {
+            .forEach(recordedIssues -> {
               String actualIssuePath = String.format("%s%s", SolidityRulingIts.ACTUAL_ISSUES,
-                path1.toString().replaceAll(SolidityRulingIts.RECORD_ISSUES, ""));
+                recordedIssues.toString().replaceAll(SolidityRulingIts.RECORD_ISSUES, ""));
               try {
-                if (!FileUtils.contentEquals(new File(path1.toString()), new File(actualIssuePath))) {
-                  System.out.println("Not equal!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nAAAAAAAAAAAAAAAAAAAAAAAAAAA     " + path1.toString() + " - " +
+                if (!FileUtils.contentEquals(new File(recordedIssues.toString()), new File(actualIssuePath))) {
+                  System.out.println("Not equal!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\nAAAAAAAAAAAAAAAAAAAAAAAAAAA     " + recordedIssues.toString() + " - " +
                     actualIssuePath);
-                  File file1 = new File(path1.toString());
+                  File file1 = new File(recordedIssues.toString());
                   FileInputStream fis = new FileInputStream(file1);
                   int oneByte;
                   while ((oneByte = fis.read()) != -1) {
@@ -116,7 +116,7 @@ public class SolidityRuling {
                     System.out.print((char) oneByte);
                   }
 
-                  List<String> lines = Arrays.asList("Differences: " + path1.toString() + " - " + actualIssuePath);
+                  List<String> lines = Arrays.asList("Differences: " + recordedIssues.toString() + " - " + actualIssuePath);
                   Files.write(Paths.get(String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, "differences")), lines, StandardCharsets.UTF_8,
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND);
                 }
@@ -134,6 +134,7 @@ public class SolidityRuling {
   public static void analyzeFiles() {
     filesToAnalyze.forEach((projectName, fileList) -> {
       fileList.stream().forEach(file -> {
+        System.out.println("Analysis: " + file + " PROJECT: " + projectName);
         analyzeFile(file, projectName);
       });
     });

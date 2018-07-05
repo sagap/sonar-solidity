@@ -14,4 +14,4 @@ dependency-reduced-pom.xml
 .settings
 
 .java-version
-# solidity-its/src/test/resources/*
+solidity-its/src/test/resources/*
