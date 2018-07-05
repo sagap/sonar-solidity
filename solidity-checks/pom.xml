@@ -66,11 +66,7 @@
       <artifactId>sonar-analyzer-test-commons</artifactId>
       <version>1.7.0.243</version>
     </dependency>
-    
-
-    
-    </dependencies>
-
+  </dependencies>
   
    <build>
     <plugins>

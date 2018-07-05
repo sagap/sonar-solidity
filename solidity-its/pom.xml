@@ -15,6 +15,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jdk.min.version>1.8</jdk.min.version>
   </properties>
 
   <dependencies>
@@ -33,6 +34,41 @@
       <artifactId>assertj-core</artifactId>
       <version>3.8.0</version>
     </dependency>
- 
+    <dependency>
+    <groupId>org.sonarsource.solidity</groupId>
+      <artifactId>solidity-checks</artifactId>
+      <version>0.4-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+    <groupId>org.sonarsource.solidity</groupId>
+      <artifactId>solidity-plugin</artifactId>
+      <version>0.4-SNAPSHOT</version>
+    </dependency>
   </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>org.sonarsource.solidity.its*</include>
+          </includes>
+          <excludes>
+            <exclude>org.sonarsource.maven.model.*</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>${jdk.min.version}</source>
+          <target>${jdk.min.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
