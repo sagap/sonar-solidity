@@ -34,6 +34,16 @@ public class SolidityRulingIts implements RuleContext {
     reportIssue(start.getLine(), projectDir);
   }
 
+  @Override
+  public void addIssueOnFile(String reportMessage, String externalRuleKey) {
+    // TODO
+  }
+
+  @Override
+  public void addIssue(Token start, Token stop, int offset, String reportMessage, String externalRuleKey) {
+    reportIssue(start.getLine(), projectDir);
+  }
+
   private void reportIssue(int line, String projectDir) {
     List<String> lines = Arrays.asList(projectDir, "Issue Line: " + line);
     try {

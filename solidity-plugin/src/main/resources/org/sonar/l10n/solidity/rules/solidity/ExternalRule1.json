@@ -9,6 +9,6 @@
   "tags": [
     "convention"
   ],
-  "defaultSeverity": "BLOCKER",
+  "defaultSeverity": "MINOR",
   "sqKey": "ExampleRule1"
 }

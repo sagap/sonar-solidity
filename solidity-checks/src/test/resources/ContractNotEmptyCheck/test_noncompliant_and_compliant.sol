@@ -10,6 +10,6 @@ contract test_compliant{   // Compliant
     }
 }
 
-contract test_non{  // Noncompliant {{Contract should not be empty}}
-
-}
+  contract test_non{  // Noncompliant {{Contract should not be empty}}
+//^^^^^^^^^^^^^^^^^^
+  }

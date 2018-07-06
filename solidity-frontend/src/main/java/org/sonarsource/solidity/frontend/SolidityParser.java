@@ -1,6 +1,6 @@
 package org.sonarsource.solidity.frontend;
 
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import org.antlr.v4.runtime.FailedPredicateException;
@@ -27,7 +27,8 @@ public class SolidityParser extends Parser {
     RuntimeMetaData.checkVersion("4.7", RuntimeMetaData.VERSION);
   }
 
-  public final Set<Token> comments = new HashSet<>();
+  // important to maintain order of comments for reporting
+  public final Set<Token> comments = new LinkedHashSet<>();
   public Integer emptyLines = 0;
   public Integer linesOfComments = 0;
   protected static final DFA[] _decisionToDFA;
