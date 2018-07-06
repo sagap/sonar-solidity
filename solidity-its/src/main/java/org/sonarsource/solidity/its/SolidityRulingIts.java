@@ -41,7 +41,7 @@ public class SolidityRulingIts implements RuleContext {
 
   @Override
   public void addIssue(Token start, Token stop, int offset, String reportMessage, String externalRuleKey) {
-    // TODO Auto-generated method stub
+    reportIssue(start.getLine(), projectDir);
   }
 
   private void reportIssue(int line, String projectDir) {

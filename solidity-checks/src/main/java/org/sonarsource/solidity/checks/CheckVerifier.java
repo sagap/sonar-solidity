@@ -30,7 +30,6 @@ public class CheckVerifier {
       checkVisitor.visit(parser.sourceUnit());
 
       parser.comments.stream()
-        .filter(comment -> CheckUtils.isCommentForReporting(comment.getText()))
         .forEach(x -> {
           int line = x.getLine();
           int col = x.getCharPositionInLine();
@@ -82,7 +81,7 @@ public class CheckVerifier {
   private static class TestRuleContext implements RuleContext {
 
     SingleFileVerifier verifier;
-    public boolean issueOnFile = false;
+    protected boolean issueOnFile = false;
 
     public TestRuleContext(SingleFileVerifier verifier) {
       this.verifier = verifier;
