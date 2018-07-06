@@ -11,6 +11,8 @@ public final class RuleKeyList {
   public static List<String> returnChecks() {
     return ImmutableList.<String>builder()
       .add("ExternalRule1")
+      .add("ExternalRule2")
+      .add("ExternalRule4")
       .build();
   }
 }

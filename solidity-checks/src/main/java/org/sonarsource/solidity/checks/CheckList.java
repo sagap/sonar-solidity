@@ -12,6 +12,7 @@ public final class CheckList {
     return ImmutableList.<Class>builder()
       .add(ContractNotEmptyCheck.class)
       .add(LatestVersionCheck.class)
+      .add(EmptyFunctionCheck.class)
       .build();
   }
 }

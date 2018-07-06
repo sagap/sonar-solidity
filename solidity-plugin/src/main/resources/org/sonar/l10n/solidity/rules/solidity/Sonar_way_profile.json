@@ -2,6 +2,8 @@
   "name": "Sonar way",
   "ruleKeys": [
     "ExternalRule1",
-    "ExternalRule2"
+    "ExternalRule2",
+    "ExternalRule3",
+    "ExternalRule4"
   ]
 }

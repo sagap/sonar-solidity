@@ -1,6 +1,6 @@
 {
-  "title": "Not the latest Pragma version",
-  "type": "BUG",
+  "title": "Functions should not be empty.",
+  "type": "CODE_SMELL",
   "status": "ready",
   "remedation": {
    "func": "Constant\/Issue",
@@ -9,6 +9,6 @@
   "tags": [
     "convention"
   ],
-  "defaultSeverity": "BLOCKER",
+  "defaultSeverity": "MINOR",
   "sqKey": "ExampleRule4"
 }
