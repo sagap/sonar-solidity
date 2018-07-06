@@ -40,4 +40,29 @@ public class SolidityRuleContext implements RuleContext {
     newIssue.at(location);
     newIssue.save();
   }
+
+  @Override
+  public void addIssueOnFile(String reportMessage, String externalRuleKey) {
+    RuleKey ruleKey = RuleKey.of(REPO_KEY, externalRuleKey);
+    NewIssue newIssue = context.newIssue().forRule(ruleKey).gap(Double.valueOf(1));
+    NewIssueLocation location = newIssue.newLocation()
+      .on(file).message(reportMessage);
+    newIssue.at(location);
+    newIssue.save();
+  }
+
+  @Override
+  public void addIssue(Token start, Token stop, int offset, String reportMessage, String externalRuleKey) {
+    RuleKey ruleKey = RuleKey.of(REPO_KEY, externalRuleKey);
+    NewIssue newIssue = context.newIssue().forRule(ruleKey).gap(Double.valueOf(1));
+    NewIssueLocation location = newIssue.newLocation()
+      .on(file).message(reportMessage);
+    DefaultTextPointer df1 = new DefaultTextPointer(start.getLine(), start.getCharPositionInLine());
+    DefaultTextPointer df2 = new DefaultTextPointer(start.getLine(), stop.getCharPositionInLine() + offset);
+    DefaultTextRange range = new DefaultTextRange(df1, df2);
+
+    location.at(range);
+    newIssue.at(location);
+    newIssue.save();
+  }
 }

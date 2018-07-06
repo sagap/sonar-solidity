@@ -6,4 +6,8 @@ public interface RuleContext {
 
   public void addIssue(Token start, Token stop, String reportMessage, String externalRuleKey);
 
+  public void addIssue(Token start, Token stop, int offset, String reportMessage, String externalRuleKey);
+
+  public void addIssueOnFile(String reportMessage, String externalRuleKey);
+
 }
