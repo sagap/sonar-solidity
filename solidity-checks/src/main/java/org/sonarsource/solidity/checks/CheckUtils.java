@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.sonarsource.solidity.frontend.SolidityParser.ContractDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ExpressionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
 
@@ -67,5 +68,13 @@ public class CheckUtils {
       }
     }
     return Optional.empty();
+  }
+
+  public static ParseTree findContractParentNode(ParseTree tree) {
+    tree = tree.getParent();
+    while (!treeMatches(tree, ContractDefinitionContext.class)) {
+      tree = tree.getParent();
+    }
+    return tree;
   }
 }

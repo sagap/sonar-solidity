@@ -129,8 +129,8 @@ public class SolidityRuling {
       try {
         SolidityParser parser = Utils.returnParserUnitFromParsedFile(IOUtils.toString(new FileReader(file)));
         visitor.visit(parser.sourceUnit());
-      } catch (IOException e) {
-        LOG.debug(e.getMessage(), e);
+      } catch (Exception e) {
+        LOG.error(e + " @File:" + file);
       }
     }
   }

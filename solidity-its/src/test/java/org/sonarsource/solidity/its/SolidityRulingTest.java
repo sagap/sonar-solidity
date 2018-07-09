@@ -24,8 +24,8 @@ public class SolidityRulingTest {
       assertThat(file).doesNotExist();
 
       SolidityRuling.collectSolidityFiles();
-      SolidityRuling.analyzeFiles();
 
+      SolidityRuling.analyzeFiles();
       SolidityRuling.findDifferences();
 
       assertThat(file).doesNotExist();

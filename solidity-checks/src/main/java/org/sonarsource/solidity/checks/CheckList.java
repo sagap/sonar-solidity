@@ -15,6 +15,7 @@ public final class CheckList {
       .add(EmptyFunctionCheck.class)
       .add(InvertedBooleanCheck.class)
       .add(CurlyBraceCheck.class)
+      .add(ConstructorVisibilityCheck.class)
       .build();
   }
 }

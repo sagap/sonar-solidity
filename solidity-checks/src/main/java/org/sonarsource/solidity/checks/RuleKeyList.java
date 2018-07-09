@@ -15,6 +15,7 @@ public final class RuleKeyList {
       .add("ExternalRule4")
       .add("ExternalRule5")
       .add("ExternalRule6")
+      .add("ExternalRule7")
       .build();
   }
 }
