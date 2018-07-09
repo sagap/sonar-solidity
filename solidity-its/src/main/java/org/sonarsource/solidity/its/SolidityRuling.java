@@ -79,7 +79,6 @@ public class SolidityRuling {
         .forEach(issues -> {
           String actualIssuePath = String.format("%s%s", SolidityRulingIts.ACTUAL_ISSUES,
             issues.toString().replaceAll(SolidityRulingIts.RECORD_ISSUES, ""));
-          System.out.println("AAA: " + issues + " - " + actualIssuePath);
           try {
             if (!FileUtils.contentEquals(new File(issues.toString()), new File(actualIssuePath))) {
               List<String> lines = Arrays.asList("Differences: " + issues.toString() + " - " + actualIssuePath);
