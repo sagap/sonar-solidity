@@ -26,6 +26,7 @@ import org.sonarsource.solidity.SolidityRulesDefinition;
 import org.sonarsource.solidity.checks.CheckList;
 import org.sonarsource.solidity.checks.IssuableVisitor;
 import org.sonarsource.solidity.checks.RuleContext;
+import org.sonarsource.solidity.checks.RuleKeyList;
 import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.Utils;
 
@@ -74,17 +75,21 @@ public class SolidityRuling {
 
   public static void findDifferences() {
     filesToCompare.forEach((projectName, recordedIssues) -> {
-      String actualIssuePath = String.format("%s%s", SolidityRulingIts.ACTUAL_ISSUES,
-        recordedIssues.toString().replaceAll(SolidityRulingIts.RECORD_ISSUES, ""));
-      try {
-        if (!FileUtils.contentEquals(new File(recordedIssues.toString()), new File(actualIssuePath))) {
-          List<String> lines = Arrays.asList("Differences: " + recordedIssues.toString() + " - " + actualIssuePath);
-          Files.write(Paths.get(String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, "differences")), lines, StandardCharsets.UTF_8,
-            StandardOpenOption.CREATE, StandardOpenOption.APPEND);
-        }
-      } catch (IOException e) {
-        LOG.debug(e.getMessage(), e);
-      }
+      recordedIssues.stream()
+        .forEach(issues -> {
+          String actualIssuePath = String.format("%s%s", SolidityRulingIts.ACTUAL_ISSUES,
+            issues.toString().replaceAll(SolidityRulingIts.RECORD_ISSUES, ""));
+          try {
+            if (!FileUtils.contentEquals(new File(issues.toString()), new File(actualIssuePath))) {
+              List<String> lines = Arrays.asList("Differences: " + issues.toString() + " - " + actualIssuePath);
+              Files.write(Paths.get(String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, "differences")), lines, StandardCharsets.UTF_8,
+                StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+            }
+          } catch (IOException e) {
+            LOG.debug(e.getMessage(), e);
+          }
+
+        });
     });
   }
 
@@ -156,11 +161,11 @@ public class SolidityRuling {
   }
 
   private static ActiveRules activeRules() {
-    return (new ActiveRulesBuilder())
-      .create(RuleKey.of(SolidityRulesDefinition.REPO_KEY, "ExternalRule1"))
-      .activate()
-      .create(RuleKey.of(SolidityRulesDefinition.REPO_KEY, "ExternalRule2"))
-      .activate()
-      .build();
+    ActiveRulesBuilder activeRulesBuilder = new ActiveRulesBuilder();
+    for (String ruleKey : RuleKeyList.returnChecks()) {
+      activeRulesBuilder.create(RuleKey.of(SolidityRulesDefinition.REPO_KEY, ruleKey))
+        .activate();
+    }
+    return activeRulesBuilder.build();
   }
 }

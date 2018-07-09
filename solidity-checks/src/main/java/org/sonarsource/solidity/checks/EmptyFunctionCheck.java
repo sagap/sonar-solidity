@@ -11,7 +11,7 @@ public class EmptyFunctionCheck extends IssuableVisitor {
 
   @Override
   public ParseTree visitFunctionDefinition(FunctionDefinitionContext ctx) {
-    if (ctx.block().statement().isEmpty())
+    if (ctx.block() != null && ctx.block().statement().isEmpty())
       ruleContext().addIssue(ctx.getStart(), ctx.getStop(), "Function should not be empty.", RULE_KEY);
     return super.visitFunctionDefinition(ctx);
   }

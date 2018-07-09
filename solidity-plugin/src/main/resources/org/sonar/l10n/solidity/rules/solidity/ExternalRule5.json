@@ -1,0 +1,14 @@
+{
+  "title": "Boolean checks should not be inverted.",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remedation": {
+   "func": "Constant\/Issue",
+   "constantCost": "10min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "MINOR",
+  "sqKey": "ExampleRule5"
+}
