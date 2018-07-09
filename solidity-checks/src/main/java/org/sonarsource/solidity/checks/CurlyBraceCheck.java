@@ -35,15 +35,16 @@ public class CurlyBraceCheck extends IssuableVisitor {
 
   @Override
   public ParseTree visitIfStatement(IfStatementContext ctx) {
-    if (ctx.statement(0).block() != null) {
-      Token curlyBraceToken = ctx.statement(0).block().getToken(SolidityParser.T__13, 0).getSymbol();
+    BlockContext block = ctx.statement(0).block();
+    if (block != null) {
+      Token curlyBraceToken = block.getToken(SolidityParser.T__13, 0).getSymbol();
       if (curlyBraceToken.getLine() != ctx.expression().getStop().getLine()) {
         report(curlyBraceToken);
       }
     }
-    CheckUtils.checkForElseStatement(ctx).ifPresent(st -> {
-      if (CheckUtils.treeMatches(st, StatementContext.class)) {
-        StatementContext stmt = (StatementContext) st;
+    CheckUtils.checkForElseStatement(ctx).ifPresent(stmtElse -> {
+      if (CheckUtils.treeMatches(stmtElse, StatementContext.class)) {
+        StatementContext stmt = (StatementContext) stmtElse;
         if (stmt.block() != null) {
           Token curlyBraceToken = stmt.block().getToken(SolidityParser.T__13, 0).getSymbol();
           if (curlyBraceToken.getLine() != ctx.Else().getSymbol().getLine()) {
@@ -52,7 +53,6 @@ public class CurlyBraceCheck extends IssuableVisitor {
         }
       }
     });
-
     return super.visitIfStatement(ctx);
   }
 
@@ -123,10 +123,11 @@ public class CurlyBraceCheck extends IssuableVisitor {
   @Override
   public ParseTree visitModifierDefinition(ModifierDefinitionContext ctx) {
     Token curlyBraceToken = (Token) ctx.block().getChild(0).getPayload();
-    int modifierLastLine = ctx.identifier().Identifier().getSymbol().getLine();
-    if (ctx.parameterList() != null && ctx.parameterList().getStop().getLine() != curlyBraceToken.getLine()) {
-      report(curlyBraceToken);
-    } else if (modifierLastLine != curlyBraceToken.getLine()) {
+    int lastLine = ctx.identifier().Identifier().getSymbol().getLine();
+    if (ctx.parameterList() != null) {
+      lastLine = ctx.parameterList().getStop().getLine();
+    }
+    if (lastLine != curlyBraceToken.getLine()) {
       report(curlyBraceToken);
     }
     return super.visitModifierDefinition(ctx);
@@ -144,5 +145,4 @@ public class CurlyBraceCheck extends IssuableVisitor {
   private void report(Token curlyBraceToken) {
     ruleContext().addIssue(curlyBraceToken, curlyBraceToken, "Move this open curly brace to the end of the previous line.", RULE_KEY);
   }
-
 }
