@@ -2,8 +2,12 @@ package org.sonarsource.solidity.checks;
 
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+import java.util.Optional;
+import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.sonarsource.solidity.frontend.SolidityParser.ExpressionContext;
+import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
 
 public class CheckUtils {
 
@@ -43,8 +47,25 @@ public class CheckUtils {
 
   public static boolean isBooleanExpression(ParseTree tree) {
     ExpressionContext expr = (ExpressionContext) tree;
-    //
     ParseTree expression = expr.getChild(1);
     return expression != null && COMPARING_OPERATORS.contains(expression.getText());
+  }
+
+  public static boolean treeMatches(ParseTree tree, Class context) {
+    return context.isInstance(tree);
+  }
+
+  public static Optional<ParseTree> checkForElseStatement(ParserRuleContext ctxNode) {
+    if (!ctxNode.children.isEmpty() && ctxNode.children.size() >= 6) {
+      // the 6th child is where else exists even for else-if case
+      Token token = (Token) ctxNode.children.get(5).getPayload();
+      if (token.getType() == 40) {
+        ParseTree child6 = ctxNode.children.get(6);
+        // exclude else - if cases
+        if (!child6.getChild(0).getClass().equals(IfStatementContext.class))
+          return Optional.of(child6);
+      }
+    }
+    return Optional.empty();
   }
 }

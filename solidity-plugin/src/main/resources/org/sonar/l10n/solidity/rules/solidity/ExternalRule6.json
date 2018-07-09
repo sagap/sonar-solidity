@@ -1,0 +1,14 @@
+{
+  "title": "An open curly brace should be located at the end of a line.",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remedation": {
+   "func": "Constant\/Issue",
+   "constantCost": "1min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "MINOR",
+  "sqKey": "ExampleRule6"
+}

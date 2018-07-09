@@ -782,6 +782,10 @@ public class SolidityParser extends Parser {
       return (TerminalNode) getChild(0);
     }
 
+    public TerminalNode getOpenCurlyBrace() {
+      return getTokens(T__13).get(0);
+    }
+
     public IdentifierContext identifier() {
       return getRuleContext(IdentifierContext.class, 0);
     }
@@ -1297,6 +1301,11 @@ public class SolidityParser extends Parser {
   }
 
   public static class StructDefinitionContext extends ParserRuleContext {
+
+    public TerminalNode getOpenCurlyBrace() {
+      return getTokens(T__13).get(0);
+    }
+
     public IdentifierContext identifier() {
       return getRuleContext(IdentifierContext.class, 0);
     }
@@ -1966,6 +1975,11 @@ public class SolidityParser extends Parser {
   }
 
   public static class EnumDefinitionContext extends ParserRuleContext {
+
+    public TerminalNode getOpenCurlyBrace() {
+      return getTokens(T__13).get(0);
+    }
+
     public IdentifierContext identifier() {
       return getRuleContext(IdentifierContext.class, 0);
     }
@@ -3333,6 +3347,10 @@ public class SolidityParser extends Parser {
       return getToken(SolidityParser.If, 0);
     }
 
+    public TerminalNode getOpenCurlyBrace() {
+      return statement(0).getTokens(T__13).get(0);
+    }
+
     public ExpressionContext expression() {
       return getRuleContext(ExpressionContext.class, 0);
     }
@@ -3405,6 +3423,7 @@ public class SolidityParser extends Parser {
   }
 
   public static class WhileStatementContext extends ParserRuleContext {
+
     public ExpressionContext expression() {
       return getRuleContext(ExpressionContext.class, 0);
     }
@@ -3708,6 +3727,11 @@ public class SolidityParser extends Parser {
   }
 
   public static class DoWhileStatementContext extends ParserRuleContext {
+
+    public TerminalNode doKeyWord() {
+      return getToken(T__42, 0);
+    }
+
     public StatementContext statement() {
       return getRuleContext(StatementContext.class, 0);
     }
