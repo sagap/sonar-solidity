@@ -4243,6 +4243,13 @@ public class SolidityParser extends Parser {
       super(parent, invokingState);
     }
 
+    public boolean isBooleanExpression() {
+      return !getTokens(T__3).isEmpty() || !getTokens(T__4).isEmpty()
+        || !getTokens(GREATER_THAN).isEmpty() || !getTokens(LESS_THAN).isEmpty()
+        || !getTokens(EQUAL).isEmpty() || !getTokens(T__67).isEmpty();
+
+    }
+
     @Override
     public int getRuleIndex() {
       return RULE_expression;

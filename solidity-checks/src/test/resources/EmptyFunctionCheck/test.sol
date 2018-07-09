@@ -1,6 +1,8 @@
 pragma solidity ^0.4.24;
 
 contract test_compliant{   // Compliant
+    function foo3 (string_coupon);
+    
     address creator;
     uint8[10] integers;
     string constant a = "1";

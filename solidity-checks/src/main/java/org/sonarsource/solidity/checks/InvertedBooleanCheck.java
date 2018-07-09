@@ -12,8 +12,10 @@ public class InvertedBooleanCheck extends IssuableVisitor {
   @Override
   public ParseTree visitExpression(ExpressionContext ctx) {
     ParseTree expr = ctx.getChild(0);
-    if (expr.getText().startsWith("!")) {
-      ruleContext().addIssue(ctx.getStart(), ctx.getStop(), "Boolean expression should not be inverted.", RULE_KEY);
+    if (ctx.primaryExpression() == null && expr.getText().startsWith("!")) {
+      if (CheckUtils.isParenthesized(ctx.getChild(1)) && CheckUtils.isBooleanExpression(CheckUtils.removeParenthesis(ctx.getChild(1)))) {
+        ruleContext().addIssue(ctx.getStart(), ctx.getStop(), "Boolean expression should not be inverted.", RULE_KEY);
+      }
     }
     return super.visitExpression(ctx);
   }

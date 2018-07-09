@@ -5,9 +5,12 @@ import java.io.File;
 import java.io.IOException;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.tree.pattern.ParseTreePatternMatcher;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
+import org.sonarsource.solidity.frontend.SolidityLexer;
 import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.Utils;
 
@@ -17,6 +20,22 @@ public class CheckVerifier {
 
   private static final Logger LOG = Loggers.get(CheckVerifier.class);
   private static final Integer SUFFIX_LENGTH = 2;
+
+  public static ParseTreePatternMatcher eCheckVerifier(boolean treePattern, String relativePath) {
+    CharStream cs;
+    ParseTreePatternMatcher p = null;
+    try {
+      cs = CharStreams.fromFileName(relativePath);
+      SolidityLexer sl = new SolidityLexer(cs);
+      CommonTokenStream tokenStream = new CommonTokenStream(sl);
+      SolidityParser parser = Utils.returnParserFromParsedFile(cs);
+      p = new ParseTreePatternMatcher(sl, parser);
+      return p;
+    } catch (IOException e) {
+      LOG.debug(e.getMessage(), e);
+    }
+    return p;
+  }
 
   private CheckVerifier(IssuableVisitor checkVisitor, String relativePath, boolean expectIssues) {
     File file = new File(relativePath);
