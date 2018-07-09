@@ -28,7 +28,7 @@ public class CurlyBraceCheck extends IssuableVisitor {
   public ParseTree visitContractDefinition(ContractDefinitionContext ctx) {
     Token curlyBraceToken = ctx.getOpenCurlyBrace().getSymbol();
     if (ctx.getStart().getLine() != curlyBraceToken.getLine()) {
-      report(ctx.getStart());
+      report(curlyBraceToken);
     }
     return super.visitContractDefinition(ctx);
   }
@@ -43,13 +43,11 @@ public class CurlyBraceCheck extends IssuableVisitor {
       }
     }
     CheckUtils.checkForElseStatement(ctx).ifPresent(stmtElse -> {
-      if (CheckUtils.treeMatches(stmtElse, StatementContext.class)) {
-        StatementContext stmt = (StatementContext) stmtElse;
-        if (stmt.block() != null) {
-          Token curlyBraceToken = stmt.block().getToken(SolidityParser.T__13, 0).getSymbol();
-          if (curlyBraceToken.getLine() != ctx.Else().getSymbol().getLine()) {
-            report(curlyBraceToken);
-          }
+      StatementContext stmt = (StatementContext) stmtElse;
+      if (stmt.block() != null) {
+        Token curlyBraceToken = stmt.block().getToken(SolidityParser.T__13, 0).getSymbol();
+        if (curlyBraceToken.getLine() != ctx.Else().getSymbol().getLine()) {
+          report(curlyBraceToken);
         }
       }
     });

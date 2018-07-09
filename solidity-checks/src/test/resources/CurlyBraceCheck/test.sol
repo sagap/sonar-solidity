@@ -47,6 +47,9 @@ contract test_non_compliant{   // Compliant
       do
       {       // Noncompliant
       }while(true);
+      bool temp;
+      while(true)
+        temp = false;
     }
    function foo2() public returns (uint8);
     function foo3() public returns (uint8, 
@@ -71,8 +74,21 @@ contract test_non_compliant{   // Compliant
         require(msg.sender == seller);
         _;
     }
+    function owned() public { owner = msg.sender; }
+    address owner;
+    modifier onlyOwner {
+        require(msg.sender == owner);
+        _;
+    }
     function abort() public onlySeller { // Modifier usage
-        // ...
+        bool a;
+        if(true)
+          a = true;
+        else
+          a = false;
+            do
+        a = false;
+        while(true);
     }
     enum State { Created, Locked, Inactive } // Compliant
     enum State1 
@@ -86,5 +102,7 @@ contract test_non_compliant{   // Compliant
     {     // Noncompliant
     }
 }
-
+contract test_non_compliant2
+{   // Noncompliant
+}
 
