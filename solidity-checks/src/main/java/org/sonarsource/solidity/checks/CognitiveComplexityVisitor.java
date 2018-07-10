@@ -21,7 +21,7 @@ import org.sonarsource.solidity.frontend.SolidityParser.WhileStatementContext;
 public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
   private int complexity;
   private int nestingLevel;
-  public Map<FunctionDefinitionContext, Integer> functionsComplexity = new HashMap<>();;
+  protected static final Map<FunctionDefinitionContext, Integer> functionsComplexity = new HashMap<>();
 
   public CognitiveComplexityVisitor(SourceUnitContext sourceUnitCtx) {
     sourceUnitCtx.accept(this);
