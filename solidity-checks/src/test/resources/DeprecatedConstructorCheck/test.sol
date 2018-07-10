@@ -17,11 +17,13 @@ contract foo3{
 
 contract foo4{
     function foo4(uint8) public{    // Noncompliant
+ // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     }
 }
 
 contract foo5{
     function foo5(){    // Noncompliant
+ // ^^^^^^^^^^^^^^^^
     }
     
     function test(){  // Compliant

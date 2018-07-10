@@ -14,7 +14,7 @@ public class DeprecatedConstructorCheck extends IssuableVisitor {
   public ParseTree visitFunctionDefinition(FunctionDefinitionContext ctx) {
     ContractDefinitionContext contractParent = (ContractDefinitionContext) CheckUtils.findContractParentNode(ctx);
     if (contractParent.identifier().getText().equals(ctx.identifier().getText())) {
-      ruleContext().addIssue(ctx.getStart(), ctx.identifier().getStop(),
+      ruleContext().addIssue(ctx.getStart(), ctx.block().getStart(),
         "Defining constructor wuth the name of the contract is deprecated use constructor(...){...}", RULE_KEY);
     }
     return super.visitFunctionDefinition(ctx);
