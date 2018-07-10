@@ -6,9 +6,14 @@ import java.util.Optional;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.SolidityParser.ContractDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ExpressionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
+import org.sonarsource.solidity.frontend.SolidityParser.ReturnStatementContext;
+import org.sonarsource.solidity.frontend.SolidityParser.SimpleStatementContext;
+import org.sonarsource.solidity.frontend.SolidityParser.StatementContext;
+import org.sonarsource.solidity.frontend.SolidityParser.VariableDeclarationStatementContext;
 
 public class CheckUtils {
 
@@ -76,5 +81,30 @@ public class CheckUtils {
       tree = tree.getParent();
     }
     return tree;
+  }
+
+  public static boolean isElseIfStatement(IfStatementContext ctx) {
+    return ctx.getParent().getRuleIndex() == 38 && ctx.getParent().getParent().getRuleIndex() == 40;
+  }
+
+  public static boolean isTernaryExpression(StatementContext ctx) {
+    String statementName = ctx.getChild(0).getClass().getSimpleName();
+    ExpressionContext expr = null;
+    switch (statementName) {
+      case "ReturnStatementContext":
+        ReturnStatementContext retStmt = ctx.returnStatement();
+        expr = retStmt.expression();
+        return expr != null && (expr.getToken(SolidityParser.TERNARY_OPERATOR, 0) != null);
+      case "SimpleStatementContext":
+        SimpleStatementContext simpleStmt = ctx.simpleStatement();
+        VariableDeclarationStatementContext varDeclStmt = simpleStmt.variableDeclarationStatement();
+        if (varDeclStmt != null) {
+          expr = varDeclStmt.expression();
+          return expr != null && (expr.getToken(SolidityParser.TERNARY_OPERATOR, 0) != null);
+        }
+        return false;
+      default:
+    }
+    return false;
   }
 }

@@ -51,11 +51,13 @@ public final class Utils {
 
   public static String returnFunctionSignature(FunctionDefinitionContext ctx) {
     StringBuilder signature = new StringBuilder();
-    signature.append(ctx.identifier().getText());
-    ctx.parameterList().parameter().forEach(param -> signature.append(", " + param.typeName().getText()));
-    if (ctx.returnParameters() != null) {
-      ctx.returnParameters().parameterList().parameter().forEach(param -> signature.append(", " + param.typeName().getText()));
-    }
+    System.out.println("AAAAAAAAAAAAAAAAAAAAAAAa" + ctx);
+    System.out.println(ctx);
+    signature.append(ctx);
+    // ctx.parameterList().parameter().forEach(param -> signature.append(", " + param.typeName().getText()));
+    // if (ctx.returnParameters() != null) {
+    // ctx.returnParameters().parameterList().parameter().forEach(param -> signature.append(", " + param.typeName().getText()));
+    // }
     return signature.toString();
   }
 }

@@ -40,6 +40,7 @@ import org.sonar.api.utils.Version;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonarsource.solidity.checks.CheckList;
+import org.sonarsource.solidity.checks.CognitiveComplexityVisitor;
 import org.sonarsource.solidity.checks.IssuableVisitor;
 import org.sonarsource.solidity.checks.RuleContext;
 import org.sonarsource.solidity.frontend.SolidityParser;
@@ -124,7 +125,7 @@ public class SoliditySensor implements Sensor {
     MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
 
     cognitiveComplexity = new CognitiveComplexityVisitor(Utils.returnParserUnitFromParsedFile(file.contents()).sourceUnit());
-    int totalComplexity = cognitiveComplexity.functionsComplexity.values().stream().mapToInt(Integer::intValue).sum();
+    int totalComplexity = cognitiveComplexity.sumAllFunctionsComplexity();
     metricsVisitor.fileMeasures.setFileCognitiveComplexity(totalComplexity);
     return metricsVisitor.fileMeasures;
   }

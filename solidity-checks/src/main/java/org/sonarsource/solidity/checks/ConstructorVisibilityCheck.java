@@ -23,7 +23,7 @@ public class ConstructorVisibilityCheck extends IssuableVisitor {
 
   @Override
   public ParseTree visitFunctionDefinition(FunctionDefinitionContext ctx) {
-    if (isConstructor(ctx) && modifierListIsEmpty(ctx.modifierList())) {
+    if (ctx.identifier() != null && isConstructor(ctx) && modifierListIsEmpty(ctx.modifierList())) {
       report(ctx.getStart(), ctx.block().getStart());
     }
     return super.visitFunctionDefinition(ctx);

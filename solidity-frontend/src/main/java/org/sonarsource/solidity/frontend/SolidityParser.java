@@ -1591,6 +1591,10 @@ public class SolidityParser extends Parser {
 
     private String functionSignature;
 
+    public TerminalNode getOpenCurlyBrace() {
+      return getTokens(T__13).get(0);
+    }
+
     public ParameterListContext parameterList() {
       return getRuleContext(ParameterListContext.class, 0);
     }
