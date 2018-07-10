@@ -13,6 +13,7 @@ public final class CheckList {
       .add(ContractNotEmptyCheck.class)
       .add(LatestVersionCheck.class)
       .add(EmptyFunctionCheck.class)
+      .add(EmptyFileCheck.class)
       .add(InvertedBooleanCheck.class)
       .add(CurlyBraceCheck.class)
       .add(ConstructorVisibilityCheck.class)

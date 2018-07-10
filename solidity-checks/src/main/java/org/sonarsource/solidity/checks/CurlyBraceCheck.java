@@ -141,6 +141,6 @@ public class CurlyBraceCheck extends IssuableVisitor {
   }
 
   private void report(Token curlyBraceToken) {
-    ruleContext().addIssue(curlyBraceToken, curlyBraceToken, "Move this open curly brace to the end of the previous line.", RULE_KEY);
+    ruleContext().addIssue(curlyBraceToken, curlyBraceToken, 1, "Move this open curly brace to the end of the previous line.", RULE_KEY);
   }
 }

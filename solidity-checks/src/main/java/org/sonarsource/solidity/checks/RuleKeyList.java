@@ -12,6 +12,7 @@ public final class RuleKeyList {
     return ImmutableList.<String>builder()
       .add("ExternalRule1")
       .add("ExternalRule2")
+      .add("ExternalRule3")
       .add("ExternalRule4")
       .add("ExternalRule5")
       .add("ExternalRule6")

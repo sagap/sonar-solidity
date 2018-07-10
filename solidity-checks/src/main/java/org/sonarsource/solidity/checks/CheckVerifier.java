@@ -95,7 +95,6 @@ public class CheckVerifier {
       int endColumn = stop.getCharPositionInLine();
       if (endColumn == 0)
         endColumn = 1;
-
       verifier.reportIssue(reportMessage).onRange(start.getLine(), startColumn, stop.getLine(), endColumn);
     }
 

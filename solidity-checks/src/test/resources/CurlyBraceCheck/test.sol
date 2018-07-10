@@ -3,12 +3,12 @@ pragma solidity ^0.4.24;
 contract test_non_compliant{   // Compliant
     function foo() public returns (uint8) 
     {         // Noncompliant {{Move this open curly brace to the end of the previous line.}}     
- // ^
+ // ^^
       if(true){  
       }
       if(false)
       {} // Noncompliant {{Move this open curly brace to the end of the previous line.}}
-  //  ^  
+  //  ^^  
       if(true && false
       ){                //  Noncompliant
       } 
