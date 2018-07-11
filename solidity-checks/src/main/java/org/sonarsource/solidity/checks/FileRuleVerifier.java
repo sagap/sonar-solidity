@@ -1,7 +1,5 @@
 package org.sonarsource.solidity.checks;
 
-import com.sonarsource.checks.verifier.SingleFileVerifier;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,35 +11,37 @@ import org.sonar.api.utils.log.Loggers;
 import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.Utils;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class FileRuleVerifier {
 
+  private FileRuleVerifier() {
+    // ...
+  }
+
   private static final Logger LOG = Loggers.get(FileRuleVerifier.class);
 
+  private static final TestRuleContext testRuleContext = new TestRuleContext();
+
   private static void verifyIssueOnFile(IssuableVisitor checkVisitor, String relativePath, String reportMessage) {
-    File file = new File(relativePath);
-    SingleFileVerifier verifier = SingleFileVerifier.create(file.toPath(), UTF_8);
     CharStream cs;
     try {
       cs = CharStreams.fromFileName(relativePath);
       SolidityParser parser = Utils.returnParserFromParsedFile(cs);
-      TestRuleContext testRuleContext = new TestRuleContext(verifier);
       checkVisitor.setRuleContext(testRuleContext);
       checkVisitor.visit(parser.sourceUnit());
       if (reportMessage != null) {
-        assertThat(testRuleContext.issues).isNotEmpty();
-        assertThat(testRuleContext.issues).hasSize(1);
-        assertThat(testRuleContext.issues.get(0)).isEqualTo(reportMessage);
+        assertThat(TestRuleContext.issues).isNotEmpty();
+        assertThat(TestRuleContext.issues).hasSize(1);
+        assertThat(TestRuleContext.issues.get(0)).isEqualTo(reportMessage);
       }
     } catch (IOException e) {
       LOG.debug(e.getMessage(), e);
     }
-
+    testRuleContext.clearList();
   }
 
-  public FileRuleVerifier(IssuableVisitor check, String relativePath, String reportMessage) {
+  public static void verifyIssue(IssuableVisitor check, String relativePath, String reportMessage) {
     verifyIssueOnFile(check, relativePath, reportMessage);
   }
 
@@ -54,27 +54,25 @@ public class FileRuleVerifier {
    */
 
   private static class TestRuleContext implements RuleContext {
-
-    SingleFileVerifier verifier;
-    public List<String> issues;
-
-    public TestRuleContext(SingleFileVerifier verifier) {
-      this.verifier = verifier;
-      issues = new ArrayList<>();
-    }
+    protected static final List<String> issues = new ArrayList<>();
 
     @Override
     public void addIssue(Token start, Token stop, String reportMessage, String externalRuleKey) {
+      /* no reason to implement for now */
     }
 
     @Override
     public void addIssue(Token start, Token stop, int offset, String reportMessage, String externalRuleKey) {
+      /* no reason to implement for now */
     }
 
     @Override
     public void addIssueOnFile(String reportMessage, String externalRuleKey) {
-      // verifier.reportIssue(reportMessage).onFile();
       issues.add(reportMessage);
+    }
+
+    protected void clearList() {
+      issues.clear();
     }
   }
 }

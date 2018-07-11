@@ -8,7 +8,7 @@ public class EmptyFileCheckTest {
 
   @Test
   public void test() {
-    new FileRuleVerifier(new EmptyFileCheck(), "src/test/resources/EmptyFileCheck/test.sol", REPORT_MESSAGE);
+    FileRuleVerifier.verifyIssue(new EmptyFileCheck(), "src/test/resources/EmptyFileCheck/test.sol", REPORT_MESSAGE);
   }
 
   @Test
