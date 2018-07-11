@@ -2,18 +2,17 @@ package org.sonarsource.solidity.checks;
 
 import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 public class EmptyFileCheckTest {
+
+  private static final String REPORT_MESSAGE = "The file has 0 lines of code";
 
   @Test
   public void test() {
-    assertThat(CheckVerifier.verifyIssueOnFile(new EmptyFileCheck(), "src/test/resources/EmptyFileCheck/test.sol")).isTrue();
-
+    FileRuleVerifier.verifyIssue(new EmptyFileCheck(), "src/test/resources/EmptyFileCheck/test.sol", REPORT_MESSAGE);
   }
 
   @Test
   public void test2() {
-    CheckVerifier.verifyNoIssue(new EmptyFileCheck(), "src/test/resources/EmptyFileCheck/test2.sol");
+    FileRuleVerifier.verifyNoIssue(new EmptyFileCheck(), "src/test/resources/EmptyFileCheck/test2.sol");
   }
 }

@@ -55,25 +55,6 @@ public class CheckVerifier {
     new CheckVerifier(check, relativePath, false);
   }
 
-  public static boolean verifyIssueOnFile(IssuableVisitor checkVisitor, String relativePath) {
-    File file = new File(relativePath); ///// TODO fix architecture
-    SingleFileVerifier verifier = SingleFileVerifier.create(file.toPath(), UTF_8);
-    CharStream cs;
-    try {
-      cs = CharStreams.fromFileName(relativePath);
-      SolidityParser parser = Utils.returnParserFromParsedFile(cs);
-      TestRuleContext testRuleContext = new TestRuleContext(verifier);
-      checkVisitor.setRuleContext(testRuleContext);
-      checkVisitor.visit(parser.sourceUnit());
-      if (testRuleContext.issueOnFile) {
-        return true;
-      }
-    } catch (IOException e) {
-      LOG.debug(e.getMessage(), e);
-    }
-    return false;
-  }
-
   /*
    * class used to report for unit tests
    */
@@ -81,7 +62,6 @@ public class CheckVerifier {
   private static class TestRuleContext implements RuleContext {
 
     SingleFileVerifier verifier;
-    protected boolean issueOnFile = false;
 
     public TestRuleContext(SingleFileVerifier verifier) {
       this.verifier = verifier;
@@ -110,7 +90,6 @@ public class CheckVerifier {
     @Override
     public void addIssueOnFile(String reportMessage, String externalRuleKey) {
       verifier.reportIssue(reportMessage).onFile();
-      issueOnFile = true;
     }
   }
 }
