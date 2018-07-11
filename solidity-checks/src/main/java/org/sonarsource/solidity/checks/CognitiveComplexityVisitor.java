@@ -1,4 +1,4 @@
-package org.sonarsource.solidity;
+package org.sonarsource.solidity.checks;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,16 +17,17 @@ import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
 import org.sonarsource.solidity.frontend.SolidityParser.StatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.WhileStatementContext;
-import org.sonarsource.solidity.frontend.Utils;
 
 public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
   private int complexity;
   private int nestingLevel;
-  protected Map<String, Integer> functionsComplexity;
+  protected static final Map<FunctionDefinitionContext, Integer> functionsComplexity = new HashMap<>();
 
   public CognitiveComplexityVisitor(SourceUnitContext sourceUnitCtx) {
-    functionsComplexity = new HashMap<>();
     sourceUnitCtx.accept(this);
+  }
+
+  public CognitiveComplexityVisitor() {
   }
 
   @Override
@@ -34,7 +35,7 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
     complexity = 0;
     nestingLevel = 0;
     super.visitFunctionDefinition(ctx);
-    functionsComplexity.put(Utils.returnFunctionSignature(ctx), complexity);
+    functionsComplexity.put(ctx, complexity);
     return null;
   }
 
@@ -67,16 +68,16 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
 
   @Override
   public Token visitIfStatement(IfStatementContext ctx) {
-    if (UtilsSensor.isElseIfStatement(ctx)) {
+    if (CheckUtils.isElseIfStatement(ctx)) {
       complexity++;
-      UtilsSensor.checkForElseStatement(ctx).ifPresent(elseStmt -> {
+      CheckUtils.checkForElseStatement(ctx).ifPresent(elseStmt -> {
         complexity++;
       });
       return super.visitIfStatement(ctx);
     } else {
       nestingLevel++;
       complexity += nestingLevel;
-      UtilsSensor.checkForElseStatement(ctx).ifPresent(elseStmt -> {
+      CheckUtils.checkForElseStatement(ctx).ifPresent(elseStmt -> {
         complexity++;
       });
       super.visitIfStatement(ctx);
@@ -107,7 +108,7 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
 
   @Override
   public Token visitStatement(StatementContext ctx) {
-    if (UtilsSensor.isTernaryExpression(ctx)) {
+    if (CheckUtils.isTernaryExpression(ctx)) {
       complexity++;
     }
     return super.visitStatement(ctx);
@@ -120,5 +121,13 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
 
   public int getCognitiveComplexity() {
     return complexity;
+  }
+
+  public int sumAllFunctionsComplexity() {
+    return functionsComplexity.values().stream().mapToInt(Integer::intValue).sum();
+  }
+
+  public int getCognitiveComplexityOfFunction(FunctionDefinitionContext function) {
+    return functionsComplexity.get(function);
   }
 }
