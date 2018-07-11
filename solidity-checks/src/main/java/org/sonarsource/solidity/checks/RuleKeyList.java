@@ -18,6 +18,8 @@ public final class RuleKeyList {
       .add("ExternalRule6")
       .add("ExternalRule7")
       .add("ExternalRule8")
+      .add("ExternalRule9")
+      .add("ExternalRule11")
       .build();
   }
 }
