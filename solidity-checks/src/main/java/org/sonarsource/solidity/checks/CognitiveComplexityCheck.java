@@ -15,14 +15,14 @@ public class CognitiveComplexityCheck extends IssuableVisitor {
   @RuleProperty(key = "Threshold",
     description = "Cognitive Complexity Threshold",
     defaultValue = "" + MAX)
-  private static CognitiveComplexityVisitor cognitiveComplexity = new CognitiveComplexityVisitor();
+  private CognitiveComplexityVisitor cognitiveComplexityVisitor = new CognitiveComplexityVisitor();
 
   @Override
   public ParseTree visitFunctionDefinition(FunctionDefinitionContext ctx) {
     if (ctx.block() != null) {
-      ctx.accept(cognitiveComplexity);
-      int total = cognitiveComplexity.getCognitiveComplexityOfFunction(ctx);
-      if (total >= MAX) {
+      ctx.accept(cognitiveComplexityVisitor);
+      int total = cognitiveComplexityVisitor.getCognitiveComplexityOfFunction(ctx);
+      if (total > MAX) {
         ruleContext().addIssue(ctx.getStart(), ctx.block().getStart(),
           "Refactor this method to reduce its Cognitive Complexity from " + total + " to the " + MAX + " allowed.",
           RULE_KEY);
