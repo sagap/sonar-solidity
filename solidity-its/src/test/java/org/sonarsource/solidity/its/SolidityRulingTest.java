@@ -22,7 +22,7 @@ public class SolidityRulingTest {
 
   @Test
   public void test() {
-    assertThat(SolidityRuling.getProjects()).hasSize(2);
+    assertThat(SolidityRuling.getProjects()).hasSize(3);
     try {
       SolidityRuling.collectFilesForIssues();
 

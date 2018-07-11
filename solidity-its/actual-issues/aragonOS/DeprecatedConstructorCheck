@@ -1,0 +1,32 @@
+solidity-test-sources/src/aragonOS/contracts/factory/APMRegistryFactory.sol
+Issue Line: 22
+solidity-test-sources/src/aragonOS/test/mocks/APMRegistryFactoryMock.sol
+Issue Line: 9
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyBase.sol
+Issue Line: 15
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyPinned.sol
+Issue Line: 13
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyUpgradeable.sol
+Issue Line: 13
+solidity-test-sources/src/aragonOS/contracts/factory/DAOFactory.sol
+Issue Line: 19
+solidity-test-sources/src/aragonOS/contracts/lib/ens/ENS.sol
+Issue Line: 27
+solidity-test-sources/src/aragonOS/contracts/factory/EVMScriptRegistryFactory.sol
+Issue Line: 16
+solidity-test-sources/src/aragonOS/test/mocks/KernelMock.sol
+Issue Line: 16
+solidity-test-sources/src/aragonOS/contracts/kernel/KernelProxy.sol
+Issue Line: 13
+solidity-test-sources/src/aragonOS/contracts/lib/misc/Migrations.sol
+Issue Line: 13
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 40
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 126
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 51
+solidity-test-sources/src/aragonOS/test/mocks/StandardTokenMock.sol
+Issue Line: 10
+solidity-test-sources/src/aragonOS/test/helpers/ThrowProxy.sol
+Issue Line: 13

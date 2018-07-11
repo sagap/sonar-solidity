@@ -1,0 +1,134 @@
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/test/helpers/ACLHelper.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/acl/ACLSyntaxSugar.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/contracts/apm/APMNamehash.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/test/mocks/APMNamehashWrapper.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/apm/APMRegistry.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/factory/APMRegistryFactory.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/test/mocks/APMRegistryFactoryMock.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/lib/ens/AbstractENS.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyBase.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/factory/AppProxyFactory.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyPinned.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyUpgradeable.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/apps/AppStorage.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/test/mocks/AppStub.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/test/mocks/AppStubConditionalRecovery.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/apps/AragonApp.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/token/BasicToken.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/evmscript/executors/CallsScript.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/factory/DAOFactory.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/common/DelegateProxy.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/common/DepositableDelegateProxy.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/lib/ens/ENS.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/ens/ENSConstants.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/contracts/factory/ENSFactory.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/ens/ENSSubdomainRegistrar.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/token/ERC20.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/token/ERC20Basic.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/lib/misc/ERCProxy.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/contracts/evmscript/EVMScriptRegistry.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/factory/EVMScriptRegistryFactory.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/evmscript/EVMScriptRunner.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/test/mocks/EncodeMock.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/common/EtherTokenConstant.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/test/mocks/ExecutionTarget.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/test/mocks/Executor.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/acl/IACL.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/contracts/evmscript/IEVMScriptExecutor.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/contracts/evmscript/IEVMScriptRegistry.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/contracts/common/IForwarder.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/contracts/kernel/IKernel.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/contracts/lib/minime/ITokenController.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/common/IVaultRecoverable.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/contracts/common/Initializable.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/contracts/common/IsContract.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/test/mocks/KeccakConstants.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/kernel/Kernel.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/test/mocks/KernelMock.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/kernel/KernelProxy.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/kernel/KernelStorage.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/math/Math.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/lib/misc/Migrations.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/apm/Repo.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/math/SafeMath.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/math/SafeMath64.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/evmscript/ScriptHelpers.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/token/StandardToken.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/test/mocks/StandardTokenMock.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/test/TestAclOracle.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/test/helpers/ThrowProxy.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/test/mocks/UpgradedKernel.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/test/mocks/VaultMock.sol
+Issue Line: 1
+solidity-test-sources/src/aragonOS/contracts/common/VaultRecoverable.sol
+Issue Line: 5

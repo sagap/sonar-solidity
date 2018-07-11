@@ -1,0 +1,12 @@
+solidity-test-sources/src/aragonOS/contracts/acl/ACLSyntaxSugar.sol
+Issue Line: 9
+solidity-test-sources/src/aragonOS/test/mocks/APMRegistryFactoryMock.sol
+Issue Line: 9
+solidity-test-sources/src/aragonOS/test/mocks/APMRegistryFactoryMock.sol
+Issue Line: 19
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyUpgradeable.sol
+Issue Line: 13
+solidity-test-sources/src/aragonOS/test/TestAclOracle.sol
+Issue Line: 8
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 11

@@ -1,0 +1,30 @@
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 92
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 107
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 122
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 135
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 147
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 232
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 283
+solidity-test-sources/src/aragonOS/contracts/apm/APMRegistry.sol
+Issue Line: 71
+solidity-test-sources/src/aragonOS/contracts/factory/APMRegistryFactory.sol
+Issue Line: 30
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyPinned.sol
+Issue Line: 15
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyUpgradeable.sol
+Issue Line: 15
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 135
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 361
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 564
+solidity-test-sources/src/aragonOS/contracts/apm/Repo.sol
+Issue Line: 33
