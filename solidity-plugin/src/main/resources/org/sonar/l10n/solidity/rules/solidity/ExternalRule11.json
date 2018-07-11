@@ -1,0 +1,14 @@
+{
+  "title": "Parameter names should not duplicate the names of their methods",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remedation": {
+   "func": "Constant\/Issue",
+   "constantCost": "5min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "MINOR",
+  "sqKey": "ExampleRule11"
+}

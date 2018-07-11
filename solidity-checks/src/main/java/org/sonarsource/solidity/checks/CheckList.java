@@ -18,6 +18,8 @@ public final class CheckList {
       .add(CurlyBraceCheck.class)
       .add(ConstructorVisibilityCheck.class)
       .add(DeprecatedConstructorCheck.class)
+      .add(CognitiveComplexityCheck.class)
+      .add(ParameterAndFunctionsNamingCheck.class)
       .build();
   }
 }

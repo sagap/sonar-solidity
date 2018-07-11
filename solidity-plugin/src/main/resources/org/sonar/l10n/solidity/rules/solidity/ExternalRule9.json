@@ -1,0 +1,14 @@
+{
+  "title": "Cognitive complexity of methods should not be too high(below 10)",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remedation": {
+   "func": "Constant\/Issue",
+   "constantCost": "5min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "CRITICAL",
+  "sqKey": "ExampleRule9"
+}
