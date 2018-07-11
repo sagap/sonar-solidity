@@ -43,6 +43,7 @@ public class SolidityRuleContext implements RuleContext {
 
   @Override
   public void addIssueOnFile(String reportMessage, String externalRuleKey) {
+    System.out.println("AAAAAAAAAAAAAAAAAAA");
     RuleKey ruleKey = RuleKey.of(REPO_KEY, externalRuleKey);
     NewIssue newIssue = context.newIssue().forRule(ruleKey).gap(Double.valueOf(1));
     NewIssueLocation location = newIssue.newLocation()

@@ -11,7 +11,7 @@ public class EmptyFileCheck extends IssuableVisitor {
   @Override
   public ParseTree visitSourceUnit(SourceUnitContext ctx) {
     if (ctx.getChildCount() <= 1) {
-      ruleContext().addIssueOnFile("File has 0 lines of code", RULE_KEY);
+      ruleContext().addIssueOnFile("The file has 0 lines of code", RULE_KEY);
     }
     return super.visitSourceUnit(ctx);
   }
