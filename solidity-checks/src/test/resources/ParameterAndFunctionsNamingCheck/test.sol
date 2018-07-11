@@ -5,4 +5,8 @@ contract test{
         a = 1;
         foo=2;
     }
+
+    function foo2(){}
+    function foo2(uint8, string foo2) public; // Noncompliant
+    function ()internal {}
 }

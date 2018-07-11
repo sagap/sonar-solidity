@@ -18,16 +18,14 @@ public class ParameterAndFunctionsNamingCheck extends IssuableVisitor {
   public ParseTree visitFunctionDefinition(FunctionDefinitionContext ctx) {
     extractNameFromFunction(ctx).ifPresent(functionName -> {
       ParameterListContext parameterList = ctx.parameterList();
-      if (parameterList != null) {
-        List<ParameterContext> parameters = parameterList.parameter();
-        for (ParameterContext parameter : parameters) {
-          extractNameFromParameter(parameter).ifPresent(parameterName -> {
-            if (functionName.equalsIgnoreCase(parameterName)) {
-              ruleContext().addIssue(parameter.getStart(), parameter.getStop(),
-                "Rename the parameter " + parameterName + " so that it doesn't duplicate the method name.", RULE_KEY);
-            }
-          });
-        }
+      List<ParameterContext> parameters = parameterList.parameter();
+      for (ParameterContext parameter : parameters) {
+        extractNameFromParameter(parameter).ifPresent(parameterName -> {
+          if (functionName.equalsIgnoreCase(parameterName)) {
+            ruleContext().addIssue(parameter.getStart(), parameter.getStop(),
+              "Rename the parameter " + parameterName + " so that it doesn't duplicate the method name.", RULE_KEY);
+          }
+        });
       }
     });
     return super.visitFunctionDefinition(ctx);
