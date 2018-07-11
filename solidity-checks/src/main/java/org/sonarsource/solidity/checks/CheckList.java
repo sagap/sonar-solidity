@@ -20,6 +20,7 @@ public final class CheckList {
       .add(DeprecatedConstructorCheck.class)
       .add(CognitiveComplexityCheck.class)
       .add(ParameterAndFunctionsNamingCheck.class)
+      .add(PragmaExistCheck.class)
       .build();
   }
 }
