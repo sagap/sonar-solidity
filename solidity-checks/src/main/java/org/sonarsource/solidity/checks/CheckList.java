@@ -21,6 +21,7 @@ public final class CheckList {
       .add(CognitiveComplexityCheck.class)
       .add(ParameterAndFunctionsNamingCheck.class)
       .add(PragmaExistCheck.class)
+      .add(DeprecatedSuicideCheck.class)
       .build();
   }
 }
