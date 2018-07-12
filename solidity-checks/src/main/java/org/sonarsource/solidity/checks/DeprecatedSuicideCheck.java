@@ -13,7 +13,7 @@ public class DeprecatedSuicideCheck extends IssuableVisitor {
   public ParseTree visitFunctionCallArguments(FunctionCallArgumentsContext ctx) {
     ExpressionContext functionCall = (ExpressionContext) ctx.getParent();
     if ("suicide".equals(functionCall.expression(0).getText())) {
-      ruleContext().addIssue(ctx.getStart(), ctx.getStop(), "\"Selfdestruct\" should be used instead of the deprecated \"suicide\".",
+      ruleContext().addIssue(functionCall.getStart(), functionCall.getStop(), "\"Selfdestruct\" should be used instead of the deprecated \"suicide\".",
         RULE_KEY);
     }
     return super.visitFunctionCallArguments(ctx);

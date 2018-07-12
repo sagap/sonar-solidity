@@ -7,6 +7,7 @@ contract test{
     
     function foo() public{
         suicide(x);       // Noncompliant {{"Selfdestruct" should be used instead of the deprecated "suicide".}}
+     // ^^^^^^^^^^
         selfdestruct(x);
     }
 }
