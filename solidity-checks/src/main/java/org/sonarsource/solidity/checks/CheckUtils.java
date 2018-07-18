@@ -6,9 +6,13 @@ import java.util.Optional;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.TerminalNode;
 import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.SolidityParser.ContractDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ExpressionContext;
+import org.sonarsource.solidity.frontend.SolidityParser.FunctionCallContext;
+import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
+import org.sonarsource.solidity.frontend.SolidityParser.IdentifierContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ReturnStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.SimpleStatementContext;
@@ -65,7 +69,7 @@ public class CheckUtils {
     if (!ctxNode.children.isEmpty() && ctxNode.children.size() >= 6) {
       // the 6th child is where else exists even for else-if case
       Token token = (Token) ctxNode.children.get(5).getPayload();
-      if (token.getType() == 40) {
+      if (token.getType() == 41) {
         ParseTree child6 = ctxNode.children.get(6);
         // exclude else - if cases
         if (!child6.getChild(0).getClass().equals(IfStatementContext.class))
@@ -94,17 +98,35 @@ public class CheckUtils {
       case "ReturnStatementContext":
         ReturnStatementContext retStmt = ctx.returnStatement();
         expr = retStmt.expression();
-        return expr != null && (expr.getToken(SolidityParser.TERNARY_OPERATOR, 0) != null);
+        return expr != null && (expr.getToken(SolidityParser.T__71, 0) != null);
       case "SimpleStatementContext":
         SimpleStatementContext simpleStmt = ctx.simpleStatement();
         VariableDeclarationStatementContext varDeclStmt = simpleStmt.variableDeclarationStatement();
         if (varDeclStmt != null) {
           expr = varDeclStmt.expression();
-          return expr != null && (expr.getToken(SolidityParser.TERNARY_OPERATOR, 0) != null);
+          return expr != null && (expr.getToken(SolidityParser.T__71, 0) != null);
         }
         return false;
       default:
     }
     return false;
+  }
+
+  public static TerminalNode getOpenCurlyBrace(ParserRuleContext ctx) {
+    return ctx.getTokens(SolidityParser.T__13).get(0);
+  }
+
+  public static Optional<String> extractNameFromFunction(ParserRuleContext functionContext) {
+    IdentifierContext functionIdentifier = null;
+    String functionName = null;
+    if (CheckUtils.treeMatches(functionContext, FunctionDefinitionContext.class)) {
+      functionIdentifier = ((FunctionDefinitionContext) functionContext).identifier();
+    } else if (CheckUtils.treeMatches(functionContext, FunctionCallContext.class)) {
+      functionIdentifier = ((FunctionCallContext) functionContext).identifier(0);
+    }
+    if (functionIdentifier != null) {
+      functionName = functionIdentifier.getText();
+    }
+    return Optional.ofNullable(functionName);
   }
 }

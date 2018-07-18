@@ -15,6 +15,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.apiVersion>6.7.1</sonar.apiVersion>
     <jdk.min.version>1.8</jdk.min.version>
+    <solidity.version>0.5-SNAPSHOT</solidity.version>
   </properties>
 
   <dependencies>
@@ -27,7 +28,7 @@
     <dependency>
       <groupId>org.sonarsource.solidity</groupId>
       <artifactId>solidity-frontend</artifactId>
-      <version>0.4-SNAPSHOT</version>
+      <version>${solidity.version}</version>
     </dependency>
     <dependency>
       <!-- packaged with the plugin -->

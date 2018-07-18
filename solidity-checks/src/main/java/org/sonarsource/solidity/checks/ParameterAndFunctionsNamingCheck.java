@@ -16,7 +16,7 @@ public class ParameterAndFunctionsNamingCheck extends IssuableVisitor {
 
   @Override
   public ParseTree visitFunctionDefinition(FunctionDefinitionContext ctx) {
-    extractNameFromFunction(ctx).ifPresent(functionName -> {
+    CheckUtils.extractNameFromFunction(ctx).ifPresent(functionName -> {
       ParameterListContext parameterList = ctx.parameterList();
       List<ParameterContext> parameters = parameterList.parameter();
       for (ParameterContext parameter : parameters) {
@@ -38,14 +38,5 @@ public class ParameterAndFunctionsNamingCheck extends IssuableVisitor {
       parameterName = parameterIdentifier.getText();
     }
     return Optional.ofNullable(parameterName);
-  }
-
-  private static Optional<String> extractNameFromFunction(FunctionDefinitionContext function) {
-    IdentifierContext functionIdentifier = function.identifier();
-    String functionName = null;
-    if (functionIdentifier != null) {
-      functionName = functionIdentifier.getText();
-    }
-    return Optional.ofNullable(functionName);
   }
 }

@@ -1,6 +1,6 @@
+// Generated from Solidity.g4 by ANTLR 4.7
 package org.sonarsource.solidity.frontend;
 
-// Generated from Solidity.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -581,6 +581,17 @@ public class SolidityBaseVisitor<T> extends AbstractParseTreeVisitor<T> implemen
    */
   @Override
   public T visitVariableDeclarationStatement(SolidityParser.VariableDeclarationStatementContext ctx) {
+    return visitChildren(ctx);
+  }
+
+  /**
+   * {@inheritDoc}
+   *
+   * <p>The default implementation returns the result of calling
+   * {@link #visitChildren} on {@code ctx}.</p>
+   */
+  @Override
+  public T visitVariableDeclarationList(SolidityParser.VariableDeclarationListContext ctx) {
     return visitChildren(ctx);
   }
 

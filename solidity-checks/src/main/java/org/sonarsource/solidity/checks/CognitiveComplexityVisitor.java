@@ -116,7 +116,7 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
 
   private static boolean isAndOrOperator(ParseTree tree) {
     int type = ((CommonToken) tree.getPayload()).getType();
-    return SolidityParser.CONDITIONAL_AND == type || SolidityParser.CONDITIONAL_OR == type;
+    return SolidityParser.T__69 == type || SolidityParser.T__70 == type;
   }
 
   public int getCognitiveComplexity() {

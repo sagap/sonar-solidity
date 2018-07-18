@@ -26,7 +26,7 @@ public class CurlyBraceCheck extends IssuableVisitor {
 
   @Override
   public ParseTree visitContractDefinition(ContractDefinitionContext ctx) {
-    Token curlyBraceToken = ctx.getOpenCurlyBrace().getSymbol();
+    Token curlyBraceToken = CheckUtils.getOpenCurlyBrace(ctx).getSymbol();
     if (ctx.getStart().getLine() != curlyBraceToken.getLine()) {
       report(curlyBraceToken);
     }
@@ -111,7 +111,7 @@ public class CurlyBraceCheck extends IssuableVisitor {
 
   @Override
   public ParseTree visitStructDefinition(StructDefinitionContext ctx) {
-    Token curlyBraceToken = ctx.getOpenCurlyBrace().getSymbol();
+    Token curlyBraceToken = CheckUtils.getOpenCurlyBrace(ctx).getSymbol();
     if (ctx.identifier().getStart().getLine() != curlyBraceToken.getLine()) {
       report(curlyBraceToken);
     }
@@ -133,7 +133,7 @@ public class CurlyBraceCheck extends IssuableVisitor {
 
   @Override
   public ParseTree visitEnumDefinition(EnumDefinitionContext ctx) {
-    Token curlyBraceToken = ctx.getOpenCurlyBrace().getSymbol();
+    Token curlyBraceToken = CheckUtils.getOpenCurlyBrace(ctx).getSymbol();
     if (ctx.identifier().getStop().getLine() != curlyBraceToken.getLine()) {
       report(curlyBraceToken);
     }
