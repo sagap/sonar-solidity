@@ -22,6 +22,7 @@ public final class CheckList {
       .add(ParameterAndFunctionsNamingCheck.class)
       .add(PragmaExistCheck.class)
       .add(DeprecatedSuicideCheck.class)
+      .add(AvoidTxOriginCheck.class)
       .build();
   }
 }

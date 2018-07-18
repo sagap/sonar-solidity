@@ -47,7 +47,8 @@ public class SolidityRuling {
   private static final String[] PROJECTS_TO_ANALYZE = {
     "ethereum-api",
     "Random-Files",
-    "aragonOS"
+    "aragonOS",
+    "ethorse-core"
   };
 
   public static String[] getProjects() {
