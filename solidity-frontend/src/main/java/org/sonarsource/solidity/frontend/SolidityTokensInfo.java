@@ -22,11 +22,11 @@ public class SolidityTokensInfo {
     "storageLocation", "stateMutability", "block", "statement", "expressionStatement",
     "ifStatement", "whileStatement", "simpleStatement", "forStatement", "inlineAssemblyStatement",
     "doWhileStatement", "continueStatement", "breakStatement", "returnStatement",
-    "throwStatement", "emitStatement", "variableDeclarationStatement", "identifierList",
-    "elementaryTypeName", "expression", "primaryExpression", "expressionList",
-    "nameValueList", "nameValue", "functionCallArguments", "functionCall",
-    "assemblyBlock", "assemblyItem", "assemblyExpression", "assemblyCall",
-    "assemblyLocalDefinition", "assemblyAssignment", "assemblyIdentifierOrList",
+    "throwStatement", "emitStatement", "variableDeclarationStatement", "variableDeclarationList",
+    "identifierList", "elementaryTypeName", "expression", "primaryExpression",
+    "expressionList", "nameValueList", "nameValue", "functionCallArguments",
+    "functionCall", "assemblyBlock", "assemblyItem", "assemblyExpression",
+    "assemblyCall", "assemblyLocalDefinition", "assemblyAssignment", "assemblyIdentifierOrList",
     "assemblyIdentifierList", "assemblyStackAssignment", "labelDefinition",
     "assemblySwitch", "assemblyCase", "assemblyFunctionDefinition", "assemblyFunctionReturns",
     "assemblyFor", "assemblyIf", "assemblyLiteral", "subAssembly", "tupleExpression",
@@ -39,16 +39,16 @@ public class SolidityTokensInfo {
     "'interface'", "'library'", "'is'", "'('", "')'", "'using'", "'for'",
     "'struct'", "'constructor'", "'modifier'", "'function'", "'returns'",
     "'event'", "'enum'", "'['", "']'", "'.'", "'mapping'", "'=>'", "'memory'",
-    "'storage'", "'if'", "'else'", "'while'", "'assembly'", "'do'", "'return'",
-    "'throw'", "'emit'", "'var'", "'address'", "'bool'", "'string'", "'byte'",
-    "'++'", "'--'", "'new'", "'+'", "'-'", "'after'", "'delete'", "'!'", "'**'",
-    "'/'", "'%'", "'<<'", "'>>'", "'&'", "'|'", "'=='", "'!='", "'&&'", "'||'",
-    "'?'", "':'", "'|='", "'^='", "'&='", "'<<='", "'>>='", "'+='", "'-='",
-    "'*='", "'/='", "'%='", "'let'", "':='", "'=:'", "'switch'", "'case'",
-    "'default'", "'->'", null, null, null, null, null, null, null, null, null,
-    null, null, null, "'anonymous'", "'break'", "'constant'", "'continue'",
-    "'external'", "'indexed'", "'internal'", "'payable'", "'private'", "'public'",
-    "'pure'", "'view'"
+    "'storage'", "'calldata'", "'if'", "'else'", "'while'", "'assembly'",
+    "'do'", "'return'", "'throw'", "'emit'", "'var'", "'address'", "'bool'",
+    "'string'", "'byte'", "'++'", "'--'", "'new'", "'+'", "'-'", "'after'",
+    "'delete'", "'!'", "'**'", "'/'", "'%'", "'<<'", "'>>'", "'&'", "'|'",
+    "'=='", "'!='", "'&&'", "'||'", "'?'", "':'", "'|='", "'^='", "'&='",
+    "'<<='", "'>>='", "'+='", "'-='", "'*='", "'/='", "'%='", "'let'", "':='",
+    "'=:'", "'switch'", "'case'", "'default'", "'->'", null, null, null, null,
+    null, null, null, null, null, null, null, null, "'anonymous'", "'break'",
+    "'constant'", "'continue'", "'external'", "'indexed'", "'internal'", "'payable'",
+    "'private'", "'public'", "'pure'", "'view'"
   };
   private static final String[] _SYMBOLIC_NAMES = {
     null, null, null, null, null, null, null, null, null, null, null, null,
@@ -58,12 +58,13 @@ public class SolidityTokensInfo {
     null, null, null, null, null, null, null, null, null, null, null, null,
     null, null, null, null, null, null, null, null, null, null, null, null,
     null, null, null, null, null, null, null, null, null, null, null, null,
-    null, null, null, null, null, null, "Int", "Uint", "Byte", "Fixed", "Ufixed",
-    "VersionLiteral", "BooleanLiteral", "DecimalNumber", "HexNumber", "NumberUnit",
-    "HexLiteral", "ReservedKeyword", "AnonymousKeyword", "BreakKeyword", "ConstantKeyword",
-    "ContinueKeyword", "ExternalKeyword", "IndexedKeyword", "InternalKeyword",
-    "PayableKeyword", "PrivateKeyword", "PublicKeyword", "PureKeyword", "ViewKeyword",
-    "Identifier", "StringLiteral", "WS", "COMMENT", "LINE_COMMENT"
+    null, null, null, null, null, null, null, "Int", "Uint", "Byte", "Fixed",
+    "Ufixed", "VersionLiteral", "BooleanLiteral", "DecimalNumber", "HexNumber",
+    "NumberUnit", "HexLiteral", "ReservedKeyword", "AnonymousKeyword", "BreakKeyword",
+    "ConstantKeyword", "ContinueKeyword", "ExternalKeyword", "IndexedKeyword",
+    "InternalKeyword", "PayableKeyword", "PrivateKeyword", "PublicKeyword",
+    "PureKeyword", "ViewKeyword", "Identifier", "StringLiteral", "WS", "COMMENT",
+    "LINE_COMMENT"
   };
   public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 

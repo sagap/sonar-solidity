@@ -253,7 +253,7 @@ public class SolidityParserTest {
     ReturnStatementContext retStmt = stmtCtx.get(0).returnStatement();
     assertThat(retStmt).isNotNull();
     ExpressionContext expr = retStmt.expression();
-    // expr.children.forEach(x -> System.out.println(x.getClass()));
-    TerminalNode t = expr.getToken(SolidityParser.TERNARY_OPERATOR, 0);
+    TerminalNode t = expr.getToken(SolidityParser.T__71, 0);
+    assertThat(t).isNotNull();
   }
 }

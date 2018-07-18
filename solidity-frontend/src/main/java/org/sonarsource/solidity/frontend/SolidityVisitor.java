@@ -1,6 +1,6 @@
+// Generated from Solidity.g4 by ANTLR 4.7
 package org.sonarsource.solidity.frontend;
 
-// Generated from Solidity.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -374,6 +374,13 @@ public interface SolidityVisitor<T> extends ParseTreeVisitor<T> {
    * @return the visitor result
    */
   T visitVariableDeclarationStatement(SolidityParser.VariableDeclarationStatementContext ctx);
+
+  /**
+   * Visit a parse tree produced by {@link SolidityParser#variableDeclarationList}.
+   * @param ctx the parse tree
+   * @return the visitor result
+   */
+  T visitVariableDeclarationList(SolidityParser.VariableDeclarationListContext ctx);
 
   /**
    * Visit a parse tree produced by {@link SolidityParser#identifierList}.

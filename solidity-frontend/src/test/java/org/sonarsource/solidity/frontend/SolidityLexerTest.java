@@ -15,7 +15,7 @@ public class SolidityLexerTest {
     CharStream cs = CharStreams.fromString("function");
     lexer = new SolidityLexer(cs);
     assertThat(lexer.getGrammarFileName()).isEqualTo("Solidity.g4");
-    assertThat(lexer.getRuleNames()).hasSize(83);
+    assertThat(lexer.getRuleNames()).hasSize(84);
     assertThat(lexer.getChannelNames()).hasSize(2);
     assertThat(lexer.getModeNames()).hasSize(1);
     assertThat(lexer.getSerializedATN()).startsWith("\3");
@@ -47,14 +47,14 @@ public class SolidityLexerTest {
   public void tokenize_numeric_literal() {
     CharStream cs = CharStreams.fromString("1");
     lexer = new SolidityLexer(cs);
-    assertThat(lexer.getAllTokens().get(0).getType()).isEqualTo(97);
+    assertThat(lexer.getAllTokens().get(0).getType()).isEqualTo(98);
   }
 
   @Test
   public void tokenize_boolean_literal() {
     CharStream cs = CharStreams.fromString("true");
     lexer = new SolidityLexer(cs);
-    assertThat(lexer.getAllTokens().get(0).getType()).isEqualTo(96);
+    assertThat(lexer.getAllTokens().get(0).getType()).isEqualTo(97);
   }
 
   @Test
@@ -62,6 +62,6 @@ public class SolidityLexerTest {
     String identifier = "identifier";
     CharStream cs = CharStreams.fromString(identifier);
     lexer = new SolidityLexer(cs);
-    assertThat(lexer.getAllTokens().get(0).getType()).isEqualTo(114);
+    assertThat(lexer.getAllTokens().get(0).getType()).isEqualTo(115);
   }
 }
