@@ -3,6 +3,7 @@ package org.sonarsource.solidity.its;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
@@ -22,7 +23,7 @@ public class SolidityRulingTest {
 
   @Test
   public void test() {
-    assertThat(SolidityRuling.getProjects()).hasSize(3);
+    assertThat(SolidityRuling.getProjects()).hasSize(4);
     try {
       SolidityRuling.collectFilesForIssues();
 
@@ -78,6 +79,12 @@ public class SolidityRulingTest {
 
     @Override
     public void addIssueOnFile(String reportMessage, String externalRuleKey) {
+    }
+
+    @Override
+    public void addIssue(ParserRuleContext ctx, String reportMessage, String externalRuleKey) {
+      // TODO Auto-generated method stub
+
     }
   }
 }

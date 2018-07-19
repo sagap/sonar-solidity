@@ -1,5 +1,6 @@
 package org.sonarsource.solidity;
 
+import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.fs.internal.DefaultTextPointer;
@@ -65,4 +66,21 @@ public class SolidityRuleContext implements RuleContext {
     newIssue.at(location);
     newIssue.save();
   }
+
+  @Override
+  public void addIssue(ParserRuleContext ctx, String reportMessage, String externalRuleKey) {
+    RuleKey ruleKey = RuleKey.of(REPO_KEY, externalRuleKey);
+    NewIssue newIssue = context.newIssue().forRule(ruleKey).gap(Double.valueOf(1));
+    NewIssueLocation location = newIssue.newLocation()
+      .on(file).message(reportMessage);
+    Token start = ctx.getStart();
+    DefaultTextPointer df1 = new DefaultTextPointer(start.getLine(), start.getCharPositionInLine());
+    DefaultTextPointer df2 = new DefaultTextPointer(start.getLine(), start.getCharPositionInLine() + ctx.getText().length());
+    DefaultTextRange range = new DefaultTextRange(df1, df2);
+
+    location.at(range);
+    newIssue.at(location);
+    newIssue.save();
+  }
+
 }

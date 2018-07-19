@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
@@ -73,6 +74,11 @@ public class FileRuleVerifier {
 
     protected void clearList() {
       issues.clear();
+    }
+
+    @Override
+    public void addIssue(ParserRuleContext ctx, String reportMessage, String externalRuleKey) {
+      /* no reason to implement for now */
     }
   }
 }

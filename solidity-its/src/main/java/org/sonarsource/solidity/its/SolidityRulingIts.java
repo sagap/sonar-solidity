@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
+import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
@@ -52,5 +53,11 @@ public class SolidityRulingIts implements RuleContext {
     } catch (IOException e) {
       LOG.debug(e.getMessage(), e);
     }
+  }
+
+  @Override
+  public void addIssue(ParserRuleContext ctx, String reportMessage, String externalRuleKey) {
+    reportIssue(ctx.getStart().getLine(), projectDir);
+
   }
 }

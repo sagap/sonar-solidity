@@ -27,7 +27,7 @@ public class SyntaxHighlightingVisitor extends SolidityBaseVisitor<Token> {
       } else if (SolidityParser.typeMatches(token, SolidityParser.StringLiteral)) {
         this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(),
           token.getLine(), (token.getCharPositionInLine() + token.getStopIndex() - token.getStartIndex() + 1), TypeOfText.STRING);
-      } else if (SolidityParser.typeMatches(token, 95, 96, 97, 98, 99, 100)) {
+      } else if (SolidityParser.typeMatches(token, 96, 97, 98, 99, 100, 101)) {
         this.highlighting.highlight(token.getLine(), token.getCharPositionInLine(),
           token.getLine(), (token.getCharPositionInLine() + token.getStopIndex() - token.getStartIndex() + 1), TypeOfText.CONSTANT);
       } else {
@@ -38,7 +38,7 @@ public class SyntaxHighlightingVisitor extends SolidityBaseVisitor<Token> {
 
   public void highlightComments(SolidityParser parser) {
     for (Token token : parser.comments) {
-      if (token.getType() == 118) {
+      if (token.getType() == 119) {
         highlightComment(token);
       } else {
         handleStructuredComments(token);

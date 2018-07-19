@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
@@ -84,12 +85,21 @@ public class CheckVerifier {
       if (startColumn == 0)
         startColumn = 1;
 
-      verifier.reportIssue(reportMessage).onRange(start.getLine(), startColumn, start.getLine(), stop.getCharPositionInLine() + offset);
+      verifier.reportIssue(reportMessage).onRange(start.getLine(), startColumn, start.getLine(), (stop.getCharPositionInLine() + offset));
     }
 
     @Override
     public void addIssueOnFile(String reportMessage, String externalRuleKey) {
       verifier.reportIssue(reportMessage).onFile();
+    }
+
+    @Override
+    public void addIssue(ParserRuleContext ctx, String reportMessage, String externalRuleKey) {
+      Token start = ctx.getStart();
+      int line = start.getLine();
+      int endLine = ctx.getStop().getLine();
+      int startColumn = start.getCharPositionInLine();
+      verifier.reportIssue(reportMessage).onRange(line, startColumn, endLine, startColumn + ctx.getText().length() - 1);
     }
   }
 }

@@ -1,0 +1,10 @@
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1101
+solidity-test-sources/src/ethorse-core/dormant/BettingComplex.sol
+Issue Line: 35
+solidity-test-sources/src/ethorse-core/dormant/KrakenPriceTicker.sol
+Issue Line: 19
+solidity-test-sources/src/ethorse-core/contracts/Migrations.sol
+Issue Line: 11
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 845
