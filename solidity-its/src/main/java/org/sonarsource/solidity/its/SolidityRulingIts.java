@@ -57,7 +57,7 @@ public class SolidityRulingIts implements RuleContext {
 
   @Override
   public void addIssue(ParserRuleContext ctx, String reportMessage, String externalRuleKey) {
-    // TODO Auto-generated method stub
+    reportIssue(ctx.getStart().getLine(), projectDir);
 
   }
 }

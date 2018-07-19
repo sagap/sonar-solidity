@@ -15,5 +15,6 @@ contract MyContract {
         
         if(tx.origin != 0x0){    // Noncompliant
         }
+        Assert.equal(meta.getBalance(tx.origin), expected, "");  // Noncompliant
     }
 }

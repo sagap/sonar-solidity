@@ -78,6 +78,7 @@ public class FileRuleVerifier {
 
     @Override
     public void addIssue(ParserRuleContext ctx, String reportMessage, String externalRuleKey) {
+      /* no reason to implement for now */
     }
   }
 }

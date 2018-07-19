@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableList;
 import java.util.List;
 import java.util.Optional;
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.sonarsource.solidity.frontend.SolidityParser;
@@ -66,15 +65,11 @@ public class CheckUtils {
   }
 
   public static Optional<ParseTree> checkForElseStatement(ParserRuleContext ctxNode) {
-    if (!ctxNode.children.isEmpty() && ctxNode.children.size() >= 6) {
-      // the 6th child is where else exists even for else-if case
-      Token token = (Token) ctxNode.children.get(5).getPayload();
-      if (token.getType() == 41) {
-        ParseTree child6 = ctxNode.children.get(6);
-        // exclude else - if cases
-        if (!child6.getChild(0).getClass().equals(IfStatementContext.class))
-          return Optional.of(child6);
-      }
+    if (!ctxNode.children.isEmpty() && (((IfStatementContext) ctxNode).Else()) != null) {
+      ParseTree childNode = ctxNode.children.get(6);
+      // exclude else - if cases
+      if (childNode.getChildCount() > 0 && !childNode.getChild(0).getClass().equals(IfStatementContext.class))
+        return Optional.of(childNode);
     }
     return Optional.empty();
   }

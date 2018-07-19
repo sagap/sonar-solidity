@@ -6,7 +6,6 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Token;
-import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
 
 public final class Utils {
 
@@ -49,14 +48,16 @@ public final class Utils {
     return matcher.find();
   }
 
-  /*public static String returnFunctionSignature(FunctionDefinitionContext ctx) {
-    StringBuilder signature = new StringBuilder();
-    System.out.println(ctx);
-    signature.append(ctx);
-     ctx.parameterList().parameter().forEach(param -> signature.append(", " + param.typeName().getText()));
-     if (ctx.returnParameters() != null) {
-     ctx.returnParameters().parameterList().parameter().forEach(param -> signature.append(", " + param.typeName().getText()));
-     }
-    return signature.toString();
-  }*/
+  /*
+   * public static String returnFunctionSignature(FunctionDefinitionContext ctx) {
+   * StringBuilder signature = new StringBuilder();
+   * System.out.println(ctx);
+   * signature.append(ctx);
+   * ctx.parameterList().parameter().forEach(param -> signature.append(", " + param.typeName().getText()));
+   * if (ctx.returnParameters() != null) {
+   * ctx.returnParameters().parameterList().parameter().forEach(param -> signature.append(", " + param.typeName().getText()));
+   * }
+   * return signature.toString();
+   * }
+   */
 }
