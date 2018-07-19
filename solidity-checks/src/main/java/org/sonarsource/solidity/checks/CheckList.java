@@ -23,6 +23,7 @@ public final class CheckList {
       .add(PragmaExistCheck.class)
       .add(DeprecatedSuicideCheck.class)
       .add(AvoidTxOriginCheck.class)
+      .add(AvoidSha3Check.class)
       .build();
   }
 }
