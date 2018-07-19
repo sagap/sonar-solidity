@@ -31,16 +31,26 @@
   
     <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sonar.apiVersion>6.7.1</sonar.apiVersion>
+    <sonar.apiVersion>7.3.0.14579</sonar.apiVersion>
     <jdk.min.version>1.8</jdk.min.version>
   </properties>
   
+   <dependencyManagement>
   <dependencies>
-      <dependency>
+    <dependency>
       <groupId>org.sonarsource.sonarqube</groupId>
       <artifactId>sonar-plugin-api</artifactId>
       <version>${sonar.apiVersion}</version>
-      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.sonarsource.analyzer-commons</groupId>
+      <artifactId>sonar-analyzer-commons</artifactId>
+      <version>1.7.0.243</version>
+    </dependency>
+    <dependency>
+      <groupId>org.sonarsource.analyzer-commons</groupId>
+      <artifactId>sonar-analyzer-test-commons</artifactId>
+      <version>1.7.0.243</version>
     </dependency>
     <dependency>
       <!-- packaged with the plugin -->
@@ -63,6 +73,16 @@
       <artifactId>antlr4</artifactId>
       <version>4.7.1</version>
     </dependency>
+        <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>19.0</version>
+    </dependency>
+    <dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>1.3.2</version>
+</dependency>
     <!-- unit tests -->
     <dependency>
       <groupId>org.sonarsource.sonarqube</groupId>
@@ -75,7 +95,7 @@
       <version>4.11</version>
     </dependency>
   </dependencies>
-
+</dependencyManagement>
   <build>
     <plugins>
        <plugin>
