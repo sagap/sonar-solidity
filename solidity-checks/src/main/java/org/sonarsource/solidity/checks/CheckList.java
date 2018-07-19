@@ -24,6 +24,7 @@ public final class CheckList {
       .add(DeprecatedSuicideCheck.class)
       .add(AvoidTxOriginCheck.class)
       .add(AvoidSha3Check.class)
+      .add(AccessRestrictionPatternCheck.class)
       .build();
   }
 }
