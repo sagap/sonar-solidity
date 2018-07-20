@@ -2,6 +2,7 @@ package org.sonarsource.solidity.checks;
 
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -13,8 +14,10 @@ import org.sonarsource.solidity.frontend.SolidityParser.FunctionCallContext;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IdentifierContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
+import org.sonarsource.solidity.frontend.SolidityParser.ModifierListContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ReturnStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.SimpleStatementContext;
+import org.sonarsource.solidity.frontend.SolidityParser.StateMutabilityContext;
 import org.sonarsource.solidity.frontend.SolidityParser.StatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.VariableDeclarationStatementContext;
 
@@ -124,4 +127,30 @@ public class CheckUtils {
     }
     return Optional.ofNullable(functionName);
   }
+
+  public static boolean isPayableFunction(List<StateMutabilityContext> stateMutabilityListCtx) {
+    return stateMutabilityListCtx.stream()
+      .map(StateMutabilityContext::PayableKeyword)
+      .filter(Objects::nonNull)
+      .count() == 1;
+  }
+
+  public static boolean isPublicOrExternalFunction(ModifierListContext modifierList) {
+    return noVisibilitySpecified(modifierList)
+      || modifierList.PublicKeyword(0) != null || modifierList.ExternalKeyword(0) != null;
+  }
+
+  public static boolean isViewOrPureFunction(List<StateMutabilityContext> stateMutabilityListCtx) {
+    return stateMutabilityListCtx.stream()
+      .filter(stateMutability -> {
+        return stateMutability.ViewKeyword() != null || stateMutability.PureKeyword() != null;
+      })
+      .count() == 1;
+  }
+
+  public static boolean noVisibilitySpecified(ModifierListContext modifierList) {
+    return modifierList.InternalKeyword(0) == null && modifierList.ExternalKeyword(0) == null
+      && modifierList.PublicKeyword(0) == null && modifierList.PrivateKeyword(0) == null;
+  }
+
 }
