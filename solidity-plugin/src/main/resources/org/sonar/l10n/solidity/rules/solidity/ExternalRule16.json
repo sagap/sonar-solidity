@@ -1,0 +1,14 @@
+{
+  "title": "Access restriction pattern should be used to increase the security of your smart contract against unauthorized access.",
+  "type": "VULNERABILITY",
+  "status": "ready",
+  "remedation": {
+   "func": "Constant\/Issue",
+   "constantCost": "60min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "CRITICAL",
+  "sqKey": "ExampleRule16"
+}
