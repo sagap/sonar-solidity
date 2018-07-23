@@ -24,10 +24,11 @@ public class StringEqualityComparisonCheck extends IssuableVisitor {
 
   @Override
   public ParseTree visitExpression(ExpressionContext ctx) {
+    FunctionCallContext functionCall = ctx.functionCall();
     if (stringUtilsImprorted
-      && ctx.functionCall() != null
-      && isStringUtilsLibrary(ctx.functionCall())) {
-      ruleContext().addIssue(ctx.functionCall(), "You should use the hash function \"keccak256()\" for string equality.", RULE_KEY);
+      && functionCall != null
+      && isStringUtilsLibrary(functionCall)) {
+      ruleContext().addIssue(functionCall, "You should use the hash function \"keccak256()\" for string equality.", RULE_KEY);
     }
     return super.visitExpression(ctx);
   }
