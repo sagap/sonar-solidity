@@ -27,6 +27,7 @@ public final class CheckList {
       .add(AccessRestrictionPatternCheck.class)
       .add(GuardCheckPatternCheck.class)
       .add(StringEqualityComparisonCheck.class)
+      .add(OraclePatternCheck.class)
       .build();
   }
 }
