@@ -20,9 +20,9 @@ public class SolidityRulesDefinitionTest {
     assertThat(repository.name()).isEqualTo(SolidityRulesDefinition.REPO_NAME);
     assertThat(repository.language()).isEqualTo("solidity");
     // assertThat(repository.rules()).hasSize(3);
-    assertThat(repository.rules()).hasSize(19);
+    assertThat(repository.rules()).hasSize(20);
     List<Rule> activated = repository.rules().stream().filter(x -> x.status().name().equals("READY")).collect(Collectors.toList());
     assertThat(activated).isNotEmpty();
-    assertThat(activated.size()).isEqualTo(19);
+    assertThat(activated.size()).isEqualTo(20);
   }
 }
