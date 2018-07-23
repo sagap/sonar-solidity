@@ -28,6 +28,7 @@ public final class CheckList {
       .add(GuardCheckPatternCheck.class)
       .add(StringEqualityComparisonCheck.class)
       .add(OraclePatternCheck.class)
+      .add(TransferEtherSecurelyCheck.class)
       .build();
   }
 }
