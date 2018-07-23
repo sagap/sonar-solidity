@@ -26,6 +26,7 @@ public final class CheckList {
       .add(AvoidSha3Check.class)
       .add(AccessRestrictionPatternCheck.class)
       .add(GuardCheckPatternCheck.class)
+      .add(StringEqualityComparisonCheck.class)
       .build();
   }
 }

@@ -1,0 +1,14 @@
+{
+  "title": "String Equality Comparison.",
+  "type": "VULNERABILITY",
+  "status": "ready",
+  "remedation": {
+   "func": "Constant\/Issue",
+   "constantCost": "30min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "CRITICAL",
+  "sqKey": "ExampleRule18"
+}
