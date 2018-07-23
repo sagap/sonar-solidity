@@ -35,23 +35,30 @@ public class GuardCheckPatternCheck extends IssuableVisitor {
 
   private static boolean parameterIsNotGuardChecked(String parameter,
     List<ModifierInvocationContext> modifierInvocationList, List<StatementContext> statementList) {
-    if (modifierHasArgument(modifierInvocationList, parameter)) {
+    if (argumentCheckedInModifier(modifierInvocationList, parameter)) {
       return false;
     }
+    if (argumentCheckedInFunction(statementList, parameter)) {
+      return false;
+    }
+    return true;
+  }
+
+  private static boolean argumentCheckedInFunction(List<StatementContext> statementList, String parameter) {
     for (StatementContext statement : statementList) {
       Optional<FunctionCallArgumentsContext> arguments = statementIsRequireFunctionCall(statement);
       if (arguments.isPresent()) {
         ExpressionVisitor expressionVisitor = new ExpressionVisitor(parameter);
         arguments.get().accept(expressionVisitor);
         if (!expressionVisitor.shouldReport) {
-          return false;
+          return true;
         }
       }
     }
-    return true;
+    return false;
   }
 
-  private static boolean modifierHasArgument(List<ModifierInvocationContext> modifierInvocationList, String parameter) {
+  private static boolean argumentCheckedInModifier(List<ModifierInvocationContext> modifierInvocationList, String parameter) {
     for (ModifierInvocationContext modifierInvocation : modifierInvocationList) {
       if (modifierInvocation.expressionList() != null) {
         for (ExpressionContext expression : modifierInvocation.expressionList().expression()) {
