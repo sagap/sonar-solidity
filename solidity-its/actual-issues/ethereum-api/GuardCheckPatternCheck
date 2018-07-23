@@ -1,0 +1,284 @@
+solidity-test-sources/src/ethereum-api/connectors/addressResolver.sol
+Issue Line: 16
+solidity-test-sources/src/ethereum-api/connectors/addressResolver.sol
+Issue Line: 25
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 360
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 360
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 363
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 363
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 363
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 359
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 359
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 362
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 362
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 362
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 385
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 385
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 391
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 391
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 391
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 400
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 400
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 400
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 406
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 406
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 406
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 406
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 415
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 415
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 415
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 421
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 421
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 421
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 421
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 430
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 430
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 430
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 430
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 436
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 436
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 436
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 436
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 436
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 488
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 493
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 34
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 41
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 48
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 48
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 57
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 57
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 57
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 64
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 79
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 79
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 85
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 85
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 85
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 95
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 95
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 106
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 106
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 113
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 113
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 122
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 129
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 137
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 137
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 145
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 145
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 153
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 199
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 215
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 221
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 227
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 234
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 234
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 279
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 279
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 287
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 287
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 295
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 295
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 295
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 303
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 303
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 311
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 311
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 311
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 319
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 319
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 319
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 327
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 327
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 327
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 327
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 335
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 335
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 335
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 352
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 352
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 352
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 352
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 360
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 360
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 360
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 360
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 368
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 368
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 368
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 368
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 368
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 376
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 376
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 376
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 376
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 384
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 384
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 384
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 384
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 398
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 398
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 398
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 398
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 398
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 412
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 412
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 412
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 412
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 426
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 426
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 426
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 426
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 426
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 440
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 440
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 440
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 440
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 440
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 440
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 454
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 454
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 454
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 454
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 454

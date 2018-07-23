@@ -25,6 +25,7 @@ public final class CheckList {
       .add(AvoidTxOriginCheck.class)
       .add(AvoidSha3Check.class)
       .add(AccessRestrictionPatternCheck.class)
+      .add(GuardCheckPatternCheck.class)
       .build();
   }
 }

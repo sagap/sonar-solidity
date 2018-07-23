@@ -1,0 +1,14 @@
+{
+  "title": "You should use \"require()\" to check the validity of a function's parameters, according to Guard Check Pattern.",
+  "type": "VULNERABILITY",
+  "status": "ready",
+  "remedation": {
+   "func": "Constant\/Issue",
+   "constantCost": "30min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "CRITICAL",
+  "sqKey": "ExampleRule17"
+}
