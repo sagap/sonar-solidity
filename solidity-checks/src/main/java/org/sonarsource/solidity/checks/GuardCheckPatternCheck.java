@@ -38,10 +38,7 @@ public class GuardCheckPatternCheck extends IssuableVisitor {
     if (argumentCheckedInModifier(modifierInvocationList, parameter)) {
       return false;
     }
-    if (argumentCheckedInFunction(statementList, parameter)) {
-      return false;
-    }
-    return true;
+    return !argumentCheckedInFunction(statementList, parameter);
   }
 
   private static boolean argumentCheckedInFunction(List<StatementContext> statementList, String parameter) {
