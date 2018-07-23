@@ -34,3 +34,6 @@ contract test is usingOraclize {
     function __callback(bytes32 myid, uint resulttt) {    // Noncompliant
     }
 }
+
+contract test2{
+}
