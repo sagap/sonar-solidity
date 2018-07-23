@@ -153,4 +153,9 @@ public class CheckUtils {
       && modifierList.PublicKeyword(0) == null && modifierList.PrivateKeyword(0) == null;
   }
 
+  public static boolean isCallBackFunction(FunctionDefinitionContext functionCtx) {
+    IdentifierContext functionIdentifier = functionCtx.identifier();
+    return functionIdentifier != null && "__callback".equals(functionIdentifier.getText());
+  }
+
 }
