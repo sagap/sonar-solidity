@@ -1,0 +1,14 @@
+{
+  "title": "Use transfer() instead of send().",
+  "type": "VULNERABILITY",
+  "status": "ready",
+  "remedation": {
+   "func": "Constant\/Issue",
+   "constantCost": "10min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "CRITICAL",
+  "sqKey": "ExampleRule20"
+}
