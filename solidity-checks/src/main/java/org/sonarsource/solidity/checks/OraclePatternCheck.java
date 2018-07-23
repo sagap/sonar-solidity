@@ -24,19 +24,14 @@ public class OraclePatternCheck extends IssuableVisitor {
   public ParseTree visitContractDefinition(ContractDefinitionContext ctx) {
 
     List<ContractPartContext> contractPart = ctx.contractPart();
-    if (inheritOraclizeOracle(ctx.inheritanceSpecifier()) && contractPart != null) {
-      List<FunctionDefinitionContext> callbackFunctions = contractPart.stream()
-        .map(ContractPartContext::functionDefinition)
-        .filter(Objects::nonNull)
-        .filter(function -> function.identifier() != null)
-        .filter(this::isCallbackFunction)
-        .collect(Collectors.toList());
-
+    if (inheritsOraclizeOracle(ctx.inheritanceSpecifier()) && contractPart != null) {
+      List<FunctionDefinitionContext> callbackFunctions = returnCallbackFunctions(contractPart);
       for (FunctionDefinitionContext function : callbackFunctions) {
         BlockContext functionBlock = function.block();
+        // raises an issue if there is no require() statement
         if (functionBlock != null &&
           functionBlock.statement().stream()
-            .filter(this::statementIsRequireFunctionCall)
+            .filter(this::statementIsRequireOrCallBackFunctionCall)
             .count() == 0) {
           ruleContext().addIssue(function.identifier(), "Callback function should use require to check "
             + "if the results from the external call are valid.", RULE_KEY);
@@ -44,10 +39,18 @@ public class OraclePatternCheck extends IssuableVisitor {
       }
     }
     return super.visitContractDefinition(ctx);
-
   }
 
-  private boolean statementIsRequireFunctionCall(StatementContext stmt) {
+  private List<FunctionDefinitionContext> returnCallbackFunctions(List<ContractPartContext> contractPart) {
+    return contractPart.stream()
+      .map(ContractPartContext::functionDefinition)
+      .filter(Objects::nonNull)
+      .filter(function -> function.identifier() != null)
+      .filter(this::isCallbackFunction)
+      .collect(Collectors.toList());
+  }
+
+  private boolean statementIsRequireOrCallBackFunctionCall(StatementContext stmt) {
     SimpleStatementContext simpleStmt = stmt.simpleStatement();
     if (simpleStmt != null && simpleStmt.expressionStatement() != null) {
       FunctionCallContext functionCall = simpleStmt.expressionStatement().expression().functionCall();
@@ -66,7 +69,7 @@ public class OraclePatternCheck extends IssuableVisitor {
     return CALLBACK_FUNCTION.equals(function.identifier().getText());
   }
 
-  private static boolean inheritOraclizeOracle(List<InheritanceSpecifierContext> inheritance) {
+  private static boolean inheritsOraclizeOracle(List<InheritanceSpecifierContext> inheritance) {
     return inheritance.stream()
       .filter(identifier -> "usingOraclize".equals(identifier.getText()))
       .count() == 1;
