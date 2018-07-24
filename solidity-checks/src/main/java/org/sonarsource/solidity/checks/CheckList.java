@@ -29,6 +29,7 @@ public final class CheckList {
       .add(StringEqualityComparisonCheck.class)
       .add(OraclePatternCheck.class)
       .add(TransferEtherSecurelyCheck.class)
+      .add(RandomnessCheck.class)
       .build();
   }
 }
