@@ -31,6 +31,7 @@ public final class CheckList {
       .add(TransferEtherSecurelyCheck.class)
       .add(RandomnessCheck.class)
       .add(BytesLowerGasCheck.class)
+      .add(CheckEffectsCheck.class)
       .build();
   }
 }

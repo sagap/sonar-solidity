@@ -1,0 +1,356 @@
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 61
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 90
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 104
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 119
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 132
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 144
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 158
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 170
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 183
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 195
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 206
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 220
+solidity-test-sources/src/aragonOS/contracts/acl/ACL.sol
+Issue Line: 225
+solidity-test-sources/src/aragonOS/test/helpers/ACLHelper.sol
+Issue Line: 18
+solidity-test-sources/src/aragonOS/test/helpers/ACLHelper.sol
+Issue Line: 25
+solidity-test-sources/src/aragonOS/test/helpers/ACLHelper.sol
+Issue Line: 32
+solidity-test-sources/src/aragonOS/test/helpers/ACLHelper.sol
+Issue Line: 39
+solidity-test-sources/src/aragonOS/test/mocks/APMNamehashWrapper.sol
+Issue Line: 9
+solidity-test-sources/src/aragonOS/contracts/apm/APMRegistry.sol
+Issue Line: 33
+solidity-test-sources/src/aragonOS/contracts/apm/APMRegistry.sol
+Issue Line: 52
+solidity-test-sources/src/aragonOS/contracts/apm/APMRegistry.sol
+Issue Line: 64
+solidity-test-sources/src/aragonOS/contracts/factory/APMRegistryFactory.sol
+Issue Line: 22
+solidity-test-sources/src/aragonOS/contracts/factory/APMRegistryFactory.sol
+Issue Line: 42
+solidity-test-sources/src/aragonOS/test/mocks/APMRegistryFactoryMock.sol
+Issue Line: 21
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyBase.sol
+Issue Line: 15
+solidity-test-sources/src/aragonOS/contracts/factory/AppProxyFactory.sol
+Issue Line: 10
+solidity-test-sources/src/aragonOS/contracts/factory/AppProxyFactory.sol
+Issue Line: 14
+solidity-test-sources/src/aragonOS/contracts/factory/AppProxyFactory.sol
+Issue Line: 20
+solidity-test-sources/src/aragonOS/contracts/factory/AppProxyFactory.sol
+Issue Line: 24
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyPinned.sol
+Issue Line: 13
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyPinned.sol
+Issue Line: 23
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyPinned.sol
+Issue Line: 30
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyUpgradeable.sol
+Issue Line: 22
+solidity-test-sources/src/aragonOS/contracts/apps/AppProxyUpgradeable.sol
+Issue Line: 29
+solidity-test-sources/src/aragonOS/test/mocks/AppStub.sol
+Issue Line: 13
+solidity-test-sources/src/aragonOS/test/mocks/AppStub.sol
+Issue Line: 18
+solidity-test-sources/src/aragonOS/test/mocks/AppStub.sol
+Issue Line: 22
+solidity-test-sources/src/aragonOS/test/mocks/AppStub.sol
+Issue Line: 26
+solidity-test-sources/src/aragonOS/test/mocks/AppStub.sol
+Issue Line: 30
+solidity-test-sources/src/aragonOS/test/mocks/AppStub.sol
+Issue Line: 36
+solidity-test-sources/src/aragonOS/test/mocks/AppStubConditionalRecovery.sol
+Issue Line: 7
+solidity-test-sources/src/aragonOS/contracts/apps/AragonApp.sol
+Issue Line: 27
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/token/BasicToken.sol
+Issue Line: 18
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/token/BasicToken.sol
+Issue Line: 40
+solidity-test-sources/src/aragonOS/contracts/evmscript/executors/CallsScript.sol
+Issue Line: 24
+solidity-test-sources/src/aragonOS/contracts/factory/DAOFactory.sol
+Issue Line: 19
+solidity-test-sources/src/aragonOS/contracts/factory/DAOFactory.sol
+Issue Line: 32
+solidity-test-sources/src/aragonOS/contracts/lib/ens/ENS.sol
+Issue Line: 27
+solidity-test-sources/src/aragonOS/contracts/lib/ens/ENS.sol
+Issue Line: 34
+solidity-test-sources/src/aragonOS/contracts/lib/ens/ENS.sol
+Issue Line: 41
+solidity-test-sources/src/aragonOS/contracts/lib/ens/ENS.sol
+Issue Line: 48
+solidity-test-sources/src/aragonOS/contracts/lib/ens/ENS.sol
+Issue Line: 58
+solidity-test-sources/src/aragonOS/contracts/lib/ens/ENS.sol
+Issue Line: 70
+solidity-test-sources/src/aragonOS/contracts/lib/ens/ENS.sol
+Issue Line: 81
+solidity-test-sources/src/aragonOS/contracts/lib/ens/ENS.sol
+Issue Line: 91
+solidity-test-sources/src/aragonOS/contracts/factory/ENSFactory.sol
+Issue Line: 14
+solidity-test-sources/src/aragonOS/contracts/ens/ENSSubdomainRegistrar.sol
+Issue Line: 24
+solidity-test-sources/src/aragonOS/contracts/ens/ENSSubdomainRegistrar.sol
+Issue Line: 34
+solidity-test-sources/src/aragonOS/contracts/ens/ENSSubdomainRegistrar.sol
+Issue Line: 38
+solidity-test-sources/src/aragonOS/contracts/ens/ENSSubdomainRegistrar.sol
+Issue Line: 43
+solidity-test-sources/src/aragonOS/contracts/ens/ENSSubdomainRegistrar.sol
+Issue Line: 60
+solidity-test-sources/src/aragonOS/contracts/evmscript/EVMScriptRegistry.sol
+Issue Line: 24
+solidity-test-sources/src/aragonOS/contracts/evmscript/EVMScriptRegistry.sol
+Issue Line: 30
+solidity-test-sources/src/aragonOS/contracts/evmscript/EVMScriptRegistry.sol
+Issue Line: 34
+solidity-test-sources/src/aragonOS/contracts/evmscript/EVMScriptRegistry.sol
+Issue Line: 38
+solidity-test-sources/src/aragonOS/contracts/factory/EVMScriptRegistryFactory.sol
+Issue Line: 16
+solidity-test-sources/src/aragonOS/contracts/factory/EVMScriptRegistryFactory.sol
+Issue Line: 21
+solidity-test-sources/src/aragonOS/contracts/evmscript/EVMScriptRunner.sol
+Issue Line: 30
+solidity-test-sources/src/aragonOS/test/mocks/EncodeMock.sol
+Issue Line: 10
+solidity-test-sources/src/aragonOS/test/mocks/ExecutionTarget.sol
+Issue Line: 7
+solidity-test-sources/src/aragonOS/test/mocks/ExecutionTarget.sol
+Issue Line: 12
+solidity-test-sources/src/aragonOS/test/mocks/ExecutionTarget.sol
+Issue Line: 16
+solidity-test-sources/src/aragonOS/test/mocks/Executor.sol
+Issue Line: 12
+solidity-test-sources/src/aragonOS/test/mocks/Executor.sol
+Issue Line: 16
+solidity-test-sources/src/aragonOS/test/mocks/Executor.sol
+Issue Line: 20
+solidity-test-sources/src/aragonOS/contracts/common/Initializable.sol
+Issue Line: 24
+solidity-test-sources/src/aragonOS/contracts/kernel/Kernel.sol
+Issue Line: 26
+solidity-test-sources/src/aragonOS/contracts/kernel/Kernel.sol
+Issue Line: 45
+solidity-test-sources/src/aragonOS/contracts/kernel/Kernel.sol
+Issue Line: 59
+solidity-test-sources/src/aragonOS/contracts/kernel/Kernel.sol
+Issue Line: 75
+solidity-test-sources/src/aragonOS/contracts/kernel/Kernel.sol
+Issue Line: 89
+solidity-test-sources/src/aragonOS/contracts/kernel/Kernel.sol
+Issue Line: 106
+solidity-test-sources/src/aragonOS/contracts/kernel/Kernel.sol
+Issue Line: 115
+solidity-test-sources/src/aragonOS/contracts/kernel/Kernel.sol
+Issue Line: 123
+solidity-test-sources/src/aragonOS/contracts/kernel/Kernel.sol
+Issue Line: 131
+solidity-test-sources/src/aragonOS/contracts/kernel/Kernel.sol
+Issue Line: 139
+solidity-test-sources/src/aragonOS/contracts/kernel/Kernel.sol
+Issue Line: 151
+solidity-test-sources/src/aragonOS/test/mocks/KernelMock.sol
+Issue Line: 16
+solidity-test-sources/src/aragonOS/test/mocks/KernelMock.sol
+Issue Line: 21
+solidity-test-sources/src/aragonOS/contracts/kernel/KernelProxy.sol
+Issue Line: 13
+solidity-test-sources/src/aragonOS/contracts/kernel/KernelProxy.sol
+Issue Line: 20
+solidity-test-sources/src/aragonOS/contracts/kernel/KernelProxy.sol
+Issue Line: 27
+solidity-test-sources/src/aragonOS/contracts/lib/misc/Migrations.sol
+Issue Line: 13
+solidity-test-sources/src/aragonOS/contracts/lib/misc/Migrations.sol
+Issue Line: 17
+solidity-test-sources/src/aragonOS/contracts/lib/misc/Migrations.sol
+Issue Line: 21
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 40
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 44
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 126
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 166
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 222
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 257
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 283
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 296
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 320
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 354
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 388
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 404
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 422
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 510
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 556
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 51
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 60
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 75
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 85
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 97
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 109
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 120
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 130
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 143
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 162
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 176
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 186
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 197
+solidity-test-sources/src/aragonOS/contracts/lib/ens/PublicResolver.sol
+Issue Line: 208
+solidity-test-sources/src/aragonOS/contracts/apm/Repo.sol
+Issue Line: 28
+solidity-test-sources/src/aragonOS/contracts/apm/Repo.sol
+Issue Line: 56
+solidity-test-sources/src/aragonOS/contracts/apm/Repo.sol
+Issue Line: 60
+solidity-test-sources/src/aragonOS/contracts/apm/Repo.sol
+Issue Line: 64
+solidity-test-sources/src/aragonOS/contracts/apm/Repo.sol
+Issue Line: 74
+solidity-test-sources/src/aragonOS/contracts/apm/Repo.sol
+Issue Line: 79
+solidity-test-sources/src/aragonOS/contracts/evmscript/ScriptHelpers.sol
+Issue Line: 14
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/token/StandardToken.sol
+Issue Line: 48
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/token/StandardToken.sol
+Issue Line: 60
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/token/StandardToken.sol
+Issue Line: 70
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/token/StandardToken.sol
+Issue Line: 76
+solidity-test-sources/src/aragonOS/test/mocks/StandardTokenMock.sol
+Issue Line: 10
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 8
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 15
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 20
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 25
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 31
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 36
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 41
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 47
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 53
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 59
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 65
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 70
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 76
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 82
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 95
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 102
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 119
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 136
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 146
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 150
+solidity-test-sources/src/aragonOS/test/TestACLInterpreter.sol
+Issue Line: 170
+solidity-test-sources/src/aragonOS/test/TestAclOracle.sol
+Issue Line: 15
+solidity-test-sources/src/aragonOS/test/TestAclOracle.sol
+Issue Line: 19
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 12
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 13
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 24
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 28
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 33
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 37
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 41
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 46
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 50
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 55
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 59
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 64
+solidity-test-sources/src/aragonOS/test/TestDelegateProxy.sol
+Issue Line: 71
+solidity-test-sources/src/aragonOS/test/helpers/ThrowProxy.sol
+Issue Line: 13
+solidity-test-sources/src/aragonOS/test/helpers/ThrowProxy.sol
+Issue Line: 22
+solidity-test-sources/src/aragonOS/test/helpers/ThrowProxy.sol
+Issue Line: 26
+solidity-test-sources/src/aragonOS/test/helpers/ThrowProxy.sol
+Issue Line: 30
+solidity-test-sources/src/aragonOS/test/mocks/UpgradedKernel.sol
+Issue Line: 9
+solidity-test-sources/src/aragonOS/contracts/common/VaultRecoverable.sol
+Issue Line: 37
