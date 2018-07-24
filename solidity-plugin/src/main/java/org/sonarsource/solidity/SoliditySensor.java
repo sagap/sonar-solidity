@@ -102,6 +102,7 @@ public class SoliditySensor implements Sensor {
           SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
           getSyntaxHighlighting(parser, context, file).save();
           saveFileMeasures(context, computeMeasures(parser, file), file);
+          SolidityCpd.addTokensCpd(context.newCpdTokens().onFile(file), file.contents());
           RuleContext ruleContext = new SolidityRuleContext(file, context);
           saveIssues(file, ruleContext);
         } catch (IOException e) {
