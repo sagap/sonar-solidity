@@ -30,6 +30,7 @@ public final class CheckList {
       .add(OraclePatternCheck.class)
       .add(TransferEtherSecurelyCheck.class)
       .add(RandomnessCheck.class)
+      .add(BytesLowerGasCheck.class)
       .build();
   }
 }
