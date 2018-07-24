@@ -1,0 +1,564 @@
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 12
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 21
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 30
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 39
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 48
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 57
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 66
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 75
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 84
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 93
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 102
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 111
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 120
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 129
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 138
+solidity-test-sources/src/ethereum-api/lib-experimental/inlineDynamicHelper_lib.sol
+Issue Line: 147
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 84
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 85
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 89
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 102
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 126
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 127
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 128
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 151
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 198
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 291
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 292
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 293
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 379
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 384
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 389
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 394
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 399
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 404
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 409
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 414
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 419
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 421
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 425
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 427
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 431
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 433
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 437
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 439
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 585
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 587
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 591
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 593
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 597
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 599
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 603
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 605
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 775
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 779
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 795
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 796
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 797
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 799
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 813
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 814
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 821
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 822
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 840
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 841
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 842
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 843
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 844
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 846
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 847
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 848
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 875
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 876
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 878
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 894
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 895
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 900
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 901
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 915
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 927
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 947
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 949
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 950
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 961
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 966
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 972
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1005
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1006
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1008
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1030
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1033
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1036
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1039
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1047
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1049
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1053
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1096
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1097
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1101
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1109
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1112
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1113
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1123
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1138
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1146
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.4.sol
+Issue Line: 1147
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 84
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 85
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 89
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 102
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 126
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 127
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 128
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 151
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 198
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 287
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 288
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 289
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 376
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 381
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 386
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 391
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 396
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 401
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 406
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 411
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 416
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 418
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 422
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 424
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 428
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 430
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 434
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 436
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 582
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 584
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 588
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 590
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 594
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 596
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 600
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 602
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 769
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 773
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 789
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 790
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 791
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 793
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 807
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 808
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 815
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 816
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 834
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 835
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 836
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 837
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 838
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 840
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 841
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 842
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 869
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 870
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 872
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 888
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 889
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 894
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 895
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 909
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 921
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 941
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 943
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 944
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 955
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 960
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 966
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 999
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1000
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1002
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1024
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1027
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1030
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1033
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1041
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1043
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1047
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1090
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1091
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1095
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1103
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1106
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1107
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1117
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1131
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1137
+solidity-test-sources/src/ethereum-api/oraclizeAPI_0.5.sol
+Issue Line: 1138
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 82
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 83
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 98
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 122
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 123
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 124
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 147
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 194
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 395
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 410
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 425
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 440
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 457
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 459
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 475
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 477
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 514
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 518
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 537
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 538
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 539
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 541
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 558
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 559
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 566
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 567
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 588
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 589
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 590
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 591
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 592
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 594
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 595
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 596
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 638
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 639
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 641
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 660
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 661
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 666
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 667
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 683
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 697
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 707
+solidity-test-sources/src/ethereum-api/lib-experimental/oraclizeAPI_lib.sol
+Issue Line: 708
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 55
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 56
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 57
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 98
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 103
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 108
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 113
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 118
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 123
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 128
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 133
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 158
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 162
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 177
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 178
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 179
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 181
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 196
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 197
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 204
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 205
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 223
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 224
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 225
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 226
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 227
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 229
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 230
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 231
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 258
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 259
+solidity-test-sources/src/ethereum-api/oraclizeAPI_pre0.4.sol
+Issue Line: 261
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 100
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 110
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 117
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 120
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 134
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 142
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 180
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 192
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 204
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 211
+solidity-test-sources/src/ethereum-api/connectors/oraclizeConnector.sol
+Issue Line: 252
