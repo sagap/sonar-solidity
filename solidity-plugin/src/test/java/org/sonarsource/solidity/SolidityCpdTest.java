@@ -25,6 +25,8 @@ public class SolidityCpdTest {
       List<TokensLine> tokensLines = context.cpdTokens("module:" + filename);
       assertThat(tokensLines).hasSize(26);
       assertThat(tokensLines.get(0).getValue()).isEqualTo("contractTwoD{");
+      assertThat(tokensLines.get(4).getValue()).isEqualTo("stringconstant_string=\"cryptopus.co Medium\";");
+      assertThat(tokensLines.get(10).getValue()).isEqualTo("while(y<arraylength)");
     } catch (IOException e) {
       e.printStackTrace();
     }
