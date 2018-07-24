@@ -1,0 +1,54 @@
+solidity-test-sources/src/aragonOS/test/mocks/AppStub.sol
+Issue Line: 6
+solidity-test-sources/src/aragonOS/contracts/apps/AragonApp.sol
+Issue Line: 28
+solidity-test-sources/src/aragonOS/contracts/evmscript/executors/CallsScript.sol
+Issue Line: 29
+solidity-test-sources/src/aragonOS/contracts/evmscript/EVMScriptRunner.sol
+Issue Line: 22
+solidity-test-sources/src/aragonOS/test/mocks/EncodeMock.sol
+Issue Line: 8
+solidity-test-sources/src/aragonOS/test/mocks/ExecutionTarget.sol
+Issue Line: 5
+solidity-test-sources/src/aragonOS/contracts/kernel/Kernel.sol
+Issue Line: 177
+solidity-test-sources/src/aragonOS/contracts/lib/misc/Migrations.sol
+Issue Line: 6
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 87
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 90
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 389
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 391
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 405
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 407
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 445
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 446
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 448
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 477
+solidity-test-sources/src/aragonOS/contracts/lib/minime/MiniMeToken.sol
+Issue Line: 517
+solidity-test-sources/src/aragonOS/contracts/apm/Repo.sol
+Issue Line: 10
+solidity-test-sources/src/aragonOS/contracts/apm/Repo.sol
+Issue Line: 49
+solidity-test-sources/src/aragonOS/contracts/apm/Repo.sol
+Issue Line: 81
+solidity-test-sources/src/aragonOS/contracts/evmscript/ScriptHelpers.sol
+Issue Line: 51
+solidity-test-sources/src/aragonOS/contracts/evmscript/ScriptHelpers.sol
+Issue Line: 105
+solidity-test-sources/src/aragonOS/contracts/evmscript/ScriptHelpers.sol
+Issue Line: 125
+solidity-test-sources/src/aragonOS/contracts/lib/zeppelin/token/StandardToken.sol
+Issue Line: 77
+solidity-test-sources/src/aragonOS/test/helpers/ThrowProxy.sol
+Issue Line: 11

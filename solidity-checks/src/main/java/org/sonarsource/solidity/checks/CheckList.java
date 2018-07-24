@@ -32,6 +32,7 @@ public final class CheckList {
       .add(RandomnessCheck.class)
       .add(BytesLowerGasCheck.class)
       .add(CheckEffectsCheck.class)
+      .add(TightVariablePackingCheck.class)
       .build();
   }
 }

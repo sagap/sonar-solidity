@@ -1,0 +1,800 @@
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 13
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 16
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 39
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 40
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 45
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 67
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 166
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 238
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 294
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 315
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 330
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 332
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 333
+solidity-test-sources/src/ethorse-core/contracts/Betting.sol
+Issue Line: 338
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 54
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 55
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 56
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 138
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 143
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 148
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 153
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 158
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 163
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 168
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 173
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 178
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 180
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 184
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 186
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 190
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 192
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 196
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 198
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 344
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 346
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 350
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 352
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 356
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 358
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 362
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 364
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 534
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 538
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 554
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 555
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 556
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 558
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 572
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 573
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 580
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 581
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 599
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 600
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 601
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 602
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 603
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 605
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 606
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 607
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 634
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 635
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 637
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 653
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 654
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 659
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 660
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 669
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 672
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 674
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 678
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 679
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 681
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 690
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 693
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 695
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 711
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 714
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 716
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 720
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 721
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 723
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 732
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 735
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 737
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 764
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 766
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 767
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 795
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 796
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 798
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 820
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 823
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 826
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 829
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 837
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 839
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 843
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 876
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 877
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 882
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 893
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 896
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 897
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 907
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 923
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 931
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 932
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1048
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1051
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1053
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1054
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1055
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1063
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1064
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1065
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1066
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1071
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1074
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1075
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1076
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1077
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1081
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1090
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1092
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1210
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1236
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1264
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1273
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1275
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1276
+solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
+Issue Line: 1281
+solidity-test-sources/src/ethorse-core/dormant/BettingComplex.sol
+Issue Line: 10
+solidity-test-sources/src/ethorse-core/dormant/BettingComplex.sol
+Issue Line: 11
+solidity-test-sources/src/ethorse-core/dormant/BettingComplex.sol
+Issue Line: 17
+solidity-test-sources/src/ethorse-core/dormant/BettingComplex.sol
+Issue Line: 26
+solidity-test-sources/src/ethorse-core/dormant/BettingComplex.sol
+Issue Line: 27
+solidity-test-sources/src/ethorse-core/dormant/BettingComplex.sol
+Issue Line: 28
+solidity-test-sources/src/ethorse-core/dormant/BettingComplex.sol
+Issue Line: 109
+solidity-test-sources/src/ethorse-core/dormant/BettingComplex.sol
+Issue Line: 125
+solidity-test-sources/src/ethorse-core/dormant/BettingComplex.sol
+Issue Line: 126
+solidity-test-sources/src/ethorse-core/dormant/BettingComplex.sol
+Issue Line: 129
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 34
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 37
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 39
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 40
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 41
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 49
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 50
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 51
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 52
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 57
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 60
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 61
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 62
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 63
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 67
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 76
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 78
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 196
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 222
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 250
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 259
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 261
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 262
+solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
+Issue Line: 267
+solidity-test-sources/src/ethorse-core/dormant/BettingSimple.sol
+Issue Line: 10
+solidity-test-sources/src/ethorse-core/contracts/Migrations.sol
+Issue Line: 5
+solidity-test-sources/src/ethorse-core/test/TestMetacoin.sol
+Issue Line: 12
+solidity-test-sources/src/ethorse-core/test/TestMetacoin.sol
+Issue Line: 20
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 42
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 43
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 57
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 71
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 84
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 143
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 162
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 201
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 207
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 208
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 209
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 216
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 252
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 253
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 300
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 301
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 302
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 326
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 464
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 465
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 503
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 549
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 564
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 580
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 617
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 649
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 675
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 694
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 695
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 699
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 792
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 793
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 794
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 795
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 801
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 802
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 803
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 804
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 805
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 807
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 808
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 810
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 812
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 927
+solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
+Issue Line: 1051
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 53
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 54
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 55
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 137
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 142
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 147
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 152
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 157
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 162
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 167
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 172
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 177
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 179
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 183
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 185
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 189
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 191
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 195
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 197
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 343
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 345
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 349
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 351
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 355
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 357
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 361
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 363
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 533
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 537
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 553
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 554
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 555
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 557
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 571
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 572
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 579
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 580
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 598
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 599
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 600
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 601
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 602
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 604
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 605
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 606
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 633
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 634
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 636
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 652
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 653
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 658
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 659
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 668
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 671
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 673
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 677
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 678
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 680
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 689
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 692
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 694
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 710
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 713
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 715
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 719
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 720
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 722
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 731
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 734
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 736
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 763
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 765
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 766
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 794
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 795
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 797
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 819
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 822
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 825
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 828
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 836
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 838
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 842
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 875
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 876
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 881
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 892
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 895
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 896
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 906
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 922
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 930
+solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
+Issue Line: 931
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 53
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 54
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 55
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 137
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 142
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 147
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 152
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 157
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 162
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 167
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 172
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 177
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 179
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 183
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 185
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 189
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 191
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 195
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 197
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 343
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 345
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 349
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 351
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 355
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 357
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 361
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 363
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 533
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 537
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 553
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 554
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 555
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 557
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 571
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 572
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 579
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 580
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 598
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 599
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 600
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 601
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 602
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 604
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 605
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 606
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 633
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 634
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 636
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 652
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 653
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 658
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 659
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 668
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 671
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 673
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 677
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 678
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 680
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 689
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 692
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 694
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 710
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 713
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 715
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 719
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 720
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 722
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 731
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 734
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 736
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 763
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 765
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 766
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 794
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 795
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 797
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 819
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 822
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 825
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 828
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 836
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 838
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 842
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 875
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 876
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 881
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 892
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 895
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 896
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 906
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 922
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 930
+solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol
+Issue Line: 931
