@@ -30,6 +30,7 @@ public final class RuleKeyList {
       .add("ExternalRule19")
       .add("ExternalRule20")
       .add("ExternalRule21")
+      .add("ExternalRule22")
       .add("ExternalRule23")
       .build();
   }
