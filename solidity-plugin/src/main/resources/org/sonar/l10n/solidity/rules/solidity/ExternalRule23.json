@@ -1,0 +1,14 @@
+{
+  "title": "Use bytes, instead of byte[] due to lower gas consumption.",
+  "type": "VULNERABILITY",
+  "status": "ready",
+  "remedation": {
+   "func": "Constant\/Issue",
+   "constantCost": "10min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "CRITICAL",
+  "sqKey": "ExampleRule23"
+}
