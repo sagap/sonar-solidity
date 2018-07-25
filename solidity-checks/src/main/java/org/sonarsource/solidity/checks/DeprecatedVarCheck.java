@@ -15,7 +15,7 @@ public class DeprecatedVarCheck extends IssuableVisitor {
   public ParseTree visitVariableDeclarationStatement(VariableDeclarationStatementContext ctx) {
     VariableDeclarationContext variableDeclaration = ctx.variableDeclaration();
     if (variableDeclaration != null && typeIsVar(variableDeclaration.typeName())
-      || typeIsVar(ctx.getChild(0))) {
+      || isTupleAssignment(ctx)) {
       ruleContext().addIssue(ctx.getStart(), ctx.getStop(), "\"var\" keyword is deprecated.", RULE_KEY);
     }
     return super.visitVariableDeclarationStatement(ctx);
@@ -23,5 +23,9 @@ public class DeprecatedVarCheck extends IssuableVisitor {
 
   private static boolean typeIsVar(ParseTree varType) {
     return VAR_KEYWORD.equals(varType.getText());
+  }
+
+  private static boolean isTupleAssignment(VariableDeclarationStatementContext variableDeclaration) {
+    return VAR_KEYWORD.equals(variableDeclaration.getChild(0).getText());
   }
 }
