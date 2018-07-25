@@ -33,6 +33,7 @@ public final class CheckList {
       .add(BytesLowerGasCheck.class)
       .add(CheckEffectsCheck.class)
       .add(TightVariablePackingCheck.class)
+      .add(DeprecatedVarCheck.class)
       .build();
   }
 }
