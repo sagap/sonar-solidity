@@ -1,0 +1,14 @@
+{
+  "title": "\"var\" keyword is deprecated.",
+  "type": "VULNERABILITY",
+  "status": "ready",
+  "remedation": {
+   "func": "Constant\/Issue",
+   "constantCost": "5min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "CRITICAL",
+  "sqKey": "ExampleRule25"
+}
