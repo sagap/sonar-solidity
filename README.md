@@ -2,3 +2,5 @@
 
 **SonarSolidity** is a static code analyzer for Solidity Smart Contracts.
 
+To begin with you should install a SonarQube instance (https://docs.sonarqube.org/).
+Please follow the instructions provided.
