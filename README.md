@@ -10,6 +10,6 @@ Please follow the instructions provided.
 ```bash
 mvn package
 ```
-
+Used ANTLR4 (https://github.com/solidityj/solidity-antlr4) to build the Parser and the Lexer.
 
 Licensed under the [GNU Lesser General Public License, Version 3.0](http://www.gnu.org/licenses/lgpl.txt)
