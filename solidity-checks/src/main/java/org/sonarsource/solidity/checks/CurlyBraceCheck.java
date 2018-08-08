@@ -5,7 +5,6 @@ import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.sonar.check.Rule;
-import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.SolidityParser.BlockContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContractDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.DoWhileStatementContext;
@@ -37,7 +36,8 @@ public class CurlyBraceCheck extends IssuableVisitor {
   public ParseTree visitIfStatement(IfStatementContext ctx) {
     BlockContext block = ctx.statement(0).block();
     if (block != null) {
-      Token curlyBraceToken = block.getToken(SolidityParser.T__13, 0).getSymbol();
+      int type = CheckUtils.returnTtypeFromLiteralName("'{'");
+      Token curlyBraceToken = block.getToken(type, 0).getSymbol();
       if (curlyBraceToken.getLine() != ctx.expression().getStop().getLine()) {
         report(curlyBraceToken);
       }
@@ -45,8 +45,10 @@ public class CurlyBraceCheck extends IssuableVisitor {
     CheckUtils.checkForElseStatement(ctx).ifPresent(stmtElse -> {
       StatementContext stmt = (StatementContext) stmtElse;
       if (stmt.block() != null) {
-        Token curlyBraceToken = stmt.block().getToken(SolidityParser.T__13, 0).getSymbol();
-        if (curlyBraceToken.getLine() != ctx.Else().getSymbol().getLine()) {
+        int type = CheckUtils.returnTtypeFromLiteralName("'{'");
+        Token curlyBraceToken = stmt.block().getToken(type, 0).getSymbol();
+        TerminalNode elseNode = CheckUtils.findTerminalNode(ctx, "'else'");
+        if (curlyBraceToken.getLine() != elseNode.getSymbol().getLine()) {
           report(curlyBraceToken);
         }
       }
@@ -87,7 +89,7 @@ public class CurlyBraceCheck extends IssuableVisitor {
   public ParseTree visitDoWhileStatement(DoWhileStatementContext ctx) {
     StatementContext statementList = ctx.statement();
     if (CheckUtils.treeMatches(statementList.getChild(0), BlockContext.class)) {
-      TerminalNode doKeyword = ctx.doKeyWord();
+      TerminalNode doKeyword = CheckUtils.findTerminalNode(ctx, "'do'");
       Token curlyBraceToken = (Token) statementList.block().getChild(0).getPayload();
       if (doKeyword.getSymbol().getLine() != curlyBraceToken.getLine()) {
         report(curlyBraceToken);

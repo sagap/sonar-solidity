@@ -27,8 +27,7 @@ import org.sonarsource.solidity.checks.CheckList;
 import org.sonarsource.solidity.checks.IssuableVisitor;
 import org.sonarsource.solidity.checks.RuleContext;
 import org.sonarsource.solidity.checks.RuleKeyList;
-import org.sonarsource.solidity.frontend.SolidityParser;
-import org.sonarsource.solidity.frontend.Utils;
+import org.sonarsource.solidity.frontend.SolidityParsingPhase;
 
 public class SolidityRuling {
 
@@ -129,8 +128,8 @@ public class SolidityRuling {
       RuleContext ruleContext = new SolidityRulingIts(visitor.getClass().getSimpleName(), file.getPath(), projectName);
       visitor.setRuleContext(ruleContext);
       try {
-        SolidityParser parser = Utils.returnParserUnitFromParsedFile(IOUtils.toString(new FileReader(file)));
-        visitor.visit(parser.sourceUnit());
+        SolidityParsingPhase parsing = new SolidityParsingPhase();
+        visitor.visit(parsing.parse(IOUtils.toString(new FileReader(file))));
       } catch (Exception e) {
         LOG.error(e + "Visitor:" + visitor.getClass() + " @File:" + file);
       }

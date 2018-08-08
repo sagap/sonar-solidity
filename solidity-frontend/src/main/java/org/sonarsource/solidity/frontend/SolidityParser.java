@@ -1,8 +1,6 @@
 package org.sonarsource.solidity.frontend;
 
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 import org.antlr.v4.runtime.FailedPredicateException;
 import org.antlr.v4.runtime.NoViableAltException;
 import org.antlr.v4.runtime.Parser;
@@ -12,6 +10,8 @@ import org.antlr.v4.runtime.RuleContext;
 import org.antlr.v4.runtime.RuntimeMetaData;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.TokenStream;
+import org.antlr.v4.runtime.Vocabulary;
+import org.antlr.v4.runtime.VocabularyImpl;
 // Generated from Solidity.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.atn.ATN;
 import org.antlr.v4.runtime.atn.ATNDeserializer;
@@ -28,10 +28,6 @@ public class SolidityParser extends Parser {
     RuntimeMetaData.checkVersion("4.7", RuntimeMetaData.VERSION);
   }
 
-  // important to maintain order of comments for reporting
-  public final Set<Token> comments = new LinkedHashSet<>();
-  public Integer emptyLines = 0;
-  public Integer linesOfComments = 0;
   protected static final DFA[] _decisionToDFA;
   protected static final PredictionContextCache _sharedContextCache = new PredictionContextCache();
   public static final int T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, T__4 = 5, T__5 = 6, T__6 = 7, T__7 = 8, T__8 = 9,
@@ -104,14 +100,70 @@ public class SolidityParser extends Parser {
     "elementaryTypeNameExpression", "numberLiteral", "identifier"
   };
 
-  public static boolean typeMatches(Token token, int... types) {
-    int tokenType = token.getType();
-    for (int typeIter : types) {
-      if (tokenType == typeIter) {
-        return true;
+  private static final String[] _LITERAL_NAMES = {
+    null, "'pragma'", "';'", "'^'", "'~'", "'>='", "'>'", "'<'", "'<='", "'='",
+    "'as'", "'import'", "'*'", "'from'", "'{'", "','", "'}'", "'contract'",
+    "'interface'", "'library'", "'is'", "'('", "')'", "'using'", "'for'",
+    "'struct'", "'constructor'", "'modifier'", "'function'", "'returns'",
+    "'event'", "'enum'", "'['", "']'", "'.'", "'mapping'", "'=>'", "'memory'",
+    "'storage'", "'calldata'", "'if'", "'else'", "'while'", "'assembly'",
+    "'do'", "'return'", "'throw'", "'emit'", "'var'", "'address'", "'bool'",
+    "'string'", "'byte'", "'++'", "'--'", "'new'", "'+'", "'-'", "'after'",
+    "'delete'", "'!'", "'**'", "'/'", "'%'", "'<<'", "'>>'", "'&'", "'|'",
+    "'=='", "'!='", "'&&'", "'||'", "'?'", "':'", "'|='", "'^='", "'&='",
+    "'<<='", "'>>='", "'+='", "'-='", "'*='", "'/='", "'%='", "'let'", "':='",
+    "'=:'", "'switch'", "'case'", "'default'", "'->'", null, null, null, null,
+    null, null, null, null, null, null, null, null, "'anonymous'", "'break'",
+    "'constant'", "'continue'", "'external'", "'indexed'", "'internal'", "'payable'",
+    "'private'", "'public'", "'pure'", "'view'"
+  };
+  private static final String[] _SYMBOLIC_NAMES = {
+    null, null, null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, null, null, null, null, null,
+    null, null, null, null, null, null, null, "Int", "Uint", "Byte", "Fixed",
+    "Ufixed", "VersionLiteral", "BooleanLiteral", "DecimalNumber", "HexNumber",
+    "NumberUnit", "HexLiteral", "ReservedKeyword", "AnonymousKeyword", "BreakKeyword",
+    "ConstantKeyword", "ContinueKeyword", "ExternalKeyword", "IndexedKeyword",
+    "InternalKeyword", "PayableKeyword", "PrivateKeyword", "PublicKeyword",
+    "PureKeyword", "ViewKeyword", "Identifier", "StringLiteral", "WS", "COMMENT",
+    "LINE_COMMENT"
+  };
+  public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+  /**
+   * @deprecated Use {@link #VOCABULARY} instead.
+   */
+  @Deprecated
+  public static final String[] tokenNames;
+  static {
+    tokenNames = new String[_SYMBOLIC_NAMES.length];
+    for (int i = 0; i < tokenNames.length; i++) {
+      tokenNames[i] = VOCABULARY.getLiteralName(i);
+      if (tokenNames[i] == null) {
+        tokenNames[i] = VOCABULARY.getSymbolicName(i);
+      }
+
+      if (tokenNames[i] == null) {
+        tokenNames[i] = "<INVALID>";
       }
     }
-    return false;
+  }
+
+  @Override
+  @Deprecated
+  public String[] getTokenNames() {
+    return tokenNames;
+  }
+
+  @Override
+
+  public Vocabulary getVocabulary() {
+    return VOCABULARY;
   }
 
   @Override
@@ -122,11 +174,6 @@ public class SolidityParser extends Parser {
   @Override
   public String[] getRuleNames() {
     return SolidityTokensInfo.getRuleNames();
-  }
-
-  @Override
-  public String[] getTokenNames() {
-    return SolidityTokensInfo.getTokenNames();
   }
 
   @Override
@@ -141,19 +188,6 @@ public class SolidityParser extends Parser {
   public SolidityParser(TokenStream input) {
     super(input);
     _interp = new ParserATNSimulator(this, _ATN, _decisionToDFA, _sharedContextCache);
-  }
-
-  public void addCommentsToSet(List<? extends Token> tokens) {
-    int emptyLines = 0;
-    int lastLine = 1;
-    for (Token token : tokens) {
-      if (token.getChannel() == 1) {
-        comments.add(token);
-        if (Utils.isCommentSignificant(token)) {
-          linesOfComments++;
-        }
-      }
-    }
   }
 
   public static class SourceUnitContext extends ParserRuleContext {
@@ -883,10 +917,6 @@ public class SolidityParser extends Parser {
   }
 
   public static class ContractDefinitionContext extends ParserRuleContext {
-
-    public TerminalNode contractKeyword() {
-      return (TerminalNode) getChild(0);
-    }
 
     public IdentifierContext identifier() {
       return getRuleContext(IdentifierContext.class, 0);
@@ -3804,14 +3834,6 @@ public class SolidityParser extends Parser {
 
   public static class IfStatementContext extends ParserRuleContext {
 
-    public TerminalNode If() {
-      return getToken(SolidityParser.T__39, 0);
-    }
-
-    public TerminalNode Else() {
-      return getToken(SolidityParser.T__40, 0);
-    }
-
     public ExpressionContext expression() {
       return getRuleContext(ExpressionContext.class, 0);
     }
@@ -4245,11 +4267,6 @@ public class SolidityParser extends Parser {
   }
 
   public static class DoWhileStatementContext extends ParserRuleContext {
-
-    public TerminalNode doKeyWord() {
-      return getToken(T__43, 0);
-    }
-
     public StatementContext statement() {
       return getRuleContext(StatementContext.class, 0);
     }

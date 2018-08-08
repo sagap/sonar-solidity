@@ -7,7 +7,6 @@ import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.sonarsource.solidity.frontend.SolidityBaseVisitor;
-import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.SolidityParser.BreakStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContinueStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.DoWhileStatementContext;
@@ -116,7 +115,7 @@ public class CognitiveComplexityVisitor extends SolidityBaseVisitor<Token> {
 
   private static boolean isAndOrOperator(ParseTree tree) {
     int type = ((CommonToken) tree.getPayload()).getType();
-    return SolidityParser.T__69 == type || SolidityParser.T__70 == type;
+    return CheckUtils.returnTtypeFromLiteralName("'&&'") == type || CheckUtils.returnTtypeFromLiteralName("'||'") == type;
   }
 
   public int getCognitiveComplexity() {
