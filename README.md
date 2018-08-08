@@ -1,4 +1,15 @@
 # Sonar-Solidity [![Build Status](https://travis-ci.org/stylianos-agapiou-sonarsource/sonar-solidity.svg?branch=master)](https://travis-ci.org/stylianos-agapiou-sonarsource/sonar-solidity) [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=org.sonarsource.solidity%3Asonar-solidity&metric=alert_status)](https://sonarcloud.io/dashboard?id=org.sonarsource.solidity%3Asonar-solidity) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=org.sonarsource.solidity%3Asonar-solidity&metric=coverage)](https://sonarcloud.io/component_measures?id=org.sonarsource.solidity%3Asonar-solidity&metric=coverage)
 
-**SonarSolidity** is a static code analyzer for Solidity Smart Contracts.
+**SonarSolidity**: is a SonarQube static code analyzer for Solidity Smart Contracts.
 
+To begin with you should install a SonarQube instance (https://docs.sonarqube.org/).
+Please follow the instructions provided.
+
+## Building
+
+```bash
+mvn package
+```
+Used ANTLR4 (https://github.com/solidityj/solidity-antlr4) to build the Parser and the Lexer.
+
+Licensed under the [GNU Lesser General Public License, Version 3.0](http://www.gnu.org/licenses/lgpl.txt)
