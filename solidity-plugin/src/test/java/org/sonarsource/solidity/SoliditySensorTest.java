@@ -31,11 +31,10 @@ import org.sonar.api.rule.RuleKey;
 import org.sonar.api.utils.Version;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
-import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.SolidityParser.ContractDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.PragmaDirectiveContext;
 import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
-import org.sonarsource.solidity.frontend.Utils;
+import org.sonarsource.solidity.frontend.SolidityParsingPhase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
@@ -222,8 +221,8 @@ public class SoliditySensorTest {
   public void test_reporting() throws IOException {
     String filename = "test_issues1.sol";
     InputFile inputFile = createInputFile(filename);
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(inputFile.contents());
-    SourceUnitContext suc = parser.sourceUnit();
+    SolidityParsingPhase parser = new SolidityParsingPhase();
+    SourceUnitContext suc = parser.parse(inputFile.contents());
     List<NewIssue> issues = createDummyIssuesPragmaAndContract(inputFile, sensorContext, suc);
     assertThat(issues).hasSize(2);
   }

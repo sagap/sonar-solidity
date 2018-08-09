@@ -9,8 +9,7 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
-import org.sonarsource.solidity.frontend.SolidityParser;
-import org.sonarsource.solidity.frontend.Utils;
+import org.sonarsource.solidity.frontend.SolidityParsingPhase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -28,9 +27,9 @@ public class FileRuleVerifier {
     CharStream cs;
     try {
       cs = CharStreams.fromFileName(relativePath);
-      SolidityParser parser = Utils.returnParserFromParsedFile(cs);
+      SolidityParsingPhase parsing = new SolidityParsingPhase();
       checkVisitor.setRuleContext(testRuleContext);
-      checkVisitor.visit(parser.sourceUnit());
+      checkVisitor.visit(parsing.parse(cs));
       if (reportMessage != null) {
         assertThat(TestRuleContext.issues).isNotEmpty();
         assertThat(TestRuleContext.issues).hasSize(1);

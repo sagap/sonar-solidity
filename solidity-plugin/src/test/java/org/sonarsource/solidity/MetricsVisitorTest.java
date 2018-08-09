@@ -8,8 +8,7 @@ import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.fs.internal.TestInputFileBuilder;
 import org.sonar.api.measures.FileLinesContext;
 import org.sonar.api.measures.FileLinesContextFactory;
-import org.sonarsource.solidity.frontend.SolidityParser;
-import org.sonarsource.solidity.frontend.Utils;
+import org.sonarsource.solidity.frontend.SolidityParsingPhase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
@@ -29,9 +28,9 @@ public class MetricsVisitorTest {
     String filename = "test_contracts.sol";
     InputFile file = createInputFile(new File("src/test/resources/" + filename));
     try {
-      SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
-      parser.emptyLines = UtilsSensor.emptyLines(file);
-      MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
+      SolidityParsingPhase parser = new SolidityParsingPhase();
+      parser.setEmptyLines(UtilsSensor.emptyLines(file));
+      MetricsVisitor metricsVisitor = new MetricsVisitor(parser, parser.parse(file.contents()));
       assertThat(metricsVisitor.fileMeasures.getContractNumber()).isEqualTo(2);
       assertThat(metricsVisitor.fileMeasures.getCommentLinesNumber()).isEqualTo(2);
     } catch (IOException e) {
@@ -44,9 +43,9 @@ public class MetricsVisitorTest {
     String filename = "test1.sol";
     InputFile file = createInputFile(new File("src/test/resources/" + filename));
     try {
-      SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
-      parser.emptyLines = UtilsSensor.emptyLines(file);
-      MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
+      SolidityParsingPhase parser = new SolidityParsingPhase();
+      parser.setEmptyLines(UtilsSensor.emptyLines(file));
+      MetricsVisitor metricsVisitor = new MetricsVisitor(parser, parser.parse(file.contents()));
       assertThat(metricsVisitor.fileMeasures.getContractNumber()).isEqualTo(1);
       assertThat(metricsVisitor.fileMeasures.getFunctionNumber()).isEqualTo(3);
       assertThat(metricsVisitor.fileMeasures.getStatementNumber()).isEqualTo(8);
@@ -63,9 +62,9 @@ public class MetricsVisitorTest {
     String filename = "test3.sol";
     InputFile file = createInputFile(new File("src/test/resources/" + filename));
     try {
-      SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
-      parser.emptyLines = UtilsSensor.emptyLines(file);
-      MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
+      SolidityParsingPhase parser = new SolidityParsingPhase();
+      parser.setEmptyLines(UtilsSensor.emptyLines(file));
+      MetricsVisitor metricsVisitor = new MetricsVisitor(parser, parser.parse(file.contents()));
       assertThat(metricsVisitor.fileMeasures.getContractNumber()).isEqualTo(1);
       assertThat(metricsVisitor.fileMeasures.getLinesOfCodeNumber()).isEqualTo(23);
     } catch (IOException e) {

@@ -16,9 +16,11 @@ import org.sonarsource.solidity.frontend.SolidityParser.ForStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.IfStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ReturnStatementContext;
+import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ThrowStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.VariableDeclarationStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.WhileStatementContext;
+import org.sonarsource.solidity.frontend.SolidityParsingPhase;
 import org.sonarsource.solidity.frontend.Utils;
 
 public class MetricsVisitor extends SolidityBaseVisitor<Token> {
@@ -27,15 +29,15 @@ public class MetricsVisitor extends SolidityBaseVisitor<Token> {
   int statements = 0;
   int contractCounter = 0;
 
-  public MetricsVisitor(SolidityParser parser) {
+  public MetricsVisitor(SolidityParsingPhase parser, SourceUnitContext suc) {
     this.fileMeasures = new FileMeasures();
-    parser.sourceUnit().accept(this);
+    suc.accept(this);
     this.fileMeasures.setStatementNumber(statements);
     this.fileMeasures.setFunctionNumber(functionCounter);
     this.fileMeasures.setContractNumber(contractCounter);
-    this.fileMeasures.setCommentLinesNumber(parser.linesOfComments);
-    TerminalNode node = parser.sourceUnit().EOF();
-    this.fileMeasures.setLinesOfCodeNumber(node.getSymbol().getLine() - computeLinesOfComments(parser.comments) - parser.emptyLines);
+    this.fileMeasures.setCommentLinesNumber(parser.getLinesOfComments());
+    TerminalNode node = suc.EOF();
+    this.fileMeasures.setLinesOfCodeNumber(node.getSymbol().getLine() - computeLinesOfComments(parser.comments) - parser.getEmptyLines());
     // TODO fix complexity
     this.fileMeasures.setContractComplexity(0);
     this.fileMeasures.setFunctionComplexity(0);
@@ -46,7 +48,7 @@ public class MetricsVisitor extends SolidityBaseVisitor<Token> {
   private int computeLinesOfComments(Set<Token> tokens) {
     int comments = 0;
     for (Token token : tokens) {
-      if (token.getType() == 118) {
+      if (token.getType() == SolidityParser.COMMENT) {
         if (Utils.isCommentSignificant(token)) {
           comments++;
         }

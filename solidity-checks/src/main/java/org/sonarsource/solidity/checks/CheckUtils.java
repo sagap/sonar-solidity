@@ -68,7 +68,8 @@ public class CheckUtils {
   }
 
   public static Optional<ParseTree> checkForElseStatement(ParserRuleContext ctxNode) {
-    if (!ctxNode.children.isEmpty() && (((IfStatementContext) ctxNode).Else()) != null) {
+    TerminalNode elseNode = CheckUtils.findTerminalNode(ctxNode, "'else'");
+    if (!ctxNode.children.isEmpty() && elseNode != null) {
       ParseTree childNode = ctxNode.children.get(6);
       // exclude else - if cases
       if (childNode.getChildCount() > 0 && !childNode.getChild(0).getClass().equals(IfStatementContext.class))
@@ -86,7 +87,8 @@ public class CheckUtils {
   }
 
   public static boolean isElseIfStatement(IfStatementContext ctx) {
-    return ctx.getParent().getRuleIndex() == 38 && ctx.getParent().getParent().getRuleIndex() == 40;
+    return ctx.getParent().getRuleIndex() == SolidityParser.RULE_statement &&
+      ctx.getParent().getParent().getRuleIndex() == returnTtypeFromLiteralName("'if'");
   }
 
   public static boolean isTernaryExpression(StatementContext ctx) {
@@ -96,13 +98,13 @@ public class CheckUtils {
       case "ReturnStatementContext":
         ReturnStatementContext retStmt = ctx.returnStatement();
         expr = retStmt.expression();
-        return expr != null && (expr.getToken(SolidityParser.T__71, 0) != null);
+        return expr != null && (expr.getToken(CheckUtils.returnTtypeFromLiteralName("'?'"), 0) != null);
       case "SimpleStatementContext":
         SimpleStatementContext simpleStmt = ctx.simpleStatement();
         VariableDeclarationStatementContext varDeclStmt = simpleStmt.variableDeclarationStatement();
         if (varDeclStmt != null) {
           expr = varDeclStmt.expression();
-          return expr != null && (expr.getToken(SolidityParser.T__71, 0) != null);
+          return expr != null && (expr.getToken(CheckUtils.returnTtypeFromLiteralName("'?'"), 0) != null);
         }
         return false;
       default:
@@ -111,7 +113,7 @@ public class CheckUtils {
   }
 
   public static TerminalNode getOpenCurlyBrace(ParserRuleContext ctx) {
-    return ctx.getTokens(SolidityParser.T__13).get(0);
+    return ctx.getTokens(returnTtypeFromLiteralName("'{'")).get(0);
   }
 
   public static Optional<String> extractNameFromFunction(ParserRuleContext functionContext) {
@@ -158,4 +160,16 @@ public class CheckUtils {
     return functionIdentifier != null && "__callback".equals(functionIdentifier.getText());
   }
 
+  public static int returnTtypeFromLiteralName(String literal) {
+    for (int i = 1; i < SolidityParser.VOCABULARY.getMaxTokenType(); i++) {
+      if (literal.equals(SolidityParser.VOCABULARY.getLiteralName(i))) {
+        return i;
+      }
+    }
+    return 0;
+  }
+
+  public static TerminalNode findTerminalNode(ParserRuleContext node, String literal) {
+    return node.getToken(returnTtypeFromLiteralName(literal), 0);
+  }
 }

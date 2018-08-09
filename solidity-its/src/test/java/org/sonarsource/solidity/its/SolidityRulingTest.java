@@ -12,8 +12,7 @@ import org.sonar.api.utils.log.Loggers;
 import org.sonarsource.solidity.checks.CognitiveComplexityCheck;
 import org.sonarsource.solidity.checks.IssuableVisitor;
 import org.sonarsource.solidity.checks.RuleContext;
-import org.sonarsource.solidity.frontend.SolidityParser;
-import org.sonarsource.solidity.frontend.Utils;
+import org.sonarsource.solidity.frontend.SolidityParsingPhase;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -56,14 +55,12 @@ public class SolidityRulingTest {
         RuleContext ruleContext = new RuleContextCognitiveComplexity();
         visitor.setRuleContext(ruleContext);
         try {
-          SolidityParser parser = Utils.returnParserUnitFromParsedFile(IOUtils.toString(new FileReader(file)));
-          visitor.visit(parser.sourceUnit());
+          SolidityParsingPhase parser = new SolidityParsingPhase();
+          visitor.visit(parser.parse(IOUtils.toString(new FileReader(file))));
         } catch (IOException e) {
           LOG.debug(e.getMessage());
         }
-
       });
-
     });
   }
 

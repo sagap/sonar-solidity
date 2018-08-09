@@ -9,8 +9,7 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
-import org.sonarsource.solidity.frontend.SolidityParser;
-import org.sonarsource.solidity.frontend.Utils;
+import org.sonarsource.solidity.frontend.SolidityParsingPhase;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -25,12 +24,12 @@ public class CheckVerifier {
     CharStream cs;
     try {
       cs = CharStreams.fromFileName(relativePath);
-      SolidityParser parser = Utils.returnParserFromParsedFile(cs);
       TestRuleContext testRuleContext = new TestRuleContext(verifier);
       checkVisitor.setRuleContext(testRuleContext);
-      checkVisitor.visit(parser.sourceUnit());
+      SolidityParsingPhase parsing = new SolidityParsingPhase();
+      checkVisitor.visit(parsing.parse(cs));
 
-      parser.comments.stream()
+      parsing.comments.stream()
         .forEach(x -> {
           int line = x.getLine();
           int col = x.getCharPositionInLine();

@@ -49,8 +49,8 @@ public class SolidityParserTest {
       " uint vote; // index of the voted proposal\n" +
       " }\n" +
       "}";
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file);
-    SourceUnitContext suc = parser.sourceUnit();
+    SolidityParsingPhase parser = new SolidityParsingPhase();
+    SourceUnitContext suc = parser.parse(file);
     PragmaDirectiveContext pdc = suc.pragmaDirective().get(0);
     assertThat(pdc).isNotNull();
     ContractDefinitionContext c = suc.contractDefinition().get(0);
@@ -78,8 +78,8 @@ public class SolidityParserTest {
   @Test
   public void test_parsing_file() throws IOException {
     CharStream cs = CharStreams.fromFileName("src/test/resources/test1.sol");
-    SolidityParser parser = Utils.returnParserFromParsedFile(cs);
-    SourceUnitContext suc = parser.sourceUnit();
+    SolidityParsingPhase parser = new SolidityParsingPhase();
+    SourceUnitContext suc = parser.parse(cs);
     assertThat(suc).isNotNull();
 
     ContractDefinitionContext cdc = suc.contractDefinition().get(0);
@@ -137,8 +137,8 @@ public class SolidityParserTest {
       "    // changes efficiently.\n" +
       "    event Sent(address from, address to, uint amount);}";
 
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file);
-    SourceUnitContext suc = parser.sourceUnit();
+    SolidityParsingPhase parser = new SolidityParsingPhase();
+    SourceUnitContext suc = parser.parse(file);
     ContractDefinitionContext cdc = suc.contractDefinition().get(0);
     assertThat(cdc).isNotNull();
 
@@ -163,8 +163,8 @@ public class SolidityParserTest {
       "}\n" +
       "";
 
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file);
-    SourceUnitContext suc = parser.sourceUnit();
+    SolidityParsingPhase parser = new SolidityParsingPhase();
+    SourceUnitContext suc = parser.parse(file);
     ContractDefinitionContext cdc = suc.contractDefinition().get(0);
     assertThat(cdc.identifier().getText()).isEqualTo("c");
 
@@ -185,8 +185,8 @@ public class SolidityParserTest {
   @Test
   public void test_import() {
     String file = "import \"./abc.sol\";";
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file);
-    SourceUnitContext suc = parser.sourceUnit();
+    SolidityParsingPhase parser = new SolidityParsingPhase();
+    SourceUnitContext suc = parser.parse(file);
     ImportDirectiveContext idCtx = suc.importDirective().get(0);
     assertThat(idCtx).isNotNull();
     assertThat(Utils.trimQuotes(idCtx.StringLiteral().getText())).isEqualTo("./abc.sol");
@@ -199,8 +199,8 @@ public class SolidityParserTest {
       "contract derived is base {\n" +
       "enum foo { }\n" +
       "}";
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file);
-    SourceUnitContext suc = parser.sourceUnit();
+    SolidityParsingPhase parser = new SolidityParsingPhase();
+    SourceUnitContext suc = parser.parse(file);
     ContractDefinitionContext cdCtx = suc.contractDefinition(1);
     assertThat(cdCtx.inheritanceSpecifier().get(0).getText()).isEqualTo("base");
     InheritanceSpecifierContext isCtx = cdCtx.inheritanceSpecifier(0);
@@ -219,24 +219,18 @@ public class SolidityParserTest {
     String file = "contract base {\n" +
       "    // ... test\n" +
       "}";
-    SolidityParser parser = Utils.returnParserUnitFromParsedFile(file);
-    SourceUnitContext suc = parser.sourceUnit();
+    SolidityParsingPhase parser = new SolidityParsingPhase();
+    SourceUnitContext suc = parser.parse(file);
     assertThat(parser.comments).hasSize(1);
-    assertThat(parser.getGrammarFileName()).isNotNull();
-    assertThat(parser.getRuleNames()).isNotEmpty();
-    assertThat(parser.getTokenNames()).isNotEmpty();
-    assertThat(parser.getATN()).isNotNull();
-    assertThat(parser.getSerializedATN()).isNotNull();
     assertThat(suc.getRuleIndex()).isEqualTo(0);
     assertThat(suc.EOF()).isNotNull();
-    assertThat(SolidityTokensInfo.getVocabulary()).isNotNull();
   }
 
   @Test
   public void test_foo2() throws IOException {
     CharStream cs = CharStreams.fromFileName("src/test/resources/test_ternary.sol");
-    SolidityParser parser = Utils.returnParserFromParsedFile(cs);
-    SourceUnitContext suc = parser.sourceUnit();
+    SolidityParsingPhase parser = new SolidityParsingPhase();
+    SourceUnitContext suc = parser.parse(cs);
     assertThat(suc).isNotNull();
 
     ContractDefinitionContext cdc = suc.contractDefinition().get(0);
@@ -253,7 +247,6 @@ public class SolidityParserTest {
     ReturnStatementContext retStmt = stmtCtx.get(0).returnStatement();
     assertThat(retStmt).isNotNull();
     ExpressionContext expr = retStmt.expression();
-    TerminalNode t = expr.getToken(SolidityParser.T__71, 0);
-    assertThat(t).isNotNull();
+    assertThat(expr).isNotNull();
   }
 }

@@ -43,9 +43,8 @@ import org.sonarsource.solidity.checks.CheckList;
 import org.sonarsource.solidity.checks.CognitiveComplexityVisitor;
 import org.sonarsource.solidity.checks.IssuableVisitor;
 import org.sonarsource.solidity.checks.RuleContext;
-import org.sonarsource.solidity.frontend.SolidityParser;
 import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
-import org.sonarsource.solidity.frontend.Utils;
+import org.sonarsource.solidity.frontend.SolidityParsingPhase;
 
 public class SoliditySensor implements Sensor {
 
@@ -99,9 +98,10 @@ public class SoliditySensor implements Sensor {
       if (inSonarQube(context)) {
         try {
           LOG.debug("Analyzing: " + lastAnalyzedFile);
-          SolidityParser parser = Utils.returnParserUnitFromParsedFile(file.contents());
-          getSyntaxHighlighting(parser, context, file).save();
-          saveFileMeasures(context, computeMeasures(parser, file), file);
+          SolidityParsingPhase parsing = new SolidityParsingPhase();
+          SourceUnitContext suc = parsing.parse(file.contents());
+          getSyntaxHighlighting(parsing, context, file).save();
+          saveFileMeasures(context, computeMeasures(parsing, suc, file), file);
           SolidityCpd.addTokensCpd(context.newCpdTokens().onFile(file), file.contents());
           RuleContext ruleContext = new SolidityRuleContext(file, context);
           saveIssues(file, ruleContext);
@@ -115,27 +115,26 @@ public class SoliditySensor implements Sensor {
   }
 
   private void saveIssues(InputFile file, RuleContext ruleContext) throws IOException {
-    SourceUnitContext suc = Utils.returnParserUnitFromParsedFile(file.contents()).sourceUnit();
+    SourceUnitContext suc = new SolidityParsingPhase().parse(file.contents());
     for (IssuableVisitor check : checks) {
       check.setRuleContext(ruleContext);
       check.visit(suc);
     }
   }
 
-  private FileMeasures computeMeasures(SolidityParser parser, InputFile file) throws IOException {
-    MetricsVisitor metricsVisitor = new MetricsVisitor(parser);
-
-    cognitiveComplexity = new CognitiveComplexityVisitor(Utils.returnParserUnitFromParsedFile(file.contents()).sourceUnit());
+  private FileMeasures computeMeasures(SolidityParsingPhase parser, SourceUnitContext suc, InputFile file) throws IOException {
+    MetricsVisitor metricsVisitor = new MetricsVisitor(parser, suc);
+    cognitiveComplexity = new CognitiveComplexityVisitor(new SolidityParsingPhase().parse(file.contents()));
     int totalComplexity = cognitiveComplexity.sumAllFunctionsComplexity();
     metricsVisitor.fileMeasures.setFileCognitiveComplexity(totalComplexity);
     return metricsVisitor.fileMeasures;
   }
 
-  public NewHighlighting getSyntaxHighlighting(SolidityParser parser, SensorContext context, InputFile inputFile) {
+  public NewHighlighting getSyntaxHighlighting(SolidityParsingPhase parser, SensorContext context, InputFile inputFile) {
     NewHighlighting highlighting = context.newHighlighting().onFile(inputFile);
     SyntaxHighlightingVisitor visitor = new SyntaxHighlightingVisitor(highlighting);
-    visitor.visitTokens(parser.getTokenStream());
-    visitor.highlightComments(parser);
+    visitor.visitTokens(parser.getTokens());
+    visitor.highlightComments(parser.comments);
     return highlighting;
   }
 
