@@ -29,7 +29,7 @@ public class MetricsVisitorTest {
     InputFile file = createInputFile(new File("src/test/resources/" + filename));
     try {
       SolidityParsingPhase parser = new SolidityParsingPhase();
-      parser.emptyLines = UtilsSensor.emptyLines(file);
+      parser.setEmptyLines(UtilsSensor.emptyLines(file));
       MetricsVisitor metricsVisitor = new MetricsVisitor(parser, parser.parse(file.contents()));
       assertThat(metricsVisitor.fileMeasures.getContractNumber()).isEqualTo(2);
       assertThat(metricsVisitor.fileMeasures.getCommentLinesNumber()).isEqualTo(2);
@@ -44,7 +44,7 @@ public class MetricsVisitorTest {
     InputFile file = createInputFile(new File("src/test/resources/" + filename));
     try {
       SolidityParsingPhase parser = new SolidityParsingPhase();
-      parser.emptyLines = UtilsSensor.emptyLines(file);
+      parser.setEmptyLines(UtilsSensor.emptyLines(file));
       MetricsVisitor metricsVisitor = new MetricsVisitor(parser, parser.parse(file.contents()));
       assertThat(metricsVisitor.fileMeasures.getContractNumber()).isEqualTo(1);
       assertThat(metricsVisitor.fileMeasures.getFunctionNumber()).isEqualTo(3);
@@ -63,7 +63,7 @@ public class MetricsVisitorTest {
     InputFile file = createInputFile(new File("src/test/resources/" + filename));
     try {
       SolidityParsingPhase parser = new SolidityParsingPhase();
-      parser.emptyLines = UtilsSensor.emptyLines(file);
+      parser.setEmptyLines(UtilsSensor.emptyLines(file));
       MetricsVisitor metricsVisitor = new MetricsVisitor(parser, parser.parse(file.contents()));
       assertThat(metricsVisitor.fileMeasures.getContractNumber()).isEqualTo(1);
       assertThat(metricsVisitor.fileMeasures.getLinesOfCodeNumber()).isEqualTo(23);

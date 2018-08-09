@@ -224,7 +224,6 @@ public class SolidityParserTest {
     assertThat(parser.comments).hasSize(1);
     assertThat(suc.getRuleIndex()).isEqualTo(0);
     assertThat(suc.EOF()).isNotNull();
-    assertThat(SolidityTokensInfo.getVocabulary()).isNotNull();
   }
 
   @Test

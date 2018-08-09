@@ -35,9 +35,9 @@ public class MetricsVisitor extends SolidityBaseVisitor<Token> {
     this.fileMeasures.setStatementNumber(statements);
     this.fileMeasures.setFunctionNumber(functionCounter);
     this.fileMeasures.setContractNumber(contractCounter);
-    this.fileMeasures.setCommentLinesNumber(parser.linesOfComments);
+    this.fileMeasures.setCommentLinesNumber(parser.getLinesOfComments());
     TerminalNode node = suc.EOF();
-    this.fileMeasures.setLinesOfCodeNumber(node.getSymbol().getLine() - computeLinesOfComments(parser.comments) - parser.emptyLines);
+    this.fileMeasures.setLinesOfCodeNumber(node.getSymbol().getLine() - computeLinesOfComments(parser.comments) - parser.getEmptyLines());
     // TODO fix complexity
     this.fileMeasures.setContractComplexity(0);
     this.fileMeasures.setFunctionComplexity(0);

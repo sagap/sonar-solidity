@@ -14,9 +14,9 @@ public class SolidityParsingPhase {
 
   // important to maintain order of comments for reporting
   public final Set<Token> comments;
-  public Integer emptyLines;
-  public Integer linesOfComments;
-  public TokenStream tokens;
+  private Integer emptyLines;
+  private Integer linesOfComments;
+  private TokenStream tokens;
 
   public SolidityParsingPhase() {
     linesOfComments = 0;
@@ -58,4 +58,19 @@ public class SolidityParsingPhase {
     }
   }
 
+  public Integer getEmptyLines() {
+    return emptyLines;
+  }
+
+  public void setEmptyLines(Integer emptyLines) {
+    this.emptyLines = emptyLines;
+  }
+
+  public Integer getLinesOfComments() {
+    return linesOfComments;
+  }
+
+  public TokenStream getTokens() {
+    return tokens;
+  }
 }
