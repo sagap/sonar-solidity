@@ -15,7 +15,6 @@ public class SolidityLexerTest {
     CharStream cs = CharStreams.fromString("function");
     lexer = new SolidityLexer(cs);
     assertThat(lexer.getGrammarFileName()).isEqualTo("Solidity.g4");
-    assertThat(lexer.getRuleNames()).hasSize(84);
     assertThat(lexer.getChannelNames()).hasSize(2);
     assertThat(lexer.getModeNames()).hasSize(1);
     assertThat(lexer.getSerializedATN()).startsWith("\3");
