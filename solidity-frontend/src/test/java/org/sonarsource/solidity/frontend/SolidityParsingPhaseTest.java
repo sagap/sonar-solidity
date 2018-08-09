@@ -31,7 +31,7 @@ import org.sonarsource.solidity.frontend.SolidityParser.WhileStatementContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SolidityParserTest {
+public class SolidityParsingPhaseTest {
 
   @Test
   public void test_parsing() {
@@ -48,9 +48,11 @@ public class SolidityParserTest {
       " address delegate; // person delegated to\n" +
       " uint vote; // index of the voted proposal\n" +
       " }\n" +
+      "bytes32 itta = \"1\";\n" +
       "}";
     SolidityParsingPhase parser = new SolidityParsingPhase();
     SourceUnitContext suc = parser.parse(file);
+    parser.setEmptyLines(0);
     PragmaDirectiveContext pdc = suc.pragmaDirective().get(0);
     assertThat(pdc).isNotNull();
     ContractDefinitionContext c = suc.contractDefinition().get(0);
@@ -70,9 +72,15 @@ public class SolidityParserTest {
 
     IdentifierContext ic = sdc.identifier();
     assertThat(ic).isNotNull();
-
+    assertThat(Utils.typeMatches(parser.getTokens().get(0), SolidityParser.StringLiteral)).isFalse();
+    assertThat(Utils.typeMatches(parser.getTokens().get(35), SolidityParser.StringLiteral)).isTrue();
     List<VariableDeclarationContext> vdcList = sdc.variableDeclaration();
     assertThat(vdcList).hasSize(4);
+    assertThat(parser.getEmptyLines()).isZero();
+    assertThat(parser.getLinesOfComments()).isNotNull();
+    assertThat(parser.getTokens()).isNotNull();
+    assertThat(parser.comments.stream().filter(comment -> Utils.isCommentSignificant(comment.getText())).collect(Collectors.toList())).isNotNull();
+
   }
 
   @Test
