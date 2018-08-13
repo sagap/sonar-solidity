@@ -1,0 +1,12 @@
+[4m
+main.sol
+[24m[1m  6:34  [22m   [33mwarning  [39m  Avoid using 'now' (alias to 'block.timestamp').    [90msecurity/no-block-members[39m
+[1m  9:8  [22m    [33mwarning  [39m  Provide an error message for require().            [90merror-reason[39m
+[1m  14:8  [22m   [33mwarning  [39m  Provide an error message for require().            [90merror-reason[39m
+[1m  14:16  [22m  [33mwarning  [39m  Avoid using 'now' (alias to 'block.timestamp').    [90msecurity/no-block-members[39m
+[1m  19:8  [22m   [33mwarning  [39m  Provide an error message for require().            [90merror-reason[39m
+[1m  32:26  [22m  [33mwarning  [39m  Avoid using 'now' (alias to 'block.timestamp').    [90msecurity/no-block-members[39m
+
+[31m✖ [39m[31m6 warnings[39m[31m found.
+
+[39m

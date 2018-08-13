@@ -1,0 +1,35 @@
+[4m
+test-solidity1.sol
+[24m[1m  10:8  [22m   [31merror  [39m    Variable 'y' is declared but never used.                                   [90mno-unused-vars[39m
+[1m  11:10  [22m  [33mwarning  [39m  Only use indent of 8 spaces.                                               [90mindentation[39m
+[1m  13:20  [22m  [33mwarning  [39m  Only use indent of 16 spaces.                                              [90mindentation[39m
+[1m  17:22  [22m  [33mwarning  [39m  Only use indent of 24 spaces.                                              [90mindentation[39m
+[1m  18:22  [22m  [33mwarning  [39m  Only use indent of 24 spaces.                                              [90mindentation[39m
+[1m  21:26  [22m  [33mwarning  [39m  Assignment operator must have exactly single space on both sides of it.    [90moperator-whitespace[39m
+[4m
+test-solidity2.sol
+[24m[1m  25:12  [22m  [31merror  [39m    Consider using 'revert()' in place of deprecated 'throw'.            [90msecurity/no-throw[39m
+[1m  28:27  [22m  [33mwarning  [39m  Avoid using 'now' (alias to 'block.timestamp').                      [90msecurity/no-block-members[39m
+[1m  28:50  [22m  [33mwarning  [39m  Single space should be either on both sides of '*' or not at all.    [90moperator-whitespace[39m
+[1m  29:27  [22m  [33mwarning  [39m  Avoid using 'now' (alias to 'block.timestamp').                      [90msecurity/no-block-members[39m
+[1m  33:60  [22m  [33mwarning  [39m  Visibility modifier "public" should come before other modifiers.     [90mvisibility-first[39m
+[1m  35:12  [22m  [31merror  [39m    Consider using 'revert()' in place of deprecated 'throw'.            [90msecurity/no-throw[39m
+[1m  37:12  [22m  [33mwarning  [39m  Avoid using 'now' (alias to 'block.timestamp').                      [90msecurity/no-block-members[39m
+[1m  38:12  [22m  [31merror  [39m    Consider using 'revert()' in place of deprecated 'throw'.            [90msecurity/no-throw[39m
+[1m  45:12  [22m  [33mwarning  [39m  Use emit statements for triggering events.                           [90memit[39m
+[1m  50:50  [22m  [33mwarning  [39m  Visibility modifier "public" should come before other modifiers.     [90mvisibility-first[39m
+[1m  52:12  [22m  [31merror  [39m    Consider using 'revert()' in place of deprecated 'throw'.            [90msecurity/no-throw[39m
+[1m  54:12  [22m  [33mwarning  [39m  Avoid using 'now' (alias to 'block.timestamp').                      [90msecurity/no-block-members[39m
+[1m  54:38  [22m  [33mwarning  [39m  Avoid using 'now' (alias to 'block.timestamp').                      [90msecurity/no-block-members[39m
+[1m  55:12  [22m  [31merror  [39m    Consider using 'revert()' in place of deprecated 'throw'.            [90msecurity/no-throw[39m
+[1m  58:12  [22m  [31merror  [39m    Consider using 'revert()' in place of deprecated 'throw'.            [90msecurity/no-throw[39m
+[1m  65:8  [22m   [33mwarning  [39m  Use emit statements for triggering events.                           [90memit[39m
+[1m  68:49  [22m  [33mwarning  [39m  Use 'view' instead of deprecated 'constant'.                         [90mno-constant[39m
+[1m  71:12  [22m  [31merror  [39m    Consider using 'revert()' in place of deprecated 'throw'.            [90msecurity/no-throw[39m
+[1m  75:4  [22m   [31merror  [39m    No visibility specified explicitly for finish function.              [90msecurity/enforce-explicit-visibility[39m
+[1m  76:12  [22m  [33mwarning  [39m  Avoid using 'now' (alias to 'block.timestamp').                      [90msecurity/no-block-members[39m
+[1m  77:12  [22m  [33mwarning  [39m  Use emit statements for triggering events.                           [90memit[39m
+
+[31m✖ [39m[31m9 errors[39m[31m, 18 warnings[39m[31m found.
+
+[39m
