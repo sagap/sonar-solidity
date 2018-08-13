@@ -1,7 +1,10 @@
 package org.sonarsource.solidity.externalreport;
 
+import com.google.gson.Gson;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import org.sonar.api.batch.fs.FilePredicates;
 import org.sonar.api.batch.fs.InputFile;
@@ -12,9 +15,14 @@ import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.api.batch.sensor.issue.NewExternalIssue;
 import org.sonar.api.batch.sensor.issue.NewIssueLocation;
 import org.sonar.api.rule.RuleKey;
+import org.sonar.api.rules.RuleType;
+import org.sonar.api.server.rule.RulesDefinition.Context;
+import org.sonar.api.server.rule.RulesDefinition.NewRepository;
+import org.sonar.api.server.rule.RulesDefinition.NewRule;
 import org.sonar.api.utils.Version;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
+import org.sonarsource.solidity.Solidity;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -121,6 +129,27 @@ public abstract class AbstractExternalReportSensor implements Sensor {
         .remediationEffortMinutes(DEFAULT_REMEDIATION_COST)
         .save();
     }
+  }
+
+  public static void createExternalRuleRepository(Context context, String linterId, String linterName) {
+    NewRepository externalRepo = context.createExternalRepository(linterId, Solidity.KEY).setName(linterName);
+    String pathToRulesMeta = "org/sonar/l10n/solidity/rules/" + linterId + "/rules.json";
+
+    try (InputStreamReader inputStreamReader = new InputStreamReader(AbstractExternalReportSensor.class.getClassLoader().getResourceAsStream(pathToRulesMeta),
+      StandardCharsets.UTF_8)) {
+      ExternalRule[] rules = new Gson().fromJson(inputStreamReader, ExternalRule[].class);
+      for (ExternalRule rule : rules) {
+        NewRule newRule = externalRepo.createRule(rule.key).setName(rule.name);
+        newRule.setHtmlDescription(rule.description);
+        newRule.setDebtRemediationFunction(newRule.debtRemediationFunctions().constantPerIssue(DEFAULT_REMEDIATION_COST + "min"));
+        if (linterId.equals(SoliumReportSensor.LINTER_ID)) {
+          newRule.setType(RuleType.BUG);
+        }
+      }
+    } catch (IOException e) {
+      throw new IllegalStateException("Can't read resource: " + pathToRulesMeta, e);
+    }
+    externalRepo.done();
   }
 
   private static class ExternalRule {

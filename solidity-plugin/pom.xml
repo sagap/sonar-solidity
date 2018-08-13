@@ -53,6 +53,10 @@
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+		</dependency>
 		<!-- unit tests -->
 		<dependency>
 			<groupId>org.sonarsource.sonarqube</groupId>

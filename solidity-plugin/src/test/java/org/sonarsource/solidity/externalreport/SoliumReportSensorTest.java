@@ -64,7 +64,7 @@ public class SoliumReportSensorTest {
   }
 
   @Test
-  public void issues_on_more_than_one_file() throws IOException {
+  public void simple_issue() throws IOException {
     String line = "21:26 warning  Assignment operator must have exactly single space on both sides of it.    operator-whitespace";
     org.sonarsource.solidity.externalreport.ExternalIssue issue = new SoliumReportSensor().parse(line);
     assertThat(issue).isNotNull();
@@ -72,5 +72,19 @@ public class SoliumReportSensorTest {
     assertThat(issue.lineNumber).isEqualTo(21);
     assertThat(issue.ruleKey).isEqualTo("operator-whitespace");
     assertThat(issue.type).isEqualTo(RuleType.CODE_SMELL);
+  }
+
+  @Test
+  public void wrong_issue() throws IOException {
+    String line = " warning  Wrong Issue    nokey";
+    org.sonarsource.solidity.externalreport.ExternalIssue issue = new SoliumReportSensor().parse(line);
+    assertThat(issue).isNull();
+  }
+
+  @Test
+  public void wrong_issue2() throws IOException {
+    String line = "2:0 warning  Assignment operator must have exactly single space on both sides of it.   wrong_key";
+    org.sonarsource.solidity.externalreport.ExternalIssue issue = new SoliumReportSensor().parse(line);
+    assertThat(issue).isNull();
   }
 }

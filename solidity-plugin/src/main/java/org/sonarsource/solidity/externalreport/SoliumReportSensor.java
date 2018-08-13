@@ -10,10 +10,10 @@ public class SoliumReportSensor extends AbstractExternalReportSensor {
 
   private static final Pattern SOLIUM_FILE_REGEX = Pattern.compile("(?<file>[^.]+.sol)");
   private static final Pattern SOLIUM_LINE_REGEX = Pattern.compile("\\s*((?<line>\\d+):\\d+)\\s*(?<type>\\w*)\\s*(?<message>.*[?=\\s{2}])\\s*(?<key>.*)");
-  private static final String LINTER_NAME = "Solium";
-  private static final String LINTER_ID = "solium";
+  public static final String LINTER_NAME = "Solium";
+  public static final String LINTER_ID = "solium";
   // Pattern used to remove special characters created by Solium linter
-  private static final Pattern SOL = Pattern.compile(".{2,3}[\\d*]m");
+  private static final Pattern SOLIUM_SPECIAL_CHARACTERS = Pattern.compile(".{2,3}[\\d*]m");
 
   @Override
   String linterName() {
@@ -27,7 +27,7 @@ public class SoliumReportSensor extends AbstractExternalReportSensor {
 
   @Override
   ExternalIssue parse(String line) {
-    Matcher m = SOL.matcher(line);
+    Matcher m = SOLIUM_SPECIAL_CHARACTERS.matcher(line);
     String cleanLine = m.replaceAll("");
     Matcher fileMatcher = SOLIUM_FILE_REGEX.matcher(cleanLine);
     Matcher lineMatcher = SOLIUM_LINE_REGEX.matcher(cleanLine);
@@ -39,7 +39,11 @@ public class SoliumReportSensor extends AbstractExternalReportSensor {
       String issueType = lineMatcher.group("type").trim();
       String message = lineMatcher.group("message").trim();
       String issueKey = lineMatcher.group("key").trim();
-      return new ExternalIssue(LINTER_ID, matchIssueToRuleType(issueType, issueKey), issueKey, null, lineNumber, message);
+      if (SoliumKeyUtils.keyExists(issueKey)) {
+        return new ExternalIssue(LINTER_ID, matchIssueToRuleType(issueType, issueKey), issueKey, null, lineNumber, message);
+      } else {
+        return null;
+      }
     } else {
       LOG.debug(logPrefix() + "Unexpected line: " + line);
     }

@@ -1,0 +1,227 @@
+[
+  {
+    "key": "imports-on-top",
+    "name": "imports-on-top",
+    "description": "Ensure that all import statements are on top of the file"
+  },
+  {
+    "key": "variable-declarations",
+    "name": "variable-declarations",
+    "description": "Ensure that names ‘l’, ‘O’ & ‘I’ are not used for variables"
+  },
+  {
+    "key": "array-declarations",
+    "name": "array-declarations",
+    "description": "Ensure that array declarations don’t have space between the type and brackets"
+  },
+  {
+    "key": "operator-whitespace",
+    "name": "operator-whitespace",
+    "description": "Ensure that operators are surrounded by a single space on either side"
+  },
+  {
+    "key": "conditionals-whitespace",
+    "name": "conditionals-whitespace",
+    "description": "Ensure that there is exactly one space between conditional operators and parenthetic blocks"
+  },
+  {
+    "key": "comma-whitespace",
+    "name": "comma-whitespace",
+    "description": "Ensure that there is no whitespace or comments between comma delimited elements and commas"
+  },
+  {
+    "key": "semicolon-whitespace",
+    "name": "semicolon-whitespace",
+    "description": "Ensure that there is no whitespace or comments before semicolons"
+  },
+  {
+    "key": "function-whitespace",
+    "name": "function-whitespace",
+    "description": "Ensure function calls and declaration have (or  don’t have) whitespace in appropriate locations"
+  },
+  {
+    "key": "lbrace",
+    "name": "lbrace",
+    "description": "Ensure that every if, for, while and do statement is followed by an opening curly brace ‘{‘ on the same line"
+  },
+  {
+    "key": "mixedcase",
+    "name": "mixedcase",
+    "description": "Ensure that all variable, function and parameter names follow the mixedCase naming convention"
+  },
+  {
+    "key": "camelcase",
+    "name": "camelcase",
+    "description": "Ensure that contract, library, modifier and struct names follow CamelCase notation"
+  },
+  {
+    "key": "uppercase",
+    "name": "uppercase",
+    "description": "Ensure that all constants (and only constants) contain only upper case letters and underscore"
+  },
+  {
+    "key": "no-with",
+    "name": "no-with",
+    "description": "Ensure no use of with statements in the code"
+  },
+  {
+    "key": "no-empty-blocks",
+    "name": "no-empty-blocks",
+    "description": "Ensure that no empty blocks {} exist"
+  },
+  {
+    "key": "no-unused-vars",
+    "name": "no-unused-vars",
+    "description": "Flag all the variables that were declared but never used"
+  },
+  {
+    "key": "double-quotes",
+    "name": "double-quotes",
+    "description": "Ensure that string are quoted with double-quotes only. Deprecated and replaced by “quotes”."
+  },
+  {
+    "key": "quotes",
+    "name": "quotes",
+    "description": "Ensure that all strings use only 1 style - either double quotes or single quotes"
+  },
+  {
+    "key": "blank-lines",
+    "name": "blank-lines",
+    "description": "Ensure that there is exactly a 2-line gap between Contract and Funtion declarations"
+  },
+  {
+    "key": "indentation",
+    "name": "indentation",
+    "description": "Ensure consistent indentation of 4 spaces per level"
+  },    
+  {
+    "key": "arg-overflow",
+    "name": "arg-overflow",
+    "description": "Specify where whitespace is suitable and where it isn’t"
+  },
+  {
+    "key": "whitespace",
+    "name": "whitespace",
+    "description": "Ensure consistent indentation of 4 spaces per level"
+  },
+  {
+    "key": "deprecated-suicide",
+    "name": "deprecated-suicide",
+    "description": "Suggest replacing deprecated ‘suicide’ for ‘selfdestruct"
+  },
+  {
+    "key": "pragma-on-top",
+    "name": "pragma-on-top",
+    "description": "Ensure a) A PRAGMA directive exists and b) its on top of the file"
+  },  
+  {
+    "key": "function-order",
+    "name": "function-order",
+    "description": "Ensure order of functions in a contract: constructor,fallback,external,public,internal,private"
+  },
+  {
+    "key": "emit",
+    "name": "emit",
+    "description": "Ensure that emit statement is used to trigger a solidity event"
+  },
+  {
+    "key": "no-constant",
+    "name": "no-constant",
+    "description": "Ensure that view is used over deprecated constant in function declarations"
+  },
+  {
+    "key": "value-in-payable",
+    "name": "value-in-payable",
+    "description": "Ensure ‘msg.value’ is only used in functions with the ‘payable’ modifier"
+  },
+  {
+    "key": "no-experimental",
+    "name": "no-experimental",
+    "description": "Ensure that experimental features are not used in production"
+  },
+  {
+    "key": "max-len",
+    "name": "max-len",
+    "description": "Ensure that a line of code doesn’t exceed the specified number of characters"
+  },
+  {
+    "key": "error-reason",
+    "name": "error-reason",
+    "description": "Ensure that error message is provided for revert and require statements"
+  },
+  {
+    "key": "visibility-first",
+    "name": "visibility-first",
+    "description": "Ensure that the visibility modifier for a function should come before any custom modifiers"
+  },
+  {
+    "key": "linebreak-style",
+    "name": "linebreak-style",
+    "description": "Ensure consistent linebreak style"
+  },
+  {
+    "key": "security/no-throw",
+    "name": "security/no-throw",
+    "description": "Discourage use of 'throw' statement for error flagging"
+  },
+  {
+    "key": "security/no-tx-origin",
+    "name": "security/no-tx-origin",
+    "description": "Discourage use of 'tx.origin' global variable"
+  },
+  {
+    "key": "security/enforce-explicit-visibility",
+    "name": "security/enforce-explicit-visibility",
+    "description": "Encourage user to explicitly specify visibility of function"
+  },
+  {
+    "key": "security/no-block-members",
+    "name": "security/no-block-members",
+    "description": "Discourage use of members 'blockhash' & 'timestamp' (and alias 'now') of 'block' global variable"
+  },
+  {
+    "key": "security/no-call-value",
+    "name": "security/no-call-value",
+    "description": "Discourage use of .call.value()()"
+  },
+  {
+    "key": "security/no-assign-params",
+    "name": "security/no-assign-params",
+    "description": "Disallow assigning to function parameters"
+  },
+  {
+    "key": "security/no-fixed",
+    "name": "security/no-fixed",
+    "description": "Disallow fixed point types"
+  },
+  {
+    "key": "security/no-inline-assembly",
+    "name": "security/no-inline-assembly",
+    "description": "Discourage use of inline assembly"
+  },
+  {
+    "key": "security/no-low-level-calls",
+    "name": "security/no-low-level-calls",
+    "description": "Discourage the use of low-level functions - call(), callcode() & delegatecall()"
+  },
+  {
+    "key": "security/no-modify-for-iter-var",
+    "name": "security/no-modify-for-iter-var",
+    "description": "Discourage user to modify a for loop iteration counting variable in the loop body"
+  },
+  {
+    "key": "security/no-send",
+    "name": "security/no-send",
+    "description": "Discourage the use of unsafe method 'send'"
+  },
+  {
+    "key": "security/no-sha3",
+    "name": "security/no-sha3",
+    "description": "Encourage use of 'keccak256()' over 'sha3()' function"
+  },
+  {
+    "key": "security/no-unreachable-code",
+    "name": "security/no-unreachable-code",
+    "description": "Disallow unreachable code"
+  }
+]
