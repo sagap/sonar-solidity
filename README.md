@@ -12,7 +12,7 @@ mvn package
 ```
 Used ANTLR4 (https://github.com/solidityj/solidity-antlr4) to build the Parser and the Lexer.
 
-SonarSolidity supports the import ofreports from Solium linter version 1.0.0. (http://solium.readthedocs.io/en/latest/).
+SonarSolidity supports the import of reports from ```Solium linter version 1.0.0``` (http://solium.readthedocs.io/en/latest/).
 
 Please read documentation on how to take advantage of this feature.
  
