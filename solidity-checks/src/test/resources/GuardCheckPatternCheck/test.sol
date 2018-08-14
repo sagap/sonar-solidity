@@ -19,7 +19,7 @@ contract foo{
       break;
   }
 
-  function f4(uint t, address _a) external payable mod1(t){    // Compliant
+  function f4(uint t, address _a, bytes) external payable mod1(t){    // Compliant
     uint a2 = 10;
     require(_a == 0);
   }
