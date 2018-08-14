@@ -1,5 +1,6 @@
 package org.sonarsource.solidity.externalreport;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -17,14 +18,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SoliumReportSensorTest {
 
   static final Path REPORT_BASE_PATH = Paths.get("src", "test", "resources", "externalreports").toAbsolutePath();
-
-  // @RegisterExtension
-  // static JUnitLogTester tester = new JUnitLogTester();
-  //
-  // @BeforeEach
-  // void setUp() {
-  // tester.clear();
-  // }
 
   @Test
   public void test_descriptor() {
@@ -65,13 +58,22 @@ public class SoliumReportSensorTest {
 
   @Test
   public void simple_issue() throws IOException {
-    String line = "21:26 warning  Assignment operator must have exactly single space on both sides of it.    operator-whitespace";
+    String line = "21:26 error  Assignment operator must have exactly single space on both sides of it.    operator-whitespace";
     org.sonarsource.solidity.externalreport.ExternalIssue issue = new SoliumReportSensor().parse(line);
     assertThat(issue).isNotNull();
     assertThat(issue.message).isEqualTo("Assignment operator must have exactly single space on both sides of it.");
     assertThat(issue.lineNumber).isEqualTo(21);
     assertThat(issue.ruleKey).isEqualTo("operator-whitespace");
-    assertThat(issue.type).isEqualTo(RuleType.CODE_SMELL);
+    assertThat(issue.type).isEqualTo(RuleType.BUG);
+
+    line = "21:26 error  Assignment operator must have exactly single space on both sides of it.    security/no-block-members";
+    issue = new SoliumReportSensor().parse(line);
+    assertThat(issue).isNotNull();
+
+    line = "21:26 warning   Ensure that all import statements are on top of the file   imports-on-top";
+    issue = new SoliumReportSensor().parse(line);
+    assertThat(issue).isNotNull();
+
   }
 
   @Test
@@ -86,5 +88,23 @@ public class SoliumReportSensorTest {
     String line = "2:0 warning  Assignment operator must have exactly single space on both sides of it.   wrong_key";
     org.sonarsource.solidity.externalreport.ExternalIssue issue = new SoliumReportSensor().parse(line);
     assertThat(issue).isNull();
+  }
+
+  @Test
+  public void wrong_file() throws IOException {
+    SensorContextTester context = SoliumTestHelper.createContext(7, 2);
+    context.settings().setProperty(SoliumReportSensor.PROPERTY_KEY, REPORT_BASE_PATH.resolve("wrong-file.out").toString());
+    List<ExternalIssue> externalIssues = SoliumTestHelper.executeSensor(new SoliumReportSensor(), context);
+    assertThat(externalIssues).isEmpty();
+  }
+
+  @Test
+  public void test_no_input() throws IOException {
+    AbstractExternalReportSensor.getIOFile(new File(""), "./");
+    SoliumReportSensor sensor = new SoliumReportSensor();
+    SensorContextTester context = SoliumTestHelper.createContext(7, 2);
+    org.sonarsource.solidity.externalreport.ExternalIssue issue = new org.sonarsource.solidity.externalreport.ExternalIssue(SoliumReportSensor.LINTER_ID, RuleType.CODE_SMELL,
+      "", "", 0, "");
+    sensor.addLineIssue(context, issue);
   }
 }

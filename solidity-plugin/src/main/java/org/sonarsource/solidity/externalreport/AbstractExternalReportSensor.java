@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import javax.annotation.Nullable;
 import org.sonar.api.batch.fs.FilePredicates;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.rule.Severity;
@@ -38,6 +39,7 @@ public abstract class AbstractExternalReportSensor implements Sensor {
 
   abstract String reportsPropertyName();
 
+  @Nullable
   abstract ExternalIssue parse(String line);
 
   protected String logPrefix() {
@@ -104,6 +106,8 @@ public abstract class AbstractExternalReportSensor implements Sensor {
 
   InputFile getInputFile(SensorContext context, String filePath) {
     FilePredicates predicates = context.fileSystem().predicates();
+    String[] arr = filePath.split("/");
+    filePath = arr[arr.length - 1];
     InputFile inputFile = context.fileSystem().inputFile(predicates.or(predicates.hasRelativePath(filePath), predicates.hasAbsolutePath(filePath)));
     if (inputFile == null) {
       LOG.warn(logPrefix() + "No input file found for {}. No {} issues will be imported on this file.", filePath, linterName());

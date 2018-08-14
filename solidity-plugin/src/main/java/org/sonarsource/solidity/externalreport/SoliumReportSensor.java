@@ -2,6 +2,7 @@ package org.sonarsource.solidity.externalreport;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.annotation.Nullable;
 import org.sonar.api.rules.RuleType;
 
 public class SoliumReportSensor extends AbstractExternalReportSensor {
@@ -25,6 +26,7 @@ public class SoliumReportSensor extends AbstractExternalReportSensor {
     return PROPERTY_KEY;
   }
 
+  @Nullable
   @Override
   ExternalIssue parse(String line) {
     Matcher m = SOLIUM_SPECIAL_CHARACTERS.matcher(line);
@@ -51,10 +53,10 @@ public class SoliumReportSensor extends AbstractExternalReportSensor {
   }
 
   private static RuleType matchIssueToRuleType(String issueType, String issueKey) {
-    if ("warning".equals(issueType)) {
-      return RuleType.CODE_SMELL;
-    } else if ("error".equals(issueType) && issueKey.startsWith("security")) {
+    if ("error".equals(issueType) && issueKey.startsWith("security")) {
       return RuleType.VULNERABILITY;
+    } else if ("warning".equals(issueType)) {
+      return RuleType.CODE_SMELL;
     } else {
       return RuleType.BUG;
     }
