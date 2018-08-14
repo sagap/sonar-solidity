@@ -42,13 +42,14 @@ public class SolidityParsingPhaseTest {
       " // This declares a new complex type which will\n" +
       " // be used for variables later.\n" +
       " // It will represent a single voter.\n" +
-      " struct Voter {\n" +
+      " struct Voter {      // Noncompliant {{here}}\n" +
       " uint weight; // weight is accumulated by delegation\n" +
       " bool voted; // if true, that person already voted\n" +
       " address delegate; // person delegated to\n" +
       " uint vote; // index of the voted proposal\n" +
       " }\n" +
-      "bytes32 itta = \"1\";\n" +
+      "bytes32 itta = \"1\";\n"
+      + "// ^^^^^^^" +
       "}";
     SolidityParsingPhase parser = new SolidityParsingPhase();
     SourceUnitContext suc = parser.parse(file);
@@ -73,7 +74,7 @@ public class SolidityParsingPhaseTest {
     IdentifierContext ic = sdc.identifier();
     assertThat(ic).isNotNull();
     assertThat(Utils.typeMatches(parser.getTokens().get(0), SolidityParser.StringLiteral)).isFalse();
-    assertThat(Utils.typeMatches(parser.getTokens().get(35), SolidityParser.StringLiteral)).isTrue();
+    assertThat(Utils.typeMatches(parser.getTokens().get(36), SolidityParser.StringLiteral)).isTrue();
     List<VariableDeclarationContext> vdcList = sdc.variableDeclaration();
     assertThat(vdcList).hasSize(4);
     assertThat(parser.getEmptyLines()).isZero();
