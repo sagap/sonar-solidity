@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 import org.sonar.api.server.rule.RulesDefinition;
 import org.sonar.api.server.rule.RulesDefinition.Rule;
+import org.sonarsource.solidity.externalreport.AbstractExternalReportSensor;
+import org.sonarsource.solidity.externalreport.SoliumReportSensor;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -38,5 +40,15 @@ public class SolidityRulesDefinitionTest {
     assertThat(soliumRepository.name()).isEqualTo("Solium");
     assertThat(soliumRepository.language()).isEqualTo("solidity");
     assertThat(soliumRepository.rules()).hasSize(45);
+  }
+
+  @Test
+  public void error_case() {
+    RulesDefinition.Context context = new RulesDefinition.Context();
+    try {
+      AbstractExternalReportSensor.createExternalRuleRepository(context, "wrong_linter_id", SoliumReportSensor.LINTER_NAME);
+    } catch (Exception e) {
+      assertThat(e).isNotNull();
+    }
   }
 }

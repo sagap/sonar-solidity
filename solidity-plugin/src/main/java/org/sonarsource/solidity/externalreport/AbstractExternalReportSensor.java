@@ -150,7 +150,7 @@ public abstract class AbstractExternalReportSensor implements Sensor {
           newRule.setType(RuleType.BUG);
         }
       }
-    } catch (IOException e) {
+    } catch (Exception e) {
       throw new IllegalStateException("Can't read resource: " + pathToRulesMeta, e);
     }
     externalRepo.done();
