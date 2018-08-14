@@ -12,7 +12,7 @@ public class SolidityRulesDefinitionTest {
 
   @Test
   public void foo() {
-    SolidityRulesDefinition rulesDefinition = new SolidityRulesDefinition();
+    SolidityRulesDefinition rulesDefinition = new SolidityRulesDefinition(false);
     RulesDefinition.Context context = new RulesDefinition.Context();
     rulesDefinition.define(context);
     context.createRepository(Solidity.KEY, "solidity");
@@ -24,5 +24,19 @@ public class SolidityRulesDefinitionTest {
     List<Rule> activated = repository.rules().stream().filter(x -> x.status().name().equals("READY")).collect(Collectors.toList());
     assertThat(activated).isNotEmpty();
     assertThat(activated.size()).isEqualTo(24);
+  }
+
+  @Test
+  public void test_external() {
+    SolidityRulesDefinition rulesDefinition = new SolidityRulesDefinition(true);
+    RulesDefinition.Context context = new RulesDefinition.Context();
+    rulesDefinition.define(context);
+    context.createRepository(Solidity.KEY, "solidity");
+    RulesDefinition.Repository soliumRepository = context.repository("external_solium");
+    assertThat(context.repositories()).hasSize(2);
+    assertThat(soliumRepository.isExternal()).isTrue();
+    assertThat(soliumRepository.name()).isEqualTo("Solium");
+    assertThat(soliumRepository.language()).isEqualTo("solidity");
+    assertThat(soliumRepository.rules()).hasSize(45);
   }
 }
