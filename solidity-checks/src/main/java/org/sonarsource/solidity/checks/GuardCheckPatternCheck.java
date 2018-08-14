@@ -8,6 +8,7 @@ import org.sonarsource.solidity.frontend.SolidityParser.ExpressionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionCallArgumentsContext;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionCallContext;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
+import org.sonarsource.solidity.frontend.SolidityParser.IdentifierContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ModifierInvocationContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ModifierListContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ParameterContext;
@@ -26,19 +27,22 @@ public class GuardCheckPatternCheck extends IssuableVisitor {
       && !CheckUtils.isViewOrPureFunction(modifiersList.stateMutability()) && ctx.block() != null) {
       List<ParameterContext> parameters = ctx.parameterList().parameter();
       parameters.stream()
-        .filter(parameter -> parameterIsNotGuardChecked(parameter.identifier().getText(), modifiersList.modifierInvocation(), ctx.block().statement()))
+        .filter(parameter -> parameterIsNotGuardChecked(parameter.identifier(), modifiersList.modifierInvocation(), ctx.block().statement()))
         .forEach(parameter -> ruleContext().addIssue(parameter.getStart(), parameter.getStop(), parameter.getStop().getText().length(),
           "You should check with require the validity of the parameter " + parameter.getChild(1).getText() + ".", RULE_KEY));
     }
     return super.visitFunctionDefinition(ctx);
   }
 
-  private static boolean parameterIsNotGuardChecked(String parameter,
+  private static boolean parameterIsNotGuardChecked(IdentifierContext parameter,
     List<ModifierInvocationContext> modifierInvocationList, List<StatementContext> statementList) {
-    if (argumentCheckedInModifier(modifierInvocationList, parameter)) {
-      return false;
+    if (parameter != null) {
+      if (argumentCheckedInModifier(modifierInvocationList, parameter.getText())) {
+        return false;
+      }
+      return !argumentCheckedInFunction(statementList, parameter.getText());
     }
-    return !argumentCheckedInFunction(statementList, parameter);
+    return false;
   }
 
   private static boolean argumentCheckedInFunction(List<StatementContext> statementList, String parameter) {
