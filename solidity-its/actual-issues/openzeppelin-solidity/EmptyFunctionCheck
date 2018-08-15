@@ -1,0 +1,32 @@
+solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/BouncerMock.sol
+Issue Line: 15
+solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/BouncerMock.sol
+Issue Line: 31
+solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/BouncerMock.sol
+Issue Line: 52
+solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/BouncerMock.sol
+Issue Line: 60
+solidity-test-sources/src/openzeppelin-solidity/contracts/crowdsale/Crowdsale.sol
+Issue Line: 135
+solidity-test-sources/src/openzeppelin-solidity/contracts/crowdsale/Crowdsale.sol
+Issue Line: 177
+solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/DestructibleMock.sol
+Issue Line: 7
+solidity-test-sources/src/openzeppelin-solidity/contracts/crowdsale/distribution/FinalizableCrowdsale.sol
+Issue Line: 39
+solidity-test-sources/src/openzeppelin-solidity/contracts/ownership/HasNoEther.sol
+Issue Line: 32
+solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/LimitBalanceMock.sol
+Issue Line: 10
+solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/RBACMock.sol
+Issue Line: 29
+solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/RBACMock.sol
+Issue Line: 36
+solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/RBACMock.sol
+Issue Line: 43
+solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/RBACMock.sol
+Issue Line: 50
+solidity-test-sources/src/openzeppelin-solidity/contracts/payment/SplitPayment.sol
+Issue Line: 36
+solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/WhitelistMock.sol
+Issue Line: 8

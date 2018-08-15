@@ -1,0 +1,10 @@
+solidity-test-sources/src/openzeppelin-solidity/contracts/payment/ConditionalEscrow.sol
+Issue Line: 1
+solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC20WithMetadataMock.sol
+Issue Line: 1
+solidity-test-sources/src/openzeppelin-solidity/contracts/payment/Escrow.sol
+Issue Line: 1
+solidity-test-sources/src/openzeppelin-solidity/contracts/payment/RefundEscrow.sol
+Issue Line: 1
+solidity-test-sources/src/openzeppelin-solidity/contracts/proposals/ERC1046/TokenMetadata.sol
+Issue Line: 1

@@ -47,7 +47,8 @@ public class SolidityRuling {
     "ethereum-api",
     "Random-Files",
     "aragonOS",
-    "ethorse-core"
+    "ethorse-core",
+    "openzeppelin-solidity"
   };
 
   public static String[] getProjects() {
