@@ -20,8 +20,6 @@ solidity-test-sources/src/ethorse-core/contracts/Migrations.sol
 Issue Line: 1
 solidity-test-sources/src/ethorse-core/test/TestMetacoin.sol
 Issue Line: 1
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1
 solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
 Issue Line: 31
 solidity-test-sources/src/ethorse-core/usingOraclize_bak.sol

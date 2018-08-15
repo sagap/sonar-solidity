@@ -35,22 +35,21 @@ public class SolidityParsingPhaseTest {
 
   @Test
   public void test_parsing() {
-    String file = "pragma solidity ^0.4.22;\n" +
-      "\n" +
-      "/// @title Voting with delegation.\n" +
-      "contract Ballot {\n" +
-      " // This declares a new complex type which will\n" +
-      " // be used for variables later.\n" +
-      " // It will represent a single voter.\n" +
-      " struct Voter {      // Noncompliant {{here}}\n" +
-      " uint weight; // weight is accumulated by delegation\n" +
-      " bool voted; // if true, that person already voted\n" +
-      " address delegate; // person delegated to\n" +
-      " uint vote; // index of the voted proposal\n" +
-      " }\n" +
-      "bytes32 itta = \"1\";\n"
-      + "// ^^^^^^^" +
-      "}";
+    String file = " pragma solidity ^0.4.22;\n" +
+      "       /// @title Voting with delegation.   +\n" +
+      "       contract Ballot {   \n" +
+      "        // This declares a new complex type which will   +\n" +
+      "        // be used for variables later.   +\n" +
+      "        // It will represent a single voter.   +\n" +
+      "        struct Voter {      // Noncompliant {{here}}   +\n" +
+      "        uint weight; // weight is accumulated by delegation   +\n" +
+      "        bool voted; // if true, that person already voted   +\n" +
+      "        address delegate; // person delegated to   +\n" +
+      "        uint vote; // index of the voted proposal   +\n" +
+      "        }   \n" +
+      "       bytes32 itta =  \"1\";  \n" +
+      "        // ^^^^^^^  \n" +
+      "       }";
     SolidityParsingPhase parser = new SolidityParsingPhase();
     SourceUnitContext suc = parser.parse(file);
     parser.setEmptyLines(0);
@@ -257,5 +256,97 @@ public class SolidityParsingPhaseTest {
     assertThat(retStmt).isNotNull();
     ExpressionContext expr = retStmt.expression();
     assertThat(expr).isNotNull();
+  }
+
+  @Test
+  public void test_foo3() throws IOException {
+    String file = "pragma solidity 0.4.24;\n" +
+      "\n" +
+      "library SafeMath {\n" +
+      "\n" +
+      "  function add(uint256 _a, uint256 _b) internal pure returns (uint256) {\n" +
+      "    uint256 c = _a + _b;\n" +
+      "    require(c >= _a);\n" +
+      "    return c;\n" +
+      "  }\n" +
+      "}\n" +
+      "\n" +
+      "contract Ownable {\n" +
+      "  address public owner;\n" +
+      "\n" +
+      "\n" +
+      "  event OwnershipRenounced(address indexed previousOwner);\n" +
+      "  event OwnershipTransferred(\n" +
+      "    address indexed previousOwner,\n" +
+      "    address indexed newOwner\n" +
+      "  );\n" +
+      "\n" +
+      "  constructor() public {\n" +
+      "    owner = msg.sender;\n" +
+      "  }\n" +
+      "\n" +
+      "  modifier onlyOwner() {\n" +
+      "    require(msg.sender == owner);\n" +
+      "    _;\n" +
+      "  }\n" +
+      "}\n" +
+      "\n" +
+      "\n" +
+      "\n" +
+      "contract Escrow is Ownable {\n" +
+      "  using SafeMath for uint256;\n" +
+      "\n" +
+      "  event Deposited(address indexed payee, uint256 weiAmount);\n" +
+      "  event Withdrawn(address indexed payee, uint256 weiAmount);\n" +
+      "\n" +
+      "  mapping(address => uint256) private deposits;\n" +
+      "\n" +
+      "  function depositsOf(address _payee) public view returns (uint256) {\n" +
+      "    return deposits[_payee];\n" +
+      "  }\n" +
+      "\n" +
+      "  function deposit(address _payee) public onlyOwner payable {\n" +
+      "    uint256 amount = msg.value;\n" +
+      "    deposits[_payee] = deposits[_payee].add(amount);\n" +
+      "\n" +
+      "    emit Deposited(_payee, amount);\n" +
+      "  }\n" +
+      "\n" +
+      "  function withdraw(address _payee) public onlyOwner {\n" +
+      "    uint256 payment = deposits[_payee];\n" +
+      "    assert(address(this).balance >= payment);\n" +
+      "\n" +
+      "    deposits[_payee] = 0;\n" +
+      "\n" +
+      "    _payee.transfer(payment);\n" +
+      "\n" +
+      "    emit Withdrawn(_payee, payment);\n" +
+      "  }\n" +
+      "}\n" +
+      "\n" +
+      "\n" +
+      "contract PullPayment {\n" +
+      "  Escrow private escrow;\n" +
+      "\n" +
+      "  constructor() public {\n" +
+      "    escrow = new Escrow();\n" +
+      "  }\n" +
+      "\n" +
+      "  function withdrawPayments() public {\n" +
+      "    address payee = msg.sender;\n" +
+      "    escrow.withdraw(payee);\n" +
+      "  }\n" +
+      "  function payments(address _dest) public view returns (uint256) {\n" +
+      "    return escrow.depositsOf(_dest);\n" +
+      "  }\n" +
+      "\n" +
+      "  function asyncTransfer(address _dest, uint256 _amount) internal {\n" +
+      "    escrow.deposit.value(_amount)(_dest);\n" +
+      "  }\n" +
+      "}";
+
+    SolidityParsingPhase parser = new SolidityParsingPhase();
+    SourceUnitContext suc = parser.parse(file);
+    assertThat(suc).isNotNull();
   }
 }

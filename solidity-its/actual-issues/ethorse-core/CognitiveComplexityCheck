@@ -24,12 +24,6 @@ solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
 Issue Line: 221
 solidity-test-sources/src/ethorse-core/contracts/BettingLegacy.sol
 Issue Line: 258
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 463
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 502
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 916
 solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
 Issue Line: 532
 solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol

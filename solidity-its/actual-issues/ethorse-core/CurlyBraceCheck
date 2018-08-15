@@ -6,38 +6,6 @@ solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
 Issue Line: 584
 solidity-test-sources/src/ethorse-core/contractsFlat/Betting.sol
 Issue Line: 587
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 873
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 919
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1050
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1083
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1093
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1100
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1107
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1114
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1124
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1131
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1150
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1162
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1169
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1176
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1183
-solidity-test-sources/src/ethorse-core/dormant/ethroll.sol
-Issue Line: 1190
 solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol
 Issue Line: 578
 solidity-test-sources/src/ethorse-core/contracts/lib/usingOraclize.sol

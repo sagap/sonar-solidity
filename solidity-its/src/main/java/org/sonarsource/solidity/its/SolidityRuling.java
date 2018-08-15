@@ -132,7 +132,8 @@ public class SolidityRuling {
         SolidityParsingPhase parsing = new SolidityParsingPhase();
         visitor.visit(parsing.parse(IOUtils.toString(new FileReader(file))));
       } catch (Exception e) {
-        LOG.error(e + "Visitor:" + visitor.getClass() + " @File:" + file);
+        LOG.error(e + ", Visitor: " + visitor.getClass() + " @File: " + file);
+        break;
       }
     }
   }
