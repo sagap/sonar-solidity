@@ -1,12 +1,14 @@
 package org.sonarsource.solidity.checks;
 
 import java.util.List;
+import java.util.Optional;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.sonar.check.Rule;
 import org.sonarsource.solidity.frontend.SolidityParser.BlockContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ExpressionStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionCallContext;
 import org.sonarsource.solidity.frontend.SolidityParser.FunctionDefinitionContext;
+import org.sonarsource.solidity.frontend.SolidityParser.IdentifierContext;
 import org.sonarsource.solidity.frontend.SolidityParser.SimpleStatementContext;
 import org.sonarsource.solidity.frontend.SolidityParser.StatementContext;
 
@@ -20,26 +22,37 @@ public class CheckEffectsCheck extends IssuableVisitor {
     if (CheckUtils.isPublicOrExternalFunction(ctx.modifierList())) {
       BlockContext functionBlock = ctx.block();
       if (functionBlock != null) {
-        List<StatementContext> stmt = functionBlock.statement();
-        if (!stmt.isEmpty() && !statementIsRequireFunctionCall(stmt.get(0)) && ctx.identifier() != null) {
-          ruleContext().addIssue(ctx.identifier(), "Checks should be done at the beggining of "
-            + "any function making external calls.", RULE_KEY);
-        }
+        statementIsTransferOrSend(functionBlock.statement()).ifPresent(stmt -> ruleContext().addIssue(stmt, "Checks should be done at the beggining of "
+          + "any function making external calls.", RULE_KEY));
       }
     }
     return super.visitFunctionDefinition(ctx);
   }
 
-  private static boolean statementIsRequireFunctionCall(StatementContext stmt) {
-    SimpleStatementContext simpleStmt = stmt.simpleStatement();
-    if (simpleStmt != null) {
-      ExpressionStatementContext expressionStatement = simpleStmt.expressionStatement();
-      if (expressionStatement != null) {
-        FunctionCallContext functionCall = expressionStatement.expression().functionCall();
-        if (functionCall != null
-          && "require".equals(functionCall.identifier(0).getText())) {
-          return true;
+  private static Optional<SimpleStatementContext> statementIsTransferOrSend(List<StatementContext> statementsList) {
+    int statementsListSize = statementsList.size();
+    for (int i = 0; i < statementsListSize; i++) {
+      StatementContext stmt = statementsList.get(i);
+      if (SimpleStatementContext.class.isInstance(stmt.getChild(0))) {
+        SimpleStatementContext simpleStmt = stmt.simpleStatement();
+        ExpressionStatementContext expressionStatement = simpleStmt.expressionStatement();
+        if (expressionStatement != null) {
+          FunctionCallContext functionCall = expressionStatement.expression().functionCall();
+          if (functionCall != null && i < statementsListSize - 1 &&
+            functionCallIdentifierIsTransferOrSend(functionCall.identifier())) {
+            return Optional.of(simpleStmt);
+          }
         }
+      }
+    }
+    return Optional.empty();
+  }
+
+  private static boolean functionCallIdentifierIsTransferOrSend(List<IdentifierContext> functionCallIdentifier) {
+    for (IdentifierContext identifier : functionCallIdentifier) {
+      String identifierText = identifier.getText();
+      if ("transfer".equals(identifierText) || "send".equals(identifierText)) {
+        return true;
       }
     }
     return false;
