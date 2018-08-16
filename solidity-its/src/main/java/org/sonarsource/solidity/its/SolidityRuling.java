@@ -49,7 +49,8 @@ public class SolidityRuling {
     "aragonOS",
     "ethorse-core",
     "openzeppelin-solidity",
-    "kleros-interaction"
+    "kleros-interaction",
+    "pm-contracts"
   };
 
   public static String[] getProjects() {

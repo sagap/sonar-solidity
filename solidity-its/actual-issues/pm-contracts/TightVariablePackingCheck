@@ -1,0 +1,112 @@
+solidity-test-sources/src/pm-contracts/contracts/Markets/Campaign.sol
+Issue Line: 31
+solidity-test-sources/src/pm-contracts/contracts/Markets/Campaign.sol
+Issue Line: 32
+solidity-test-sources/src/pm-contracts/contracts/Markets/Campaign.sol
+Issue Line: 33
+solidity-test-sources/src/pm-contracts/contracts/Markets/Campaign.sol
+Issue Line: 112
+solidity-test-sources/src/pm-contracts/contracts/Markets/Campaign.sol
+Issue Line: 113
+solidity-test-sources/src/pm-contracts/contracts/Events/Event.sol
+Issue Line: 25
+solidity-test-sources/src/pm-contracts/contracts/MarketMakers/LMSRMarketMaker.sol
+Issue Line: 15
+solidity-test-sources/src/pm-contracts/contracts/MarketMakers/LMSRMarketMaker.sol
+Issue Line: 16
+solidity-test-sources/src/pm-contracts/contracts/MarketMakers/LMSRMarketMaker.sol
+Issue Line: 34
+solidity-test-sources/src/pm-contracts/contracts/MarketMakers/LMSRMarketMaker.sol
+Issue Line: 35
+solidity-test-sources/src/pm-contracts/contracts/MarketMakers/LMSRMarketMaker.sol
+Issue Line: 36
+solidity-test-sources/src/pm-contracts/contracts/MarketMakers/LMSRMarketMaker.sol
+Issue Line: 45
+solidity-test-sources/src/pm-contracts/contracts/MarketMakers/LMSRMarketMaker.sol
+Issue Line: 69
+solidity-test-sources/src/pm-contracts/contracts/MarketMakers/LMSRMarketMaker.sol
+Issue Line: 70
+solidity-test-sources/src/pm-contracts/contracts/MarketMakers/LMSRMarketMaker.sol
+Issue Line: 74
+solidity-test-sources/src/pm-contracts/contracts/MarketMakers/LMSRMarketMaker.sol
+Issue Line: 74
+solidity-test-sources/src/pm-contracts/contracts/MarketMakers/LMSRMarketMaker.sol
+Issue Line: 95
+solidity-test-sources/src/pm-contracts/contracts/MarketMakers/LMSRMarketMaker.sol
+Issue Line: 95
+solidity-test-sources/src/pm-contracts/contracts/MarketMakers/LMSRMarketMaker.sol
+Issue Line: 132
+solidity-test-sources/src/pm-contracts/contracts/Markets/Market.sol
+Issue Line: 20
+solidity-test-sources/src/pm-contracts/contracts/Markets/Market.sol
+Issue Line: 24
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 15
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 16
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 17
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 39
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 39
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 52
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 52
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 87
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 88
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 106
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 107
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 174
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 174
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 187
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 187
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 215
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 226
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 249
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 251
+solidity-test-sources/src/pm-contracts/contracts/Utils/Math.sol
+Issue Line: 271
+solidity-test-sources/src/pm-contracts/contracts/Migrations.sol
+Issue Line: 9
+solidity-test-sources/src/pm-contracts/contracts/Events/ScalarEvent.sol
+Issue Line: 19
+solidity-test-sources/src/pm-contracts/contracts/Events/ScalarEvent.sol
+Issue Line: 20
+solidity-test-sources/src/pm-contracts/contracts/Events/ScalarEvent.sol
+Issue Line: 86
+solidity-test-sources/src/pm-contracts/contracts/Events/ScalarEvent.sol
+Issue Line: 87
+solidity-test-sources/src/pm-contracts/contracts/Events/ScalarEvent.sol
+Issue Line: 88
+solidity-test-sources/src/pm-contracts/contracts/Events/ScalarEvent.sol
+Issue Line: 89
+solidity-test-sources/src/pm-contracts/contracts/Markets/StandardMarket.sol
+Issue Line: 110
+solidity-test-sources/src/pm-contracts/contracts/Markets/StandardMarket.sol
+Issue Line: 111
+solidity-test-sources/src/pm-contracts/contracts/Markets/StandardMarketWithPriceLogger.sol
+Issue Line: 9
+solidity-test-sources/src/pm-contracts/contracts/Markets/StandardMarketWithPriceLogger.sol
+Issue Line: 15
+solidity-test-sources/src/pm-contracts/contracts/Markets/StandardMarketWithPriceLogger.sol
+Issue Line: 16
+solidity-test-sources/src/pm-contracts/contracts/Markets/StandardMarketWithPriceLogger.sol
+Issue Line: 17
+solidity-test-sources/src/pm-contracts/contracts/Markets/StandardMarketWithPriceLogger.sol
+Issue Line: 18
+solidity-test-sources/src/pm-contracts/contracts/Markets/StandardMarketWithPriceLogger.sol
+Issue Line: 19
