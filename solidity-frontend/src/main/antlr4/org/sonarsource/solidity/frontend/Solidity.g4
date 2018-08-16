@@ -235,6 +235,7 @@ expression
   | expression '[' expression ']'
   | expression '.' identifier
   | functionCall
+  | expression '.' functionCall functionCallArguments
   | '(' expression ')'
   | ('++' | '--') expression
   | ('+' | '-') expression
