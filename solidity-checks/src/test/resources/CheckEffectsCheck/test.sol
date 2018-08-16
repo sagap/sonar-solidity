@@ -16,7 +16,7 @@ contract test {
     
     function withdraw2(uint amount) public {
         require(b[msg.sender] >= amount);
-        msg.sender.transfer(amount);     // Noncompliant
+        msg.sender.transfer(amount);     // Noncompliant {{External call should always be last statement in a function.}}
      // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         b[msg.sender] -= amount;
     }

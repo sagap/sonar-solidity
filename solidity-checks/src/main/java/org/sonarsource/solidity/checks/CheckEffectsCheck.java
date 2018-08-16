@@ -22,8 +22,8 @@ public class CheckEffectsCheck extends IssuableVisitor {
     if (CheckUtils.isPublicOrExternalFunction(ctx.modifierList())) {
       BlockContext functionBlock = ctx.block();
       if (functionBlock != null) {
-        statementIsTransferOrSend(functionBlock.statement()).ifPresent(stmt -> ruleContext().addIssue(stmt, "Checks should be done at the beggining of "
-          + "any function making external calls.", RULE_KEY));
+        statementIsTransferOrSend(functionBlock.statement())
+          .ifPresent(stmt -> ruleContext().addIssue(stmt, "External call should always be last statement in a function.", RULE_KEY));
       }
     }
     return super.visitFunctionDefinition(ctx);
