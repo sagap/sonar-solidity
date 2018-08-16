@@ -1,0 +1,8 @@
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuction.sol
+Issue Line: 22
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyCore.sol
+Issue Line: 59
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SaleClockAuction.sol
+Issue Line: 23
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SiringClockAuction.sol
+Issue Line: 19

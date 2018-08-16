@@ -48,7 +48,8 @@ public class SolidityRuling {
     "Random-Files",
     "aragonOS",
     "ethorse-core",
-    "openzeppelin-solidity"
+    "openzeppelin-solidity",
+    "kleros-interaction"
   };
 
   public static String[] getProjects() {

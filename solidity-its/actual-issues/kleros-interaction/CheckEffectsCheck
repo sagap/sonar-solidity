@@ -1,0 +1,28 @@
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableDeposit.sol
+Issue Line: 82
+solidity-test-sources/src/kleros-interaction/contracts/standard/permission/ArbitrablePermissionList.sol
+Issue Line: 260
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTransaction.sol
+Issue Line: 47
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTransaction.sol
+Issue Line: 56
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CentralizedArbitrator.sol
+Issue Line: 98
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/FundingVault.sol
+Issue Line: 221
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/FundingVault.sol
+Issue Line: 240
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/FundingVault.sol
+Issue Line: 260
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
+Issue Line: 252
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
+Issue Line: 267
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
+Issue Line: 280
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/Rental.sol
+Issue Line: 81
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/Rental.sol
+Issue Line: 88
+solidity-test-sources/src/kleros-interaction/contracts/standard/rng/TrustedRNG.sol
+Issue Line: 40
