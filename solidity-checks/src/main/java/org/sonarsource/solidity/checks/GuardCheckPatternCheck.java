@@ -26,10 +26,12 @@ public class GuardCheckPatternCheck extends IssuableVisitor {
     if (CheckUtils.isPublicOrExternalFunction(modifiersList)
       && !CheckUtils.isViewOrPureFunction(modifiersList.stateMutability()) && ctx.block() != null) {
       List<ParameterContext> parameters = ctx.parameterList().parameter();
-      parameters.stream()
-        .filter(parameter -> parameterIsNotGuardChecked(parameter.identifier(), modifiersList.modifierInvocation(), ctx.block().statement()))
-        .forEach(parameter -> ruleContext().addIssue(parameter.getStart(), parameter.getStop(), parameter.getStop().getText().length(),
-          "You should check with require the validity of the parameter " + parameter.getChild(1).getText() + ".", RULE_KEY));
+      for (ParameterContext parameter : parameters) {
+        if (parameterIsNotGuardChecked(parameter.identifier(), modifiersList.modifierInvocation(), ctx.block().statement())) {
+          ruleContext().addIssue(ctx.identifier(), "You should check with require the validity of all the parameters.", RULE_KEY);
+          break;
+        }
+      }
     }
     return super.visitFunctionDefinition(ctx);
   }

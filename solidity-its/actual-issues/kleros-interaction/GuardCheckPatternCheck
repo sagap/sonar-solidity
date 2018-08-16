@@ -1,31 +1,17 @@
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/Arbitrable.sol
 Issue Line: 67
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/Arbitrable.sol
-Issue Line: 67
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
-Issue Line: 197
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
-Issue Line: 198
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
-Issue Line: 199
+Issue Line: 195
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
 Issue Line: 222
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
-Issue Line: 246
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
-Issue Line: 319
+Issue Line: 245
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
 Issue Line: 319
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
 Issue Line: 334
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
-Issue Line: 403
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
-Issue Line: 404
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
-Issue Line: 405
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
-Issue Line: 406
+Issue Line: 402
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
 Issue Line: 425
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
@@ -47,17 +33,9 @@ Issue Line: 48
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitratorCourt.sol
 Issue Line: 82
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitratorCourt.sol
-Issue Line: 82
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitratorCourt.sol
-Issue Line: 95
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitratorCourt.sol
 Issue Line: 95
 solidity-test-sources/src/kleros-interaction/contracts/standard/proxy/ArbitratorVersioningProxy.sol
 Issue Line: 40
-solidity-test-sources/src/kleros-interaction/contracts/standard/proxy/ArbitratorVersioningProxy.sol
-Issue Line: 40
-solidity-test-sources/src/kleros-interaction/contracts/standard/proxy/ArbitratorVersioningProxy.sol
-Issue Line: 55
 solidity-test-sources/src/kleros-interaction/contracts/standard/proxy/ArbitratorVersioningProxy.sol
 Issue Line: 55
 solidity-test-sources/src/kleros-interaction/contracts/standard/rng/BlockhashRNG.sol
@@ -75,10 +53,6 @@ Issue Line: 51
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CentralizedArbitrator.sol
 Issue Line: 60
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CentralizedArbitrator.sol
-Issue Line: 60
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CentralizedArbitrator.sol
-Issue Line: 70
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CentralizedArbitrator.sol
 Issue Line: 70
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CentralizedArbitrator.sol
 Issue Line: 87
@@ -86,8 +60,6 @@ solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/Cent
 Issue Line: 106
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CentralizedArbitrator.sol
 Issue Line: 114
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CentralizedCourt.sol
-Issue Line: 111
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CentralizedCourt.sol
 Issue Line: 111
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CentralizedCourt.sol
@@ -101,7 +73,7 @@ Issue Line: 303
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuction.sol
 Issue Line: 22
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuction.sol
-Issue Line: 57
+Issue Line: 52
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuction.sol
 Issue Line: 80
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuction.sol
@@ -131,17 +103,9 @@ Issue Line: 31
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyAuction.sol
 Issue Line: 43
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyAuction.sol
-Issue Line: 57
+Issue Line: 55
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyAuction.sol
-Issue Line: 58
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyAuction.sol
-Issue Line: 59
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyAuction.sol
-Issue Line: 85
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyAuction.sol
-Issue Line: 86
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyAuction.sol
-Issue Line: 87
+Issue Line: 83
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBreeding.sol
 Issue Line: 38
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBreeding.sol
@@ -151,13 +115,9 @@ Issue Line: 100
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBreeding.sol
 Issue Line: 279
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBreeding.sol
-Issue Line: 279
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBreeding.sol
 Issue Line: 304
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyCore.sol
 Issue Line: 79
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyMinting.sol
-Issue Line: 30
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyMinting.sol
 Issue Line: 30
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyMinting.sol
@@ -165,17 +125,13 @@ Issue Line: 44
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyOwnership.sol
 Issue Line: 62
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyOwnership.sol
-Issue Line: 103
+Issue Line: 102
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyOwnership.sol
-Issue Line: 128
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/LockedToken.sol
-Issue Line: 36
+Issue Line: 126
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/LockedToken.sol
 Issue Line: 36
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/LockedToken.sol
 Issue Line: 49
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/LockedToken.sol
-Issue Line: 57
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/LockedToken.sol
 Issue Line: 57
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/LockedToken.sol
@@ -188,10 +144,6 @@ solidity-test-sources/src/kleros-interaction/contracts/Migrations.sol
 Issue Line: 19
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/MiniMeTokenERC20.sol
 Issue Line: 50
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/MiniMeTokenERC20.sol
-Issue Line: 50
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
-Issue Line: 96
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
 Issue Line: 96
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
@@ -205,19 +157,7 @@ Issue Line: 181
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
 Issue Line: 196
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
-Issue Line: 196
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
 Issue Line: 210
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
-Issue Line: 210
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
-Issue Line: 224
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
-Issue Line: 224
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
-Issue Line: 224
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
-Issue Line: 224
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
 Issue Line: 224
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
@@ -235,15 +175,11 @@ Issue Line: 19
 solidity-test-sources/src/kleros-interaction/contracts/standard/rng/RNG.sol
 Issue Line: 34
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SaleClockAuction.sol
-Issue Line: 33
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SaleClockAuction.sol
-Issue Line: 37
+Issue Line: 32
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SaleClockAuction.sol
 Issue Line: 58
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SiringClockAuction.sol
-Issue Line: 30
-solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SiringClockAuction.sol
-Issue Line: 34
+Issue Line: 29
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SiringClockAuction.sol
 Issue Line: 57
 solidity-test-sources/src/kleros-interaction/contracts/standard/rng/TrustedRNG.sol
@@ -256,8 +192,6 @@ solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/TwoP
 Issue Line: 141
 solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/TwoPartyArbitrable.sol
 Issue Line: 151
-solidity-test-sources/src/kleros-interaction/contracts/standard/proxy/VersioningProxy.sol
-Issue Line: 94
 solidity-test-sources/src/kleros-interaction/contracts/standard/proxy/VersioningProxy.sol
 Issue Line: 94
 solidity-test-sources/src/kleros-interaction/contracts/standard/proxy/VersioningProxy.sol
