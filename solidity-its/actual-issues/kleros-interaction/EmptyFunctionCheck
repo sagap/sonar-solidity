@@ -1,0 +1,14 @@
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/Arbitrator.sol
+Issue Line: 48
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuctionBase.sol
+Issue Line: 45
+solidity-test-sources/src/kleros-interaction/contracts/standard/rng/ConstantNG.sol
+Issue Line: 25
+solidity-test-sources/src/kleros-interaction/contracts/standard/proxy/ExperimentalProxy.sol
+Issue Line: 97
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SaleClockAuction.sol
+Issue Line: 23
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SiringClockAuction.sol
+Issue Line: 19
+solidity-test-sources/src/kleros-interaction/contracts/standard/proxy/VersioningProxy.sol
+Issue Line: 137

@@ -1,0 +1,80 @@
+solidity-test-sources/src/kleros-interaction/contracts/standard/permission/AddressPermissionList.sol
+Issue Line: 6
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/Arbitrable.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableDeposit.sol
+Issue Line: 8
+solidity-test-sources/src/kleros-interaction/contracts/standard/permission/ArbitrablePermissionList.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTransaction.sol
+Issue Line: 8
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/Arbitrator.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitratorCourt.sol
+Issue Line: 1
+solidity-test-sources/src/kleros-interaction/contracts/standard/proxy/ArbitratorVersioningProxy.sol
+Issue Line: 1
+solidity-test-sources/src/kleros-interaction/contracts/standard/rng/BlockhashRNG.sol
+Issue Line: 8
+solidity-test-sources/src/kleros-interaction/contracts/standard/rng/BlockhashRNGFallback.sol
+Issue Line: 10
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CentralizedArbitrator.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CentralizedCourt.sol
+Issue Line: 8
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuction.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuctionBase.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/rng/ConstantNG.sol
+Issue Line: 9
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/ERC721.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/proxy/ExperimentalProxy.sol
+Issue Line: 1
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/FundingVault.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/ExternalInterfaces/GeneScienceInterface.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/GeneScienceMock.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyAccessControl.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyAuction.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBase.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBreeding.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyCore.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyMinting.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyOwnership.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/LockedToken.sol
+Issue Line: 8
+solidity-test-sources/src/kleros-interaction/contracts/Migrations.sol
+Issue Line: 1
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableTokens/MiniMeTokenERC20.sol
+Issue Line: 9
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/MultipleArbitrableTransaction.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/permission/PermissionInterface.sol
+Issue Line: 6
+solidity-test-sources/src/kleros-interaction/contracts/standard/permission/PermissionList.sol
+Issue Line: 6
+solidity-test-sources/src/kleros-interaction/contracts/standard/rng/RNG.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/Rental.sol
+Issue Line: 8
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SaleClockAuction.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SiringClockAuction.sol
+Issue Line: 7
+solidity-test-sources/src/kleros-interaction/contracts/standard/rng/TrustedRNG.sol
+Issue Line: 8
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/TwoPartyArbitrable.sol
+Issue Line: 8
+solidity-test-sources/src/kleros-interaction/contracts/standard/proxy/VersioningProxy.sol
+Issue Line: 1

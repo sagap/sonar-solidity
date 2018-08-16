@@ -1,0 +1,88 @@
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
+Issue Line: 155
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
+Issue Line: 178
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
+Issue Line: 206
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
+Issue Line: 255
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
+Issue Line: 280
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
+Issue Line: 302
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
+Issue Line: 324
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
+Issue Line: 339
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
+Issue Line: 354
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
+Issue Line: 389
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
+Issue Line: 412
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
+Issue Line: 430
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/ArbitrableKitty.sol
+Issue Line: 442
+solidity-test-sources/src/kleros-interaction/contracts/standard/permission/ArbitrablePermissionList.sol
+Issue Line: 388
+solidity-test-sources/src/kleros-interaction/contracts/standard/permission/ArbitrablePermissionList.sol
+Issue Line: 399
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuction.sol
+Issue Line: 64
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuction.sol
+Issue Line: 84
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuction.sol
+Issue Line: 97
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuction.sol
+Issue Line: 113
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuction.sol
+Issue Line: 149
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuctionBase.sol
+Issue Line: 115
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuctionBase.sol
+Issue Line: 183
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/ClockAuctionBase.sol
+Issue Line: 214
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyAuction.sol
+Issue Line: 63
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyAuction.sol
+Issue Line: 91
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyAuction.sol
+Issue Line: 120
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBase.sol
+Issue Line: 166
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBreeding.sol
+Issue Line: 92
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBreeding.sol
+Issue Line: 117
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBreeding.sol
+Issue Line: 138
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBreeding.sol
+Issue Line: 176
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBreeding.sol
+Issue Line: 192
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBreeding.sol
+Issue Line: 283
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyBreeding.sol
+Issue Line: 308
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyOwnership.sol
+Issue Line: 25
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyOwnership.sol
+Issue Line: 86
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyOwnership.sol
+Issue Line: 108
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyOwnership.sol
+Issue Line: 133
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyOwnership.sol
+Issue Line: 154
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/KittyOwnership.sol
+Issue Line: 173
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SaleClockAuction.sol
+Issue Line: 43
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SaleClockAuction.sol
+Issue Line: 61
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SiringClockAuction.sol
+Issue Line: 40
+solidity-test-sources/src/kleros-interaction/contracts/standard/arbitration/CriptoKitties/Auction/SiringClockAuction.sol
+Issue Line: 60
