@@ -5,15 +5,19 @@
   <parent>
     <groupId>org.sonarsource.solidity</groupId>
     <artifactId>sonar-solidity</artifactId>
-    <version>0.6-SNAPSHOT</version>
+    <version>1.0</version>
   </parent>
 
 	<artifactId>solidity-plugin</artifactId>
 	<packaging>sonar-plugin</packaging>
 
 	<name>solidity-plugin</name>
-	<description>Draft of sonar-solidity</description>
-  
+	<description>Sonar-solidity</description>
+  <developers>
+    <developer>
+      <name>Agapiou Stylianos</name>
+    </developer>
+  </developers>
 	<dependencies>
 		<dependency>
 			<groupId>org.sonarsource.sonarqube</groupId>
@@ -78,7 +82,7 @@
 				<version>1.18.0.372</version>
 				<extensions>true</extensions>
 				<configuration>
-					<pluginKey>example</pluginKey>
+					<pluginKey>SolidityPlugin</pluginKey>
 					<pluginClass>org.sonarsource.solidity.SolidityPlugin</pluginClass>
 				</configuration>
 			</plugin>
