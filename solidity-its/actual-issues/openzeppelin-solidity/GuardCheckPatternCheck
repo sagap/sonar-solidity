@@ -7,11 +7,9 @@ Issue Line: 18
 solidity-test-sources/src/openzeppelin-solidity/contracts/ownership/CanReclaimToken.sol
 Issue Line: 21
 solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/CappedToken.sol
-Issue Line: 26
+Issue Line: 25
 solidity-test-sources/src/openzeppelin-solidity/contracts/ownership/Claimable.sol
 Issue Line: 27
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ConditionalEscrowMock.sol
-Issue Line: 11
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ConditionalEscrowMock.sol
 Issue Line: 11
 solidity-test-sources/src/openzeppelin-solidity/contracts/ownership/Contactable.sol
@@ -22,48 +20,26 @@ solidity-test-sources/src/openzeppelin-solidity/contracts/lifecycle/Destructible
 Issue Line: 19
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC223TokenMock.sol
 Issue Line: 19
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC223TokenMock.sol
-Issue Line: 19
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC223TokenMock.sol
-Issue Line: 19
 solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC721/ERC721BasicToken.sol
 Issue Line: 71
 solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC721/ERC721BasicToken.sol
 Issue Line: 95
 solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC721/ERC721BasicToken.sol
-Issue Line: 127
+Issue Line: 126
 solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC721/ERC721BasicToken.sol
-Issue Line: 156
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC721/ERC721BasicToken.sol
-Issue Line: 157
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC721/ERC721BasicToken.sol
-Issue Line: 158
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721BasicTokenMock.sol
-Issue Line: 11
+Issue Line: 155
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721BasicTokenMock.sol
 Issue Line: 11
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721BasicTokenMock.sol
 Issue Line: 15
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721ReceiverMock.sol
-Issue Line: 24
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721ReceiverMock.sol
-Issue Line: 25
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721ReceiverMock.sol
-Issue Line: 26
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721ReceiverMock.sol
-Issue Line: 27
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721TokenMock.sol
-Issue Line: 16
+Issue Line: 23
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721TokenMock.sol
 Issue Line: 16
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721TokenMock.sol
 Issue Line: 20
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721TokenMock.sol
 Issue Line: 28
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721TokenMock.sol
-Issue Line: 28
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721TokenMock.sol
-Issue Line: 32
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ERC721TokenMock.sol
 Issue Line: 32
 solidity-test-sources/src/openzeppelin-solidity/contracts/payment/Escrow.sol
@@ -77,57 +53,27 @@ Issue Line: 18
 solidity-test-sources/src/openzeppelin-solidity/contracts/crowdsale/validation/IndividuallyCappedCrowdsale.sol
 Issue Line: 23
 solidity-test-sources/src/openzeppelin-solidity/contracts/crowdsale/validation/IndividuallyCappedCrowdsale.sol
-Issue Line: 23
-solidity-test-sources/src/openzeppelin-solidity/contracts/crowdsale/validation/IndividuallyCappedCrowdsale.sol
-Issue Line: 33
-solidity-test-sources/src/openzeppelin-solidity/contracts/crowdsale/validation/IndividuallyCappedCrowdsale.sol
-Issue Line: 34
+Issue Line: 32
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/MessageHelper.sol
-Issue Line: 10
+Issue Line: 9
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/MessageHelper.sol
-Issue Line: 11
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/MessageHelper.sol
-Issue Line: 12
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/MessageHelper.sol
-Issue Line: 22
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/MessageHelper.sol
-Issue Line: 23
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/MessageHelper.sol
-Issue Line: 24
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/MessageHelper.sol
-Issue Line: 42
+Issue Line: 21
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/MessageHelper.sol
 Issue Line: 42
 solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/MintableToken.sol
-Issue Line: 36
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/MintableToken.sol
-Issue Line: 37
+Issue Line: 35
 solidity-test-sources/src/openzeppelin-solidity/contracts/ownership/Ownable.sol
 Issue Line: 51
 solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
-Issue Line: 14
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
-Issue Line: 15
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
-Issue Line: 25
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
-Issue Line: 26
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
-Issue Line: 27
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
-Issue Line: 37
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
-Issue Line: 38
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
-Issue Line: 48
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
-Issue Line: 49
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
-Issue Line: 59
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
-Issue Line: 60
-solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/PullPaymentMock.sol
 Issue Line: 13
+solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
+Issue Line: 24
+solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
+Issue Line: 36
+solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
+Issue Line: 47
+solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol
+Issue Line: 58
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/PullPaymentMock.sol
 Issue Line: 13
 solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/RBACMintableToken.sol
@@ -138,10 +84,6 @@ solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/RBACMock.sol
 Issue Line: 58
 solidity-test-sources/src/openzeppelin-solidity/contracts/examples/RBACWithAdmin.sol
 Issue Line: 48
-solidity-test-sources/src/openzeppelin-solidity/contracts/examples/RBACWithAdmin.sol
-Issue Line: 48
-solidity-test-sources/src/openzeppelin-solidity/contracts/examples/RBACWithAdmin.sol
-Issue Line: 60
 solidity-test-sources/src/openzeppelin-solidity/contracts/examples/RBACWithAdmin.sol
 Issue Line: 60
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/ReentrancyMock.sol
@@ -157,15 +99,9 @@ Issue Line: 81
 solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol
 Issue Line: 80
 solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol
-Issue Line: 80
+Issue Line: 120
 solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol
-Issue Line: 121
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol
-Issue Line: 122
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol
-Issue Line: 143
-solidity-test-sources/src/openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol
-Issue Line: 144
+Issue Line: 142
 solidity-test-sources/src/openzeppelin-solidity/contracts/ownership/Superuser.sol
 Issue Line: 59
 solidity-test-sources/src/openzeppelin-solidity/contracts/mocks/SupportsInterfaceWithLookupMock.sol

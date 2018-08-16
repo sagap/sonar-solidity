@@ -4,8 +4,8 @@ contract foo{
 
   bytes32 a = 0x0;
   
-  function f1(uint t){ // Noncompliant {{You should check with require the validity of the parameter t.}}
-           // ^^^^^^^
+  function f1(uint t){ // Noncompliant {{You should check with require the validity of all the parameters.}}
+        // ^^
   }
   
   function f2(uint t) external payable mod1(t){    // Compliant
@@ -13,7 +13,7 @@ contract foo{
   }
   
   function f3(uint t, address _a) public payable mod1(t){    // Noncompliant
-                   // ^^^^^^^^^^^
+        // ^^
     uint a = 1;
     while(true)
       break;
