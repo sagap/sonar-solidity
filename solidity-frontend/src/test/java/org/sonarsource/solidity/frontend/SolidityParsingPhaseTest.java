@@ -349,4 +349,56 @@ public class SolidityParsingPhaseTest {
     SourceUnitContext suc = parser.parse(file);
     assertThat(suc).isNotNull();
   }
+
+  @Test
+  public void test_error() throws IOException {
+    String file = "import anotherContract.sol"
+      + "contract base {\n" +
+      "    // ... test\n" +
+      "}";
+    try {
+      new SolidityParsingPhase().parse(file);
+    } catch (IllegalStateException e) {
+      assertThat(e).isNotNull();
+    }
+  }
+
+  @Test
+  public void test_error2() throws IOException {
+    String file = "contract Ownable {\n" +
+      "  address public owner;\n" +
+      "\n" +
+      "\n" +
+      "  event OwnershipRenounced(address indexed previousOwner);\n" +
+      "  event OwnershipTransferred(\n" +
+      "    address indexed previousOwner,\n" +
+      "    address indexed newOwner\n" +
+      "  );\n" +
+      "\n" +
+      "  constructor() public {\n" +
+      "    owner = msg.sender;\n" +
+      "  }\n" +
+      "\n" +
+      "  modifier onlyOwner() {\n" +
+      "    require(msg.sender == owner);\n" +
+      "    _\n" +
+      "  }\n" +
+      "}\n" +
+      "";
+    try {
+      new SolidityParsingPhase().parse(file);
+    } catch (IllegalStateException e) {
+      assertThat(e).isNotNull();
+    }
+  }
+
+  @Test
+  public void test_error3() throws IOException {
+    String file = "pragma solidity 0.4.24";
+    try {
+      new SolidityParsingPhase().parse(file);
+    } catch (IllegalStateException e) {
+      assertThat(e).isNotNull();
+    }
+  }
 }
