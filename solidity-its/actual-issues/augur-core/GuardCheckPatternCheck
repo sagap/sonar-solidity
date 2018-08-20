@@ -1,0 +1,908 @@
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 72
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 98
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 110
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 121
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 129
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 136
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 143
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 150
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 157
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 164
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 171
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 186
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 201
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 208
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 213
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 218
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 223
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 228
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 233
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 244
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 251
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 258
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 265
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 273
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 280
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 287
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 295
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 303
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 310
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 317
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 324
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 331
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 337
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 344
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 351
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 358
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 364
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 372
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 380
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 388
+solidity-test-sources/src/augur-core/source/contracts/libraries/token/BasicToken.sol
+Issue Line: 23
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/BasicToken.sol
+Issue Line: 22
+solidity-test-sources/src/augur-core/source/contracts/trading/Cash.sol
+Issue Line: 26
+solidity-test-sources/src/augur-core/source/contracts/trading/Cash.sol
+Issue Line: 32
+solidity-test-sources/src/augur-core/source/contracts/trading/Cash.sol
+Issue Line: 37
+solidity-test-sources/src/augur-core/source/contracts/trading/Cash.sol
+Issue Line: 50
+solidity-test-sources/src/augur-core/source/contracts/trading/ClaimTradingProceeds.sol
+Issue Line: 22
+solidity-test-sources/src/augur-core/source/contracts/trading/ClaimTradingProceeds.sol
+Issue Line: 64
+solidity-test-sources/src/augur-core/source/contracts/trading/ClaimTradingProceeds.sol
+Issue Line: 77
+solidity-test-sources/src/augur-core/source/contracts/trading/CompleteSets.sol
+Issue Line: 23
+solidity-test-sources/src/augur-core/source/contracts/trading/CompleteSets.sol
+Issue Line: 30
+solidity-test-sources/src/augur-core/source/contracts/trading/CompleteSets.sol
+Issue Line: 37
+solidity-test-sources/src/augur-core/source/contracts/trading/CompleteSets.sol
+Issue Line: 57
+solidity-test-sources/src/augur-core/source/contracts/trading/CompleteSets.sol
+Issue Line: 64
+solidity-test-sources/src/augur-core/source/contracts/trading/CompleteSets.sol
+Issue Line: 71
+solidity-test-sources/src/augur-core/source/contracts/Controlled.sol
+Issue Line: 45
+solidity-test-sources/src/augur-core/source/contracts/Controller.sol
+Issue Line: 53
+solidity-test-sources/src/augur-core/source/contracts/Controller.sol
+Issue Line: 58
+solidity-test-sources/src/augur-core/source/contracts/Controller.sol
+Issue Line: 68
+solidity-test-sources/src/augur-core/source/contracts/Controller.sol
+Issue Line: 83
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/ControllerUser.sol
+Issue Line: 15
+solidity-test-sources/src/augur-core/source/contracts/trading/CreateOrder.sol
+Issue Line: 18
+solidity-test-sources/src/augur-core/source/contracts/trading/CreateOrder.sol
+Issue Line: 24
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSAuth.sol
+Issue Line: 16
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSAuth.sol
+Issue Line: 24
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSGuard.sol
+Issue Line: 32
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSGuard.sol
+Issue Line: 37
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSGuard.sol
+Issue Line: 41
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSValue.sol
+Issue Line: 22
+solidity-test-sources/src/augur-core/source/contracts/libraries/Delegator.sol
+Issue Line: 9
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/DelegatorHelper.sol
+Issue Line: 22
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/DelegatorHelper.sol
+Issue Line: 32
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/DelegatorHelper.sol
+Issue Line: 37
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/DelegatorHelper.sol
+Issue Line: 42
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/DelegatorHelper.sol
+Issue Line: 47
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/DelegatorHelper.sol
+Issue Line: 52
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/DelegatorHelper.sol
+Issue Line: 57
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/DelegatorHelper.sol
+Issue Line: 102
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/DelegatorHelper.sol
+Issue Line: 106
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/DelegatorHelper.sol
+Issue Line: 114
+solidity-test-sources/src/augur-core/source/contracts/reporting/DisputeCrowdsourcer.sol
+Issue Line: 14
+solidity-test-sources/src/augur-core/source/contracts/reporting/DisputeCrowdsourcer.sol
+Issue Line: 49
+solidity-test-sources/src/augur-core/source/contracts/factories/DisputeCrowdsourcerFactory.sol
+Issue Line: 10
+solidity-test-sources/src/augur-core/source/contracts/external/EscapeHatchController.sol
+Issue Line: 10
+solidity-test-sources/src/augur-core/source/contracts/reporting/FeeToken.sol
+Issue Line: 17
+solidity-test-sources/src/augur-core/source/contracts/reporting/FeeToken.sol
+Issue Line: 27
+solidity-test-sources/src/augur-core/source/contracts/reporting/FeeToken.sol
+Issue Line: 33
+solidity-test-sources/src/augur-core/source/contracts/factories/FeeTokenFactory.sol
+Issue Line: 10
+solidity-test-sources/src/augur-core/source/contracts/reporting/FeeWindow.sol
+Issue Line: 39
+solidity-test-sources/src/augur-core/source/contracts/reporting/FeeWindow.sol
+Issue Line: 63
+solidity-test-sources/src/augur-core/source/contracts/reporting/FeeWindow.sol
+Issue Line: 68
+solidity-test-sources/src/augur-core/source/contracts/reporting/FeeWindow.sol
+Issue Line: 88
+solidity-test-sources/src/augur-core/source/contracts/reporting/FeeWindow.sol
+Issue Line: 143
+solidity-test-sources/src/augur-core/source/contracts/factories/FeeWindowFactory.sol
+Issue Line: 10
+solidity-test-sources/src/augur-core/source/contracts/trading/FillOrder.sol
+Issue Line: 361
+solidity-test-sources/src/augur-core/source/contracts/trading/FillOrder.sol
+Issue Line: 368
+solidity-test-sources/src/augur-core/source/contracts/reporting/InitialReporter.sol
+Issue Line: 16
+solidity-test-sources/src/augur-core/source/contracts/reporting/InitialReporter.sol
+Issue Line: 43
+solidity-test-sources/src/augur-core/source/contracts/factories/InitialReporterFactory.sol
+Issue Line: 10
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/LegacyRepToken.sol
+Issue Line: 27
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/LegacyRepToken.sol
+Issue Line: 41
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/LegacyRepToken.sol
+Issue Line: 53
+solidity-test-sources/src/augur-core/source/contracts/reporting/Mailbox.sol
+Issue Line: 15
+solidity-test-sources/src/augur-core/source/contracts/reporting/Mailbox.sol
+Issue Line: 41
+solidity-test-sources/src/augur-core/source/contracts/factories/MailboxFactory.sol
+Issue Line: 10
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MaliciousMarket.sol
+Issue Line: 13
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MaliciousMarketHaver.sol
+Issue Line: 13
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MaliciousTrader.sol
+Issue Line: 11
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MaliciousTrader.sol
+Issue Line: 16
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MaliciousTrader.sol
+Issue Line: 20
+solidity-test-sources/src/augur-core/source/contracts/libraries/collections/Map.sol
+Issue Line: 13
+solidity-test-sources/src/augur-core/source/contracts/libraries/collections/Map.sol
+Issue Line: 19
+solidity-test-sources/src/augur-core/source/contracts/libraries/collections/Map.sol
+Issue Line: 28
+solidity-test-sources/src/augur-core/source/contracts/libraries/collections/Map.sol
+Issue Line: 32
+solidity-test-sources/src/augur-core/source/contracts/factories/MapFactory.sol
+Issue Line: 10
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MapHelper.sol
+Issue Line: 11
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MapHelper.sol
+Issue Line: 15
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MapHelper.sol
+Issue Line: 19
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MapHelper.sol
+Issue Line: 41
+solidity-test-sources/src/augur-core/source/contracts/reporting/Market.sol
+Issue Line: 59
+solidity-test-sources/src/augur-core/source/contracts/reporting/Market.sol
+Issue Line: 116
+solidity-test-sources/src/augur-core/source/contracts/reporting/Market.sol
+Issue Line: 137
+solidity-test-sources/src/augur-core/source/contracts/factories/MarketFactory.sol
+Issue Line: 12
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/Medianizer.sol
+Issue Line: 18
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/Medianizer.sol
+Issue Line: 48
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/Medianizer.sol
+Issue Line: 52
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 25
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 36
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 41
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 46
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 50
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 54
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 58
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 62
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 66
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 70
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 74
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 82
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 91
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 96
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 100
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 104
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 108
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 112
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 116
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 120
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 124
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 128
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 132
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 136
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 140
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 144
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 148
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 165
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 170
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 178
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 183
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 187
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 191
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 195
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 199
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 203
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 207
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 211
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 215
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockCash.sol
+Issue Line: 52
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockCash.sol
+Issue Line: 57
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockCash.sol
+Issue Line: 62
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockCash.sol
+Issue Line: 67
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockDisputeCrowdsourcer.sol
+Issue Line: 16
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockDisputeCrowdsourcer.sol
+Issue Line: 26
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockDisputeCrowdsourcer.sol
+Issue Line: 41
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockDisputeCrowdsourcer.sol
+Issue Line: 45
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockDisputeCrowdsourcer.sol
+Issue Line: 61
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockDisputeCrowdsourcer.sol
+Issue Line: 85
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockDisputeCrowdsourcerFactory.sol
+Issue Line: 14
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockDisputeCrowdsourcerFactory.sol
+Issue Line: 30
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeToken.sol
+Issue Line: 50
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeToken.sol
+Issue Line: 63
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeToken.sol
+Issue Line: 73
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeTokenFactory.sol
+Issue Line: 17
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeTokenFactory.sol
+Issue Line: 25
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 79
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 83
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 87
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 91
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 95
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 99
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 103
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 107
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 111
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 115
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 119
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 123
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 127
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 131
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 135
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 139
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 143
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 147
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 151
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 155
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 159
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 167
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 183
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 194
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 201
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 302
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 306
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 318
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 322
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 346
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 354
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 358
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindowFactory.sol
+Issue Line: 18
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindowFactory.sol
+Issue Line: 26
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindowFactory.sol
+Issue Line: 30
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFillOrder.sol
+Issue Line: 18
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFillOrder.sol
+Issue Line: 25
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockInitialReporter.sol
+Issue Line: 14
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockInitialReporter.sol
+Issue Line: 19
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockInitialReporter.sol
+Issue Line: 24
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockInitialReporter.sol
+Issue Line: 30
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockInitialReporter.sol
+Issue Line: 36
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockInitialReporter.sol
+Issue Line: 77
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockInitialReporterFactory.sol
+Issue Line: 11
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockInitialReporterFactory.sol
+Issue Line: 15
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockLegacyReputationToken.sol
+Issue Line: 15
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 52
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 56
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 60
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 64
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 68
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 72
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 76
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 80
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 84
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 88
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 92
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 96
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 100
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 104
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 108
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 112
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 116
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 120
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 124
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 128
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 132
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 136
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 140
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 144
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 148
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 152
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 156
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 196
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 200
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 204
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 208
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 219
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 227
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 239
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 324
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 370
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 376
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarketFactory.sol
+Issue Line: 22
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarketFactory.sol
+Issue Line: 62
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 47
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 51
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 55
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 59
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 63
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 67
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 111
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 122
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 128
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 134
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 140
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 148
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 155
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 170
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 174
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 178
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationTokenFactory.sol
+Issue Line: 17
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationTokenFactory.sol
+Issue Line: 21
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockShareToken.sol
+Issue Line: 52
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockShareToken.sol
+Issue Line: 56
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockShareToken.sol
+Issue Line: 60
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockShareToken.sol
+Issue Line: 67
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockShareToken.sol
+Issue Line: 73
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockShareToken.sol
+Issue Line: 91
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockShareToken.sol
+Issue Line: 95
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockShareToken.sol
+Issue Line: 99
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockShareTokenFactory.sol
+Issue Line: 23
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockShareTokenFactory.sol
+Issue Line: 27
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockShareTokenFactory.sol
+Issue Line: 39
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockStandardToken.sol
+Issue Line: 54
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockStandardToken.sol
+Issue Line: 58
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockStandardToken.sol
+Issue Line: 67
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockStandardToken.sol
+Issue Line: 74
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockToken.sol
+Issue Line: 9
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockToken.sol
+Issue Line: 13
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 79
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 83
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 87
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 91
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 95
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 99
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 103
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 107
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 111
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 115
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 119
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 123
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 127
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 131
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 135
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 139
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 143
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 147
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 151
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 155
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 159
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 163
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 167
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 171
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 175
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 179
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 183
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 187
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 191
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 195
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 199
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 203
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 207
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 219
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 230
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 245
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 273
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 277
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 331
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 335
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 390
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 394
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 398
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 402
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 410
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 415
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 420
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 431
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 453
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 465
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 473
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 479
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 483
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverseFactory.sol
+Issue Line: 14
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverseFactory.sol
+Issue Line: 26
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockVariableSupplyToken.sol
+Issue Line: 21
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockVariableSupplyToken.sol
+Issue Line: 46
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockVariableSupplyToken.sol
+Issue Line: 55
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockVariableSupplyToken.sol
+Issue Line: 60
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockVariableSupplyToken.sol
+Issue Line: 93
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockVariableSupplyToken.sol
+Issue Line: 105
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/Redeploy/NewReputationToken.sol
+Issue Line: 37
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/Redeploy/NewReputationToken.sol
+Issue Line: 46
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/Redeploy/NewReputationToken.sol
+Issue Line: 54
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/Redeploy/NewReputationToken.sol
+Issue Line: 72
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/Redeploy/NewReputationToken.sol
+Issue Line: 82
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/Redeploy/NewReputationToken.sol
+Issue Line: 86
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/Redeploy/NewReputationToken.sol
+Issue Line: 90
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/Redeploy/NewReputationToken.sol
+Issue Line: 95
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/Redeploy/NewReputationToken.sol
+Issue Line: 100
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/Redeploy/NewReputationToken.sol
+Issue Line: 105
+solidity-test-sources/src/augur-core/source/contracts/trading/Orders.sol
+Issue Line: 147
+solidity-test-sources/src/augur-core/source/contracts/trading/Orders.sol
+Issue Line: 167
+solidity-test-sources/src/augur-core/source/contracts/trading/Orders.sol
+Issue Line: 204
+solidity-test-sources/src/augur-core/source/contracts/trading/Orders.sol
+Issue Line: 209
+solidity-test-sources/src/augur-core/source/contracts/trading/Orders.sol
+Issue Line: 214
+solidity-test-sources/src/augur-core/source/contracts/trading/OrdersFetcher.sol
+Issue Line: 67
+solidity-test-sources/src/augur-core/source/contracts/external/OrdersFinder.sol
+Issue Line: 10
+solidity-test-sources/src/augur-core/source/contracts/libraries/Ownable.sol
+Issue Line: 39
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/Ownable.sol
+Issue Line: 33
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/PausableToken.sol
+Issue Line: 14
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/PausableToken.sol
+Issue Line: 18
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/PriceFeed.sol
+Issue Line: 24
+solidity-test-sources/src/augur-core/source/contracts/external/PriceFeedWrapper.sol
+Issue Line: 12
+solidity-test-sources/src/augur-core/source/contracts/external/PriceFeedWrapper.sol
+Issue Line: 17
+solidity-test-sources/src/augur-core/source/contracts/external/PriceFeedWrapper.sol
+Issue Line: 23
+solidity-test-sources/src/augur-core/source/contracts/external/PriceFeedWrapper.sol
+Issue Line: 28
+solidity-test-sources/src/augur-core/source/contracts/external/RepPriceBridge.sol
+Issue Line: 12
+solidity-test-sources/src/augur-core/source/contracts/external/RepPriceBridge.sol
+Issue Line: 27
+solidity-test-sources/src/augur-core/source/contracts/external/RepPriceBridge.sol
+Issue Line: 32
+solidity-test-sources/src/augur-core/source/contracts/external/RepPriceBridge.sol
+Issue Line: 37
+solidity-test-sources/src/augur-core/source/contracts/reporting/RepPriceOracle.sol
+Issue Line: 10
+solidity-test-sources/src/augur-core/source/contracts/reporting/ReputationToken.sol
+Issue Line: 61
+solidity-test-sources/src/augur-core/source/contracts/reporting/ReputationToken.sol
+Issue Line: 70
+solidity-test-sources/src/augur-core/source/contracts/reporting/ReputationToken.sol
+Issue Line: 78
+solidity-test-sources/src/augur-core/source/contracts/reporting/ReputationToken.sol
+Issue Line: 96
+solidity-test-sources/src/augur-core/source/contracts/reporting/ReputationToken.sol
+Issue Line: 106
+solidity-test-sources/src/augur-core/source/contracts/reporting/ReputationToken.sol
+Issue Line: 110
+solidity-test-sources/src/augur-core/source/contracts/reporting/ReputationToken.sol
+Issue Line: 114
+solidity-test-sources/src/augur-core/source/contracts/reporting/ReputationToken.sol
+Issue Line: 119
+solidity-test-sources/src/augur-core/source/contracts/reporting/ReputationToken.sol
+Issue Line: 124
+solidity-test-sources/src/augur-core/source/contracts/reporting/ReputationToken.sol
+Issue Line: 129
+solidity-test-sources/src/augur-core/source/contracts/reporting/ReputationToken.sol
+Issue Line: 204
+solidity-test-sources/src/augur-core/source/contracts/reporting/ReputationToken.sol
+Issue Line: 241
+solidity-test-sources/src/augur-core/source/contracts/factories/ReputationTokenFactory.sol
+Issue Line: 11
+solidity-test-sources/src/augur-core/source/contracts/trading/ShareToken.sol
+Issue Line: 21
+solidity-test-sources/src/augur-core/source/contracts/trading/ShareToken.sol
+Issue Line: 28
+solidity-test-sources/src/augur-core/source/contracts/trading/ShareToken.sol
+Issue Line: 33
+solidity-test-sources/src/augur-core/source/contracts/trading/ShareToken.sol
+Issue Line: 38
+solidity-test-sources/src/augur-core/source/contracts/trading/ShareToken.sol
+Issue Line: 42
+solidity-test-sources/src/augur-core/source/contracts/trading/ShareToken.sol
+Issue Line: 47
+solidity-test-sources/src/augur-core/source/contracts/factories/ShareTokenFactory.sol
+Issue Line: 11
+solidity-test-sources/src/augur-core/source/contracts/libraries/token/StandardToken.sol
+Issue Line: 29
+solidity-test-sources/src/augur-core/source/contracts/libraries/token/StandardToken.sol
+Issue Line: 44
+solidity-test-sources/src/augur-core/source/contracts/libraries/token/StandardToken.sol
+Issue Line: 66
+solidity-test-sources/src/augur-core/source/contracts/libraries/token/StandardToken.sol
+Issue Line: 78
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/StandardToken.sol
+Issue Line: 24
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/StandardTokenHelper.sol
+Issue Line: 7
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/TestController.sol
+Issue Line: 7
+solidity-test-sources/src/augur-core/source/contracts/TimeControlled.sol
+Issue Line: 25
+solidity-test-sources/src/augur-core/source/contracts/TimeControlled.sol
+Issue Line: 31
+solidity-test-sources/src/augur-core/source/contracts/trading/Trade.sol
+Issue Line: 21
+solidity-test-sources/src/augur-core/source/contracts/trading/Trade.sol
+Issue Line: 27
+solidity-test-sources/src/augur-core/source/contracts/trading/Trade.sol
+Issue Line: 33
+solidity-test-sources/src/augur-core/source/contracts/trading/Trade.sol
+Issue Line: 39
+solidity-test-sources/src/augur-core/source/contracts/trading/Trade.sol
+Issue Line: 82
+solidity-test-sources/src/augur-core/source/contracts/trading/Trade.sol
+Issue Line: 88
+solidity-test-sources/src/augur-core/source/contracts/trading/Trade.sol
+Issue Line: 94
+solidity-test-sources/src/augur-core/source/contracts/trading/Trade.sol
+Issue Line: 100
+solidity-test-sources/src/augur-core/source/contracts/trading/TradingEscapeHatch.sol
+Issue Line: 27
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 44
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 127
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 170
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 174
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 185
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 274
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 279
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 285
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 290
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 424
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 431
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 438
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 455
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 467
+solidity-test-sources/src/augur-core/source/contracts/factories/UniverseFactory.sol
+Issue Line: 10
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/UpgradedUniverse.sol
+Issue Line: 9
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/ZeroX/ZeroXPoC.sol
+Issue Line: 79
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/ZeroX/ZeroXPoC.sol
+Issue Line: 123
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/ZeroX/ZeroXPoC.sol
+Issue Line: 303
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/ZeroX/ZeroXPoC.sol
+Issue Line: 355
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/ZeroX/ZeroXPoC.sol
+Issue Line: 380
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/ZeroX/ZeroXPoC.sol
+Issue Line: 401

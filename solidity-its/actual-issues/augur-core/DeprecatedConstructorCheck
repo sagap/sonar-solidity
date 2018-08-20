@@ -1,0 +1,30 @@
+solidity-test-sources/src/augur-core/source/contracts/Controlled.sol
+Issue Line: 37
+solidity-test-sources/src/augur-core/source/contracts/Controller.sol
+Issue Line: 44
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSAuth.sol
+Issue Line: 11
+solidity-test-sources/src/augur-core/source/contracts/libraries/Delegator.sol
+Issue Line: 9
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/LegacyRepToken.sol
+Issue Line: 27
+solidity-test-sources/src/augur-core/source/contracts/LegacyReputationToken.sol
+Issue Line: 39
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MaliciousMarket.sol
+Issue Line: 13
+solidity-test-sources/src/augur-core/source/contracts/external/OrdersFinder.sol
+Issue Line: 10
+solidity-test-sources/src/augur-core/source/contracts/libraries/Ownable.sol
+Issue Line: 19
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/Ownable.sol
+Issue Line: 17
+solidity-test-sources/src/augur-core/source/contracts/external/PriceFeedWrapper.sol
+Issue Line: 12
+solidity-test-sources/src/augur-core/source/contracts/external/RepPriceBridge.sol
+Issue Line: 12
+solidity-test-sources/src/augur-core/source/contracts/TestNetReputationToken.sol
+Issue Line: 13
+solidity-test-sources/src/augur-core/source/contracts/TimeControlled.sol
+Issue Line: 15
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/ZeroX/ZeroXPoC.sol
+Issue Line: 79

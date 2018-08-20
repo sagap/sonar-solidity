@@ -1,0 +1,20 @@
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MaliciousTrader.sol
+Issue Line: 16
+solidity-test-sources/src/augur-core/source/contracts/factories/MarketFactory.sol
+Issue Line: 12
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockCash.sol
+Issue Line: 52
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 201
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFillOrder.sol
+Issue Line: 18
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 227
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarketFactory.sol
+Issue Line: 62
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 410
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 415
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 420

@@ -50,7 +50,8 @@ public class SolidityRuling {
     "ethorse-core",
     "openzeppelin-solidity",
     "kleros-interaction",
-    "pm-contracts"
+    "pm-contracts",
+    "augur-core"
   };
 
   public static String[] getProjects() {

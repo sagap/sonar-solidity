@@ -1,0 +1,8 @@
+solidity-test-sources/src/augur-core/source/contracts/trading/CancelOrder.sol
+Issue Line: 56
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/Medianizer.sol
+Issue Line: 75
+solidity-test-sources/src/augur-core/source/contracts/trading/OrdersFetcher.sol
+Issue Line: 67
+solidity-test-sources/src/augur-core/source/contracts/trading/TradingEscapeHatch.sol
+Issue Line: 69

@@ -1,0 +1,304 @@
+solidity-test-sources/src/augur-core/source/contracts/Augur.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/BaseReportingParticipant.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/token/BasicToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/BasicToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/CancelOrder.sol
+Issue Line: 5
+solidity-test-sources/src/augur-core/source/contracts/trading/Cash.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/CashAutoConverter.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/CashWrapperHelper.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/ClaimTradingProceeds.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/CompleteSets.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/Constants.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/ContractExists.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/ContractExistsHelper.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/Controlled.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/Controller.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/ControllerUser.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/CreateOrder.sol
+Issue Line: 3
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSAuth.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSAuthEvents.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSAuthority.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSGuard.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSGuardEvents.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSGuardFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSMath.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSNote.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSThing.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/DSValue.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/DelegationTarget.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/Delegator.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/DelegatorHelper.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/DisputeCrowdsourcer.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/factories/DisputeCrowdsourcerFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/token/ERC20.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/ERC20.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/token/ERC20Basic.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/ERC20Basic.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/EscapeHatchController.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/FeeToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/factories/FeeTokenFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/FeeWindow.sol
+Issue Line: 3
+solidity-test-sources/src/augur-core/source/contracts/factories/FeeWindowFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/FeedFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/FillOrder.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/IAugur.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/ICancelOrder.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/ICash.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/IClaimTradingProceeds.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/ICompleteSets.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/IControlled.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/IController.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/ICreateOrder.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/IDisputeCrowdsourcer.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/IFeeToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/IFeeWindow.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/IFillOrder.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/IInitialReporter.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/IMailbox.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/IMarket.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/IOrders.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/IOrdersFetcher.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/IOwnable.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/IRepPriceOracle.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/IReportingParticipant.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/IReputationToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/IShareToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/ITime.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/ITrade.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/ITradingEscapeHatch.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/ITyped.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/IUniverse.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/InitialReporter.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/factories/InitialReporterFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/Initializable.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/Initializable.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/LegacyRepToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/LegacyReputationToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/Mailbox.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/factories/MailboxFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MaliciousMarket.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MaliciousMarketHaver.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MaliciousTrader.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/collections/Map.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/factories/MapFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MapHelper.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/Market.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/factories/MarketFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/MarketValidator.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/Medianizer.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockAugur.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockCash.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockDisputeCrowdsourcer.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockDisputeCrowdsourcerFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeTokenFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindow.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFeeWindowFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockFillOrder.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockInitialReporter.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockInitialReporterFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockLegacyReputationToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarket.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockMarketFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockReputationTokenFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockShareToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockShareTokenFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockStandardToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverse.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockUniverseFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/MockVariableSupplyToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/Redeploy/NewReputationToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/Order.sol
+Issue Line: 8
+solidity-test-sources/src/augur-core/source/contracts/trading/Orders.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/OrdersFetcher.sol
+Issue Line: 5
+solidity-test-sources/src/augur-core/source/contracts/external/OrdersFinder.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/Ownable.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/Ownable.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/Pausable.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/PausableToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/MkrPriceFeed/PriceFeed.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/PriceFeedWrapper.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/ReentrancyGuard.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/ReentrancyGuardHelper.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/external/RepPriceBridge.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/RepPriceOracle.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/Reporting.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/ReputationToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/factories/ReputationTokenFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/SafeMath.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/math/SafeMathInt256.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/SafeMathInt256Tester.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/math/SafeMathUint256.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/SafeMathUint256Tester.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/ShareToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/factories/ShareTokenFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/token/StandardToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/legacy_reputation/StandardToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/StandardTokenHelper.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/TestControlled.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/TestController.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/TestNetReputationToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/TestTrade.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/Time.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/TimeControlled.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/trading/Trade.sol
+Issue Line: 3
+solidity-test-sources/src/augur-core/source/contracts/trading/TradingEscapeHatch.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/reporting/Universe.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/factories/UniverseFactory.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/UpgradedUniverse.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/source/contracts/libraries/token/VariableSupplyToken.sol
+Issue Line: 1
+solidity-test-sources/src/augur-core/tests/solidity_test_helpers/ZeroX/ZeroXPoC.sol
+Issue Line: 1
