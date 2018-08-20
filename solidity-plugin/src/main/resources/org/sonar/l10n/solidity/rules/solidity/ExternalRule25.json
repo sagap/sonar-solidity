@@ -2,7 +2,7 @@
   "title": "\"var\" keyword is deprecated.",
   "type": "VULNERABILITY",
   "status": "ready",
-  "remedation": {
+  "remediation": {
    "func": "Constant\/Issue",
    "constantCost": "5min"
   },

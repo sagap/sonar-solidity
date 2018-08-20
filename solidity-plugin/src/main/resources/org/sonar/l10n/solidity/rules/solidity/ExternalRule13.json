@@ -2,7 +2,7 @@
   "title": "selfdestruct function should be used instead of suicide.",
   "type": "CODE_SMELL",
   "status": "ready",
-  "remedation": {
+  "remediation": {
    "func": "Constant\/Issue",
    "constantCost": "10min"
   },

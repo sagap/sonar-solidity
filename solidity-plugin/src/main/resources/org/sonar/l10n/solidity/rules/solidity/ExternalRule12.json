@@ -2,7 +2,7 @@
   "title": "Specify pragma version.",
   "type": "CODE_SMELL",
   "status": "ready",
-  "remedation": {
+  "remediation": {
    "func": "Constant\/Issue",
    "constantCost": "10min"
   },

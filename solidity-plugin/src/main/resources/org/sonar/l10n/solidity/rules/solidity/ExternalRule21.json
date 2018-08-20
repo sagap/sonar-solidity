@@ -2,7 +2,7 @@
   "title": "Do not use block to generate random numbers.",
   "type": "VULNERABILITY",
   "status": "ready",
-  "remedation": {
+  "remediation": {
    "func": "Constant\/Issue",
    "constantCost": "10min"
   },

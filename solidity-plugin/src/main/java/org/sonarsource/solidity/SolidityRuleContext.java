@@ -31,7 +31,7 @@ public class SolidityRuleContext implements RuleContext {
   @Override
   public void addIssue(Token start, Token stop, String reportMessage, String externalRuleKey) {
     RuleKey ruleKey = RuleKey.of(REPO_KEY, externalRuleKey);
-    NewIssue newIssue = context.newIssue().forRule(ruleKey).gap(Double.valueOf(1));
+    NewIssue newIssue = context.newIssue().forRule(ruleKey);
     NewIssueLocation location = newIssue.newLocation()
       .on(file).message(reportMessage);
     DefaultTextPointer df1 = new DefaultTextPointer(start.getLine(), start.getCharPositionInLine());
@@ -45,7 +45,7 @@ public class SolidityRuleContext implements RuleContext {
   @Override
   public void addIssueOnFile(String reportMessage, String externalRuleKey) {
     RuleKey ruleKey = RuleKey.of(REPO_KEY, externalRuleKey);
-    NewIssue newIssue = context.newIssue().forRule(ruleKey).gap(Double.valueOf(1));
+    NewIssue newIssue = context.newIssue().forRule(ruleKey);
     NewIssueLocation location = newIssue.newLocation()
       .on(file).message(reportMessage);
     newIssue.at(location);
@@ -55,7 +55,7 @@ public class SolidityRuleContext implements RuleContext {
   @Override
   public void addIssue(Token start, Token stop, int offset, String reportMessage, String externalRuleKey) {
     RuleKey ruleKey = RuleKey.of(REPO_KEY, externalRuleKey);
-    NewIssue newIssue = context.newIssue().forRule(ruleKey).gap(Double.valueOf(1));
+    NewIssue newIssue = context.newIssue().forRule(ruleKey);
     NewIssueLocation location = newIssue.newLocation()
       .on(file).message(reportMessage);
     DefaultTextPointer df1 = new DefaultTextPointer(start.getLine(), start.getCharPositionInLine());
@@ -70,7 +70,7 @@ public class SolidityRuleContext implements RuleContext {
   @Override
   public void addIssue(ParserRuleContext ctx, String reportMessage, String externalRuleKey) {
     RuleKey ruleKey = RuleKey.of(REPO_KEY, externalRuleKey);
-    NewIssue newIssue = context.newIssue().forRule(ruleKey).gap(Double.valueOf(1));
+    NewIssue newIssue = context.newIssue().forRule(ruleKey);
     NewIssueLocation location = newIssue.newLocation()
       .on(file).message(reportMessage);
     Token start = ctx.getStart();

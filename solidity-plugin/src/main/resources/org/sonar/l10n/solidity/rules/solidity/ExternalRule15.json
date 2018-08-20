@@ -2,7 +2,7 @@
   "title": "\"sha3\" should be replaced by \"keccak256\".",
   "type": "VULNERABILITY",
   "status": "ready",
-  "remedation": {
+  "remediation": {
    "func": "Constant\/Issue",
    "constantCost": "10min"
   },

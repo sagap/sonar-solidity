@@ -2,9 +2,9 @@
   "title": "Access restriction pattern should be used to increase the security of your smart contract against unauthorized access.",
   "type": "VULNERABILITY",
   "status": "ready",
-  "remedation": {
+  "remediation": {
    "func": "Constant\/Issue",
-   "constantCost": "60min"
+   "constantCost": "30min"
   },
   "tags": [
     "convention"

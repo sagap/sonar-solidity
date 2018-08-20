@@ -2,7 +2,7 @@
   "title": "Boolean checks should not be inverted.",
   "type": "CODE_SMELL",
   "status": "ready",
-  "remedation": {
+  "remediation": {
    "func": "Constant\/Issue",
    "constantCost": "10min"
   },
