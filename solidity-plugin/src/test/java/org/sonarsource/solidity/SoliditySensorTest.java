@@ -31,6 +31,7 @@ import org.sonar.api.rule.RuleKey;
 import org.sonar.api.utils.Version;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
+import org.sonarsource.solidity.checks.RuleContext;
 import org.sonarsource.solidity.frontend.SolidityParser.ContractDefinitionContext;
 import org.sonarsource.solidity.frontend.SolidityParser.PragmaDirectiveContext;
 import org.sonarsource.solidity.frontend.SolidityParser.SourceUnitContext;
@@ -224,6 +225,9 @@ public class SoliditySensorTest {
     SolidityParsingPhase parser = new SolidityParsingPhase();
     SourceUnitContext suc = parser.parse(inputFile.contents());
     List<NewIssue> issues = createDummyIssuesPragmaAndContract(inputFile, sensorContext, suc);
+    RuleContext r = new SolidityRuleContext(inputFile, sensorContext);
+    r.addIssue(suc.pragmaDirective(0), "Test", "ExternalRule1");
+    r.addIssueOnFile("Test File Issue", "ExternalRule2");
     assertThat(issues).hasSize(2);
   }
 
