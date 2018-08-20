@@ -1,0 +1,338 @@
+solidity-test-sources/src/standard-contracts/contracts/src/bits/BitOps.sol
+Issue Line: 95
+solidity-test-sources/src/standard-contracts/contracts/src/bits/BitOps.sol
+Issue Line: 108
+solidity-test-sources/src/standard-contracts/contracts/src/bits/BitOps.sol
+Issue Line: 120
+solidity-test-sources/src/standard-contracts/contracts/src/bits/BitOps.sol
+Issue Line: 133
+solidity-test-sources/src/standard-contracts/contracts/src/bits/BitOps.sol
+Issue Line: 145
+solidity-test-sources/src/standard-contracts/contracts/src/bits/BitOps.sol
+Issue Line: 158
+solidity-test-sources/src/standard-contracts/contracts/src/bits/BitOps.sol
+Issue Line: 170
+solidity-test-sources/src/standard-contracts/contracts/src/bits/BitOps.sol
+Issue Line: 183
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 9
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 22
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 35
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 48
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 61
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 76
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 84
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 97
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 105
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 117
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 126
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 139
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 148
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 161
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 175
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 189
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 203
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 217
+solidity-test-sources/src/standard-contracts/contracts/test/BitOpsTest.sol
+Issue Line: 231
+solidity-test-sources/src/standard-contracts/contracts/gas/BitsGas.sol
+Issue Line: 10
+solidity-test-sources/src/standard-contracts/contracts/gas/BitsGas.sol
+Issue Line: 17
+solidity-test-sources/src/standard-contracts/contracts/gas/BitsGas.sol
+Issue Line: 24
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 11
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 12
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 81
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 97
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 124
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 144
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 161
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 162
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 163
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 190
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 209
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 210
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 211
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 250
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/ByteSlice.sol
+Issue Line: 253
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 9
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 17
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 24
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 32
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 40
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 48
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 56
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 64
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 72
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 81
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 89
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 97
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 105
+solidity-test-sources/src/standard-contracts/contracts/gas/ByteSliceGas.sol
+Issue Line: 113
+solidity-test-sources/src/standard-contracts/contracts/test/ByteSliceTest.sol
+Issue Line: 10
+solidity-test-sources/src/standard-contracts/contracts/test/ByteSliceTest.sol
+Issue Line: 20
+solidity-test-sources/src/standard-contracts/contracts/test/ByteSliceTest.sol
+Issue Line: 21
+solidity-test-sources/src/standard-contracts/contracts/test/ByteSliceTest.sol
+Issue Line: 105
+solidity-test-sources/src/standard-contracts/contracts/test/ByteSliceTest.sol
+Issue Line: 299
+solidity-test-sources/src/standard-contracts/contracts/test/ByteSliceTest.sol
+Issue Line: 305
+solidity-test-sources/src/standard-contracts/contracts/test/ByteSliceTest.sol
+Issue Line: 306
+solidity-test-sources/src/standard-contracts/contracts/test/ByteSliceTest.sol
+Issue Line: 309
+solidity-test-sources/src/standard-contracts/contracts/src/bytes/Bytes.sol
+Issue Line: 16
+solidity-test-sources/src/standard-contracts/contracts/src/codec/ECCConversion.sol
+Issue Line: 23
+solidity-test-sources/src/standard-contracts/contracts/src/codec/ECCConversion.sol
+Issue Line: 24
+solidity-test-sources/src/standard-contracts/contracts/src/codec/ECCConversion.sol
+Issue Line: 60
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/ECCMath.sol
+Issue Line: 19
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/ECCMath.sol
+Issue Line: 20
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/ECCMath.sol
+Issue Line: 21
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/ECCMath.sol
+Issue Line: 22
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/ECCMath.sol
+Issue Line: 23
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/ECCMath.sol
+Issue Line: 48
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/ECCMath.sol
+Issue Line: 81
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/ECCMath.sol
+Issue Line: 82
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 10
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 11
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 12
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 13
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 15
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 16
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 20
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 21
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 26
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 61
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 65
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 79
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 103
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 115
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 127
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 128
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 141
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 142
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 146
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 147
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 148
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 162
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 200
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 215
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 245
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 264
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 306
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 307
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 322
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 352
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 353
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 366
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 403
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 404
+solidity-test-sources/src/standard-contracts/contracts/src/codec/RLP.sol
+Issue Line: 405
+solidity-test-sources/src/standard-contracts/contracts/test/RLPReaderTest.sol
+Issue Line: 23
+solidity-test-sources/src/standard-contracts/contracts/test/RLPReaderTest.sol
+Issue Line: 52
+solidity-test-sources/src/standard-contracts/contracts/test/RLPReaderTest.sol
+Issue Line: 95
+solidity-test-sources/src/standard-contracts/contracts/test/RLPReaderTest.sol
+Issue Line: 101
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 19
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 22
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 23
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 26
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 32
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 40
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 43
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 44
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 55
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 56
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 62
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 70
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 83
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 86
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 99
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 118
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 119
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 120
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 121
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 122
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 138
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 160
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 161
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 162
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 163
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 164
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 182
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 204
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 205
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 206
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 207
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 208
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 220
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 223
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 224
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 225
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 226
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 227
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 236
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 239
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 240
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 241
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 242
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 243
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 254
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 257
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 258
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 304
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 315
+solidity-test-sources/src/standard-contracts/contracts/src/crypto/Secp256k1.sol
+Issue Line: 316
+solidity-test-sources/src/standard-contracts/contracts/test/Secp256k1ArithTest.sol
+Issue Line: 7

@@ -51,7 +51,8 @@ public class SolidityRuling {
     "openzeppelin-solidity",
     "kleros-interaction",
     "pm-contracts",
-    "augur-core"
+    "augur-core",
+    "standard-contracts"
   };
 
   public static String[] getProjects() {
