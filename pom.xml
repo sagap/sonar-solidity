@@ -3,11 +3,11 @@
 
   <groupId>org.sonarsource.solidity</groupId>
   <artifactId>sonar-solidity</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <packaging>pom</packaging>
 
   <name>SonarSolidity</name>
-  <description>Draft of sonar-solidity</description>
+  <description>sonar-solidity</description>
   <scm>
      <connection>scm:git:git@github.com:sagap/sonar-solidity.git</connection>
      <developerConnection>scm:git:git@github.com:sagap/sonar-solidity.git</developerConnection>
