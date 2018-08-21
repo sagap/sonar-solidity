@@ -9,6 +9,7 @@ Please follow the instructions provided.
 ## Building
 
 ```bash
+git clone --recursive https://github.com/sagap/sonar-solidity.git
 mvn clean install
 ```
 
