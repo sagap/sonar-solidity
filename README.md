@@ -1,4 +1,4 @@
-# Sonar-Solidity [![Build Status](https://travis-ci.org/stylianos-agapiou-sonarsource/sonar-solidity.svg?branch=master)](https://travis-ci.org/stylianos-agapiou-sonarsource/sonar-solidity) [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=org.sonarsource.solidity%3Asonar-solidity&metric=alert_status)](https://sonarcloud.io/dashboard?id=org.sonarsource.solidity%3Asonar-solidity) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=org.sonarsource.solidity%3Asonar-solidity&metric=coverage)](https://sonarcloud.io/component_measures?id=org.sonarsource.solidity%3Asonar-solidity&metric=coverage)
+# Sonar-Solidity [![Build Status](https://travis-ci.org/sagap/sonar-solidity.svg?branch=master)](https://travis-ci.org/sagap/sonar-solidity) [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=org.sonarsource.solidity%3Asonar-solidity&metric=alert_status)](https://sonarcloud.io/dashboard?id=org.sonarsource.solidity%3Asonar-solidity) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=org.sonarsource.solidity%3Asonar-solidity&metric=coverage)](https://sonarcloud.io/component_measures?id=org.sonarsource.solidity%3Asonar-solidity&metric=coverage)
 
 **SonarSolidity**: is a SonarQube static code analyzer for Solidity Smart Contracts.
 
@@ -25,7 +25,7 @@ SonarSolidity supports the import of reports from[ ```Solium linter version 1.0.
 
 ## Documentation
 
-Please read [documentation](https://github.com/stylianos-agapiou-sonarsource/sonar-solidity/blob/master/Sonar%20Solidity%20Docs.pdf) on how to take advantage of this feature.
+Please read [documentation](https://github.com/sagap/sonar-solidity/blob/master/Sonar%20Solidity%20Docs.pdf) on how to take advantage of this feature.
 
 ## License
 
