@@ -3,6 +3,10 @@ package org.sonarsource.solidity.its;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.Token;
 import org.apache.commons.io.IOUtils;
@@ -13,7 +17,6 @@ import org.sonarsource.solidity.checks.CognitiveComplexityCheck;
 import org.sonarsource.solidity.checks.IssuableVisitor;
 import org.sonarsource.solidity.checks.RuleContext;
 import org.sonarsource.solidity.frontend.SolidityParsingPhase;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SolidityRulingTest {
@@ -24,6 +27,8 @@ public class SolidityRulingTest {
   public void test() {
     assertThat(SolidityRuling.getProjects()).hasSize(9);
     try {
+
+      createDirectoriesIfNotExist();
       SolidityRuling.collectFilesForIssues();
 
       SolidityRuling.deletePreviouslyAnalyzedFiles();
@@ -42,6 +47,18 @@ public class SolidityRulingTest {
     } catch (IOException e) {
       LOG.debug(e.getMessage());
     }
+  }
+
+  private static void createDirectoriesIfNotExist() {
+    Arrays.asList(SolidityRuling.getProjects())
+      .stream()
+      .forEach(projectName -> {
+        String pathName = String.format("%s%s", SolidityRulingIts.RECORD_ISSUES, projectName);
+        final Path path = Paths.get(pathName);
+        if (Files.notExists(path)) {
+          LOG.error("Error: file does not exist "+pathName);
+        }
+      });
   }
 
   /*
